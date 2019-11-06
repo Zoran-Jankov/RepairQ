@@ -11,19 +11,21 @@ import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.CmbModelFactory;
 import com.repair_shop.utility.DataType;
+import com.repair_shop.utility.GuiFactory;
 import com.repair_shop.utility.IDGenerator;
 
 public class ClientRegistrationController extends InputDialogController
 {
-	private int clientID = IDGenerator.getNewClientID();
+	private static final byte dataType = DataType.CLIENT;
+	private int clientID = IDGenerator.getNewID(dataType);
 	private ClientRegistrationGUI gui;
 	
 	public ClientRegistrationController(WindowController owner)
 	{
-		gui = new ClientRegistrationGUI(owner.getWindow());
+		gui = (ClientRegistrationGUI) GuiFactory.getWindow(owner.getWindow(), dataType);
 		gui.lblIDValue.setText(IDGenerator.formatRegularID(clientID));
 		setActionListeners();
-		updateComboBoxes();
+		updateComboBox();
 	}
 	
 	private void setActionListeners()
@@ -34,7 +36,7 @@ public class ClientRegistrationController extends InputDialogController
 		gui.btnCancel.addActionListener(ActionListenerFactory.closeWindow(this));
 	}
 	
-	public void updateComboBoxes()
+	public void updateComboBox()
 	{
 		gui.cmbMarketing.setModel(CmbModelFactory.getModel(DataType.MARKETING_TYPE));
 	}

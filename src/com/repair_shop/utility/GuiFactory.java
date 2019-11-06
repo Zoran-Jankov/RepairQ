@@ -9,7 +9,7 @@ public class GuiFactory
 {
 	public static WindowContainer getWindow(Window owner, byte windowType)
 	{
-		if(windowType == DataType.CLIENT)
+		if(DataType.isAClient(windowType))
 		{
 			return new ClientRegistrationGUI(owner);
 		}

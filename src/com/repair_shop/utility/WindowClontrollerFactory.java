@@ -8,7 +8,7 @@ public class WindowClontrollerFactory
 {
 	public static WindowController createController(WindowController owner, byte newWindowType)
 	{
-		if(newWindowType == DataType.CLIENT)
+		if(DataType.isAClient(newWindowType))
 		{
 			return new ClientRegistrationController(owner);
 		}

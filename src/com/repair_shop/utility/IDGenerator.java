@@ -2,19 +2,13 @@ package com.repair_shop.utility;
 
 public class IDGenerator
 {
-	public static final int COUNTER_MAX_VALUE = 10000000;
-	public static final int TERMINAL_NUMBER = 1;
+	private static final int COUNTER_MAX_VALUE = 10000000;
+	private static final int TERMINAL_NUMBER = 1;
 	
-	public static int getNewClientID()
+	public static int getNewID(byte table)
 	{
-		return AccessData.clientsDataTable.getDataElementCounter() + (TERMINAL_NUMBER * COUNTER_MAX_VALUE);
+		return AccessData.getDataTable(table).getDataElementCounter() + (TERMINAL_NUMBER * COUNTER_MAX_VALUE);
 	}
-	
-	public static int getNewDeviceID()
-	{
-		return AccessData.devicesDataTable.getDataElementCounter() + (TERMINAL_NUMBER * COUNTER_MAX_VALUE);
-	}
-	
 	
 	public static String formatRegularID(int id)
 	{

@@ -1,26 +1,36 @@
 package com.repair_shop.controller;
 
+import java.awt.Color;
 import java.awt.Window;
 
 import com.repair_shop.data.Device;
 import com.repair_shop.gui.DeviceRegistrationGUI;
+import com.repair_shop.gui.text.DeviceGUITextUtils;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.DataType;
+import com.repair_shop.utility.GuiFactory;
 import com.repair_shop.utility.IDGenerator;
+import com.repair_shop.utility.WindowClontrollerFactory;
 
 public class DeviceRegistrationController extends InputDialogController
 {
+	private static final byte dataType = DataType.DEVICE;
 	private int deviceID;
-	private Device newDevice;
 	private DeviceRegistrationGUI gui;
 	
 	public DeviceRegistrationController(WindowController owner)
 	{
-		deviceID = IDGenerator.getNewClientID();
-		gui = new DeviceRegistrationGUI(owner.getWindow());
+		deviceID = IDGenerator.getNewID(dataType);
+		gui = (DeviceRegistrationGUI) GuiFactory.getWindow(owner.getWindow(), dataType);
 		gui.labelDeviceIDValue.setText(IDGenerator.formatRegularID(deviceID));
-		gui.buttonAddNewModel.addActionListener(ActionListenerFactory.openNewWindow(this,DataType.MODEL));
+		setActionListeners();
+	}
+	
+	private void setActionListeners()
+	{
+		gui.buttonAddNewModel.addActionListener(ActionListenerFactory
+							 .openNewWindow(this,DataType.MODEL));
 		gui.buttonAddDevice.addActionListener(ActionListenerFactory.saveData(this));
 		gui.buttonCancel.addActionListener(ActionListenerFactory.closeWindow(this));
 	}
@@ -72,7 +82,8 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		if(isSerialNumberOK())
 		{
-			gui.showDefaultSerial();
+			gui.labelSerial.setText(DeviceGUITextUtils.SERIAL_NUMBER_LABEL);
+			gui.textFieldSerial.setBackground(Color.WHITE);
 		}
 		else
 		{
@@ -95,7 +106,7 @@ public class DeviceRegistrationController extends InputDialogController
 	@Override
 	public Window getWindow()
 	{
-		return null;
+		return gui.getWindow();
 	}
 
 	@Override
@@ -103,6 +114,4 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		gui.window.dispose();
 	}
-
-	
 }
