@@ -58,7 +58,6 @@ public class ModelRegistrationWindow implements WindowContainer
 		lblDeviceType.setBounds(10, 72, 200, 14);
 		contentPane.add(lblDeviceType);
 		
-		
 		comboBoxDeviceType.setBounds(10, 97, 200, 25);
 		contentPane.add(comboBoxDeviceType);
 		

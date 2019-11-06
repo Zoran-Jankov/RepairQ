@@ -12,8 +12,9 @@ public class PropertyRegistrationController extends InputDialogController
 	
 	public PropertyRegistrationController(WindowController owner, byte type)
 	{
-		gui = (PropertyRegistrationGUI) GuiFactory.getWindow(owner.getWindow(), type);
 		PropertyGUITextUtils.loadText(type);
+		gui = (PropertyRegistrationGUI) GuiFactory.getWindow(owner.getWindow(), type);
+		
 	}
 
 	@Override

@@ -12,8 +12,7 @@ public class WindowClontrollerFactory
 		{
 			return new ClientRegistrationController(owner);
 		}
-		
-		if(isAPropertyWindow(newWindowType))
+		else if(DataType.isAProperty(newWindowType))
 		{
 			return new PropertyRegistrationController(owner, newWindowType);
 		}
@@ -23,12 +22,5 @@ public class WindowClontrollerFactory
 		}
 	}
 	
-	private static boolean isAPropertyWindow(byte type)
-	{
-		return (type == DataType.BRAND)
-		    || (type == DataType.DEVICE_TYPE)
-		    || (type == DataType.MARKETING_TYPE)
-		    || (type == DataType.NOTIFICATION_TYPE)
-		    || (type == DataType.STATUS);
-	}
+	
 }
