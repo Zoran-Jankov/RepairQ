@@ -3,7 +3,7 @@ package com.repair_shop.controller;
 import java.awt.Window;
 
 import com.repair_shop.gui.PropertyRegistrationGUI;
-import com.repair_shop.utility.DataType;
+import com.repair_shop.gui.text.PropertyGUITextUtils;
 import com.repair_shop.utility.GuiFactory;
 
 public class PropertyRegistrationController extends InputDialogController
@@ -12,7 +12,8 @@ public class PropertyRegistrationController extends InputDialogController
 	
 	public PropertyRegistrationController(WindowController owner, byte type)
 	{
-		gui = GuiFactory.getWindow(owner.getWindow(), DataType.PROPERTY)
+		gui = (PropertyRegistrationGUI) GuiFactory.getWindow(owner.getWindow(), type);
+		PropertyGUITextUtils.loadText(type);
 	}
 
 	@Override

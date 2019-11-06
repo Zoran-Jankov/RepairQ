@@ -2,15 +2,12 @@ package com.repair_shop.controller;
 
 import java.awt.Window;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-
 import com.repair_shop.data.Device;
 import com.repair_shop.gui.DeviceRegistrationGUI;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.DataType;
 import com.repair_shop.utility.IDGenerator;
-import com.repair_shop.utility.WindowClontrollerFactory;
 
 public class DeviceRegistrationController extends InputDialogController
 {
@@ -22,17 +19,10 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		deviceID = IDGenerator.getNewClientID();
 		gui = new DeviceRegistrationGUI(owner.getWindow());
-		gui.labelDeviceIDValue.setText(formatIDValue());
+		gui.labelDeviceIDValue.setText(IDGenerator.formatRegularID(deviceID));
 		gui.buttonAddNewModel.addActionListener(ActionListenerFactory.openNewWindow(this,DataType.MODEL));
 		gui.buttonAddDevice.addActionListener(ActionListenerFactory.saveData(this));
 		gui.buttonCancel.addActionListener(ActionListenerFactory.closeWindow(this));
-	}
-	
-	private String formatIDValue()
-	{
-		return String.valueOf(IDGenerator.TERMINAL_NUMBER)
-			 + " - " 
-			 + String.valueOf(deviceID / IDGenerator.COUNTER_MAX_VALUE);
 	}
 
 	@Override

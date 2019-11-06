@@ -1,5 +1,7 @@
 package com.repair_shop.gui.text;
 
+import com.repair_shop.utility.DataType;
+
 public class PropertyGUITextUtils
 {
 	public static String TITLE;
@@ -10,7 +12,21 @@ public class PropertyGUITextUtils
 	public static String CANCEL_BUTTON;
 	public static String NAME_ERROR;
 	
-	public static void loadDeviceTypeText()
+	
+	public static void loadText(byte type)
+	{
+		if(type == DataType.MARKETING_TYPE)
+		{
+			loadMarketingTypeText();
+		}
+		
+		if(type == DataType.DEVICE_TYPE)
+		{
+			loadDeviceTypeText();
+		}
+		
+	}
+	private static void loadDeviceTypeText()
 	{
 		TITLE = "Device Type Registration Form";
 		ID_LABEL =  "Device type ID";
@@ -21,7 +37,7 @@ public class PropertyGUITextUtils
 		NAME_ERROR = "<html><font size='2' color='red'>Please enter a uniqe name for new device type</font></html>";
 	}
 	
-	public static void loadMarketingTypeText()
+	private static void loadMarketingTypeText()
 	{
 		TITLE = "Marketing Type Registration Form";
 		ID_LABEL =  "Marketing type ID";
