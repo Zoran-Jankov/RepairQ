@@ -20,8 +20,8 @@ public class PropertyRegistrationGUI
 	public JLabel lblID = new JLabel(PropertyGUITextUtils.ID_LABEL);
 	public JTextField txtName = new JTextField();
 	public JEditorPane txtDescription = new JEditorPane();
-	public JButton btnAdd = new JButton("Add");
-	public JButton btnCancel = new JButton("Cancel");
+	public JButton btnAdd = new JButton(PropertyGUITextUtils.ADD_BUTTON);
+	public JButton btnCancel = new JButton(PropertyGUITextUtils.CANCEL_BUTTON);
 	
 	/**
 	 * Creates JDialog "General Property Registration Form".
@@ -39,7 +39,6 @@ public class PropertyRegistrationGUI
 		window.setBounds(100, 100, 300, 380);
 		window.setContentPane(contentPane);
 		
-		
 		lblID.setBounds(10, 11, 274, 14);
 		contentPane.add(lblID);
 
@@ -56,7 +55,6 @@ public class PropertyRegistrationGUI
 	
 		txtDescription.setBounds(10, 158, 274, 137);
 		contentPane.add(txtDescription);
-	
 	
 		btnAdd.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnAdd.setBounds(10, 315, 108, 25);

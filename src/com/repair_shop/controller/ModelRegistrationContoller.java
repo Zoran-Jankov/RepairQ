@@ -19,10 +19,7 @@ public class ModelRegistrationContoller extends InputDialogController
 	public void scanWindowEntries()
 	{
 		IDGenerator.getNewClientID();
-		  
-		
 	}
-	
 
 	public boolean isInputValid()
 	{
@@ -65,8 +62,7 @@ public class ModelRegistrationContoller extends InputDialogController
 		return newModel;
 	}
 
-	@Override
-	public void showInputErrors()
+	private void showInputErrors()
 	{
 		// TODO Auto-generated method stub
 	}

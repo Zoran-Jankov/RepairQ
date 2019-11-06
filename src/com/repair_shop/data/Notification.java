@@ -2,7 +2,7 @@ package com.repair_shop.data;
 
 import java.sql.Timestamp;
 
-public class Notification extends DataElement
+public class Notification extends AbstractDataElement
 {
 	private Property notificationType;
 	private Ticket ticket;

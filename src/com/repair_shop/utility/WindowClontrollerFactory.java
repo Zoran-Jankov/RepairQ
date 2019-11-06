@@ -1,7 +1,7 @@
 package com.repair_shop.utility;
 
 import com.repair_shop.controller.ClientRegistrationController;
-import com.repair_shop.controller.PropetyRegistrationController;
+import com.repair_shop.controller.PropertyRegistrationController;
 import com.repair_shop.controller.WindowController;
 
 public class WindowClontrollerFactory
@@ -15,7 +15,7 @@ public class WindowClontrollerFactory
 		
 		if(isAPropertyWindow(newWindowType))
 		{
-			return new PropetyRegistrationController(owner, newWindowType);
+			return new PropertyRegistrationController(owner, newWindowType);
 		}
 		else
 		{

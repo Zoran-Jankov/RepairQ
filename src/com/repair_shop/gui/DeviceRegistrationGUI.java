@@ -9,7 +9,6 @@ import com.repair_shop.data.Model;
 import com.repair_shop.data.Property;
 import com.repair_shop.gui.text.DeviceGUITextUtils;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Window;
 

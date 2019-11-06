@@ -1,6 +1,6 @@
 package com.repair_shop.data;
 
-public class LegalEntitie extends DataElement
+public class LegalEntitie extends AbstractDataElement
 {
 	private Client client;
 	private String taxIDNumber;

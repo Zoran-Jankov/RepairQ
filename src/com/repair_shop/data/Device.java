@@ -20,7 +20,7 @@ package com.repair_shop.data;
  * @since 2019-10-15
  */
 
-public class Device extends DataElement
+public class Device extends AbstractDataElement
 {
 	private Model model;
 	private String serial;

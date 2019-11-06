@@ -1,6 +1,6 @@
 package com.repair_shop.data;
 
-public abstract class Person extends DataElement
+public abstract class Person extends AbstractDataElement
 {
 	private String firstName;
 	private String lastName;

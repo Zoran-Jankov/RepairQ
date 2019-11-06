@@ -1,6 +1,6 @@
 package com.repair_shop.data;
 
-public class Ticket extends DataElement
+public class Ticket extends AbstractDataElement
 {
 	private int priority;
 	private Client client;

@@ -17,4 +17,5 @@ public class DataType
 	public static final byte BRAND = 12;
 	public static final byte USER = 13;
 	public static final byte USER_TYPE = 14;
+	public static final byte PROPERTY = 15;
 }

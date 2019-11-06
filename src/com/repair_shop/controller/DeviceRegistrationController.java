@@ -2,17 +2,19 @@ package com.repair_shop.controller;
 
 import java.awt.Window;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+
 import com.repair_shop.data.Device;
 import com.repair_shop.gui.DeviceRegistrationGUI;
-import com.repair_shop.gui.actions.AddDataElement;
-import com.repair_shop.gui.actions.CloseWindow;
-import com.repair_shop.gui.actions.OpenModelDialog;
 import com.repair_shop.utility.AccessData;
+import com.repair_shop.utility.ActionListenerFactory;
+import com.repair_shop.utility.DataType;
 import com.repair_shop.utility.IDGenerator;
+import com.repair_shop.utility.WindowClontrollerFactory;
 
 public class DeviceRegistrationController extends InputDialogController
 {
-	int deviceID;
+	private int deviceID;
 	private Device newDevice;
 	private DeviceRegistrationGUI gui;
 	
@@ -21,9 +23,9 @@ public class DeviceRegistrationController extends InputDialogController
 		deviceID = IDGenerator.getNewClientID();
 		gui = new DeviceRegistrationGUI(owner.getWindow());
 		gui.labelDeviceIDValue.setText(formatIDValue());
-		gui.buttonAddNewModel.addActionListener(new OpenModelDialog(gui.window));
-		gui.buttonAddDevice.addActionListener(new AddDataElement(this));
-		gui.buttonCancel.addActionListener(new CloseWindow(this));
+		gui.buttonAddNewModel.addActionListener(ActionListenerFactory.openNewWindow(this,DataType.MODEL));
+		gui.buttonAddDevice.addActionListener(ActionListenerFactory.saveData(this));
+		gui.buttonCancel.addActionListener(ActionListenerFactory.closeWindow(this));
 	}
 	
 	private String formatIDValue()

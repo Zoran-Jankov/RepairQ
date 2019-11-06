@@ -2,7 +2,7 @@ package com.repair_shop.controller;
 
 public class TicketRegistrationController
 {
-	public TicketRegistrationController(BasicWindowController owner)
+	public TicketRegistrationController(AbstractWindowController owner)
 	{
 		
 	}

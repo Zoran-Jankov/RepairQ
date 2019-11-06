@@ -1,6 +1,6 @@
 package com.repair_shop.data;
 
-public class Service extends DataElement
+public class Service extends AbstractDataElement
 {
 	private Notification notification;
 	private ServiceType serviceType;
