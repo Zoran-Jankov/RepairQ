@@ -9,6 +9,7 @@ import com.repair_shop.data.Property;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Window;
+import java.awt.event.ActionListener;
 
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -18,7 +19,7 @@ import java.awt.Button;
 import javax.swing.JEditorPane;
 import javax.swing.JButton;
 
-public class ModelRegistrationWindow implements WindowContainer
+public class ModelRegistrationWindow implements InputDialogGui
 {
 	public JDialog window = new JDialog();
 	public JPanel contentPane = new JPanel();
@@ -103,5 +104,23 @@ public class ModelRegistrationWindow implements WindowContainer
 	public Window getWindow()
 	{
 		return window;
+	}
+
+	@Override
+	public void setIdValue(String id)
+	{
+		lblModelIDValue.setText(id);
+	}
+
+	@Override
+	public void setBtnAddActionListener(ActionListener l)
+	{
+		btnAdd.addActionListener(l);
+	}
+
+	@Override
+	public void setBtnCancelActionListener(ActionListener l)
+	{
+		btnCancel.addActionListener(l);
 	}
 }	

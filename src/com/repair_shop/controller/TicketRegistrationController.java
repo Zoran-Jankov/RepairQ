@@ -1,9 +1,41 @@
 package com.repair_shop.controller;
 
-public class TicketRegistrationController
+import java.awt.Window;
+
+import com.repair_shop.data.DataElement;
+
+public class TicketRegistrationController extends InputDialogController
 {
-	public TicketRegistrationController(AbstractWindowController owner)
+	public TicketRegistrationController(WindowController owner, byte dataType)
 	{
+		super(owner, dataType);
+	}
+
+	@Override
+	public Window getWindow()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected boolean isInputValid()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected DataElement createDataElement()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected void showInputErrors()
+	{
+		// TODO Auto-generated method stub
 		
 	}
 }

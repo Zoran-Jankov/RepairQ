@@ -1,7 +1,6 @@
 package com.repair_shop.controller;
 
 import java.awt.Color;
-import java.awt.Window;
 
 import com.repair_shop.data.Device;
 import com.repair_shop.data.Model;
@@ -95,17 +94,5 @@ public class DeviceRegistrationController extends InputDialogController
 			deviceGUI.lblModel.setText(DeviceGUITextUtils.MODEL_ERROR_MESSAGE);
 			deviceGUI.cmbModel.setBackground(Color.YELLOW);
 		}
-	}
-	
-	@Override
-	public Window getWindow()
-	{
-		return deviceGUI.getWindow();
-	}
-
-	@Override
-	public void closeWindow()
-	{
-		deviceGUI.getWindow().dispose();
 	}
 }

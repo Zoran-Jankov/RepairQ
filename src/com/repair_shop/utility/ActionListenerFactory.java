@@ -20,14 +20,14 @@ public class ActionListenerFactory
 		};
 	}
 	
-	public static ActionListener openNewWindow(WindowController owner, byte newWindowType)
+	public static ActionListener openNewWindow(WindowController owner, byte dataType)
 	{
 		return new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				WindowClontrollerFactory.createController(owner, newWindowType);
+				WindowClontrollerFactory.createController(owner, dataType);
 			}
 		};
 	}
@@ -39,7 +39,7 @@ public class ActionListenerFactory
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				controller.closeWindow();
+				controller.getWindow().dispose();
 			}
 		};
 	}

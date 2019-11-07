@@ -1,10 +1,8 @@
 package com.repair_shop.controller;
 
-import java.awt.Window;
-
-import com.repair_shop.data.DataElement;
+import com.repair_shop.data.Property;
 import com.repair_shop.gui.PropertyRegistrationGUI;
-import com.repair_shop.gui.text.PropertyGUITextUtils;
+import com.repair_shop.utility.AccessData;
 
 public class PropertyRegistrationController extends InputDialogController
 {
@@ -13,33 +11,32 @@ public class PropertyRegistrationController extends InputDialogController
 	public PropertyRegistrationController(WindowController owner, byte dataType)
 	{
 		super(owner, dataType);
-		PropertyGUITextUtils.loadText(dataType);
 		propertyGUI = (PropertyRegistrationGUI) gui;
 	}
 	@Override
 	protected boolean isInputValid()
 	{
-		// TODO Auto-generated method stub
-		return false;
+		String name = propertyGUI.txtName.getText();
+		
+		return !(AccessData.clientsDataTable.uniqueStringCollision(name)
+			 || ("".equals(name)));
 	}
 
 	@Override
-	protected DataElement createDataElement()
+	protected Property createDataElement()
 	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Window getWindow()
-	{
-		// TODO Auto-generated method stub
-		return propertyGUI.getWindow();
+		Property newProperty = new Property();
+		
+		newProperty.setId(id);
+		newProperty.setName(propertyGUI.txtName.getText());
+		newProperty.setDescription(propertyGUI.txtDescription.getText());
+		
+		return newProperty;
 	}
 
 	@Override
 	protected void showInputErrors()
 	{
-		// TODO Auto-generated method stub
+		//TODO
 	}
 }

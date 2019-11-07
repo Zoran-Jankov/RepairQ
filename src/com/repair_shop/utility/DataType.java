@@ -18,13 +18,13 @@ public class DataType
 	public static final byte USER = 13;
 	public static final byte USER_TYPE = 14;
 	
-	public static boolean isAProperty(byte type)
+	public static boolean isAProperty(byte dataType)
 	{
-		return (type == NOTIFICATION_TYPE)
-		    || (type == MARKETING_TYPE)
-		    || (type == STATUS)
-		    || (type == DEVICE_TYPE)
-		    || (type == BRAND);
+		return (dataType == NOTIFICATION_TYPE)
+		    || (dataType == MARKETING_TYPE)
+		    || (dataType == STATUS)
+		    || (dataType == DEVICE_TYPE)
+		    || (dataType == BRAND);
 	}
 	
 	public static boolean isANotification(byte type)

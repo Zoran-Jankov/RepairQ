@@ -30,6 +30,12 @@ public class ClientRegistrationController extends InputDialogController
 	}
 	
 	@Override
+	public Window getWindow()
+	{
+		return clientGUI.getWindow();
+	}
+	
+	@Override
 	protected boolean isInputValid()
 	{
 		return isFirstNameEntered()
@@ -143,11 +149,5 @@ public class ClientRegistrationController extends InputDialogController
 			clientGUI.lblMarketing.setText(ClientGUITextUtils.MARKETING_ERROR_MESSAGE);
 			clientGUI.cmbMarketing.setBackground(Color.YELLOW);
 		}
-	}
-	
-	@Override
-	public Window getWindow()
-	{
-		return clientGUI.getWindow();
 	}
 }

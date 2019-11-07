@@ -1,7 +1,4 @@
-
 package com.repair_shop.controller;
-
-import java.awt.Window;
 
 import com.repair_shop.data.Model;
 import com.repair_shop.data.Property;
@@ -63,17 +60,5 @@ public class ModelRegistrationContoller extends InputDialogController
 	protected void showInputErrors()
 	{
 		// TODO Auto-generated method stub
-	}
-	
-	@Override
-	public Window getWindow()
-	{
-		return modelGUI.getWindow();
-	}
-
-	@Override
-	public void closeWindow()
-	{
-		getWindow().dispose();
 	}
 }
