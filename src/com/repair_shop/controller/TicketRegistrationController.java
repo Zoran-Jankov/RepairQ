@@ -36,6 +36,5 @@ public class TicketRegistrationController extends InputDialogController
 	protected void showInputErrors()
 	{
 		// TODO Auto-generated method stub
-		
 	}
 }
