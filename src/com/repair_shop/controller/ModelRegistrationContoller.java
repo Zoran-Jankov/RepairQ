@@ -3,87 +3,77 @@ package com.repair_shop.controller;
 
 import java.awt.Window;
 
+import com.repair_shop.data.Model;
+import com.repair_shop.data.Property;
 import com.repair_shop.gui.ModelRegistrationWindow;
 import com.repair_shop.utility.AccessData;
-import com.repair_shop.utility.IDGenerator;
 
 public class ModelRegistrationContoller extends InputDialogController
 {
-	private ModelRegistrationWindow gui;
+	private ModelRegistrationWindow modelGUI;
 	
-	public ModelRegistrationContoller(Window owner)
+	public ModelRegistrationContoller(WindowController owner, byte dataType)
 	{
-		gui = new ModelRegistrationWindow(owner);
+		super(owner, dataType);
+		modelGUI = (ModelRegistrationWindow) gui;
 	}
 
-	public void scanWindowEntries()
-	{
-		IDGenerator.getNewClientID();
-	}
-
-	public boolean isInputValid()
+	@Override
+	protected boolean isInputValid()
 	{
 		return isDeviceTypeSelected()
 			&& isManufacturerSelected()
-			&& isModelNameEntered()
-			&& isModelNameUnique();
+			&& isModelNameOK();
 	}
 
 	private boolean isDeviceTypeSelected()
 	{
-		return true;
+		return modelGUI.comboBoxDeviceType.getSelectedItem() != null;
 	}
 	
 	private boolean isManufacturerSelected()
 	{
 		
-		return true;
+		return modelGUI.comboBoxDeviceType.getSelectedItem() != null;
 	}
 	
-	private boolean isModelNameEntered()
+	private boolean isModelNameOK()
 	{
-		return name != null;
-	}
-	
-	private boolean isModelNameUnique()
-	{
-		return !AccessData.modelsDataTable.containsKey(name);
+		String name = modelGUI.textFieldModel.getText();
+		return !("".equals(name) || AccessData.modelsDataTable
+				                              .uniqueStringCollision(name));
 	}
 	
 	@Override
-	public Model getInput()
+	protected Model createDataElement()
 	{
 		Model newModel = new Model();
+		
 		newModel.setId(id);
-		newModel.setName(name);
-		newModel.setDescription(description);
-		newModel.setDeviceType(deviceType);
-		newModel.setManufacturer(manufacturer);
+		newModel.setName(modelGUI.textFieldModel.getText());
+		newModel.setDescription(modelGUI.editorPaneSpecification.getText());
+		newModel.setDeviceType((Property) AccessData.deviceTypesDataTable
+				                                    .getByUniqueString((String) modelGUI.comboBoxDeviceType.getSelectedItem()));
+		newModel.setBrand(null); //TODO set 
+		
 		return newModel;
 	}
 
-	private void showInputErrors()
+	@Override
+	protected void showInputErrors()
 	{
 		// TODO Auto-generated method stub
+	}
+	
+	@Override
+	public Window getWindow()
+	{
+		return modelGUI.getWindow();
 	}
 
 	@Override
 	public void closeWindow()
 	{
-		gui.getWindow().dispose();
-	}
-
-	@Override
-	public void trySavingDataElement()
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Window getWindow()
-	{
-		// TODO Auto-generated method stub
-		return null;
+		getWindow().dispose();
 	}
 }

@@ -2,6 +2,7 @@ package com.repair_shop.gui;
 
 import java.awt.Font;
 import java.awt.Window;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -13,7 +14,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.repair_shop.gui.text.PropertyGUITextUtils;
 
-public class PropertyRegistrationGUI  
+public class PropertyRegistrationGUI implements InputDialogGui
 {
 	public JDialog window;
 	public JLabel lblIDValue = new JLabel("1-2345");
@@ -63,5 +64,29 @@ public class PropertyRegistrationGUI
 		btnCancel.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnCancel.setBounds(176, 315, 108, 25);
 		contentPane.add(btnCancel);
+	}
+
+	@Override
+	public void setIdValue(String id)
+	{
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void setBtnAddActionListener(ActionListener l)
+	{
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void setBtnCancelActionListener(ActionListener l)
+	{
+		// TODO Auto-generated method stub
+	}
+	
+	@Override
+	public Window getWindow()
+	{
+		return window;
 	}
 }

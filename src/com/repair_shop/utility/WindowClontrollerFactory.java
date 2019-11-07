@@ -6,21 +6,19 @@ import com.repair_shop.controller.WindowController;
 
 public class WindowClontrollerFactory
 {
-	public static WindowController createController(WindowController owner, byte newWindowType)
+	public static WindowController createController(WindowController owner, byte dataType)
 	{
-		if(DataType.isAClient(newWindowType))
+		if(DataType.isAClient(dataType))
 		{
-			return new ClientRegistrationController(owner);
+			return new ClientRegistrationController(owner, dataType);
 		}
-		else if(DataType.isAProperty(newWindowType))
+		else if(DataType.isAProperty(dataType))
 		{
-			return new PropertyRegistrationController(owner, newWindowType);
+			return new PropertyRegistrationController(owner, dataType);
 		}
 		else
 		{
 			return null;
 		}
 	}
-	
-	
 }

@@ -38,7 +38,7 @@ public abstract class AbstractDataElement implements DataElement
 	 * @param (int) id - Data element ID number.
 	 */
 	@Override
-	public void setID(int id)
+	public void setId(int id)
 	{
 		this.id = id;
 	}

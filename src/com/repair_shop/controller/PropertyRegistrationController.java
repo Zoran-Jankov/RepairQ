@@ -2,34 +2,44 @@ package com.repair_shop.controller;
 
 import java.awt.Window;
 
+import com.repair_shop.data.DataElement;
 import com.repair_shop.gui.PropertyRegistrationGUI;
 import com.repair_shop.gui.text.PropertyGUITextUtils;
-import com.repair_shop.utility.GuiFactory;
-import com.repair_shop.utility.IDGenerator;
 
 public class PropertyRegistrationController extends InputDialogController
 {
-	private int propertyID;
-	private PropertyRegistrationGUI gui;
+	private PropertyRegistrationGUI propertyGUI;
 	
-	public PropertyRegistrationController(WindowController owner, byte type)
+	public PropertyRegistrationController(WindowController owner, byte dataType)
 	{
-		PropertyGUITextUtils.loadText(type);
-		propertyID = IDGenerator.
-		gui = (PropertyRegistrationGUI) GuiFactory.getWindow(owner.getWindow(), type);
-		gui.lblIDValue.setText(ID);
+		super(owner, dataType);
+		PropertyGUITextUtils.loadText(dataType);
+		propertyGUI = (PropertyRegistrationGUI) gui;
+	}
+	@Override
+	protected boolean isInputValid()
+	{
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
-	public void trySavingDataElement()
+	protected DataElement createDataElement()
 	{
 		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Window getWindow()
 	{
 		// TODO Auto-generated method stub
-		return null;
+		return propertyGUI.getWindow();
+	}
+
+	@Override
+	protected void showInputErrors()
+	{
+		// TODO Auto-generated method stub
 	}
 }

@@ -28,7 +28,7 @@ package com.repair_shop.data;
 public class Model extends Property
 {
 	private Property deviceType;
-	private Property manufacturer;
+	private Property brand;
 	
 	/**
 	 * Getter for model device type.
@@ -54,30 +54,30 @@ public class Model extends Property
 	 */
 	public Property getManufacturer()
 	{
-		return manufacturer;
+		return brand;
 	}
 	
 	/**
 	 * Setter for model manufacturer.
-	 * @param manufacturer - Model manufacturer.
+	 * @param brand - Model manufacturer.
 	 */
-	public void setManufacturer(Property manufacturer)
+	public void setBrand(Property brand)
 	{
-		this.manufacturer = manufacturer;	
+		this.brand = brand;	
 	}
 	
 	@Override
 	public void createReferences()
 	{
 		deviceType.addReference(this);
-		manufacturer.addReference(this);
+		brand.addReference(this);
 	}
 	
 	@Override
 	public void deleteReferences()
 	{
 		deviceType.removeReference(this.getID());
-		manufacturer.addReference(this);
+		brand.addReference(this);
 	}
 	
 	@Override

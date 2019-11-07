@@ -22,8 +22,9 @@ import com.repair_shop.gui.text.ClientGUITextUtils;
 
 import java.awt.Font;
 import java.awt.Window;
+import java.awt.event.ActionListener;
 
-public class ClientRegistrationGUI implements WindowContainer
+public class ClientRegistrationGUI implements InputDialogGui
 {	
 	public JDialog window;
 	public JLabel lblIDValue = new JLabel("1-23456789");
@@ -137,5 +138,23 @@ public class ClientRegistrationGUI implements WindowContainer
 	public Window getWindow()
 	{
 		return window;
+	}
+
+	@Override
+	public void setIdValue(String id)
+	{
+		lblIDValue.setText(id);
+	}
+
+	@Override
+	public void setBtnAddActionListener(ActionListener l)
+	{
+		btnAdd.addActionListener(l);
+	}
+
+	@Override
+	public void setBtnCancelActionListener(ActionListener l)
+	{
+		btnCancel.addActionListener(l);
 	}
 }

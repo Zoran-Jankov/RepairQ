@@ -6,7 +6,7 @@ public interface DataElement
 {
 	public int getID();
 	
-	public void setID(int id);
+	public void setId(int id);
 	
 	public HashMap<Integer, DataElement> getReferenceMap();
 	
@@ -16,11 +16,11 @@ public interface DataElement
 	
 	public void removeReference(int id);
 	
-	public abstract boolean hasUniqueString();
+	public boolean hasUniqueString();
 	
 	public String getUniqueString();
 	
-	public abstract boolean isReferencable();
+	public boolean isReferencable();
 	
 	public void createReferences();
 	

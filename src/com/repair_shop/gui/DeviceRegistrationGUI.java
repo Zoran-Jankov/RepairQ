@@ -4,13 +4,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.repair_shop.data.Device;
-import com.repair_shop.data.Model;
-import com.repair_shop.data.Property;
 import com.repair_shop.gui.text.DeviceGUITextUtils;
 
 import java.awt.Font;
 import java.awt.Window;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -20,26 +18,29 @@ import javax.swing.JTextField;
 
 import javax.swing.SwingConstants;
 
-public class DeviceRegistrationGUI implements WindowContainer
+public class DeviceRegistrationGUI implements InputDialogGui
 {
-	public JDialog window; 
-	public JPanel contentPane = new JPanel();
-	public JLabel labelDeviceIDValue = new JLabel();
-	public JComboBox<Property> comboBoxDeviceType = new JComboBox<Property>();
-	public JComboBox<Property> comboBoxManufacturer = new JComboBox<Property>();
-	public JLabel labelModel = new JLabel();
-	public JComboBox<Model> comboBoxModel = new JComboBox<Model>();
-	public JButton buttonAddNewModel;
-	public JLabel labelSerial = new JLabel();
-	public JTextField textFieldSerial = new JTextField();
-	public JButton buttonAddDevice;
-	public JButton buttonCancel;
+	private JDialog window;
+	private JButton btnAddDevice = new JButton(DeviceGUITextUtils.ADD_DEVICE_BUTTON);;
+	private JButton btnCancel = new JButton(DeviceGUITextUtils.CANCEL_BUTTON);
+	private JLabel lblDeviceIDValue = new JLabel("1-23456");
+	public JComboBox<String> cmbDeviceType = new JComboBox<String>();
+	public JComboBox<String> cmbManufacturer = new JComboBox<String>();
+	public JLabel lblModel = new JLabel(DeviceGUITextUtils.MODEL_LABEL);
+	public JComboBox<String> cmbModel = new JComboBox<String>();
+	public JButton btnAddNewModel = new JButton(DeviceGUITextUtils.ADD_NEW_MODEL_BUTTON);
+	public JLabel lblSerial = new JLabel(DeviceGUITextUtils.SERIAL_NUMBER_LABEL);
+	public JTextField txtSerial = new JTextField();
 	
 	/**
 	 * Creates frame "Device Registration Form".
 	 */
 	public DeviceRegistrationGUI(Window owner)
 	{
+		JPanel contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(null);
+		
 		window = new JDialog(owner);
 		window.setTitle(DeviceGUITextUtils.TITLE);
 		window.setResizable(false);
@@ -48,71 +49,73 @@ public class DeviceRegistrationGUI implements WindowContainer
 		window.setContentPane(contentPane);
 		window.setVisible(true);
 		
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(null);
-	
 		JLabel labelDeviceID = new JLabel(DeviceGUITextUtils.DEVICE_ID_LABEL);
 		labelDeviceID.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		labelDeviceID.setBounds(20, 10, 75, 25);
 		contentPane.add(labelDeviceID);
 		
-		labelDeviceIDValue.setHorizontalAlignment(SwingConstants.CENTER);
-		labelDeviceIDValue.setFont(new Font("Segoe UI Symbol", Font.BOLD, 15));
-		labelDeviceIDValue.setBounds(200, 10, 75, 25);
-		contentPane.add(labelDeviceIDValue);
+		lblDeviceIDValue.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDeviceIDValue.setFont(new Font("Segoe UI Symbol", Font.BOLD, 15));
+		lblDeviceIDValue.setBounds(200, 10, 75, 25);
+		contentPane.add(lblDeviceIDValue);
 	
 		JLabel labelDeviceType = new JLabel(DeviceGUITextUtils.DEVICE_TYPE_LABEL);
 		labelDeviceType.setBounds(20, 50, 255, 15);
 		contentPane.add(labelDeviceType);
 		
-		comboBoxDeviceType.setBounds(20, 75, 255, 25);
-		contentPane.add(comboBoxDeviceType);
+		cmbDeviceType.setBounds(20, 75, 255, 25);
+		contentPane.add(cmbDeviceType);
 	
 		JLabel labelManufacturer = new JLabel(DeviceGUITextUtils.MANUFACTURER_LABEL);
 		labelManufacturer.setBounds(20, 115, 255, 15);
 		contentPane.add(labelManufacturer);
 		
-		comboBoxManufacturer.setBounds(20, 140, 255, 25);
-		contentPane.add(comboBoxManufacturer);
+		cmbManufacturer.setBounds(20, 140, 255, 25);
+		contentPane.add(cmbManufacturer);
 	
-		labelModel.setBounds(20, 175, 255, 15);
-		contentPane.add(labelModel);
+		lblModel.setBounds(20, 175, 255, 15);
+		contentPane.add(lblModel);
 		
-		comboBoxModel.setBounds(20, 200, 255, 25);
-		contentPane.add(comboBoxModel);
+		cmbModel.setBounds(20, 200, 255, 25);
+		contentPane.add(cmbModel);
 		
-		buttonAddNewModel = new JButton(DeviceGUITextUtils.ADD_NEW_MODEL_BUTTON);
-		buttonAddNewModel.setBounds(95, 234, 110, 25);
-		contentPane.add(buttonAddNewModel);
+		btnAddNewModel.setBounds(95, 234, 110, 25);
+		contentPane.add(btnAddNewModel);
 
-		labelSerial.setBounds(20, 265, 255, 14);
-		contentPane.add(labelSerial);
+		lblSerial.setBounds(20, 265, 255, 14);
+		contentPane.add(lblSerial);
 		
-		textFieldSerial.setBounds(20, 290, 255, 25);
-		contentPane.add(textFieldSerial);
-		textFieldSerial.setColumns(10);
+		txtSerial.setBounds(20, 290, 255, 25);
+		contentPane.add(txtSerial);
+		txtSerial.setColumns(10);
 	
-		buttonAddDevice = new JButton(DeviceGUITextUtils.ADD_DEVICE_BUTTON);
-		buttonAddDevice.setFont(new Font("Dialog", Font.PLAIN, 15));
-		buttonAddDevice.setBounds(20, 345, 110, 25);
-		contentPane.add(buttonAddDevice);
+		btnAddDevice.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnAddDevice.setBounds(20, 345, 110, 25);
+		contentPane.add(btnAddDevice);
 		
-		buttonCancel = new JButton(DeviceGUITextUtils.CANCEL_BUTTON);
-		buttonCancel.setFont(new Font("Dialog", Font.PLAIN, 15));
-		buttonCancel.setBounds(165, 345, 110, 25);
-		contentPane.add(buttonCancel);
+		btnCancel.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnCancel.setBounds(165, 345, 110, 25);
+		contentPane.add(btnCancel);
 	}
 	
-	
-	
-	public Device getInput()
-	{	
-		Device newDevice = new Device();
-		newDevice.setModel((Model) comboBoxModel.getSelectedItem());
-		newDevice.setSerial(textFieldSerial.getText());
-		return newDevice;
+	@Override
+	public void setIdValue(String id)
+	{
+		lblDeviceIDValue.setText(id);
 	}
 
+	@Override
+	public void setBtnAddActionListener(ActionListener l)
+	{
+		btnAddDevice.addActionListener(l);
+	}
+
+	@Override
+	public void setBtnCancelActionListener(ActionListener l)
+	{
+		btnCancel.addActionListener(l);
+	}
+	
 	@Override
 	public Window getWindow()
 	{

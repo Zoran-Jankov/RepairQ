@@ -11,68 +11,26 @@ import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.CmbModelFactory;
 import com.repair_shop.utility.DataType;
-import com.repair_shop.utility.GuiFactory;
-import com.repair_shop.utility.IDGenerator;
 
 public class ClientRegistrationController extends InputDialogController
 {
-	private static final byte dataType = DataType.CLIENT;
-	private int clientID = IDGenerator.getNewID(dataType);
-	private ClientRegistrationGUI gui;
-	
-	public ClientRegistrationController(WindowController owner)
+	private ClientRegistrationGUI clientGUI;
+	public ClientRegistrationController(WindowController owner, byte dataType)
 	{
-		gui = (ClientRegistrationGUI) GuiFactory.getWindow(owner.getWindow(), dataType);
-		gui.lblIDValue.setText(IDGenerator.formatRegularID(clientID));
-		setActionListeners();
-		updateComboBox();
+		super(owner, dataType);
+		clientGUI = (ClientRegistrationGUI) gui;
+		clientGUI.btnAddNewMarketing.addActionListener(ActionListenerFactory
+	              .openNewWindow(this, DataType.MARKETING_TYPE));
+		updateComboBoxes();
 	}
 	
-	private void setActionListeners()
+	public void updateComboBoxes()
 	{
-		gui.btnAddNewMarketing.addActionListener(ActionListenerFactory
-				              .openNewWindow(this, DataType.MARKETING_TYPE));
-		gui.btnAdd.addActionListener(ActionListenerFactory.saveData(this));
-		gui.btnCancel.addActionListener(ActionListenerFactory.closeWindow(this));
-	}
-	
-	public void updateComboBox()
-	{
-		gui.cmbMarketing.setModel(CmbModelFactory.getModel(DataType.MARKETING_TYPE));
+		clientGUI.cmbMarketing.setModel(CmbModelFactory.getModel(DataType.MARKETING_TYPE));
 	}
 	
 	@Override
-	public void trySavingDataElement()
-	{
-		if(isInputValid())
-		{
-			AccessData.clientsDataTable.save(createNewClient());
-			closeWindow();
-		}
-		else
-		{
-			showInputErrors();
-		}
-	}
-
-	private Client createNewClient()
-	{
-		Client newClient = new Client();
-		
-		newClient.setID(clientID);
-		newClient.setFirstName(gui.txtFirstName.getText());
-		newClient.setLastName(gui.txtPrimePhoneNum.getText());
-		newClient.setPrimePhoneNumber(gui.txtPrimePhoneNum.getText());
-		newClient.setAlternativePhoneNumber(gui.txtAlternativePhoneNum.getText());
-		newClient.setEmail(gui.txtEmail.getText());
-		newClient.setAddress(gui.txtAddress.getText());
-		newClient.setMarketing((Property) AccessData.marketingTypesDataTable
-				 .getByUniqueString((String) gui.cmbMarketing.getSelectedItem()));
-		
-		return newClient;
-	}
-	
-	private boolean isInputValid()
+	protected boolean isInputValid()
 	{
 		return isFirstNameEntered()
 			&& isLastNameEntered()
@@ -82,17 +40,17 @@ public class ClientRegistrationController extends InputDialogController
 	
 	private boolean isFirstNameEntered( )
 	{
-		return !("".equals(gui.txtFirstName.getText()));
+		return !("".equals(clientGUI.txtFirstName.getText()));
 	}
 
 	private boolean isLastNameEntered( )
 	{
-		return !("".equals(gui.txtLastName.getText()));
+		return !("".equals(clientGUI.txtLastName.getText()));
 	}
 	
 	private boolean isPhoneNumberOK()
 	{
-		String phoneNumber = gui.txtPrimePhoneNum.getText();
+		String phoneNumber = clientGUI.txtPrimePhoneNum.getText();
 		
 		return !(AccessData.clientsDataTable.uniqueStringCollision(phoneNumber)
 			 || ("".equals(phoneNumber)));
@@ -100,10 +58,29 @@ public class ClientRegistrationController extends InputDialogController
 
 	private boolean isMarketingSelected()
 	{
-		return gui.cmbMarketing.getSelectedItem() != null;
+		return clientGUI.cmbMarketing.getSelectedItem() != null;
+	}
+
+	@Override
+	protected Client createDataElement()
+	{
+		Client newClient = new Client();
+		
+		newClient.setId(id);
+		newClient.setFirstName(clientGUI.txtFirstName.getText());
+		newClient.setLastName(clientGUI.txtPrimePhoneNum.getText());
+		newClient.setPrimePhoneNumber(clientGUI.txtPrimePhoneNum.getText());
+		newClient.setAlternativePhoneNumber(clientGUI.txtAlternativePhoneNum.getText());
+		newClient.setEmail(clientGUI.txtEmail.getText());
+		newClient.setAddress(clientGUI.txtAddress.getText());
+		newClient.setMarketing((Property) AccessData.marketingTypesDataTable
+				 .getByUniqueString((String) clientGUI.cmbMarketing.getSelectedItem()));
+		
+		return newClient;
 	}
 	
-	private void showInputErrors()
+	@Override
+	protected void showInputErrors()
 	{
 		checkFirstName();
 		checkLastName();
@@ -115,13 +92,13 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		if(isFirstNameEntered())
 		{
-			gui.lblFirstName.setText(ClientGUITextUtils.FIRST_NAME_LABEL);
-			gui.txtFirstName.setBackground(Color.WHITE);
+			clientGUI.lblFirstName.setText(ClientGUITextUtils.FIRST_NAME_LABEL);
+			clientGUI.txtFirstName.setBackground(Color.WHITE);
 		}
 		else
 		{
-			gui.lblFirstName.setText(ClientGUITextUtils.FIRST_NAME_ERROR_MESSAGE);
-			gui.txtFirstName.setBackground(Color.YELLOW);
+			clientGUI.lblFirstName.setText(ClientGUITextUtils.FIRST_NAME_ERROR_MESSAGE);
+			clientGUI.txtFirstName.setBackground(Color.YELLOW);
 		}
 	}
 	
@@ -129,13 +106,13 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		if(isLastNameEntered())
 		{
-			gui.lblLastName.setText(ClientGUITextUtils.LAST_NAME_LABEL);
-			gui.txtLastName.setBackground(Color.WHITE);
+			clientGUI.lblLastName.setText(ClientGUITextUtils.LAST_NAME_LABEL);
+			clientGUI.txtLastName.setBackground(Color.WHITE);
 		}
 		else
 		{
-			gui.lblLastName.setText(ClientGUITextUtils.LAST_NAME_ERROR_MESSAGE);
-			gui.txtLastName.setBackground(Color.YELLOW);
+			clientGUI.lblLastName.setText(ClientGUITextUtils.LAST_NAME_ERROR_MESSAGE);
+			clientGUI.txtLastName.setBackground(Color.YELLOW);
 		}
 	}
 	
@@ -144,13 +121,13 @@ public class ClientRegistrationController extends InputDialogController
 
 		if(isPhoneNumberOK())
 		{
-			gui.lblPrimePhoneNum.setText(ClientGUITextUtils.PRIME_PHONE_NUMBER_LABEL);
-			gui.txtPrimePhoneNum.setBackground(Color.WHITE);
+			clientGUI.lblPrimePhoneNum.setText(ClientGUITextUtils.PRIME_PHONE_NUMBER_LABEL);
+			clientGUI.txtPrimePhoneNum.setBackground(Color.WHITE);
 		}
 		else
 		{
-			gui.lblPrimePhoneNum.setText(ClientGUITextUtils.PHONE_NUMBER_ERROR_MESSAGE);
-			gui.txtPrimePhoneNum.setBackground(Color.YELLOW);
+			clientGUI.lblPrimePhoneNum.setText(ClientGUITextUtils.PHONE_NUMBER_ERROR_MESSAGE);
+			clientGUI.txtPrimePhoneNum.setBackground(Color.YELLOW);
 		}
 	}
 	
@@ -158,19 +135,19 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		if(isMarketingSelected())
 		{
-			gui.lblMarketing.setText(ClientGUITextUtils.MARKETING_LABEL);
-			gui.cmbMarketing.setBackground(Color.WHITE);
+			clientGUI.lblMarketing.setText(ClientGUITextUtils.MARKETING_LABEL);
+			clientGUI.cmbMarketing.setBackground(Color.WHITE);
 		}
 		else
 		{
-			gui.lblMarketing.setText(ClientGUITextUtils.MARKETING_ERROR_MESSAGE);
-			gui.cmbMarketing.setBackground(Color.YELLOW);
+			clientGUI.lblMarketing.setText(ClientGUITextUtils.MARKETING_ERROR_MESSAGE);
+			clientGUI.cmbMarketing.setBackground(Color.YELLOW);
 		}
 	}
 	
 	@Override
 	public Window getWindow()
 	{
-		return gui.getWindow();
+		return clientGUI.getWindow();
 	}
 }

@@ -4,57 +4,47 @@ import java.awt.Color;
 import java.awt.Window;
 
 import com.repair_shop.data.Device;
+import com.repair_shop.data.Model;
 import com.repair_shop.gui.DeviceRegistrationGUI;
 import com.repair_shop.gui.text.DeviceGUITextUtils;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.ActionListenerFactory;
+import com.repair_shop.utility.CmbModelFactory;
 import com.repair_shop.utility.DataType;
-import com.repair_shop.utility.GuiFactory;
-import com.repair_shop.utility.IDGenerator;
-import com.repair_shop.utility.WindowClontrollerFactory;
 
 public class DeviceRegistrationController extends InputDialogController
 {
-	private static final byte dataType = DataType.DEVICE;
-	private int deviceID;
-	private DeviceRegistrationGUI gui;
+	private DeviceRegistrationGUI deviceGUI;
 	
-	public DeviceRegistrationController(WindowController owner)
+	public DeviceRegistrationController(WindowController owner, byte dataType)
 	{
-		deviceID = IDGenerator.getNewID(dataType);
-		gui = (DeviceRegistrationGUI) GuiFactory.getWindow(owner.getWindow(), dataType);
-		gui.labelDeviceIDValue.setText(IDGenerator.formatRegularID(deviceID));
-		setActionListeners();
+		super(owner, dataType);
+		deviceGUI = (DeviceRegistrationGUI) gui;
+		deviceGUI.btnAddNewModel.addActionListener(ActionListenerFactory
+				 .openNewWindow(this,DataType.MODEL));
+		updateComboBoxes();
 	}
 	
-	private void setActionListeners()
+	private void updateComboBoxes()
 	{
-		gui.buttonAddNewModel.addActionListener(ActionListenerFactory
-							 .openNewWindow(this,DataType.MODEL));
-		gui.buttonAddDevice.addActionListener(ActionListenerFactory.saveData(this));
-		gui.buttonCancel.addActionListener(ActionListenerFactory.closeWindow(this));
+		deviceGUI.cmbModel.setModel(CmbModelFactory.getModel(DataType.MODEL));
 	}
-
+	
 	@Override
-	public void trySavingDataElement()
+	protected Device createDataElement()
 	{
-		newDevice = gui.getInput();
-		newDevice.setID(deviceID);
+		Device newDevice = new Device();
 		
-		if(isInputValid())
-		{
-			AccessData.devicesDataTable.save(newDevice);
-			closeWindow();
-		}
-		else
-		{
-			showDeviceinputErrors();
-		}
+		newDevice.setId(id);
+		newDevice.setSerial(deviceGUI.txtSerial.getText());
+		newDevice.setModel((Model) AccessData.devicesDataTable		
+				 .getByUniqueString((String) deviceGUI.cmbModel.getSelectedItem()));
+		
+		return newDevice;
 	}
 	
-	
-	
-	private  boolean isInputValid()
+	@Override
+	protected  boolean isInputValid()
 	{
 		return isModelSelected()
 			&& isSerialNumberOK();
@@ -62,17 +52,18 @@ public class DeviceRegistrationController extends InputDialogController
 
 	private  boolean isModelSelected()
 	{
-		return newDevice.getModel() != null;
+		return deviceGUI.cmbModel.getSelectedItem() != null;
 	}
 
 	private  boolean isSerialNumberOK()
 	{
-		String serial = newDevice.getSerial();
+		String serial = deviceGUI.txtSerial.getText();
 		
 		return !("".equals(serial) || AccessData.devicesDataTable.uniqueStringCollision(serial));
 	}
 	
-	private void showDeviceinputErrors()
+	@Override
+	protected void showInputErrors()
 	{
 		checkSerialNumber();
 		checkModel();
@@ -82,12 +73,13 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		if(isSerialNumberOK())
 		{
-			gui.labelSerial.setText(DeviceGUITextUtils.SERIAL_NUMBER_LABEL);
-			gui.textFieldSerial.setBackground(Color.WHITE);
+			deviceGUI.lblSerial.setText(DeviceGUITextUtils.SERIAL_NUMBER_LABEL);
+			deviceGUI.txtSerial.setBackground(Color.WHITE);
 		}
 		else
 		{
-			gui.showSerialError();
+			deviceGUI.lblSerial.setText(DeviceGUITextUtils.SERIAL_NUMBER_ERROR_MESSAGE);
+			deviceGUI.txtSerial.setBackground(Color.YELLOW);
 		}
 	}
 
@@ -95,23 +87,25 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		if(isModelSelected())
 		{
-			gui.showDefaultModel();
+			deviceGUI.lblModel.setText(DeviceGUITextUtils.MODEL_LABEL);
+			deviceGUI.cmbModel.setBackground(Color.WHITE);
 		}
 		else
 		{
-			gui.showModelError();
+			deviceGUI.lblModel.setText(DeviceGUITextUtils.MODEL_ERROR_MESSAGE);
+			deviceGUI.cmbModel.setBackground(Color.YELLOW);
 		}
 	}
 	
 	@Override
 	public Window getWindow()
 	{
-		return gui.getWindow();
+		return deviceGUI.getWindow();
 	}
 
 	@Override
 	public void closeWindow()
 	{
-		gui.window.dispose();
+		deviceGUI.getWindow().dispose();
 	}
 }
