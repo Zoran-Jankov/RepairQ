@@ -17,8 +17,7 @@ import com.repair_shop.utility.PropertyDialogText;
 public class PropertyRegistrationDialog implements InputDialog
 {
 	private JDialog window;
-	public JLabel lblIDValue = new JLabel("1-23456789");
-	public JLabel lblID = new JLabel(PropertyDialogText.ID_LABEL);
+	public JLabel lblPropertyIDValue = new JLabel("1-23456789");
 	public JTextField txtName = new JTextField();
 	public JEditorPane txtDescription = new JEditorPane();
 	public JButton btnAddProperty = new JButton(PropertyDialogText.ADD_BUTTON);
@@ -41,20 +40,25 @@ public class PropertyRegistrationDialog implements InputDialog
 		window.setContentPane(contentPane);
 		window.setVisible(true);
 		
+		JLabel lblID = new JLabel(PropertyDialogText.ID_LABEL);
 		lblID.setBounds(10, 11, 274, 14);
 		contentPane.add(lblID);
 
-		lblIDValue.setFont(new Font("Serif", Font.BOLD, 25));
-		lblIDValue.setBounds(10, 36, 274, 25);
-		contentPane.add(lblIDValue);
-	
-		JLabel lblDescription = new JLabel(PropertyDialogText.DESCRIPTION_LABEL);
-		lblDescription.setBounds(10, 133, 214, 14);
-		contentPane.add(lblDescription);
+		lblPropertyIDValue.setFont(new Font("Serif", Font.BOLD, 25));
+		lblPropertyIDValue.setBounds(10, 36, 274, 25);
+		contentPane.add(lblPropertyIDValue);
+		
+		JLabel lblName = new JLabel(PropertyDialogText.NAME_LABEL);
+		lblName.setBounds(10, 72, 274, 14);
+		contentPane.add(lblName);
 	
 		txtName.setBounds(10, 97, 274, 25);
 		contentPane.add(txtName);
 	
+		JLabel lblDescription = new JLabel(PropertyDialogText.DESCRIPTION_LABEL);
+		lblDescription.setBounds(10, 133, 214, 14);
+		contentPane.add(lblDescription);
+		
 		txtDescription.setBounds(10, 158, 274, 137);
 		contentPane.add(txtDescription);
 	
@@ -70,7 +74,7 @@ public class PropertyRegistrationDialog implements InputDialog
 	@Override
 	public void setIdValue(String id)
 	{
-		lblIDValue.setText(id);
+		lblPropertyIDValue.setText(id);
 	}
 
 	@Override

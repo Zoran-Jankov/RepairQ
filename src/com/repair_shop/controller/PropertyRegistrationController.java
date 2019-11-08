@@ -1,9 +1,12 @@
 package com.repair_shop.controller;
 
+import java.awt.Color;
+
 import com.repair_shop.data.Property;
 import com.repair_shop.gui.PropertyRegistrationDialog;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.DataType;
+import com.repair_shop.utility.PropertyDialogText;
 
 public class PropertyRegistrationController extends InputDialogController
 {
@@ -38,6 +41,7 @@ public class PropertyRegistrationController extends InputDialogController
 	@Override
 	protected void showInputErrors()
 	{
-		//TODO
+		propertyGUI.lblPropertyIDValue.setText(PropertyDialogText.NAME_ERROR);
+		propertyGUI.txtDescription.setBackground(Color.YELLOW);
 	}
 }
