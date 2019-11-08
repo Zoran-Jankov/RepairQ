@@ -6,7 +6,7 @@ import com.repair_shop.controller.WindowController;
 
 public class WindowClontrollerFactory
 {
-	public static WindowController createController(WindowController owner, byte dataType)
+	public static WindowController createController(WindowController owner, DataType dataType)
 	{
 		if(DataType.isAClient(dataType))
 		{

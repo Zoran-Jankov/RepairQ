@@ -9,7 +9,7 @@ import com.repair_shop.gui.text.PropertyGUITextUtils;
 
 public class InputGuiFactory
 {
-	public static InputDialogGui getWindow(Window owner, byte dataType)
+	public static InputDialogGui getWindow(Window owner, DataType dataType)
 	{
 		if(DataType.isAClient(dataType))
 		{

@@ -13,14 +13,14 @@ public class PropertyGUITextUtils
 	public static String NAME_ERROR;
 	
 	
-	public static void loadText(byte type)
+	public static void loadText(DataType dataType)
 	{
-		if(type == DataType.MARKETING_TYPE)
+		if(DataType.isAMatketingType(dataType))
 		{
 			loadMarketingTypeText();
 		}
 		
-		if(type == DataType.DEVICE_TYPE)
+		if(dataType == DataType.DEVICE_TYPE)
 		{
 			loadDeviceTypeText();
 		}

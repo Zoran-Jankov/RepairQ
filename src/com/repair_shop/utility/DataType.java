@@ -1,24 +1,24 @@
 package com.repair_shop.utility;
 
-public class DataType
+public enum DataType
 {
-	public static final byte NOTIFICATION = 0;
-	public static final byte NOTIFICATION_TYPE = 1;
-	public static final byte SERVICE = 2;
-	public static final byte SERVICE_TYPE = 3;
-	public static final byte TICKET = 4;
-	public static final byte STATUS = 5;
-	public static final byte CLIENT = 6;
-	public static final byte MARKETING_TYPE = 7;
-	public static final byte LEGAL_ENTITY = 8;
-	public static final byte DEVICE = 9;
-	public static final byte MODEL = 10;
-	public static final byte DEVICE_TYPE = 11;
-	public static final byte BRAND = 12;
-	public static final byte USER = 13;
-	public static final byte USER_TYPE = 14;
+	NOTIFICATION,
+	NOTIFICATION_TYPE,
+	SERVICE,
+	SERVICE_TYPE,
+	TICKET,
+	STATUS,
+	CLIENT,
+	MARKETING_TYPE,
+	LEGAL_ENTITY,
+	DEVICE,
+	MODEL,
+	DEVICE_TYPE,
+	BRAND,
+	USER,
+	USER_TYPE;
 	
-	public static boolean isAProperty(byte dataType)
+	public static boolean isAProperty(DataType dataType)
 	{
 		return (dataType == NOTIFICATION_TYPE)
 		    || (dataType == MARKETING_TYPE)
@@ -27,78 +27,78 @@ public class DataType
 		    || (dataType == BRAND);
 	}
 	
-	public static boolean isANotification(byte type)
+	public static boolean isANotification(DataType dataType)
 	{
-		return type == NOTIFICATION;
+		return dataType == NOTIFICATION;
 	}
 	
-	public static boolean isANotificationType(byte type)
+	public static boolean isANotificationType(DataType dataType)
 	{
-		return type == NOTIFICATION_TYPE;
+		return dataType == NOTIFICATION_TYPE;
 	}
 	
-	public static boolean isAService(byte type)
+	public static boolean isAService(DataType dataType)
 	{
-		return type == SERVICE;
+		return dataType == SERVICE;
 	}
 	
-	public static boolean isAServiceType(byte type)
+	public static boolean isAServiceType(DataType dataType)
 	{
-		return type == SERVICE_TYPE;
+		return dataType == SERVICE_TYPE;
 	}
 	
-	public static boolean isATicket(byte type)
+	public static boolean isATicket(DataType dataType)
 	{
-		return type == TICKET;
+		return dataType == TICKET;
 	}
 	
-	public static boolean isAStatus(byte type)
+	public static boolean isAStatus(DataType dataType)
 	{
-		return type == STATUS;
+		return dataType == STATUS;
 	}
 	
-	public static boolean isAClient(byte type)
+	public static boolean isAClient(DataType dataType)
 	{
-		return type == CLIENT;
+		return dataType == CLIENT;
 	}
 	
-	public static boolean isAMatketingType(byte type)
+	public static boolean isAMatketingType(DataType dataType)
 	{
-		return type == MARKETING_TYPE;
+		return dataType == MARKETING_TYPE;
 	}
 	
-	public static boolean isALegalEntity(byte type)
+	public static boolean isALegalEntity(DataType dataType)
 	{
-		return type == LEGAL_ENTITY;
+		return dataType == LEGAL_ENTITY;
 	}
 	
-	public static boolean isADevice(byte type)
+	public static boolean isADevice(DataType dataType)
 	{
-		return type == DEVICE;
+		return dataType == DEVICE;
 	}
 	
-	public static boolean isAModel(byte type)
+	public static boolean isAModel(DataType dataType)
 	{
-		return type == MODEL;
+		return dataType == MODEL;
 	}
 	
-	public static boolean isADeviceType(byte type)
+	public static boolean isADeviceType(DataType dataType)
 	{
-		return type == DEVICE_TYPE;
+		return dataType == DEVICE_TYPE;
 	}
 	
-	public static boolean isABrand(byte type)
+	public static boolean isABrand(DataType dataType)
 	{
-		return type == BRAND;
+		return dataType == BRAND;
 	}
 	
-	public static boolean isAUser(byte type)
+	public static boolean isAUser(DataType dataType)
 	{
-		return type == USER;
+		return dataType == USER;
 	}
 	
-	public static boolean isAUserType(byte type)
+	public static boolean isAUserType(DataType dataType)
 	{
-		return type == USER_TYPE;
+		return dataType == USER_TYPE;
 	}
 }

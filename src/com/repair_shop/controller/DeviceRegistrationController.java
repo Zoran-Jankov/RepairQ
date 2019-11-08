@@ -15,7 +15,7 @@ public class DeviceRegistrationController extends InputDialogController
 {
 	private DeviceRegistrationGUI deviceGUI;
 	
-	public DeviceRegistrationController(WindowController owner, byte dataType)
+	public DeviceRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
 		deviceGUI = (DeviceRegistrationGUI) gui;

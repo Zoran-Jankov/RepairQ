@@ -4,9 +4,9 @@ import javax.swing.DefaultComboBoxModel;
 
 public class CmbModelFactory 
 {
-	public static DefaultComboBoxModel<String> getModel(byte table)
+	public static DefaultComboBoxModel<String> getModel(DataType dataType)
 	{
-		String[] items = (String[]) AccessData.getDataTable(table)
+		String[] items = (String[]) AccessData.getDataTable(dataType)
 											  .getUniqueStringMap()
 											  .keySet().toArray();
 		

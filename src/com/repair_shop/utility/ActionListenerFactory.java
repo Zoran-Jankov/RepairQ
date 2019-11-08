@@ -20,7 +20,7 @@ public class ActionListenerFactory
 		};
 	}
 	
-	public static ActionListener openNewWindow(WindowController owner, byte dataType)
+	public static ActionListener openNewWindow(WindowController owner, DataType dataType)
 	{
 		return new ActionListener()
 		{

@@ -1,5 +1,7 @@
 package com.repair_shop.utility;
 
+import java.util.HashMap;
+
 import com.repair_shop.data.IndexedDataTable;
 
 public class AccessData
@@ -20,27 +22,29 @@ public class AccessData
 	public static IndexedDataTable usersDataTable = new IndexedDataTable();
 	public static IndexedDataTable userTypesDataTable = new IndexedDataTable();
 	
-	private static final IndexedDataTable[] dataTables = 
-	{
-			notificationsDataTable,
-			notificationTypesDataTable,
-			servicesDataTable,
-			serviceTypesDataTable,
-			ticketsDataTable,
-			statusTypesDataTable,
-			clientsDataTable,
-			marketingTypesDataTable,
-			legalEntitiesDataTable,
-			devicesDataTable,
-			modelsDataTable,
-			deviceTypesDataTable,
-			brandsDataTable,
-			usersDataTable,
-			userTypesDataTable
-	};
+	private static final HashMap<DataType, IndexedDataTable> dataTables = new HashMap<DataType, IndexedDataTable>();
 	
-	public static IndexedDataTable getDataTable(byte table)
+	static
 	{
-		return dataTables[table];
+		dataTables.put(DataType.NOTIFICATION, notificationsDataTable);
+		dataTables.put(DataType.NOTIFICATION_TYPE, notificationTypesDataTable);
+		dataTables.put(DataType.SERVICE, servicesDataTable);
+		dataTables.put(DataType.SERVICE_TYPE, serviceTypesDataTable);
+		dataTables.put(DataType.TICKET, ticketsDataTable);
+		dataTables.put(DataType.STATUS, statusTypesDataTable);
+		dataTables.put(DataType.CLIENT, clientsDataTable);
+		dataTables.put(DataType.MARKETING_TYPE, marketingTypesDataTable);
+		dataTables.put(DataType.LEGAL_ENTITY, legalEntitiesDataTable);
+		dataTables.put(DataType.DEVICE, devicesDataTable);
+		dataTables.put(DataType.MODEL, modelsDataTable);
+		dataTables.put(DataType.DEVICE_TYPE, deviceTypesDataTable);
+		dataTables.put(DataType.BRAND, brandsDataTable);
+		dataTables.put(DataType.USER, usersDataTable);
+		dataTables.put(DataType.USER_TYPE, userTypesDataTable);
+	}
+	
+	public static IndexedDataTable getDataTable(DataType dataType)
+	{
+		return dataTables.get(dataType);
 	}
 }

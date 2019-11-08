@@ -15,7 +15,7 @@ import com.repair_shop.utility.DataType;
 public class ClientRegistrationController extends InputDialogController
 {
 	private ClientRegistrationGUI clientGUI;
-	public ClientRegistrationController(WindowController owner, byte dataType)
+	public ClientRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
 		clientGUI = (ClientRegistrationGUI) gui;
