@@ -26,9 +26,8 @@ import java.awt.event.ActionListener;
 
 public class ClientRegistrationDialog implements InputDialog
 {	
-	private JDialog clientRegisrationWindow;
-	private JPanel contentPane = new JPanel();
-	private JLabel lblClientIDValue = new JLabel("1-23456789");
+	public JDialog clientRegisrationWindow;
+	public JLabel lblClientIDValue = new JLabel("1-23456789");
 	public JLabel lblFirstName = new JLabel(ClientDialogText.FIRST_NAME_LABEL);
 	public JTextField txtFirstName = new JTextField();
 	public JLabel lblLastName = new JLabel(ClientDialogText.LAST_NAME_LABEL); 
@@ -41,35 +40,26 @@ public class ClientRegistrationDialog implements InputDialog
 	public JLabel lblMarketing =  new JLabel(ClientDialogText.MARKETING_LABEL);
 	public JComboBox<String> cmbMarketing = new JComboBox<String>();
 	public JButton btnAddNewMarketing = new JButton(ClientDialogText.ADD_NEW_MARKETING_BUTTON);
-	private JButton btnAddNewClient = new JButton(ClientDialogText.ADD_CLIENT_BUTTON);
-	private JButton btnCancel = new JButton(ClientDialogText.CANCEL_BUTTON);
+	public JButton btnAddNewClient = new JButton(ClientDialogText.ADD_CLIENT_BUTTON);
+	public JButton btnCancel = new JButton(ClientDialogText.CANCEL_BUTTON);
 	
 	/**
 	 * Creates JDialog "Customer Registration Form".
 	 */
 	public ClientRegistrationDialog(Window owner)
 	{
-		createContentPane();
-		createIDView();
-		createFirstName();
-		createLastName();
-		createPrimePhoneView();
-		createAlternativePhoneView();
-		createEmailView();
-		createAddressView();
-		createMarketingView();
-		createBasicButtonsView();
-		createWindow(owner);
-	}
-
-	private void createContentPane()
-	{
+		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
-	}
-
-	private void createIDView()
-	{
+	
+		clientRegisrationWindow = new JDialog(owner);
+		clientRegisrationWindow.setTitle(ClientDialogText.TITLE);
+		clientRegisrationWindow.setResizable(false);
+		clientRegisrationWindow.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		clientRegisrationWindow.setBounds(100, 100, 460, 440);
+		clientRegisrationWindow.setContentPane(contentPane);
+		clientRegisrationWindow.setVisible(true);
+		
 		JLabel lblClientID =  new JLabel(ClientDialogText.CLIENT_ID_LABEL);
 		lblClientID.setBounds(35, 25, 110, 25);
 		contentPane.add(lblClientID);
@@ -78,40 +68,28 @@ public class ClientRegistrationDialog implements InputDialog
 		lblClientIDValue.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblClientIDValue.setBounds(150, 25, 160, 25);
 		contentPane.add(lblClientIDValue);
-	}
-
-	private void createFirstName()
-	{
+		
 		lblFirstName.setBounds(35, 90, 185, 15);
 		contentPane.add(lblFirstName);
 		
 		txtFirstName.setColumns(10);
 		txtFirstName.setBounds(35, 105, 185, 25);
 		contentPane.add(txtFirstName);
-	}
-
-	private void createLastName()
-	{
+		
 		lblLastName.setBounds(235, 90, 185, 15);
 		contentPane.add(lblLastName);
 		
 		txtLastName.setColumns(10);
 		txtLastName.setBounds(235, 105, 185, 25);
 		contentPane.add(txtLastName);
-	}
-
-	private void createPrimePhoneView()
-	{
+	
 		lblPrimePhoneNum.setBounds(35, 140, 185, 15);
 		contentPane.add(lblPrimePhoneNum);
 		
 		txtPrimePhoneNum.setColumns(10);
 		txtPrimePhoneNum.setBounds(35, 155, 185, 25);
 		contentPane.add(txtPrimePhoneNum);
-	}
-
-	private void createAlternativePhoneView()
-	{
+	
 		JLabel labelAlternativePhoneNum =new JLabel(ClientDialogText.SECOND_NUMBER_LABEL);
 		labelAlternativePhoneNum.setBounds(235, 140, 185, 15);
 		contentPane.add(labelAlternativePhoneNum);
@@ -119,10 +97,7 @@ public class ClientRegistrationDialog implements InputDialog
 		txtAlternativePhoneNum.setColumns(10);
 		txtAlternativePhoneNum.setBounds(235, 155, 185, 25);
 		contentPane.add(txtAlternativePhoneNum);
-	}
-
-	private void createEmailView()
-	{
+	
 		JLabel labelEmail = new JLabel(ClientDialogText.EMAIL_LABEL);
 		labelEmail.setBounds(35, 190, 385, 15);
 		contentPane.add(labelEmail);
@@ -130,10 +105,7 @@ public class ClientRegistrationDialog implements InputDialog
 		txtEmail.setColumns(10);
 		txtEmail.setBounds(35, 205, 385, 25);
 		contentPane.add(txtEmail);
-	}
-
-	private void createAddressView()
-	{
+	
 		JLabel labelAddress =  new JLabel(ClientDialogText.ADDRESS_LABEL);
 		labelAddress.setBounds(35, 240, 385, 15);
 		contentPane.add(labelAddress);
@@ -141,10 +113,7 @@ public class ClientRegistrationDialog implements InputDialog
 		txtAddress.setColumns(10);
 		txtAddress.setBounds(35, 255, 385, 25);
 		contentPane.add(txtAddress);
-	}
-
-	private void createMarketingView()
-	{
+	
 		lblMarketing.setBounds(35, 290, 185, 15);
 		contentPane.add(lblMarketing);
 		
@@ -155,10 +124,7 @@ public class ClientRegistrationDialog implements InputDialog
 		btnAddNewMarketing.setFont(new Font("Dialog", Font.PLAIN, 12));
 		btnAddNewMarketing.setBounds(235, 305, 185, 25);
 		contentPane.add(btnAddNewMarketing);
-	}
-
-	private void createBasicButtonsView()
-	{
+	
 		btnAddNewClient.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnAddNewClient.setBounds(35, 365, 110, 25);
 		contentPane.add(btnAddNewClient);
@@ -166,17 +132,6 @@ public class ClientRegistrationDialog implements InputDialog
 		btnCancel.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnCancel.setBounds(310, 365, 110, 25);
 		contentPane.add(btnCancel);
-	}
-
-	private void createWindow(Window owner)
-	{
-		clientRegisrationWindow = new JDialog(owner);
-		clientRegisrationWindow.setTitle(ClientDialogText.TITLE);
-		clientRegisrationWindow.setResizable(false);
-		clientRegisrationWindow.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		clientRegisrationWindow.setBounds(100, 100, 460, 440);
-		clientRegisrationWindow.setContentPane(contentPane);
-		clientRegisrationWindow.setVisible(true);
 	}
 
 	@Override
