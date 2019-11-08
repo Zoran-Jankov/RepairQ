@@ -68,7 +68,7 @@ public class TicketRegistrationDialog
 		window = new JDialog(owner);
 		window.setResizable(false);
 		window.setTitle("Ticket Registration");
-		window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		window.setBounds(0, 0, 500, 700);
 		window.setVisible(true);
 		window.setContentPane(contentPane);

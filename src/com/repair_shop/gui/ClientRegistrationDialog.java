@@ -26,7 +26,7 @@ import java.awt.event.ActionListener;
 
 public class ClientRegistrationDialog implements InputDialog
 {	
-	public JDialog clientRegisrationWindow;
+	public JDialog clientWindow;
 	public JLabel lblClientIDValue = new JLabel("1-23456789");
 	public JLabel lblFirstName = new JLabel(ClientDialogText.FIRST_NAME_LABEL);
 	public JTextField txtFirstName = new JTextField();
@@ -52,13 +52,13 @@ public class ClientRegistrationDialog implements InputDialog
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 	
-		clientRegisrationWindow = new JDialog(owner);
-		clientRegisrationWindow.setTitle(ClientDialogText.TITLE);
-		clientRegisrationWindow.setResizable(false);
-		clientRegisrationWindow.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		clientRegisrationWindow.setBounds(100, 100, 460, 440);
-		clientRegisrationWindow.setContentPane(contentPane);
-		clientRegisrationWindow.setVisible(true);
+		clientWindow = new JDialog(owner);
+		clientWindow.setTitle(ClientDialogText.TITLE);
+		clientWindow.setResizable(false);
+		clientWindow.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		clientWindow.setBounds(100, 100, 460, 440);
+		clientWindow.setContentPane(contentPane);
+		clientWindow.setVisible(true);
 		
 		JLabel lblClientID =  new JLabel(ClientDialogText.CLIENT_ID_LABEL);
 		lblClientID.setBounds(35, 25, 110, 25);
@@ -137,7 +137,7 @@ public class ClientRegistrationDialog implements InputDialog
 	@Override
 	public Window getWindow()
 	{
-		return clientRegisrationWindow;
+		return clientWindow;
 	}
 
 	@Override

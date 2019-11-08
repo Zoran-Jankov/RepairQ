@@ -26,18 +26,18 @@ public class ModelRegistrationContoller extends InputDialogController
 
 	private boolean isDeviceTypeSelected()
 	{
-		return modelGUI.comboBoxDeviceType.getSelectedItem() != null;
+		return modelGUI.cmbDeviceType.getSelectedItem() != null;
 	}
 	
 	private boolean isManufacturerSelected()
 	{
 		
-		return modelGUI.comboBoxDeviceType.getSelectedItem() != null;
+		return modelGUI.cmbDeviceType.getSelectedItem() != null;
 	}
 	
 	private boolean isModelNameOK()
 	{
-		String name = modelGUI.textFieldModel.getText();
+		String name = modelGUI.txtModel.getText();
 		return !("".equals(name) || AccessData.modelsDataTable
 				                              .uniqueStringCollision(name));
 	}
@@ -48,11 +48,17 @@ public class ModelRegistrationContoller extends InputDialogController
 		Model newModel = new Model();
 		
 		newModel.setId(id);
-		newModel.setName(modelGUI.textFieldModel.getText());
-		newModel.setDescription(modelGUI.editorPaneSpecification.getText());
+		newModel.setName(modelGUI.txtModel.getText());
+		newModel.setDescription(modelGUI.txtSpecification.getText());
 		newModel.setDeviceType((Property) AccessData.deviceTypesDataTable
-				                                    .getByUniqueString((String) modelGUI.comboBoxDeviceType.getSelectedItem()));
-		newModel.setBrand(null); //TODO set 
+				                                    .getByUniqueString((String) modelGUI
+				                                    .cmbDeviceType
+				                                    .getSelectedItem()));
+		
+		newModel.setBrand((Property) AccessData.brandsDataTable
+									           .getByUniqueString((String) modelGUI
+									           .cmbManufacturer
+									           .getSelectedItem()));
 		
 		return newModel;
 	}
@@ -60,6 +66,6 @@ public class ModelRegistrationContoller extends InputDialogController
 	@Override
 	protected void showInputErrors()
 	{
-		// TODO Auto-generated method stub
+		//TODO Input erros
 	}
 }

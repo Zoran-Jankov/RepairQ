@@ -4,8 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.repair_shop.data.Property;
-
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Window;
@@ -21,16 +19,16 @@ import javax.swing.JButton;
 
 public class ModelRegistrationDialog implements InputDialog
 {
-	public JDialog window = new JDialog();
-	public JPanel contentPane = new JPanel();
-	public JLabel lblModelIDValue = new JLabel("Error");
-	public JComboBox<String> comboBoxDeviceType = new JComboBox<String>();
+	private JDialog modelWindow;
+	private JLabel lblModelIDValue = new JLabel("Error");
+	public JComboBox<String> cmbDeviceType = new JComboBox<String>();
 	public Button btnNewDeviceType = new Button("New Device Type");
+	public JComboBox<String> cmbManufacturer = new JComboBox<String>();
 	public Button btnNewManufacturer = new Button("New Manufacturer");
-	public JTextField textFieldModel = new JTextField();
-	public JEditorPane editorPaneSpecification = new JEditorPane();
-	public JButton btnAdd = new JButton("Add");
-	public JButton btnCancel = new JButton("Cancel");
+	public JTextField txtModel = new JTextField();
+	public JEditorPane txtSpecification = new JEditorPane();
+	private JButton btnAddNewModel = new JButton("Add");
+	private JButton btnCancel = new JButton("Cancel");
 
 	/**
 	 * Create frame "Model Registration Form"
@@ -38,14 +36,16 @@ public class ModelRegistrationDialog implements InputDialog
 	 */
 	public ModelRegistrationDialog(Window owner)
 	{
-		window.setResizable(false);
-		window.setTitle("Add New Model");
-		window.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		window.setBounds(100, 100, 340, 540);
-		window.setContentPane(contentPane);
-		
+		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
+		
+		modelWindow = new JDialog(owner);
+		modelWindow.setResizable(false);
+		modelWindow.setTitle("Add New Model");
+		modelWindow.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		modelWindow.setBounds(100, 100, 340, 540);
+		modelWindow.setContentPane(contentPane);
 
 		JLabel lblModelID = new JLabel("Model ID");
 		lblModelID.setBounds(10, 11, 314, 14);
@@ -59,8 +59,8 @@ public class ModelRegistrationDialog implements InputDialog
 		lblDeviceType.setBounds(10, 72, 200, 14);
 		contentPane.add(lblDeviceType);
 		
-		comboBoxDeviceType.setBounds(10, 97, 200, 25);
-		contentPane.add(comboBoxDeviceType);
+		cmbDeviceType.setBounds(10, 97, 200, 25);
+		contentPane.add(cmbDeviceType);
 		
 		btnNewDeviceType.setBounds(216, 97, 108, 25);
 		contentPane.add(btnNewDeviceType);
@@ -69,9 +69,8 @@ public class ModelRegistrationDialog implements InputDialog
 		lblManufacturer.setBounds(10, 133, 200, 14);
 		contentPane.add(lblManufacturer);
 		
-		JComboBox<Property> comboBoxManufacturer = new JComboBox<Property>();
-		comboBoxManufacturer.setBounds(10, 158, 200, 25);
-		contentPane.add(comboBoxManufacturer);
+		cmbManufacturer.setBounds(10, 158, 200, 25);
+		contentPane.add(cmbManufacturer);
 		
 		btnNewManufacturer.setBounds(216, 158, 108, 25);
 		contentPane.add(btnNewManufacturer);
@@ -80,20 +79,20 @@ public class ModelRegistrationDialog implements InputDialog
 		lblModel.setBounds(10, 195, 200, 14);
 		contentPane.add(lblModel);
 		
-		textFieldModel.setBounds(10, 220, 200, 25);
-		contentPane.add(textFieldModel);
-		textFieldModel.setColumns(10);
+		txtModel.setBounds(10, 220, 200, 25);
+		contentPane.add(txtModel);
+		txtModel.setColumns(10);
 
 		JLabel lblSpecification = new JLabel("Specification");
 		lblSpecification.setBounds(10, 255, 314, 14);
 		contentPane.add(lblSpecification);
 		
-		editorPaneSpecification.setBounds(10, 280, 314, 184);
-		contentPane.add(editorPaneSpecification);
+		txtSpecification.setBounds(10, 280, 314, 184);
+		contentPane.add(txtSpecification);
 
-		btnAdd.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnAdd.setBounds(10, 475, 108, 25);
-		contentPane.add(btnAdd);
+		btnAddNewModel.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnAddNewModel.setBounds(10, 475, 108, 25);
+		contentPane.add(btnAddNewModel);
 		
 		btnCancel.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnCancel.setBounds(216, 475, 108, 25);
@@ -103,7 +102,7 @@ public class ModelRegistrationDialog implements InputDialog
 	@Override
 	public Window getWindow()
 	{
-		return window;
+		return modelWindow;
 	}
 
 	@Override
@@ -115,7 +114,7 @@ public class ModelRegistrationDialog implements InputDialog
 	@Override
 	public void setBtnAddActionListener(ActionListener l)
 	{
-		btnAdd.addActionListener(l);
+		btnAddNewModel.addActionListener(l);
 	}
 
 	@Override
