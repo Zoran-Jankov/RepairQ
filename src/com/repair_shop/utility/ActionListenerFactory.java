@@ -27,7 +27,7 @@ public class ActionListenerFactory
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				WindowClontrollerFactory.createController(owner, dataType);
+				DialogClontrollerFactory.createController(owner, dataType);
 			}
 		};
 	}

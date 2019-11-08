@@ -2,18 +2,18 @@ package com.repair_shop.controller;
 
 import com.repair_shop.data.Model;
 import com.repair_shop.data.Property;
-import com.repair_shop.gui.ModelRegistrationWindow;
+import com.repair_shop.gui.ModelRegistrationDialog;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.DataType;
 
 public class ModelRegistrationContoller extends InputDialogController
 {
-	private ModelRegistrationWindow modelGUI;
+	private ModelRegistrationDialog modelGUI;
 	
 	public ModelRegistrationContoller(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		modelGUI = (ModelRegistrationWindow) gui;
+		modelGUI = (ModelRegistrationDialog) gui;
 	}
 
 	@Override

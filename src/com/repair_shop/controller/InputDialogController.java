@@ -3,22 +3,22 @@ package com.repair_shop.controller;
 import java.awt.Window;
 
 import com.repair_shop.data.DataElement;
-import com.repair_shop.gui.InputDialogGui;
+import com.repair_shop.gui.InputDialog;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.DataType;
 import com.repair_shop.utility.IDGenerator;
-import com.repair_shop.utility.InputGuiFactory;
+import com.repair_shop.utility.InputDialogFactory;
 
 public abstract class InputDialogController implements WindowController
 {
 	protected DataType dataType;
 	protected int id = IDGenerator.getNewID(dataType);
-	protected InputDialogGui gui;
+	protected InputDialog gui;
 	
 	protected InputDialogController(WindowController owner, DataType dataType)
 	{
-		gui = InputGuiFactory.getWindow(owner.getWindow(), dataType);
+		gui = InputDialogFactory.getWindow(owner.getWindow(), dataType);
 		gui.setIdValue(IDGenerator.formatRegularID(id));
 		gui.setBtnAddActionListener(ActionListenerFactory.saveData(this));
 		gui.setBtnCancelActionListener(ActionListenerFactory.closeWindow(this));

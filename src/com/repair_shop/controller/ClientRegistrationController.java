@@ -5,20 +5,20 @@ import java.awt.Window;
 
 import com.repair_shop.data.Client;
 import com.repair_shop.data.Property;
-import com.repair_shop.gui.ClientRegistrationGUI;
-import com.repair_shop.gui.text.ClientGUITextUtils;
+import com.repair_shop.gui.ClientRegistrationDialog;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.ActionListenerFactory;
+import com.repair_shop.utility.ClientDialogText;
 import com.repair_shop.utility.CmbModelFactory;
 import com.repair_shop.utility.DataType;
 
 public class ClientRegistrationController extends InputDialogController
 {
-	private ClientRegistrationGUI clientGUI;
+	private ClientRegistrationDialog clientGUI;
 	public ClientRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		clientGUI = (ClientRegistrationGUI) gui;
+		clientGUI = (ClientRegistrationDialog) gui;
 		clientGUI.btnAddNewMarketing.addActionListener(ActionListenerFactory
 	              .openNewWindow(this, DataType.MARKETING_TYPE));
 		updateComboBoxes();
@@ -98,12 +98,12 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		if(isFirstNameEntered())
 		{
-			clientGUI.lblFirstName.setText(ClientGUITextUtils.FIRST_NAME_LABEL);
+			clientGUI.lblFirstName.setText(ClientDialogText.FIRST_NAME_LABEL);
 			clientGUI.txtFirstName.setBackground(Color.WHITE);
 		}
 		else
 		{
-			clientGUI.lblFirstName.setText(ClientGUITextUtils.FIRST_NAME_ERROR_MESSAGE);
+			clientGUI.lblFirstName.setText(ClientDialogText.FIRST_NAME_ERROR_MESSAGE);
 			clientGUI.txtFirstName.setBackground(Color.YELLOW);
 		}
 	}
@@ -112,12 +112,12 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		if(isLastNameEntered())
 		{
-			clientGUI.lblLastName.setText(ClientGUITextUtils.LAST_NAME_LABEL);
+			clientGUI.lblLastName.setText(ClientDialogText.LAST_NAME_LABEL);
 			clientGUI.txtLastName.setBackground(Color.WHITE);
 		}
 		else
 		{
-			clientGUI.lblLastName.setText(ClientGUITextUtils.LAST_NAME_ERROR_MESSAGE);
+			clientGUI.lblLastName.setText(ClientDialogText.LAST_NAME_ERROR_MESSAGE);
 			clientGUI.txtLastName.setBackground(Color.YELLOW);
 		}
 	}
@@ -127,12 +127,12 @@ public class ClientRegistrationController extends InputDialogController
 
 		if(isPhoneNumberOK())
 		{
-			clientGUI.lblPrimePhoneNum.setText(ClientGUITextUtils.PRIME_PHONE_NUMBER_LABEL);
+			clientGUI.lblPrimePhoneNum.setText(ClientDialogText.PRIME_PHONE_NUMBER_LABEL);
 			clientGUI.txtPrimePhoneNum.setBackground(Color.WHITE);
 		}
 		else
 		{
-			clientGUI.lblPrimePhoneNum.setText(ClientGUITextUtils.PHONE_NUMBER_ERROR_MESSAGE);
+			clientGUI.lblPrimePhoneNum.setText(ClientDialogText.PHONE_NUMBER_ERROR_MESSAGE);
 			clientGUI.txtPrimePhoneNum.setBackground(Color.YELLOW);
 		}
 	}
@@ -141,12 +141,12 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		if(isMarketingSelected())
 		{
-			clientGUI.lblMarketing.setText(ClientGUITextUtils.MARKETING_LABEL);
+			clientGUI.lblMarketing.setText(ClientDialogText.MARKETING_LABEL);
 			clientGUI.cmbMarketing.setBackground(Color.WHITE);
 		}
 		else
 		{
-			clientGUI.lblMarketing.setText(ClientGUITextUtils.MARKETING_ERROR_MESSAGE);
+			clientGUI.lblMarketing.setText(ClientDialogText.MARKETING_ERROR_MESSAGE);
 			clientGUI.cmbMarketing.setBackground(Color.YELLOW);
 		}
 	}

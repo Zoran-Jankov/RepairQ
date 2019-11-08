@@ -4,21 +4,21 @@ import java.awt.Color;
 
 import com.repair_shop.data.Device;
 import com.repair_shop.data.Model;
-import com.repair_shop.gui.DeviceRegistrationGUI;
-import com.repair_shop.gui.text.DeviceGUITextUtils;
+import com.repair_shop.gui.DeviceRegistrationDialog;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.CmbModelFactory;
 import com.repair_shop.utility.DataType;
+import com.repair_shop.utility.DeviceDialogText;
 
 public class DeviceRegistrationController extends InputDialogController
 {
-	private DeviceRegistrationGUI deviceGUI;
+	private DeviceRegistrationDialog deviceGUI;
 	
 	public DeviceRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		deviceGUI = (DeviceRegistrationGUI) gui;
+		deviceGUI = (DeviceRegistrationDialog) gui;
 		deviceGUI.btnAddNewModel.addActionListener(ActionListenerFactory
 				 .openNewWindow(this,DataType.MODEL));
 		updateComboBoxes();
@@ -72,12 +72,12 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		if(isSerialNumberOK())
 		{
-			deviceGUI.lblSerial.setText(DeviceGUITextUtils.SERIAL_NUMBER_LABEL);
+			deviceGUI.lblSerial.setText(DeviceDialogText.SERIAL_NUMBER_LABEL);
 			deviceGUI.txtSerial.setBackground(Color.WHITE);
 		}
 		else
 		{
-			deviceGUI.lblSerial.setText(DeviceGUITextUtils.SERIAL_NUMBER_ERROR_MESSAGE);
+			deviceGUI.lblSerial.setText(DeviceDialogText.SERIAL_NUMBER_ERROR_MESSAGE);
 			deviceGUI.txtSerial.setBackground(Color.YELLOW);
 		}
 	}
@@ -86,12 +86,12 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		if(isModelSelected())
 		{
-			deviceGUI.lblModel.setText(DeviceGUITextUtils.MODEL_LABEL);
+			deviceGUI.lblModel.setText(DeviceDialogText.MODEL_LABEL);
 			deviceGUI.cmbModel.setBackground(Color.WHITE);
 		}
 		else
 		{
-			deviceGUI.lblModel.setText(DeviceGUITextUtils.MODEL_ERROR_MESSAGE);
+			deviceGUI.lblModel.setText(DeviceDialogText.MODEL_ERROR_MESSAGE);
 			deviceGUI.cmbModel.setBackground(Color.YELLOW);
 		}
 	}

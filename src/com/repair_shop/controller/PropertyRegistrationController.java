@@ -1,18 +1,18 @@
 package com.repair_shop.controller;
 
 import com.repair_shop.data.Property;
-import com.repair_shop.gui.PropertyRegistrationGUI;
+import com.repair_shop.gui.PropertyRegistrationDialog;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.DataType;
 
 public class PropertyRegistrationController extends InputDialogController
 {
-	private PropertyRegistrationGUI propertyGUI;
+	private PropertyRegistrationDialog propertyGUI;
 	
 	public PropertyRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		propertyGUI = (PropertyRegistrationGUI) gui;
+		propertyGUI = (PropertyRegistrationDialog) gui;
 	}
 	@Override
 	protected boolean isInputValid()
