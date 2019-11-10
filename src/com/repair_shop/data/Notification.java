@@ -2,20 +2,28 @@ package com.repair_shop.data;
 
 import java.sql.Timestamp;
 
+import com.repair_shop.utility.DataType;
+
 public class Notification extends AbstractDataElement
 {
-	private Property notificationType;
+	private NotificationType notificationType;
 	private Ticket ticket;
 	private User user;
 	private Timestamp timestamp;
 	private String comment;
 	
-	public Property getNotificationType()
+	@Override
+	public DataType getDataType()
+	{
+		return DataType.NOTIFICATION;
+	}
+	
+	public NotificationType getNotificationType()
 	{
 		return notificationType;
 	}
 	
-	public void setNotificationType(Property notificationType)
+	public void setNotificationType(NotificationType notificationType)
 	{
 		this.notificationType = notificationType;
 	}

@@ -19,7 +19,7 @@ package com.repair_shop.data;
  * @since 2019-10-15
  */
 
-public class Property extends AbstractDataElement
+public abstract class Property extends AbstractDataElement
 {
 	private String name;
 	private String description;

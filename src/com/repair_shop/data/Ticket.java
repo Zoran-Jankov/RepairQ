@@ -1,11 +1,19 @@
 package com.repair_shop.data;
 
+import com.repair_shop.utility.DataType;
+
 public class Ticket extends AbstractDataElement
 {
 	private int priority;
 	private Client client;
 	private Device device;
-	private Property status;
+	private Status status;
+	
+	@Override
+	public DataType getDataType()
+	{
+		return DataType.TICKET;
+	}
 	
 	public int getPriority()
 	{
@@ -37,12 +45,12 @@ public class Ticket extends AbstractDataElement
 		this.device = device;
 	}
 
-	public Property getStatus()
+	public Status getStatus()
 	{
 		return status;
 	}
 
-	public void setStatus(Property status)
+	public void setStatus(Status status)
 	{
 		this.status = status;
 	}

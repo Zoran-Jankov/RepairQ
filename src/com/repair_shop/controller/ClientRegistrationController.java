@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Window;
 
 import com.repair_shop.data.Client;
-import com.repair_shop.data.Property;
+import com.repair_shop.data.Marketing;
 import com.repair_shop.gui.ClientRegistrationDialog;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.ActionListenerFactory;
@@ -79,7 +79,7 @@ public class ClientRegistrationController extends InputDialogController
 		newClient.setAlternativePhoneNumber(clientGUI.txtAlternativePhoneNum.getText());
 		newClient.setEmail(clientGUI.txtEmail.getText());
 		newClient.setAddress(clientGUI.txtAddress.getText());
-		newClient.setMarketing((Property) AccessData.marketingTypesDataTable
+		newClient.setMarketing((Marketing) AccessData.marketingTypesDataTable
 				 .getByUniqueString((String) clientGUI.cmbMarketing.getSelectedItem()));
 		
 		return newClient;

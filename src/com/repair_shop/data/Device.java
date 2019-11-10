@@ -1,5 +1,7 @@
 package com.repair_shop.data;
 
+import com.repair_shop.utility.DataType;
+
 /** 
  * Class Device inherits DataElement class, and represents a device with
  * associated information about that device.
@@ -24,6 +26,12 @@ public class Device extends AbstractDataElement
 {
 	private Model model;
 	private String serial;
+	
+	@Override
+	public DataType getDataType()
+	{
+		return DataType.DEVICE;
+	}
 	
 	/**
 	 * Getter for device model.

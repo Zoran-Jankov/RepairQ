@@ -1,5 +1,7 @@
 package com.repair_shop.data;
 
+import com.repair_shop.utility.DataType;
+
 /** 
  * Class Model extends class GeneralProperty and represents 
  * a device model with associated information about that model.
@@ -27,14 +29,20 @@ package com.repair_shop.data;
 
 public class Model extends Property
 {
-	private Property deviceType;
-	private Property brand;
+	private DeviceType deviceType;
+	private Brand brand;
+	
+	@Override
+	public DataType getDataType()
+	{
+		return DataType.MODEL;
+	}
 	
 	/**
 	 * Getter for model device type.
 	 * @return Model device type.
 	 */
-	public Property getDeviceType()
+	public DeviceType getDeviceType()
 	{
 		return deviceType;
 	}
@@ -43,7 +51,7 @@ public class Model extends Property
 	 * Setter for model device type.
 	 * @param deviceType - Model device type.
 	 */
-	public void setDeviceType(Property deviceType)
+	public void setDeviceType(DeviceType deviceType)
 	{
 		this.deviceType = deviceType;
 	}
@@ -52,7 +60,7 @@ public class Model extends Property
 	 * Getter for model manufacturer.
 	 * @return Model manufacturer.
 	 */
-	public Property getManufacturer()
+	public Brand getManufacturer()
 	{
 		return brand;
 	}
@@ -61,7 +69,7 @@ public class Model extends Property
 	 * Setter for model manufacturer.
 	 * @param brand - Model manufacturer.
 	 */
-	public void setBrand(Property brand)
+	public void setBrand(Brand brand)
 	{
 		this.brand = brand;	
 	}

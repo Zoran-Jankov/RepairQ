@@ -5,6 +5,7 @@ import java.awt.Color;
 import com.repair_shop.data.Property;
 import com.repair_shop.gui.PropertyRegistrationDialog;
 import com.repair_shop.utility.AccessData;
+import com.repair_shop.utility.DataElementFactory;
 import com.repair_shop.utility.DataType;
 import com.repair_shop.utility.PropertyDialogText;
 
@@ -29,7 +30,7 @@ public class PropertyRegistrationController extends InputDialogController
 	@Override
 	protected Property createDataElement()
 	{
-		Property newProperty = new Property();
+		Property newProperty = (Property) DataElementFactory.createNewDataElement(dataType);
 		
 		newProperty.setId(id);
 		newProperty.setName(propertyGUI.txtName.getText());

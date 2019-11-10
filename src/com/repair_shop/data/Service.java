@@ -1,10 +1,18 @@
 package com.repair_shop.data;
 
+import com.repair_shop.utility.DataType;
+
 public class Service extends AbstractDataElement
 {
 	private Notification notification;
 	private ServiceType serviceType;
 	private int price;
+	
+	@Override
+	public DataType getDataType()
+	{
+		return DataType.SERVICE;
+	}
 	
 	public Notification getNotification()
 	{

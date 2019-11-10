@@ -1,5 +1,7 @@
 package com.repair_shop.data;
 
+import com.repair_shop.utility.DataType;
+
 /** 
  * Class Client extends class Person and represents a client 
  * with associated information about that client.
@@ -33,14 +35,20 @@ package com.repair_shop.data;
 
 public class Client extends Person
 {
-	private Property marketing;
+	private Marketing marketing;
+	
+	@Override
+	public DataType getDataType()
+	{
+		return DataType.CLIENT;
+	}
 	
 	/**
 	 * Getter for clients marketing information.
 	 * Marketing type describes how did the client find about your business.
 	 * @return Clients marketing information.
 	 */
-	public Property getMarketing()
+	public Marketing getMarketing()
 	{
 		return marketing;
 	}
@@ -50,7 +58,7 @@ public class Client extends Person
 	 * Marketing type describes how did the client find about your business.
 	 * @param marketing - Clients marketing information.
 	 */
-	public void setMarketing(Property marketing)
+	public void setMarketing(Marketing marketing)
 	{
 		this.marketing = marketing;
 	}
@@ -82,4 +90,6 @@ public class Client extends Person
 	{
 		return true;
 	}
+
+	
 }

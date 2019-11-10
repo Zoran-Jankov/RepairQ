@@ -1,5 +1,7 @@
 package com.repair_shop.data;
 
+import com.repair_shop.utility.DataType;
+
 /** 
  * Class Employee extends class Person and represents a employee with associated information about that employee.
  * <p>
@@ -40,6 +42,12 @@ public class User extends Person
 	private UserType userType;
 	private String username;
 	private char[] password;
+	
+	@Override
+	public DataType getDataType()
+	{
+		return DataType.USER;
+	}
 		
 	/**
 	 * Getter for user username.

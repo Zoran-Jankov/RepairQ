@@ -1,7 +1,8 @@
 package com.repair_shop.controller;
 
+import com.repair_shop.data.Brand;
+import com.repair_shop.data.DeviceType;
 import com.repair_shop.data.Model;
-import com.repair_shop.data.Property;
 import com.repair_shop.gui.ModelRegistrationDialog;
 import com.repair_shop.utility.AccessData;
 import com.repair_shop.utility.DataType;
@@ -50,12 +51,12 @@ public class ModelRegistrationContoller extends InputDialogController
 		newModel.setId(id);
 		newModel.setName(modelGUI.txtModel.getText());
 		newModel.setDescription(modelGUI.txtSpecification.getText());
-		newModel.setDeviceType((Property) AccessData.deviceTypesDataTable
+		newModel.setDeviceType((DeviceType) AccessData.deviceTypesDataTable
 				                                    .getByUniqueString((String) modelGUI
 				                                    .cmbDeviceType
 				                                    .getSelectedItem()));
 		
-		newModel.setBrand((Property) AccessData.brandsDataTable
+		newModel.setBrand((Brand) AccessData.brandsDataTable
 									           .getByUniqueString((String) modelGUI
 									           .cmbManufacturer
 									           .getSelectedItem()));

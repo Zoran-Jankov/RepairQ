@@ -18,6 +18,7 @@ public abstract class InputDialogController implements WindowController
 	
 	protected InputDialogController(WindowController owner, DataType dataType)
 	{
+		this.dataType = dataType;
 		gui = InputDialogFactory.getWindow(owner.getWindow(), dataType);
 		gui.setIdValue(IDGenerator.formatRegularID(id));
 		gui.setBtnAddActionListener(ActionListenerFactory.saveData(this));
