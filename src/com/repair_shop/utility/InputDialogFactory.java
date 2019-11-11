@@ -2,6 +2,7 @@ package com.repair_shop.utility;
 
 import java.awt.Window;
 
+import com.repair_shop.data.DataType;
 import com.repair_shop.gui.ClientRegistrationDialog;
 import com.repair_shop.gui.InputDialog;
 import com.repair_shop.gui.PropertyRegistrationDialog;

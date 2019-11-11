@@ -4,13 +4,13 @@ import java.awt.Color;
 import java.awt.Window;
 
 import com.repair_shop.data.Client;
+import com.repair_shop.data.DataType;
 import com.repair_shop.data.Marketing;
 import com.repair_shop.gui.ClientRegistrationDialog;
-import com.repair_shop.utility.AccessData;
+import com.repair_shop.utility.DataManager;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.ClientDialogText;
 import com.repair_shop.utility.CmbModelFactory;
-import com.repair_shop.utility.DataType;
 
 public class ClientRegistrationController extends InputDialogController
 {
@@ -58,7 +58,7 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		String phoneNumber = clientGUI.txtPrimePhoneNum.getText();
 		
-		return !(AccessData.clientsDataTable.uniqueStringCollision(phoneNumber)
+		return !(DataManager.clientsDataTable.uniqueStringCollision(phoneNumber)
 			 || ("".equals(phoneNumber)));
 	}
 
@@ -79,7 +79,7 @@ public class ClientRegistrationController extends InputDialogController
 		newClient.setAlternativePhoneNumber(clientGUI.txtAlternativePhoneNum.getText());
 		newClient.setEmail(clientGUI.txtEmail.getText());
 		newClient.setAddress(clientGUI.txtAddress.getText());
-		newClient.setMarketing((Marketing) AccessData.marketingTypesDataTable
+		newClient.setMarketing((Marketing) DataManager.marketingTypesDataTable
 				 .getByUniqueString((String) clientGUI.cmbMarketing.getSelectedItem()));
 		
 		return newClient;

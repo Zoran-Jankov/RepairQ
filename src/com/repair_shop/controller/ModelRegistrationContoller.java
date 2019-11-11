@@ -1,11 +1,11 @@
 package com.repair_shop.controller;
 
 import com.repair_shop.data.Brand;
+import com.repair_shop.data.DataType;
 import com.repair_shop.data.DeviceType;
 import com.repair_shop.data.Model;
 import com.repair_shop.gui.ModelRegistrationDialog;
-import com.repair_shop.utility.AccessData;
-import com.repair_shop.utility.DataType;
+import com.repair_shop.utility.DataManager;
 
 public class ModelRegistrationContoller extends InputDialogController
 {
@@ -39,7 +39,7 @@ public class ModelRegistrationContoller extends InputDialogController
 	private boolean isModelNameOK()
 	{
 		String name = modelGUI.txtModel.getText();
-		return !("".equals(name) || AccessData.modelsDataTable
+		return !("".equals(name) || DataManager.modelsDataTable
 				                              .uniqueStringCollision(name));
 	}
 	
@@ -51,12 +51,12 @@ public class ModelRegistrationContoller extends InputDialogController
 		newModel.setId(id);
 		newModel.setName(modelGUI.txtModel.getText());
 		newModel.setDescription(modelGUI.txtSpecification.getText());
-		newModel.setDeviceType((DeviceType) AccessData.deviceTypesDataTable
+		newModel.setDeviceType((DeviceType) DataManager.deviceTypesDataTable
 				                                    .getByUniqueString((String) modelGUI
 				                                    .cmbDeviceType
 				                                    .getSelectedItem()));
 		
-		newModel.setBrand((Brand) AccessData.brandsDataTable
+		newModel.setBrand((Brand) DataManager.brandsDataTable
 									           .getByUniqueString((String) modelGUI
 									           .cmbManufacturer
 									           .getSelectedItem()));

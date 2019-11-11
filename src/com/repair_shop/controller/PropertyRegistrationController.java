@@ -2,11 +2,11 @@ package com.repair_shop.controller;
 
 import java.awt.Color;
 
+import com.repair_shop.data.DataType;
 import com.repair_shop.data.Property;
 import com.repair_shop.gui.PropertyRegistrationDialog;
-import com.repair_shop.utility.AccessData;
+import com.repair_shop.utility.DataManager;
 import com.repair_shop.utility.DataElementFactory;
-import com.repair_shop.utility.DataType;
 import com.repair_shop.utility.PropertyDialogText;
 
 public class PropertyRegistrationController extends InputDialogController
@@ -23,7 +23,7 @@ public class PropertyRegistrationController extends InputDialogController
 	{
 		String name = propertyGUI.txtName.getText();
 		
-		return !(AccessData.clientsDataTable.uniqueStringCollision(name)
+		return !(DataManager.clientsDataTable.uniqueStringCollision(name)
 			 || ("".equals(name)));
 	}
 

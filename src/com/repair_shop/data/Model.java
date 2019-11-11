@@ -1,7 +1,5 @@
 package com.repair_shop.data;
 
-import com.repair_shop.utility.DataType;
-
 /** 
  * Class Model extends class GeneralProperty and represents 
  * a device model with associated information about that model.

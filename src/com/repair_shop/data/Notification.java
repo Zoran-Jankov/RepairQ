@@ -2,8 +2,6 @@ package com.repair_shop.data;
 
 import java.sql.Timestamp;
 
-import com.repair_shop.utility.DataType;
-
 public class Notification extends AbstractDataElement
 {
 	private NotificationType notificationType;

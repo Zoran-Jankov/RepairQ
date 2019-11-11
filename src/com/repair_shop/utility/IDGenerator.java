@@ -1,5 +1,7 @@
 package com.repair_shop.utility;
 
+import com.repair_shop.data.DataType;
+
 public class IDGenerator
 {
 	private static final int COUNTER_MAX_VALUE = 10000000;
@@ -7,7 +9,7 @@ public class IDGenerator
 	
 	public static int getNewID(DataType dataType)
 	{
-		return AccessData.getDataTable(dataType).getDataElementCounter() + (TERMINAL_NUMBER * COUNTER_MAX_VALUE);
+		return DataManager.getDataTable(dataType).getDataElementCounter() + (TERMINAL_NUMBER * COUNTER_MAX_VALUE);
 	}
 	
 	public static String formatRegularID(int id)

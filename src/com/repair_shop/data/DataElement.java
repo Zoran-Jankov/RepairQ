@@ -2,8 +2,6 @@ package com.repair_shop.data;
 
 import java.util.HashMap;
 
-import com.repair_shop.utility.DataType;
-
 public interface DataElement
 {
 	public DataType getDataType();

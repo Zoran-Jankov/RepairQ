@@ -2,13 +2,13 @@ package com.repair_shop.controller;
 
 import java.awt.Color;
 
+import com.repair_shop.data.DataType;
 import com.repair_shop.data.Device;
 import com.repair_shop.data.Model;
 import com.repair_shop.gui.DeviceRegistrationDialog;
-import com.repair_shop.utility.AccessData;
+import com.repair_shop.utility.DataManager;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.CmbModelFactory;
-import com.repair_shop.utility.DataType;
 import com.repair_shop.utility.DeviceDialogText;
 
 public class DeviceRegistrationController extends InputDialogController
@@ -36,7 +36,7 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		newDevice.setId(id);
 		newDevice.setSerial(deviceGUI.txtSerial.getText());
-		newDevice.setModel((Model) AccessData.devicesDataTable		
+		newDevice.setModel((Model) DataManager.devicesDataTable		
 				 .getByUniqueString((String) deviceGUI.cmbModel.getSelectedItem()));
 		
 		return newDevice;
@@ -58,7 +58,7 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		String serial = deviceGUI.txtSerial.getText();
 		
-		return !("".equals(serial) || AccessData.devicesDataTable.uniqueStringCollision(serial));
+		return !("".equals(serial) || DataManager.devicesDataTable.uniqueStringCollision(serial));
 	}
 	
 	@Override

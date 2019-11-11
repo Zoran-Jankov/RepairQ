@@ -1,7 +1,5 @@
 package com.repair_shop.data;
 
-import com.repair_shop.utility.DataType;
-
 /** 
  * Class Client extends class Person and represents a client 
  * with associated information about that client.

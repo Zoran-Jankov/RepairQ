@@ -1,7 +1,5 @@
 package com.repair_shop.data;
 
-import com.repair_shop.utility.DataType;
-
 /** 
  * Class Device inherits DataElement class, and represents a device with
  * associated information about that device.

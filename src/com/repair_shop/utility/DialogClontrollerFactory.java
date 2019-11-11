@@ -4,6 +4,7 @@ import com.repair_shop.controller.ClientRegistrationController;
 import com.repair_shop.controller.InputDialogController;
 import com.repair_shop.controller.PropertyRegistrationController;
 import com.repair_shop.controller.WindowController;
+import com.repair_shop.data.DataType;
 
 public class DialogClontrollerFactory
 {

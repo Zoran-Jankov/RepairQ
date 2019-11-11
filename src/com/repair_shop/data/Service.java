@@ -1,7 +1,5 @@
 package com.repair_shop.data;
 
-import com.repair_shop.utility.DataType;
-
 public class Service extends AbstractDataElement
 {
 	private Notification notification;

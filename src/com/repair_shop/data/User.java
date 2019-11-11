@@ -1,7 +1,5 @@
 package com.repair_shop.data;
 
-import com.repair_shop.utility.DataType;
-
 /** 
  * Class Employee extends class Person and represents a employee with associated information about that employee.
  * <p>
@@ -107,18 +105,6 @@ public class User extends Person
 	public String getUniqueString()
 	{
 		return getUsername();
-	}
-	
-	@Override
-	public void createReferences()
-	{
-		userType.addReference(this);
-	}
-	
-	@Override
-	public void deleteReferences()
-	{
-		userType.removeReference(this.getID());
 	}
 
 	@Override

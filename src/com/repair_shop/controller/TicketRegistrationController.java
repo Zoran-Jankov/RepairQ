@@ -3,7 +3,7 @@ package com.repair_shop.controller;
 import java.awt.Window;
 
 import com.repair_shop.data.DataElement;
-import com.repair_shop.utility.DataType;
+import com.repair_shop.data.DataType;
 
 public class TicketRegistrationController extends InputDialogController
 {
