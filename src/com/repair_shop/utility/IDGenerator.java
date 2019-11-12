@@ -1,5 +1,6 @@
 package com.repair_shop.utility;
 
+import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 
 public class IDGenerator

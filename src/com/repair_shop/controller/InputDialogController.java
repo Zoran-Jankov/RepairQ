@@ -3,9 +3,9 @@ package com.repair_shop.controller;
 import java.awt.Window;
 
 import com.repair_shop.data.DataElement;
+import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.gui.InputDialog;
-import com.repair_shop.utility.DataManager;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.IDGenerator;
 import com.repair_shop.utility.InputDialogFactory;

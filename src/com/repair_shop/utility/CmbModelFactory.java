@@ -2,6 +2,7 @@ package com.repair_shop.utility;
 
 import javax.swing.DefaultComboBoxModel;
 
+import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 
 public class CmbModelFactory 

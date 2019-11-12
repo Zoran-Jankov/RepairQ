@@ -1,11 +1,11 @@
 package com.repair_shop.controller;
 
 import com.repair_shop.data.Brand;
+import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.DeviceType;
 import com.repair_shop.data.Model;
 import com.repair_shop.gui.ModelRegistrationDialog;
-import com.repair_shop.utility.DataManager;
 
 public class ModelRegistrationContoller extends InputDialogController
 {
