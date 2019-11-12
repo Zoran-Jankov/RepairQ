@@ -15,8 +15,16 @@ public enum DataType
 	MODEL,
 	DEVICE_TYPE,
 	BRAND,
-	USER,
-	USER_TYPE;
+	USER;
+	
+	public static boolean makesReferences(DataType dataType)
+	{
+		return (dataType == NOTIFICATION)
+			|| (dataType == MARKETING_TYPE)
+			|| (dataType == STATUS)
+			|| (dataType == DEVICE_TYPE)
+			|| (dataType == BRAND);
+	}
 	
 	public static boolean isAProperty(DataType dataType)
 	{
@@ -95,10 +103,5 @@ public enum DataType
 	public static boolean isAUser(DataType dataType)
 	{
 		return dataType == USER;
-	}
-	
-	public static boolean isAUserType(DataType dataType)
-	{
-		return dataType == USER_TYPE;
 	}
 }

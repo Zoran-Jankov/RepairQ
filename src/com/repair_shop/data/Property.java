@@ -73,7 +73,7 @@ public abstract class Property extends AbstractDataElement
 	}
 	
 	@Override
-	public boolean isReferencable()
+	public boolean makesReferences()
 	{
 		return false;
 	}

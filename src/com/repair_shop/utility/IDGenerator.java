@@ -10,12 +10,19 @@ public class IDGenerator
 	
 	public static int getNewID(DataType dataType)
 	{
-		return DataManager.getDataTable(dataType).getDataElementCounter() + (TERMINAL_NUMBER * COUNTER_MAX_VALUE);
+		if(!DataType.isATicket(dataType))
+		{
+			return 0; //TODO ticket ID generator
+		}
+		else
+		{
+			return DataManager.getDataElementCounter(dataType) + (TERMINAL_NUMBER * COUNTER_MAX_VALUE);
+		}
 	}
 	
 	public static String formatRegularID(int id)
 	{
-		return String.valueOf(TERMINAL_NUMBER)
+		return String.valueOf(id / COUNTER_MAX_VALUE)
 				 + " - " 
 				 + String.valueOf(id % COUNTER_MAX_VALUE);
 	}

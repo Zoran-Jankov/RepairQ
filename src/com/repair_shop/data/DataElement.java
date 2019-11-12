@@ -22,7 +22,7 @@ public interface DataElement
 	
 	public String getUniqueString();
 	
-	public boolean isReferencable();
+	public boolean makesReferences();
 	
 	public void createReferences();
 	

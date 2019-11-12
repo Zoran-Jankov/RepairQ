@@ -84,7 +84,7 @@ public class Client extends Person
 		return true;
 	}
 	@Override
-	public boolean isReferencable()
+	public boolean makesReferences()
 	{
 		return true;
 	}

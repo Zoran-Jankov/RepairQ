@@ -3,6 +3,7 @@ package com.repair_shop.data;
 public class Service extends AbstractDataElement
 {
 	private Notification notification;
+	private Ticket ticket;
 	private ServiceType serviceType;
 	private int price;
 	
@@ -20,6 +21,16 @@ public class Service extends AbstractDataElement
 	public void setNotification(Notification notification)
 	{
 		this.notification = notification;
+	}
+	
+	public Ticket getTicket()
+	{
+		return ticket;
+	}
+
+	public void setTicket(Ticket ticket)
+	{
+		this.ticket = ticket;
 	}
 
 	public ServiceType getServiceType()
@@ -60,7 +71,7 @@ public class Service extends AbstractDataElement
 	}
 
 	@Override
-	public boolean isReferencable()
+	public boolean makesReferences()
 	{
 		return true;
 	}

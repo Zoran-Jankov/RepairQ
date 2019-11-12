@@ -78,7 +78,7 @@ public abstract class AbstractDataElement implements DataElement
 	}
 
 	@Override
-	public abstract boolean isReferencable();
+	public abstract boolean makesReferences();
 	
 	@Override
 	public void createReferences()

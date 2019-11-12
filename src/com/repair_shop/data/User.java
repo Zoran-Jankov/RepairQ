@@ -114,7 +114,7 @@ public class User extends Person
 	}
 
 	@Override
-	public boolean isReferencable()
+	public boolean makesReferences()
 	{
 		return true;
 	}

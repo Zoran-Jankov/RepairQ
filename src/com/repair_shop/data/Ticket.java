@@ -76,7 +76,7 @@ public class Ticket extends AbstractDataElement
 	}
 
 	@Override
-	public boolean isReferencable()
+	public boolean makesReferences()
 	{
 		return true;
 	}

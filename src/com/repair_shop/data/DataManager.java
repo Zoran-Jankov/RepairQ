@@ -18,7 +18,6 @@ public class DataManager
 	public static IndexedData deviceTypesDataTable = new IndexedDataTable();
 	public static IndexedData brandsDataTable = new IndexedDataTable();
 	public static IndexedData usersDataTable = new IndexedDataTable();
-	public static IndexedData userTypesDataTable = new IndexedDataTable();
 	
 	private static final HashMap<DataType, IndexedData> dataTables = new HashMap<DataType, IndexedData>();
 	
@@ -38,7 +37,6 @@ public class DataManager
 		dataTables.put(DataType.DEVICE_TYPE, deviceTypesDataTable);
 		dataTables.put(DataType.BRAND, brandsDataTable);
 		dataTables.put(DataType.USER, usersDataTable);
-		dataTables.put(DataType.USER_TYPE, userTypesDataTable);
 	}
 	
 	public static IndexedData getDataTable(DataType dataType)
@@ -46,42 +44,42 @@ public class DataManager
 		return dataTables.get(dataType);
 	}
 
-	public int getDataElementCounter(DataType dataType)
+	public static int getDataElementCounter(DataType dataType)
 	{
 		return getDataTable(dataType).getDataElementCounter();
 	}
 
-	public HashMap<String, DataElement> getUniqueStringMap(DataType dataType)
+	public static HashMap<String, DataElement> getUniqueStringMap(DataType dataType)
 	{
 		return getDataTable(dataType).getUniqueStringMap();
 	}
 
-	public DataElement getByID(DataType dataType, int id)
+	public static DataElement getByID(DataType dataType, int id)
 	{
 		return getDataTable(dataType).getByID(id);
 	}
 
-	public DataElement getByUniqueString(DataType dataType, String uniqueString)
+	public static DataElement getByUniqueString(DataType dataType, String uniqueString)
 	{
 		return getDataTable(dataType).getByUniqueString(uniqueString);
 	}
 
-	public boolean idCollision(DataType dataType, int id)
+	public static boolean idCollision(DataType dataType, int id)
 	{
 		return getDataTable(dataType).idCollision(id);
 	}
 
-	public boolean uniqueStringCollision(DataType dataType, String uniqueString)
+	public static boolean uniqueStringCollision(DataType dataType, String uniqueString)
 	{
 		return getDataTable(dataType).uniqueStringCollision(uniqueString);
 	}
 
-	public void save(DataElement newDataElement)
+	public static void save(DataElement newDataElement)
 	{
 		getDataTable(newDataElement.getDataType()).save(newDataElement);
 	}
 
-	public void delete(DataElement newDataElement)
+	public static void delete(DataElement newDataElement)
 	{
 		getDataTable(newDataElement.getDataType()).delete(newDataElement);
 	}

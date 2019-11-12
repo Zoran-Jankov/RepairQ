@@ -54,7 +54,7 @@ public class IndexedDataTable implements IndexedData
 			uniqueStringMap.put(newDataElement.getUniqueString(), newDataElement);
 		}
 		
-		if(newDataElement.isReferencable())
+		if(newDataElement.makesReferences())
 		{
 			newDataElement.createReferences();
 		}
@@ -72,7 +72,7 @@ public class IndexedDataTable implements IndexedData
 			uniqueStringMap.remove(newDataElement.getUniqueString());
 		}
 		
-		if(newDataElement.isReferencable())
+		if(newDataElement.makesReferences())
 		{
 			newDataElement.deleteReferences();
 		}

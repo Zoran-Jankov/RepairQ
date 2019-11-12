@@ -87,7 +87,7 @@ public class Model extends Property
 	}
 	
 	@Override
-	public boolean isReferencable()
+	public boolean makesReferences()
 	{
 		return true;
 	}
