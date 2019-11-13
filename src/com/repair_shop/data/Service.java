@@ -63,16 +63,4 @@ public class Service extends AbstractDataElement
 	{
 		serviceType.removeReference(this.getID());
 	}
-	
-	@Override
-	public boolean hasUniqueString()
-	{
-		return false;
-	}
-
-	@Override
-	public boolean makesReferences()
-	{
-		return true;
-	}
 }

@@ -17,13 +17,29 @@ public enum DataType
 	BRAND,
 	USER;
 	
-	public static boolean makesReferences(DataType dataType)
+	public static boolean hasUniqueString(DataElement dataElement)
 	{
+		DataType dataType = dataElement.getDataType();
+		
+		return isAProperty(dataType)
+			|| (dataType == SERVICE_TYPE)
+			|| (dataType == CLIENT)
+			|| (dataType == LEGAL_ENTITY)
+			|| (dataType == DEVICE)
+			|| (dataType == MODEL)
+			|| (dataType == USER);
+	}
+	
+	public static boolean makesReferences(DataElement dataElement)
+	{
+		DataType dataType = dataElement.getDataType();
+		
 		return (dataType == NOTIFICATION)
-			|| (dataType == MARKETING_TYPE)
-			|| (dataType == STATUS)
-			|| (dataType == DEVICE_TYPE)
-			|| (dataType == BRAND);
+			|| (dataType == SERVICE)
+			|| (dataType == TICKET)
+			|| (dataType == CLIENT)
+			|| (dataType == DEVICE)
+			|| (dataType == MODEL);
 	}
 	
 	public static boolean isAProperty(DataType dataType)

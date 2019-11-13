@@ -84,16 +84,4 @@ public class Device extends AbstractDataElement
 	{
 		model.removeReference(this.getID());
 	}
-
-	@Override
-	public boolean hasUniqueString()
-	{
-		return true;
-	}
-
-	@Override
-	public boolean makesReferences()
-	{
-		return true;
-	}
 }

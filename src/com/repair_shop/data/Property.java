@@ -65,16 +65,4 @@ public abstract class Property extends AbstractDataElement
 	{
 		return getName();
 	}
-	
-	@Override
-	public boolean hasUniqueString()
-	{
-		return 	true;
-	}
-	
-	@Override
-	public boolean makesReferences()
-	{
-		return false;
-	}
 }

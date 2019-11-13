@@ -47,16 +47,4 @@ public class LegalEntity extends AbstractDataElement
 	{
 		return getTaxIDNumber();
 	}
-
-	@Override
-	public boolean hasUniqueString()
-	{
-		return true;
-	}
-
-	@Override
-	public boolean makesReferences()
-	{
-		return false;
-	}
 }

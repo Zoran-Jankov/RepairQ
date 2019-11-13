@@ -106,16 +106,4 @@ public class User extends Person
 	{
 		return getUsername();
 	}
-
-	@Override
-	public boolean hasUniqueString()
-	{
-		return true;
-	}
-
-	@Override
-	public boolean makesReferences()
-	{
-		return true;
-	}
 }

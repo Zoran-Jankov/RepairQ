@@ -49,12 +49,12 @@ public class IndexedDataTable implements IndexedData
 	{
 		idMap.put(newDataElement.getID(), newDataElement);
 		
-		if(newDataElement.hasUniqueString())
+		if(DataType.hasUniqueString(newDataElement))
 		{
 			uniqueStringMap.put(newDataElement.getUniqueString(), newDataElement);
 		}
 		
-		if(newDataElement.makesReferences())
+		if(DataType.makesReferences(newDataElement))
 		{
 			newDataElement.createReferences();
 		}
@@ -67,12 +67,12 @@ public class IndexedDataTable implements IndexedData
 	{
 		idMap.remove(newDataElement.getID());
 		
-		if(newDataElement.hasUniqueString())
+		if(DataType.hasUniqueString(newDataElement))
 		{
 			uniqueStringMap.remove(newDataElement.getUniqueString());
 		}
 		
-		if(newDataElement.makesReferences())
+		if(DataType.makesReferences(newDataElement))
 		{
 			newDataElement.deleteReferences();
 		}

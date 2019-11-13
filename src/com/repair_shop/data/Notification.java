@@ -81,16 +81,4 @@ public class Notification extends AbstractDataElement
 		ticket.removeReference(this.getID());
 		user.removeReference(this.getID());
 	}
-
-	@Override
-	public boolean hasUniqueString()
-	{
-		return false;
-	}
-
-	@Override
-	public boolean makesReferences()
-	{
-		return true;
-	}
 }

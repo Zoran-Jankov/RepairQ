@@ -85,10 +85,4 @@ public class Model extends Property
 		deviceType.removeReference(this.getID());
 		brand.addReference(this);
 	}
-	
-	@Override
-	public boolean makesReferences()
-	{
-		return true;
-	}
 }

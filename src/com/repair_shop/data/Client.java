@@ -78,16 +78,4 @@ public class Client extends Person
 	{
 		marketing.removeReference(this.getID());
 	}
-	@Override
-	public boolean hasUniqueString()
-	{
-		return true;
-	}
-	@Override
-	public boolean makesReferences()
-	{
-		return true;
-	}
-
-	
 }

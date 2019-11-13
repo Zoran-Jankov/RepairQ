@@ -68,17 +68,11 @@ public abstract class AbstractDataElement implements DataElement
 	}
 	
 	@Override
-	public abstract boolean hasUniqueString();
-	
-	@Override
 	public String getUniqueString()
 	{
 		methodNotSupported();
 		return null;
 	}
-
-	@Override
-	public abstract boolean makesReferences();
 	
 	@Override
 	public void createReferences()

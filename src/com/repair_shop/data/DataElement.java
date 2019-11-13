@@ -18,11 +18,7 @@ public interface DataElement
 	
 	public void removeReference(int id);
 	
-	public boolean hasUniqueString();
-	
 	public String getUniqueString();
-	
-	public boolean makesReferences();
 	
 	public void createReferences();
 	

@@ -68,16 +68,4 @@ public class Ticket extends AbstractDataElement
 		device.removeReference(this.getID());
 		status.removeReference(this.getID());
 	}
-
-	@Override
-	public boolean hasUniqueString()
-	{
-		return false;
-	}
-
-	@Override
-	public boolean makesReferences()
-	{
-		return true;
-	}
 }
