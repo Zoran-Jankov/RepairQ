@@ -1,29 +1,17 @@
 package com.repair_shop.gui;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
 import com.repair_shop.utility.DeviceDialogText;
 
-import java.awt.Font;
 import java.awt.Window;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import javax.swing.SwingConstants;
-
-public class DeviceRegistrationDialog implements InputDialog
+public class DeviceRegistrationDialog extends InputDialog
 {
-	private JDialog window;
-	private JButton btnAddDevice = new JButton(DeviceDialogText.ADD_DEVICE_BUTTON);;
-	private JButton btnCancel = new JButton(DeviceDialogText.CANCEL_BUTTON);
-	private JLabel lblDeviceIDValue = new JLabel("1-23456");
+	private static final long serialVersionUID = -610400028743924499L;
 	public JComboBox<String> cmbDeviceType = new JComboBox<String>();
 	public JComboBox<String> cmbManufacturer = new JComboBox<String>();
 	public JLabel lblModel = new JLabel(DeviceDialogText.MODEL_LABEL);
@@ -37,27 +25,9 @@ public class DeviceRegistrationDialog implements InputDialog
 	 */
 	public DeviceRegistrationDialog(Window owner)
 	{
-		JPanel contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(null);
-		
-		window = new JDialog(owner);
-		window.setTitle(DeviceDialogText.TITLE);
-		window.setResizable(false);
-		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		window.setBounds(100, 100, 300, 420);
-		window.setContentPane(contentPane);
-		window.setVisible(true);
-		
-		JLabel labelDeviceID = new JLabel(DeviceDialogText.DEVICE_ID_LABEL);
-		labelDeviceID.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		labelDeviceID.setBounds(20, 10, 75, 25);
-		contentPane.add(labelDeviceID);
-		
-		lblDeviceIDValue.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDeviceIDValue.setFont(new Font("Segoe UI Symbol", Font.BOLD, 15));
-		lblDeviceIDValue.setBounds(200, 10, 75, 25);
-		contentPane.add(lblDeviceIDValue);
+		super(owner);
+		setTitle(DeviceDialogText.TITLE);
+		setBounds(100, 100, 300, 420);
 	
 		JLabel labelDeviceType = new JLabel(DeviceDialogText.DEVICE_TYPE_LABEL);
 		labelDeviceType.setBounds(20, 50, 255, 15);
@@ -88,37 +58,5 @@ public class DeviceRegistrationDialog implements InputDialog
 		txtSerial.setBounds(20, 290, 255, 25);
 		contentPane.add(txtSerial);
 		txtSerial.setColumns(10);
-	
-		btnAddDevice.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnAddDevice.setBounds(20, 345, 110, 25);
-		contentPane.add(btnAddDevice);
-		
-		btnCancel.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnCancel.setBounds(165, 345, 110, 25);
-		contentPane.add(btnCancel);
-	}
-	
-	@Override
-	public void setIdValue(String id)
-	{
-		lblDeviceIDValue.setText(id);
-	}
-
-	@Override
-	public void setBtnAddActionListener(ActionListener l)
-	{
-		btnAddDevice.addActionListener(l);
-	}
-
-	@Override
-	public void setBtnCancelActionListener(ActionListener l)
-	{
-		btnCancel.addActionListener(l);
-	}
-	
-	@Override
-	public Window getWindow()
-	{
-		return window;
 	}
 }

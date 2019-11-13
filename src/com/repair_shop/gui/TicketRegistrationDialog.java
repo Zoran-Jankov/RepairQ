@@ -26,24 +26,8 @@ public class TicketRegistrationDialog
 	private JLabel lblDevice = new JLabel("Device");
 	private JLabel lblDeviceID = new JLabel("ID");
 	private JComboBox<String> comboBoxDeviceIDValue = new JComboBox<String>();
-	private JLabel lblDeviceType = new JLabel("Type");
-	private JLabel lblTaypeValue = new JLabel("Error");
-	private JLabel lblDeviceManufacturer = new JLabel("Manufacturer");
-	private JLabel lblManufacturerValue = new JLabel("Error");
-	private JLabel lblModel = new JLabel("Model");
-	private JLabel lblModelValue = new JLabel("Error");
-	private JLabel lblSerial = new JLabel("Serial");
-	private JLabel lblSerialValue = new JLabel("Error");
 	private JButton btnAddNewDevice = new JButton("Add New Device");
 	private JLabel lblClient = new JLabel("Client");
-	private JLabel lblClientID = new JLabel("ID");
-	private JLabel comboBoxClientIDValue = new JLabel();
-	private JLabel lblName = new JLabel("Name");
-	private JLabel comboBoxNameValue = new JLabel();
-	private JLabel lblprimePhoneNum = new JLabel("Phone Number");
-	private JComboBox<String> comboBoxPhoneValue = new JComboBox<String>();
-	private JLabel lblEmail = new JLabel("Email");
-	private JLabel comboBoxEmailValue = new JLabel();
 	private JButton btnAddNewClient = new JButton("Add New Client");
 	private JLabel lblTicketDetails = new JLabel("Ticket Details");
 	private JTextPane details = new JTextPane();
@@ -69,7 +53,7 @@ public class TicketRegistrationDialog
 		window.setResizable(false);
 		window.setTitle("Ticket Registration");
 		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		window.setBounds(0, 0, 500, 700);
+		window.setBounds(0, 0, 644, 700);
 		window.setVisible(true);
 		window.setContentPane(contentPane);
 		
@@ -96,30 +80,6 @@ public class TicketRegistrationDialog
 		comboBoxDeviceIDValue.setBounds(159, 160, 85, 22);
 		contentPane.add(comboBoxDeviceIDValue);
 		
-		lblDeviceType.setBounds(36, 189, 63, 14);
-		contentPane.add(lblDeviceType);
-		
-		lblTaypeValue.setBounds(159, 189, 121, 14);
-		contentPane.add(lblTaypeValue);
-		
-		lblDeviceManufacturer.setBounds(36, 214, 100, 14);
-		contentPane.add(lblDeviceManufacturer);
-		
-		lblManufacturerValue.setBounds(159, 214, 121, 14);
-		contentPane.add(lblManufacturerValue);
-		
-		lblModel.setBounds(36, 239, 48, 14);
-		contentPane.add(lblModel);
-		
-		lblModelValue.setBounds(159, 239, 121, 14);
-		contentPane.add(lblModelValue);
-		
-		lblSerial.setBounds(36, 264, 48, 14);
-		contentPane.add(lblSerial);
-		
-		lblSerialValue.setBounds(159, 264, 121, 14);
-		contentPane.add(lblSerialValue);
-		
 		btnAddNewDevice.setBounds(61, 289, 111, 23);
 		contentPane.add(btnAddNewDevice);
 		lblClient.setHorizontalAlignment(SwingConstants.CENTER);
@@ -135,33 +95,6 @@ public class TicketRegistrationDialog
 		textFieldSearch.setBounds(444, 161, 144, 20);
 		contentPane.add(textFieldSearch);
 		textFieldSearch.setColumns(10);
-		
-		lblClientID.setBounds(349, 189, 48, 14);
-		contentPane.add(lblClientID);
-		comboBoxClientIDValue.setText("Error");
-		
-		comboBoxClientIDValue.setBounds(444, 183, 144, 20);
-		contentPane.add(comboBoxClientIDValue);
-		
-		lblName.setBounds(349, 214, 48, 14);
-		contentPane.add(lblName);
-		comboBoxNameValue.setText("Error");
-		
-		comboBoxNameValue.setBounds(444, 208, 144, 20);
-		contentPane.add(comboBoxNameValue);
-		
-		lblprimePhoneNum.setBounds(349, 239, 85, 14);
-		contentPane.add(lblprimePhoneNum);
-		
-		comboBoxPhoneValue.setBounds(444, 236, 144, 20);
-		contentPane.add(comboBoxPhoneValue);
-		
-		lblEmail.setBounds(349, 264, 48, 14);
-		contentPane.add(lblEmail);
-		comboBoxEmailValue.setText("Error");
-		
-		comboBoxEmailValue.setBounds(444, 261, 144, 20);
-		contentPane.add(comboBoxEmailValue);
 		
 		btnAddNewClient.setBounds(400, 289, 121, 23);
 		contentPane.add(btnAddNewClient);

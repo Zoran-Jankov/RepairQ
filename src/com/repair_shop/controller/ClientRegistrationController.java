@@ -20,13 +20,13 @@ public class ClientRegistrationController extends InputDialogController
 		super(owner, dataType);
 		clientGUI = (ClientRegistrationDialog) gui;
 		clientGUI.btnAddNewMarketing.addActionListener(ActionListenerFactory
-	              .openNewWindow(this, DataType.MARKETING_TYPE));
+			     .openNewWindow(this, DataType.MARKETING_TYPE));
 		updateComboBoxes();
 	}
 	
 	public void updateComboBoxes()
 	{
-		clientGUI.cmbMarketing.setModel(CmbModelFactory.getModel(DataType.MARKETING_TYPE));
+	//	clientGUI.cmbMarketing.setModel(CmbModelFactory.getModel(DataType.MARKETING_TYPE));
 	}
 	
 	@Override

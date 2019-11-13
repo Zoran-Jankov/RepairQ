@@ -19,10 +19,8 @@ package com.repair_shop.data;
  * <p>
  * (String) Home Address
  * <p>
- * 
  * Fields:
  * <p>
-
  * (UserType) User Type
  * <p>
  * (String) Username - must be unique
