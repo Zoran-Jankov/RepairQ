@@ -2,8 +2,7 @@ package com.repair_shop.data;
 
 public abstract class Person extends AbstractDataElement
 {
-	private String firstName;
-	private String lastName;
+	private String name;
 	private String primePhoneNumber;
 	private String alternativePhoneNumber;
 	private String email;
@@ -13,9 +12,9 @@ public abstract class Person extends AbstractDataElement
 	 * Getter for persons first name.
 	 * @return (String) Persons first name.
 	 */
-	public String getFirstName()
+	public String getName()
 	{
-		return firstName;
+		return name;
 	}
 	
 	/**
@@ -23,28 +22,9 @@ public abstract class Person extends AbstractDataElement
 	 * @param (String) firstName - Persons first name.
 	 */
 
-	public void setFirstName(String firstName)
+	public void setName(String name)
 	{
-		this.firstName = firstName;
-
-	}
-	
-	/**
-	 * Getter for persons last name.
-	 * @return (String) Persons last name.
-	 */
-	public String getLastName()
-	{
-		return lastName;
-	}
-	
-	/**
-	 * Setter for persons last name.
-	 * @param (String) lastName - Persons last name.
-	 */
-	public void setLastName(String lastName)
-	{
-		this.lastName = lastName;
+		this.name = name;
 	}
 	
 	/**

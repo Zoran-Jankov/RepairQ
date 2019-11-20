@@ -21,13 +21,9 @@ public enum DataType
 	{
 		DataType dataType = dataElement.getDataType();
 		
-		return isAProperty(dataType)
-			|| (dataType == SERVICE_TYPE)
-			|| (dataType == CLIENT)
-			|| (dataType == LEGAL_ENTITY)
-			|| (dataType == DEVICE)
-			|| (dataType == MODEL)
-			|| (dataType == USER);
+		return !(dataType == NOTIFICATION
+			  || dataType == SERVICE
+			  || dataType == TICKET);
 	}
 	
 	public static boolean makesReferences(DataElement dataElement)
