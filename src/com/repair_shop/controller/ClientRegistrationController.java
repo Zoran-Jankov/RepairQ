@@ -8,6 +8,7 @@ import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.Marketing;
 import com.repair_shop.gui.ClientRegistrationDialog;
+import com.repair_shop.gui.PersonRegistrationDialog;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.ClientDialogText;
 import com.repair_shop.utility.CmbModelFactory;

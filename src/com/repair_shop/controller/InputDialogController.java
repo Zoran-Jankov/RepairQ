@@ -47,6 +47,6 @@ public abstract class InputDialogController implements WindowController
 	@Override
 	public Window getWindow()
 	{
-		return gui.getWindow();
+		return gui;
 	}
 }
