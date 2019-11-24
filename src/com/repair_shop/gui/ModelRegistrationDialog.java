@@ -11,7 +11,7 @@ public class ModelRegistrationDialog extends JDialog implements InputDialog
 {
 	private static final long serialVersionUID = 9140297212046754823L;
 	private IdPanel idPanel = new IdPanel();
-	private ModelRegistrationPanel modelPanel = new ModelRegistrationPanel();
+	private ModelPanel modelPanel = new ModelPanel();
 	private PropertyPanel propertyPanel = new PropertyPanel();
 	private InputButtonPanel buttonPanel = new InputButtonPanel();
 
