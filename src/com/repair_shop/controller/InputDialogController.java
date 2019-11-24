@@ -20,9 +20,9 @@ public abstract class InputDialogController implements WindowController
 	{
 		this.dataType = dataType;
 		gui = InputDialogFactory.getWindow(owner.getWindow(), dataType);
-		gui.setIdValue(IDGenerator.formatRegularID(id));
-		gui.setBtnAddActionListener(ActionListenerFactory.saveData(this));
-		gui.setBtnCancelActionListener(ActionListenerFactory.closeWindow(this));
+		gui.getIdPanel().setIdValue(IDGenerator.formatRegularID(id));
+		gui.getInputButtonPanel().setBtnAddActionListener(ActionListenerFactory.saveData(this));
+		gui.getInputButtonPanel().setBtnCancelActionListener(ActionListenerFactory.closeWindow(this));
 	}
 
 	public void trySavingDataElement()
@@ -43,10 +43,4 @@ public abstract class InputDialogController implements WindowController
 	protected abstract DataElement createDataElement();
 	
 	protected abstract void showInputErrors();
-	
-	@Override
-	public Window getWindow()
-	{
-		return gui;
-	}
 }

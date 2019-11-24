@@ -6,7 +6,6 @@ public final class LabelFactory
 {
 	/**
 	 * @wbp.factory
-	 * @wbp.factory.parameter.source text "Name"
 	 * @wbp.factory.parameter.source font new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 13)
 	 */
 	public static JLabel createJLabel(String text, Font font)

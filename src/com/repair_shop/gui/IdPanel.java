@@ -1,6 +1,7 @@
 package com.repair_shop.gui;
 
 import javax.swing.JPanel;
+
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import java.awt.Font;

@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
 import java.awt.Font;
 
 public class PersonalInfoPanel extends JPanel
@@ -48,6 +49,30 @@ public class PersonalInfoPanel extends JPanel
 		
 		txtAddress = TextFieldFactory.createJTextField(10);
 		add(txtAddress, "cell 2 4,grow");
-
+	}
+	
+	public String getPersonName()
+	{
+		return txtName.getText();
+	}
+	
+	public String getPrimePoneNumber()
+	{
+		return txtPrimePhone.getText();
+	}
+	
+	public String getAltPoneNumber()
+	{
+		return txtAltPhone.getText();
+	}
+	
+	public String getEmail()
+	{
+		return txtAltPhone.getText();
+	}
+	
+	public String getAddress()
+	{
+		return txtAddress.getText();
 	}
 }

@@ -4,12 +4,13 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import net.miginfocom.swing.MigLayout;
+import java.awt.Font;
 
 public class InputButtonPanel extends JPanel
 {
 	private static final long serialVersionUID = -454697132541346234L;
-	private JButton btnAdd = new JButton("Add");
-	private JButton btnCancel = new JButton("Cancel");
+	private JButton btnAdd = ButtonFactory.createJButton("Add", new Font("Tahoma", Font.PLAIN, 13));
+	private JButton btnCancel = ButtonFactory.createJButton("Cancel", new Font("Tahoma", Font.PLAIN, 13));
 
 	public InputButtonPanel()
 	{
@@ -18,7 +19,7 @@ public class InputButtonPanel extends JPanel
 		add(btnCancel, "cell 1 0,grow");
 	}
 	
-	public void setBtnAddActionListerner(ActionListener listener)
+	public void setBtnAddActionListener(ActionListener listener)
 	{
 		btnAdd.addActionListener(listener);
 	}
