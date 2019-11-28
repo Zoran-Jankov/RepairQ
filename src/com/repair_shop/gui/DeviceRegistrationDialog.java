@@ -10,7 +10,7 @@ public class DeviceRegistrationDialog extends JDialog implements InputDialog
 {
 	private static final long serialVersionUID = -4737312459407759293L;
 	private IdPanel idPanel = new IdPanel();
-	private DevicePanel devicePanel = new DevicePanel();
+	private DeviceRegistrationPanel devicePanel = new DeviceRegistrationPanel();
 	private InputButtonPanel buttonPanel = new InputButtonPanel();
 	
 	public DeviceRegistrationDialog(Window owner)
