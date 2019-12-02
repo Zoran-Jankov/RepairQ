@@ -6,7 +6,6 @@ import net.miginfocom.swing.MigLayout;
 public class TicketRegistrationDialog extends JDialog
 {
 	private static final long serialVersionUID = -9127229519123602813L;
-	
 	private IdPanel ticketIDPanel = new IdPanel();
 	private SelectionPanel clientPanel = new SelectionPanel();
 	private SelectionPanel devicePanel = new SelectionPanel();
