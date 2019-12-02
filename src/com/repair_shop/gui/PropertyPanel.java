@@ -31,7 +31,6 @@ public class PropertyPanel extends JPanel
 	public String getPropertyName()
 	{
 		return txtName.getText();
-		
 	}
 	
 	public String getDescription()

@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 
+import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 
@@ -19,17 +20,25 @@ public class MarketingPanel extends JPanel
 	public MarketingPanel()
 	{
 		setLayout(new MigLayout("", "[][grow,fill][][][][][][][][][]", "[fill]"));
-		
 		JLabel lblMarketingInformation = LabelFactory.createJLabel("Marketing Information", new Font("Tahoma", Font.PLAIN, 13));
 		add(lblMarketingInformation, "cell 0 0,alignx trailing,growy");
 		add(cmbMarketing, "cell 1 0 9 1,grow");
 		add(btnNewMarketing, "cell 10 0,growy");
 	}
 	
-	public void updateMarketingInfo(String newMarketing)
+	public String getMarketing()
 	{
-		cmbMarketing.addItem(newMarketing);
-		cmbMarketing.setSelectedItem(newMarketing);
+		return (String) cmbMarketing.getSelectedItem();
+	}
+	
+	public void setMarketing(String item)
+	{
+		cmbMarketing.setSelectedItem(item);
+	}
+	
+	public void setMarketingCmbModel(ComboBoxModel<String> model)
+	{
+		cmbMarketing.setModel(model);
 	}
 	
 	public void setBtnMarketingActionListener(ActionListener listener)

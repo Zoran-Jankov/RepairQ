@@ -4,9 +4,11 @@ import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
-
+import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
 
 public class DeviceRegistrationPanel extends JPanel
@@ -43,5 +45,60 @@ public class DeviceRegistrationPanel extends JPanel
 		add(lblSerial, "cell 0 4,growy");
 		
 		add(txtSerial, "cell 1 4,grow");
+	}
+	
+	public String getDeviceType()
+	{
+		return (String) cmbDeviceType.getSelectedItem();
+	}
+	
+	public void setDeviceType(String item)
+	{
+		cmbDeviceType.setSelectedItem(item);
+	}
+	
+	public void setDeviceTypeCmbModel(ComboBoxModel<String> model)
+	{
+		cmbDeviceType.setModel(model);
+	}
+	
+	public String getBrand()
+	{
+		return (String) cmbBrand.getSelectedItem();
+	}
+	
+	public void setBrand(String item)
+	{
+		cmbBrand.setSelectedItem(item);
+	}
+	
+	public void setBrandCmbModel(ComboBoxModel<String> model)
+	{
+		cmbBrand.setModel(model);
+	}
+	
+	public String getModel()
+	{
+		return (String) cmbModel.getSelectedItem();
+	}
+	
+	public void setModel(String item)
+	{
+		cmbModel.setSelectedItem(item);
+	}
+	
+	public void setModelCmbModel(ComboBoxModel<String> model)
+	{
+		cmbModel.setModel(model);
+	}
+	
+	public String getSerial()
+	{
+		return txtSerial.getText();
+	}
+	
+	public void setBtnNewModelActionListener(ActionListener listener)
+	{
+		btnNewModel.addActionListener(listener);
 	}
 }

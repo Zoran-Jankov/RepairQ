@@ -4,11 +4,12 @@ import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
+import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class SelectionPanel extends JPanel
 {
@@ -26,10 +27,6 @@ public class SelectionPanel extends JPanel
 		add(lblDataElement, "cell 0 0 2 1,grow");
 		
 		add(cmbDataElement, "cell 0 1,grow");
-		btnNewDataElement.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		
 		add(btnNewDataElement, "cell 1 1,grow");
 		
@@ -37,5 +34,23 @@ public class SelectionPanel extends JPanel
 		add(lblDataElementDetails, "cell 0 2 2 1,grow");
 	}
 	
+	public String getDataElement()
+	{
+		return (String) cmbDataElement.getSelectedItem();
+	}
 	
+	public void setDataElement(String item)
+	{
+		cmbDataElement.setSelectedItem(item);
+	}
+	
+	public void setDataElementCmbModel(ComboBoxModel<String> model)
+	{
+		cmbDataElement.setModel(model);
+	}
+	
+	public void setBtnNewDataElement(ActionListener listener)
+	{
+		btnNewDataElement.addActionListener(listener);
+	}
 }

@@ -1,7 +1,6 @@
 package com.repair_shop.gui;
 
 import java.awt.Window;
-import java.awt.event.ActionListener;
 
 import javax.swing.JDialog;
 
@@ -26,20 +25,24 @@ public class ModelRegistrationDialog extends JDialog implements InputDialog
 	}
 
 	@Override
-	public void setIdValue(String id)
+	public IdPanel getIdPanel()
 	{
-		
+		return idPanel;
+	}
+	
+	public ModelRegistrationPanel getModelPanel()
+	{
+		return modelPanel;
+	}
+
+	public PropertyPanel getPropertyPanel()
+	{
+		return propertyPanel;
 	}
 
 	@Override
-	public void setBtnAddActionListener(ActionListener listener)
+	public InputButtonPanel getInputButtonPanel()
 	{
-		
-	}
-
-	@Override
-	public void setBtnCancelActionListener(ActionListener listener)
-	{
-		
+		return buttonPanel;
 	}
 }

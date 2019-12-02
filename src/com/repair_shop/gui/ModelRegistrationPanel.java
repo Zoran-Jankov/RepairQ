@@ -6,7 +6,10 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 
 import java.awt.Font;
+import java.awt.event.ActionListener;
+
 import javax.swing.JComboBox;
+import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
 
 public class ModelRegistrationPanel extends JPanel
@@ -28,5 +31,45 @@ public class ModelRegistrationPanel extends JPanel
 		add(lblBrand, "cell 0 1,growy");
 		add(cmbBrand, "cell 1 1,grow");
 		add(btnNewBrand, "cell 2 1,growx");
+	}
+	
+	public String getDeviceType()
+	{
+		return (String) cmbDeviceType.getSelectedItem();
+	}
+	
+	public void setDeviceType(String item)
+	{
+		cmbDeviceType.setSelectedItem(item);
+	}
+	
+	public void setDeviceTypeCmbModel(ComboBoxModel<String> model)
+	{
+		cmbDeviceType.setModel(model);
+	}
+	
+	public void setBtnNewDeviceTypeActionlistener(ActionListener listener)
+	{
+		btnNewDeviceType.addActionListener(listener);
+	}
+	
+	public String getBrand()
+	{
+		return (String) cmbBrand.getSelectedItem();
+	}
+	
+	public void setBrand(String item)
+	{
+		cmbBrand.setSelectedItem(item);
+	}
+	
+	public void setBrandCmbModel(ComboBoxModel<String> model)
+	{
+		cmbBrand.setModel(model);
+	}
+	
+	public void setBtnNewBrandActionlistener(ActionListener listener)
+	{
+		btnNewBrand.addActionListener(listener);
 	}
 }

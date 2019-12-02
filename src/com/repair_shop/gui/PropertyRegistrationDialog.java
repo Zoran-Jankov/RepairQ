@@ -1,7 +1,6 @@
 package com.repair_shop.gui;
 
 import java.awt.Window;
-import java.awt.event.ActionListener;
 
 import javax.swing.JDialog;
 
@@ -10,8 +9,8 @@ import net.miginfocom.swing.MigLayout;
 public class PropertyRegistrationDialog extends JDialog implements InputDialog
 {
 	private static final long serialVersionUID = 6674166830353586592L;
-	private PropertyPanel propertyPanel = new PropertyPanel();
 	private IdPanel idPanel = new IdPanel();
+	private PropertyPanel propertyPanel = new PropertyPanel();
 	private InputButtonPanel buttonPanel = new InputButtonPanel();
 	
 	public PropertyRegistrationDialog(Window owner)
@@ -22,35 +21,21 @@ public class PropertyRegistrationDialog extends JDialog implements InputDialog
 		getContentPane().add(propertyPanel, "cell 0 1,grow");
 		getContentPane().add(buttonPanel, "cell 0 2,grow");
 	}
+
+	@Override
+	public IdPanel getIdPanel()
+	{
+		return idPanel;
+	}
 	
-	public String getProperyName()
+	public PropertyPanel getPropertyPanel()
 	{
-		return propertyPanel.getPropertyName();
-	}
-	
-	public String getDescription()
-	{
-		return propertyPanel.getDescription();
+		return propertyPanel;
 	}
 
 	@Override
-	public void setIdValue(String id)
+	public InputButtonPanel getInputButtonPanel()
 	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setBtnAddActionListener(ActionListener listener)
-	{
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setBtnCancelActionListener(ActionListener listener)
-	{
-		// TODO Auto-generated method stub
-		
+		return buttonPanel;
 	}
 }
