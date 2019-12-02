@@ -8,7 +8,6 @@ import com.repair_shop.gui.ClientRegistrationDialog;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.CmbModelFactory;
 
-
 public class ClientRegistrationController extends InputDialogController
 {
 	private ClientRegistrationDialog clientGUI;
