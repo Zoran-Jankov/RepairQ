@@ -52,7 +52,7 @@ public class ClientRegistrationController extends InputDialogController
 
 	private boolean isMarketingSelected()
 	{
-		return !("".equals(clientGUI.getMarketingPanel().getMarketing()));
+		return clientGUI.getMarketingPanel().getMarketing() != "";
 	}
 
 	@Override

@@ -35,8 +35,6 @@ package com.repair_shop.data;
 
 public class User extends Person
 {
-	
-
 	private UserType userType;
 	private String username;
 	private char[] password;
@@ -50,7 +48,7 @@ public class User extends Person
 	super(id, name, primePhoneNumber, alternativePhoneNumber, email, address);
 	
 }
-	
+
 	@Override
 	public DataType getDataType()
 	{
