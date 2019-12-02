@@ -14,7 +14,7 @@ public class InputButtonPanel extends JPanel
 
 	public InputButtonPanel()
 	{
-		setLayout(new MigLayout("", "[225px][225px]", "[30px:n]"));
+		setLayout(new MigLayout("", "[225px,grow][225px,grow]", "[30px:n]"));
 		add(btnAdd, "cell 0 0,grow");
 		add(btnCancel, "cell 1 0,grow");
 	}
