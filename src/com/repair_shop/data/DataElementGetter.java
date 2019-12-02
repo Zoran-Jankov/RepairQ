@@ -32,9 +32,9 @@ public class DataElementGetter
 		return (Marketing) DataManager.getByUniqueString(DataType.MARKETING_TYPE, name);
 	}
 	
-	public static DataElement getModel(String name)
+	public static Model getModel(String name)
 	{
-		return DataManager.getByUniqueString(DataType.MODEL, name);
+		return (Model)DataManager.getByUniqueString(DataType.MODEL, name);
 	}
 	
 	public static DataElement getNotification(int id)

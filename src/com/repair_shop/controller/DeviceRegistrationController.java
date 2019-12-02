@@ -1,16 +1,12 @@
 package com.repair_shop.controller;
 
-import java.awt.Color;
-import java.awt.Window;
-
+import com.repair_shop.data.DataElementGetter;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.Device;
-import com.repair_shop.data.Model;
 import com.repair_shop.gui.DeviceRegistrationDialog;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.CmbModelFactory;
-import com.repair_shop.utility.DeviceDialogText;
 
 public class DeviceRegistrationController extends InputDialogController
 {
@@ -42,9 +38,9 @@ public class DeviceRegistrationController extends InputDialogController
 		Device newDevice = new Device();
 		
 		newDevice.setId(id);
-		newDevice.setSerial(deviceGUI.txtSerial.getText());
-		newDevice.setModel((Model) DataManager.devicesDataTable		
-				 .getByUniqueString((String) deviceGUI.cmbModel.getSelectedItem()));
+		newDevice.setSerial(deviceGUI.getDeviceRegistrationPanel().getSerial());
+		newDevice.setModel(DataElementGetter.getModel(deviceGUI
+				 .getDeviceRegistrationPanel().getModel()));
 		
 		return newDevice;
 	}
@@ -53,17 +49,17 @@ public class DeviceRegistrationController extends InputDialogController
 	protected  boolean isInputValid()
 	{
 		return isModelSelected()
-			&& isSerialNumberOK();
+			&& isSerialNumberValid();
 	}
 
 	private  boolean isModelSelected()
 	{
-		return deviceGUI.cmbModel.getSelectedItem() != null;
+		return !("".equals(deviceGUI.getDeviceRegistrationPanel().getModel()));
 	}
 
-	private  boolean isSerialNumberOK()
+	private  boolean isSerialNumberValid()
 	{
-		String serial = deviceGUI.txtSerial.getText();
+		String serial = deviceGUI.getDeviceRegistrationPanel().getSerial();
 		
 		return !("".equals(serial) || DataManager.devicesDataTable.uniqueStringCollision(serial));
 	}
@@ -77,15 +73,14 @@ public class DeviceRegistrationController extends InputDialogController
 	
 	private void checkSerialNumber()
 	{
-		if(isSerialNumberOK())
+		if(isSerialNumberValid())
 		{
-			deviceGUI.lblSerial.setText(DeviceDialogText.SERIAL_NUMBER_LABEL);
-			deviceGUI.txtSerial.setBackground(Color.WHITE);
+			deviceGUI.getDeviceRegistrationPanel().showSerialDefault();
 		}
 		else
 		{
-			deviceGUI.lblSerial.setText(DeviceDialogText.SERIAL_NUMBER_ERROR_MESSAGE);
-			deviceGUI.txtSerial.setBackground(Color.YELLOW);
+			deviceGUI.getDeviceRegistrationPanel().showSerialError();
+			
 		}
 	}
 
@@ -93,13 +88,12 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		if(isModelSelected())
 		{
-			deviceGUI.lblModel.setText(DeviceDialogText.MODEL_LABEL);
-			deviceGUI.cmbModel.setBackground(Color.WHITE);
+			deviceGUI.getDeviceRegistrationPanel().showModelDefault();
+			
 		}
 		else
 		{
-			deviceGUI.lblModel.setText(DeviceDialogText.MODEL_ERROR_MESSAGE);
-			deviceGUI.cmbModel.setBackground(Color.YELLOW);
+			deviceGUI.getDeviceRegistrationPanel().showModelError();
 		}
 	}
 }
