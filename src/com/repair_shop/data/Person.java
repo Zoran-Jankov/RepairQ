@@ -8,20 +8,6 @@ public abstract class Person extends AbstractDataElement
 	private String email;
 	private String address;
 	
-	protected Person(int id, String name, 
-				  String primePhoneNumber,
-				  String alternativePhoneNumber,
-				  String email,
-				  String address)
-	{
-		super(id);
-		setName(name);
-		setPrimePhoneNumber(primePhoneNumber);
-		setAlternativePhoneNumber(alternativePhoneNumber);
-		setEmail(email);
-		setAddress(address);
-	}
-	
 	/**
 	 * Getter for persons first name.
 	 * @return (String) Persons first name.

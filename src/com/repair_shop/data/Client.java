@@ -35,17 +35,6 @@ public class Client extends Person
 {
 	private Marketing marketing;
 	
-	public Client(int id, String name, 
-			      String primePhoneNumber, 
-			      String alternativePhoneNumber, 
-			      String email, 
-			      String address,
-			      Marketing marketing)
-{
-	super(id, name, primePhoneNumber, alternativePhoneNumber, email, address);
-	setMarketing(marketing);
-}
-	
 	@Override
 	public DataType getDataType()
 	{

@@ -4,11 +4,6 @@ import java.sql.Timestamp;
 
 public class Notification extends AbstractDataElement
 {
-	protected Notification(int id)
-	{
-		super(id);
-	}
-
 	private NotificationType notificationType;
 	private Ticket ticket;
 	private User user;

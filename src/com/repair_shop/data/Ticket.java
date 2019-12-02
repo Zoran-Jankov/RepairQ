@@ -2,18 +2,10 @@ package com.repair_shop.data;
 
 public class Ticket extends AbstractDataElement
 {
-	
-
 	private int priority;
 	private Client client;
 	private Device device;
 	private Status status;
-	
-	protected Ticket(int id)
-	{
-		super(id);
-		// TODO Auto-generated constructor stub
-	}
 	
 	@Override
 	public DataType getDataType()

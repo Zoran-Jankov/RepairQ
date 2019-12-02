@@ -2,16 +2,19 @@ package com.repair_shop.data;
 
 public class Service extends AbstractDataElement
 {
-	
-
+	private int price;
 	private Notification notification;
 	private Ticket ticket;
 	private ServiceType serviceType;
-	private int price;
 	
-	protected Service(int id)
+	public double getPrice()
 	{
-		super(id);
+		return price;
+	}
+	
+	public void setPrice(int price)
+	{
+		this.price = price;
 	}
 	
 	@Override
@@ -48,16 +51,6 @@ public class Service extends AbstractDataElement
 	public void setServiceType(ServiceType serviceType)
 	{
 		this.serviceType = serviceType;
-	}
-	
-	public double getPrice()
-	{
-		return price;
-	}
-	
-	public void setPrice(int price)
-	{
-		this.price = price;
 	}
 	
 	@Override

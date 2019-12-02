@@ -6,17 +6,6 @@ public class LegalEntity extends AbstractDataElement
 	private String taxIDNumber;
 	private String bankAccount;
 	
-	public LegalEntity(int id,
-					   Client client, 
-					   String taxIDNumber, 
-					   String bankAccount)
-	{
-		super(id);
-		setClient(client);
-		setTaxIDNumber(taxIDNumber);
-		setBankAccount(bankAccount);
-	}
-	
 	@Override
 	public DataType getDataType()
 	{

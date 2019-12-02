@@ -58,12 +58,17 @@ public class ClientRegistrationController extends InputDialogController
 	@Override
 	protected Client createDataElement()
 	{
-		return new Client(clientGUI.getPersonalInfoPanel().getName(), 
-						  clientGUI.getPersonalInfoPanel().getPrimePhoneNumber(), 
-						  clientGUI.getPersonalInfoPanel().getAltPoneNumber(), 
-						  clientGUI.getPersonalInfoPanel().getEmail(), 
-						  clientGUI.getPersonalInfoPanel().getAddress(), 
-						  DataElementGetter.getMarketing(clientGUI.getMarketingPanel().getMarketing()));
+		Client newClient= new Client();
+		
+		newClient.setId(id);
+		newClient.setName(clientGUI.getPersonalInfoPanel().getName());
+		newClient.setPrimePhoneNumber(clientGUI.getPersonalInfoPanel().getPrimePhoneNumber());
+		newClient.setAlternativePhoneNumber(clientGUI.getPersonalInfoPanel().getAltPoneNumber());
+		newClient.setEmail(clientGUI.getPersonalInfoPanel().getEmail());
+		newClient.setAddress(clientGUI.getPersonalInfoPanel().getAddress());
+		newClient.setMarketing(DataElementGetter.getMarketing(clientGUI.getMarketingPanel().getMarketing()));
+		
+		return newClient;
 	}
 	
 	@Override
