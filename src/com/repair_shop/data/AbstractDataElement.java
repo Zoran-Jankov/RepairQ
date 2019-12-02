@@ -23,6 +23,11 @@ public abstract class AbstractDataElement implements DataElement
 	private int id;
 	private HashMap<Integer, DataElement> referenceMap = new HashMap<Integer, DataElement>();
 	
+	protected AbstractDataElement(int id)
+	{
+		setId(id);
+	}
+	
 	/**
 	 * Getter for data element ID number.
 	 * @return (int) Data element ID number.

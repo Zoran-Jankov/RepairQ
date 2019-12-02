@@ -24,6 +24,14 @@ public abstract class Property extends AbstractDataElement
 	private String name;
 	private String description;
 	
+	protected Property(int id,
+					   String name, 
+					   String description)
+	{
+		super(id);
+		setName(name);
+		setDescription(description);
+	}
 	/**
 	 * Getter for general property name.
 	 * @return General property name.

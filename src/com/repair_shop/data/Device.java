@@ -25,6 +25,13 @@ public class Device extends AbstractDataElement
 	private Model model;
 	private String serial;
 	
+	public Device(int id, Model model, String serial)
+	{
+		super(id);
+		setModel(model);
+		setSerial(serial);
+	}
+	
 	@Override
 	public DataType getDataType()
 	{

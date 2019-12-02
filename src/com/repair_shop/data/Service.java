@@ -2,10 +2,17 @@ package com.repair_shop.data;
 
 public class Service extends AbstractDataElement
 {
+	
+
 	private Notification notification;
 	private Ticket ticket;
 	private ServiceType serviceType;
 	private int price;
+	
+	protected Service(int id)
+	{
+		super(id);
+	}
 	
 	@Override
 	public DataType getDataType()

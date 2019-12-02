@@ -2,6 +2,11 @@ package com.repair_shop.data;
 
 public class ServiceType extends Property
 {
+	protected ServiceType(int id, String name, String description)
+	{
+		super(id, name, description);
+	}
+
 	private int defaultPrice;
 	
 	@Override

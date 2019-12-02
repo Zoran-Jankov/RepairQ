@@ -41,13 +41,13 @@ public class User extends Person
 	private String username;
 	private char[] password;
 	
-	public User(String name, 
+	public User(int id, String name, 
 				String primePhoneNumber, 
 				String alternativePhoneNumber, 
 				String email, 
 				String address)
 {
-	super(name, primePhoneNumber, alternativePhoneNumber, email, address);
+	super(id, name, primePhoneNumber, alternativePhoneNumber, email, address);
 	
 }
 	

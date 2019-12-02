@@ -27,6 +27,11 @@ package com.repair_shop.data;
 
 public class Model extends Property
 {
+	protected Model(int id, String name, String description)
+	{
+		super(id, name, description);
+	}
+
 	private DeviceType deviceType;
 	private Brand brand;
 	
