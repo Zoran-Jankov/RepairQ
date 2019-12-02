@@ -16,8 +16,8 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		super(owner, dataType);
 		deviceGUI = (DeviceRegistrationDialog) gui;
-		deviceGUI.getDeviceRegistrationPanel().setDeviceTypeCmbModel(CmbModelFactory.getModel(dataType));
-		deviceGUI.getDeviceRegistrationPanel().setBrandCmbModel(CmbModelFactory.getModel(dataType));
+		deviceGUI.getDeviceRegistrationPanel().setDeviceTypeCmbModel(CmbModelFactory.getModel(DataType.DEVICE_TYPE));
+		deviceGUI.getDeviceRegistrationPanel().setBrandCmbModel(CmbModelFactory.getModel(DataType.BRAND));
 		deviceGUI.getDeviceRegistrationPanel()
 				 .setBtnNewModelActionListener(ActionListenerFactory
 				 .openNewWindow(this,DataType.MODEL));

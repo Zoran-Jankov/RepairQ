@@ -6,6 +6,7 @@ import com.repair_shop.data.DataType;
 import com.repair_shop.data.DeviceType;
 import com.repair_shop.data.Model;
 import com.repair_shop.gui.ModelRegistrationDialog;
+import com.repair_shop.utility.CmbModelFactory;
 
 public class ModelRegistrationContoller extends InputDialogController
 {
@@ -15,6 +16,9 @@ public class ModelRegistrationContoller extends InputDialogController
 	{
 		super(owner, dataType);
 		modelGUI = (ModelRegistrationDialog) gui;
+		modelGUI.getModelPanel().setDeviceTypeCmbModel(CmbModelFactory.getModel(DataType.DEVICE_TYPE));
+		modelGUI.getModelPanel().setBrandCmbModel(CmbModelFactory.getModel(DataType.BRAND));
+		//TODO Finish ModelRegistrationContoller constructor
 	}
 
 	@Override
@@ -22,7 +26,7 @@ public class ModelRegistrationContoller extends InputDialogController
 	{
 		return isDeviceTypeSelected()
 			&& isManufacturerSelected()
-			&& isModelNameOK();
+			&& isModelNameValid();
 	}
 
 	private boolean isDeviceTypeSelected()
@@ -36,7 +40,7 @@ public class ModelRegistrationContoller extends InputDialogController
 		return modelGUI.cmbDeviceType.getSelectedItem() != null;
 	}
 	
-	private boolean isModelNameOK()
+	private boolean isModelNameValid()
 	{
 		String name = modelGUI.txtModel.getText();
 		return !("".equals(name) || DataManager.modelsDataTable
