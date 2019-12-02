@@ -27,9 +27,9 @@ public class DataElementGetter
 		return DataManager.getByUniqueString(DataType.LEGAL_ENTITY, taxID);
 	}
 	
-	public static DataElement getMarketing(String name)
+	public static Marketing getMarketing(String name)
 	{
-		return DataManager.getByUniqueString(DataType.MARKETING_TYPE, name);
+		return (Marketing) DataManager.getByUniqueString(DataType.MARKETING_TYPE, name);
 	}
 	
 	public static DataElement getModel(String name)

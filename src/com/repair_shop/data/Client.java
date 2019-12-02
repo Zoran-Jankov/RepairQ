@@ -33,6 +33,17 @@ package com.repair_shop.data;
 
 public class Client extends Person
 {
+	public Client(String name, 
+				  String primePhoneNumber, 
+				  String alternativePhoneNumber, 
+				  String email, 
+				  String address,
+				  Marketing marketing)
+	{
+		super(name, primePhoneNumber, alternativePhoneNumber, email, address);
+		setMarketing(marketing);
+	}
+
 	private Marketing marketing;
 	
 	@Override

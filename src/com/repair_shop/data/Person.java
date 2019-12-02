@@ -8,6 +8,19 @@ public abstract class Person extends AbstractDataElement
 	private String email;
 	private String address;
 	
+	public Person(String name, 
+				  String primePhoneNumber,
+				  String alternativePhoneNumber,
+				  String email,
+				  String address)
+	{
+		setName(name);
+		setPrimePhoneNumber(primePhoneNumber);
+		setAlternativePhoneNumber(alternativePhoneNumber);
+		setEmail(email);
+		setAddress(address);
+	}
+	
 	/**
 	 * Getter for persons first name.
 	 * @return (String) Persons first name.
@@ -40,9 +53,9 @@ public abstract class Person extends AbstractDataElement
 	 * Setter for persons primary phone number.
 	 * @param (String) primePhoneNum - Persons primary phone number.
 	 */
-	public void setPrimePhoneNumber(String primePhoneNum)
+	public void setPrimePhoneNumber(String primePhoneNumber)
 	{
-		this.primePhoneNumber = primePhoneNum;
+		this.primePhoneNumber = primePhoneNumber;
 	}
 
 	/**

@@ -5,6 +5,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import java.awt.Color;
 import java.awt.Font;
 
 public class PersonalInfoPanel extends JPanel
@@ -56,7 +57,7 @@ public class PersonalInfoPanel extends JPanel
 		return txtName.getText();
 	}
 	
-	public String getPrimePoneNumber()
+	public String getPrimePhoneNumber()
 	{
 		return txtPrimePhone.getText();
 	}
@@ -74,5 +75,25 @@ public class PersonalInfoPanel extends JPanel
 	public String getAddress()
 	{
 		return txtAddress.getText();
+	}
+	
+	public void showNameDefault()
+	{
+		txtName.setBackground(Color.WHITE);
+	}
+	
+	public void showNameError()
+	{
+		txtName.setBackground(Color.YELLOW);
+	}
+	
+	public void showPhoneDefault()
+	{
+		txtName.setBackground(Color.WHITE);
+	}
+	
+	public void showPhoneError()
+	{
+		txtName.setBackground(Color.YELLOW);
 	}
 }

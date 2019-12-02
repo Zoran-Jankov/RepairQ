@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
+
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 
@@ -44,5 +46,15 @@ public class MarketingPanel extends JPanel
 	public void setBtnMarketingActionListener(ActionListener listener)
 	{
 		btnNewMarketing.addActionListener(listener);
+	}
+	
+	public void showMarketingDefault()
+	{
+		cmbMarketing.setBackground(Color.WHITE);
+	}
+	
+	public void showMarketingError()
+	{
+		cmbMarketing.setBackground(Color.YELLOW);
 	}
 }

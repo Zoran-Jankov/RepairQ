@@ -3,6 +3,8 @@ package com.repair_shop.gui;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
+
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
@@ -36,5 +38,15 @@ public class PropertyPanel extends JPanel
 	public String getDescription()
 	{
 		return txtDescription.getText();
+	}
+	
+	public void showNameDefault()
+	{
+		txtName.setBackground(Color.WHITE);
+	}
+	
+	public void showNameError()
+	{
+		txtName.setBackground(Color.YELLOW);
 	}
 }

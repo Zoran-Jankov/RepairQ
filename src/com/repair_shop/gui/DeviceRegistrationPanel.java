@@ -3,6 +3,8 @@ package com.repair_shop.gui;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
+
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 
@@ -37,7 +39,7 @@ public class DeviceRegistrationPanel extends JPanel
 		JLabel lblModel = LabelFactory.createJLabel("Model", new Font("Tahoma", Font.PLAIN, 13));
 		add(lblModel, "cell 0 2,growy");
 		
-		add(cmbModel, "cell 1 2,growx");
+		add(cmbModel, "cell 1 2,grow");
 		
 		add(btnNewModel, "cell 1 3,alignx center,growy");
 		
@@ -101,4 +103,45 @@ public class DeviceRegistrationPanel extends JPanel
 	{
 		btnNewModel.addActionListener(listener);
 	}
+	
+	public void showDeviceTypeDefault()
+	{
+		cmbDeviceType.setBackground(Color.WHITE);
+	}
+	
+	public void showDeviceTypeError()
+	{
+		cmbDeviceType.setBackground(Color.YELLOW);
+	}
+	
+	public void showBrandDefault()
+	{
+		cmbBrand.setBackground(Color.WHITE);
+	}
+	
+	public void showBrandError()
+	{
+		cmbBrand.setBackground(Color.YELLOW);
+	}
+	
+	public void showModelDefault()
+	{
+		cmbModel.setBackground(Color.WHITE);
+	}
+	
+	public void showModelError()
+	{
+		cmbModel.setBackground(Color.YELLOW);
+	}
+	
+	public void showSerialDefault()
+	{
+		txtSerial.setBackground(Color.WHITE);
+	}
+	
+	public void showSerialError()
+	{
+		txtSerial.setBackground(Color.YELLOW);
+	}
+	
 }

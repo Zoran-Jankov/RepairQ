@@ -1,6 +1,7 @@
 package com.repair_shop.controller;
 
 import java.awt.Color;
+import java.awt.Window;
 
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;

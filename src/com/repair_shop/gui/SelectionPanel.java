@@ -3,6 +3,8 @@ package com.repair_shop.gui;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
+
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 
@@ -52,5 +54,15 @@ public class SelectionPanel extends JPanel
 	public void setBtnNewDataElement(ActionListener listener)
 	{
 		btnNewDataElement.addActionListener(listener);
+	}
+	
+	public void showDataElementDefault()
+	{
+		cmbDataElement.setBackground(Color.WHITE);
+	}
+	
+	public void showDataElementError()
+	{
+		cmbDataElement.setBackground(Color.YELLOW);
 	}
 }

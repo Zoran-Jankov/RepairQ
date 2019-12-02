@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 
@@ -23,10 +24,12 @@ public class ModelRegistrationPanel extends JPanel
 	public ModelRegistrationPanel()
 	{
 		setLayout(new MigLayout("", "[][grow][]", "[20px:n][20px:n]"));
+		
 		JLabel lblDeviceType = LabelFactory.createJLabel("Device Type", new Font("Tahoma", Font.PLAIN, 13));
 		add(lblDeviceType, "cell 0 0,growy");
 		add(cmbDeviceType, "cell 1 0,grow");
 		add(btnNewDeviceType, "cell 2 0,growx");
+		
 		JLabel lblBrand = LabelFactory.createJLabel("Brand", new Font("Tahoma", Font.PLAIN, 13));
 		add(lblBrand, "cell 0 1,growy");
 		add(cmbBrand, "cell 1 1,grow");
@@ -71,5 +74,25 @@ public class ModelRegistrationPanel extends JPanel
 	public void setBtnNewBrandActionlistener(ActionListener listener)
 	{
 		btnNewBrand.addActionListener(listener);
+	}
+	
+	public void showDeviceTypeDefault()
+	{
+		cmbDeviceType.setBackground(Color.WHITE);
+	}
+	
+	public void showDeviceTypeError()
+	{
+		cmbDeviceType.setBackground(Color.YELLOW);
+	}
+	
+	public void showBrandDefault()
+	{
+		cmbBrand.setBackground(Color.WHITE);
+	}
+	
+	public void showBrandError()
+	{
+		cmbBrand.setBackground(Color.YELLOW);
 	}
 }
