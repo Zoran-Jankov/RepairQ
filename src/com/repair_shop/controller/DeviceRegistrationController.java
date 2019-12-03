@@ -24,8 +24,8 @@ public class DeviceRegistrationController extends InputDialogController
 	}
 	
 	public void updateComboBoxes(String deviceType,
-								  String brand,
-								  String model)
+								 String brand,
+								 String model)
 	{
 		deviceGUI.getDeviceRegistrationPanel().setDeviceType(deviceType);
 		deviceGUI.getDeviceRegistrationPanel().setBrand(brand);
