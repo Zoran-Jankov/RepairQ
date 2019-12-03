@@ -6,6 +6,7 @@ import com.repair_shop.data.DataType;
 import com.repair_shop.data.DeviceType;
 import com.repair_shop.data.Model;
 import com.repair_shop.gui.ModelRegistrationDialog;
+import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.CmbModelFactory;
 
 public class ModelRegistrationContoller extends InputDialogController
@@ -15,36 +16,57 @@ public class ModelRegistrationContoller extends InputDialogController
 	public ModelRegistrationContoller(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		modelGUI = (ModelRegistrationDialog) gui;
-		modelGUI.getModelPanel().setDeviceTypeCmbModel(CmbModelFactory.getModel(DataType.DEVICE_TYPE));
-		modelGUI.getModelPanel().setBrandCmbModel(CmbModelFactory.getModel(DataType.BRAND));
-		//TODO Finish ModelRegistrationContoller constructor
+		modelGUI = (ModelRegistrationDialog) super.gui;
+		setComboBoxModels();
+		setButtonActionListeners();
+	}
+	
+	private void setComboBoxModels()
+	{
+		modelGUI.getModelPanel()
+		        .setDeviceTypeCmbModel(CmbModelFactory
+		        .getModel(DataType.DEVICE_TYPE));
+		
+		modelGUI.getModelPanel()
+		        .setBrandCmbModel(CmbModelFactory
+		        .getModel(DataType.BRAND));
+	}
+	
+	private void setButtonActionListeners()
+	{
+		modelGUI.getModelPanel()
+				.setBtnNewDeviceTypeActionlistener(ActionListenerFactory
+		        .openNewWindow(this, DataType.DEVICE_TYPE));
+		
+		modelGUI.getModelPanel()
+		        .setBtnNewBrandActionlistener(ActionListenerFactory
+		        .openNewWindow(this, DataType.BRAND));
 	}
 
 	@Override
 	protected boolean isInputValid()
 	{
 		return isDeviceTypeSelected()
-			&& isManufacturerSelected()
+			&& isBrandSelected()
 			&& isModelNameValid();
 	}
 
 	private boolean isDeviceTypeSelected()
 	{
-		return modelGUI.cmbDeviceType.getSelectedItem() != null;
+		return !("".equals(modelGUI.getModelPanel().getDeviceType()));
 	}
 	
-	private boolean isManufacturerSelected()
+	private boolean isBrandSelected()
 	{
 		
-		return modelGUI.cmbDeviceType.getSelectedItem() != null;
+		return !("".equals(modelGUI.getModelPanel().getBrand()));
 	}
 	
 	private boolean isModelNameValid()
 	{
-		String name = modelGUI.txtModel.getText();
+		String name = modelGUI.getPropertyPanel().getName();
 		return !("".equals(name) || DataManager.modelsDataTable
-				                              .uniqueStringCollision(name));
+				                               .uniqueStringCollision(name));
 	}
 	
 	@Override
@@ -53,24 +75,57 @@ public class ModelRegistrationContoller extends InputDialogController
 		Model newModel = new Model();
 		
 		newModel.setId(id);
-		newModel.setName(modelGUI.txtModel.getText());
-		newModel.setDescription(modelGUI.txtSpecification.getText());
-		newModel.setDeviceType((DeviceType) DataManager.deviceTypesDataTable
-				                                    .getByUniqueString((String) modelGUI
-				                                    .cmbDeviceType
-				                                    .getSelectedItem()));
-		
-		newModel.setBrand((Brand) DataManager.brandsDataTable
-									           .getByUniqueString((String) modelGUI
-									           .cmbManufacturer
-									           .getSelectedItem()));
-		
+		newModel.setName(modelGUI.getPropertyPanel().getName());
+		newModel.setDescription(modelGUI.getPropertyPanel().getDescription());
+		newModel.setDeviceType((DeviceType) DataManager.getDataElement(DataType.DEVICE_TYPE, 
+				                               modelGUI.getModelPanel().getDeviceType()));
+				                                
+		newModel.setBrand((Brand) DataManager.getDataElement(DataType.BRAND, 
+                                     modelGUI.getModelPanel().getBrand()));
 		return newModel;
 	}
 
 	@Override
 	protected void showInputErrors()
 	{
-		//TODO Input erros
+		checkDeviceType();
+		checkBrand();
+		checkModelName();
+	}
+
+	private void checkDeviceType()
+	{
+		if(isDeviceTypeSelected())
+		{
+			modelGUI.getModelPanel().showDeviceTypeDefault();
+		}
+		else
+		{
+			modelGUI.getModelPanel().showDeviceTypeError();
+		}
+	}
+
+	private void checkBrand()
+	{
+		if(isBrandSelected())
+		{
+			modelGUI.getModelPanel().showBrandDefault();
+		}
+		else
+		{
+			modelGUI.getModelPanel().showBrandError();
+		}
+	}
+
+	private void checkModelName()
+	{
+		if(isModelNameValid())
+		{
+			modelGUI.getPropertyPanel().showNameDefault();
+		}
+		else
+		{
+			modelGUI.getPropertyPanel().showNameError();
+		}
 	}
 }
