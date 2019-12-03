@@ -1,9 +1,9 @@
 package com.repair_shop.controller;
 
 import com.repair_shop.data.Client;
-import com.repair_shop.data.DataElementGetter;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
+import com.repair_shop.data.Marketing;
 import com.repair_shop.gui.ClientRegistrationDialog;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.CmbModelFactory;
@@ -65,7 +65,8 @@ public class ClientRegistrationController extends InputDialogController
 		newClient.setAlternativePhoneNumber(clientGUI.getPersonalInfoPanel().getAltPoneNumber());
 		newClient.setEmail(clientGUI.getPersonalInfoPanel().getEmail());
 		newClient.setAddress(clientGUI.getPersonalInfoPanel().getAddress());
-		newClient.setMarketing(DataElementGetter.getMarketing(clientGUI.getMarketingPanel().getMarketing()));
+		newClient.setMarketing((Marketing) DataManager.getDataElement(DataType.MARKETING_TYPE, 
+											 clientGUI.getMarketingPanel().getMarketing()));
 		
 		return newClient;
 	}

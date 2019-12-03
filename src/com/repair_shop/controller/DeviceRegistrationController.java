@@ -1,9 +1,9 @@
 package com.repair_shop.controller;
 
-import com.repair_shop.data.DataElementGetter;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.Device;
+import com.repair_shop.data.Model;
 import com.repair_shop.gui.DeviceRegistrationDialog;
 import com.repair_shop.utility.ActionListenerFactory;
 import com.repair_shop.utility.CmbModelFactory;
@@ -39,8 +39,8 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		newDevice.setId(id);
 		newDevice.setSerial(deviceGUI.getDeviceRegistrationPanel().getSerial());
-		newDevice.setModel(DataElementGetter.getModel(deviceGUI
-				 .getDeviceRegistrationPanel().getModel()));
+		newDevice.setModel((Model) DataManager.getDataElement(DataType.MODEL,
+									 deviceGUI.getDeviceRegistrationPanel().getModel()));
 		
 		return newDevice;
 	}

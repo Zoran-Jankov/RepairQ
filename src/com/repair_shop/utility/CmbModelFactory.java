@@ -10,8 +10,8 @@ public class CmbModelFactory
 	public static DefaultComboBoxModel<String> getModel(DataType dataType)
 	{
 		String[] items = (String[]) DataManager.getDataTable(dataType)
-											  .getUniqueStringMap()
-											  .keySet().toArray();
+											   .getUniqueStringMap()
+											   .keySet().toArray();
 		
 		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>(items);
 		return model;

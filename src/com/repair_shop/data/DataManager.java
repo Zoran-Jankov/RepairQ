@@ -43,6 +43,16 @@ public class DataManager
 	{
 		return dataTables.get(dataType);
 	}
+	
+	public static DataElement getDataElement(DataType dataType, int id)
+	{
+		return getByID(dataType, id);
+	}
+	
+	public static DataElement getDataElement(DataType dataType, String name)
+	{
+		return getByUniqueString(dataType, name);
+	}
 
 	public static int getDataElementCounter(DataType dataType)
 	{
