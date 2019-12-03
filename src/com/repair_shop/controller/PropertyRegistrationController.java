@@ -1,13 +1,10 @@
 package com.repair_shop.controller;
 
-import java.awt.Color;
-
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.Property;
 import com.repair_shop.gui.PropertyRegistrationDialog;
 import com.repair_shop.utility.DataElementFactory;
-import com.repair_shop.utility.PropertyDialogText;
 
 public class PropertyRegistrationController extends InputDialogController
 {
@@ -16,12 +13,12 @@ public class PropertyRegistrationController extends InputDialogController
 	public PropertyRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		propertyGUI = (PropertyRegistrationDialog) gui;
+		propertyGUI = (PropertyRegistrationDialog) super.gui;
 	}
 	@Override
 	protected boolean isInputValid()
 	{
-		String name = propertyGUI.txtName.getText();
+		String name = propertyGUI.getPropertyPanel().getName();
 		
 		return !(DataManager.clientsDataTable.uniqueStringCollision(name)
 			 || ("".equals(name)));
@@ -33,8 +30,8 @@ public class PropertyRegistrationController extends InputDialogController
 		Property newProperty = (Property) DataElementFactory.createNewDataElement(dataType);
 		
 		newProperty.setId(id);
-		newProperty.setName(propertyGUI.txtName.getText());
-		newProperty.setDescription(propertyGUI.txtDescription.getText());
+		newProperty.setName(propertyGUI.getPropertyPanel().getName());
+		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
 		
 		return newProperty;
 	}
@@ -42,7 +39,6 @@ public class PropertyRegistrationController extends InputDialogController
 	@Override
 	protected void showInputErrors()
 	{
-		propertyGUI.lblPropertyIDValue.setText(PropertyDialogText.NAME_ERROR);
-		propertyGUI.txtDescription.setBackground(Color.YELLOW);
+		propertyGUI.getPropertyPanel().showNameError();
 	}
 }
