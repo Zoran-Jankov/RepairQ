@@ -1,5 +1,7 @@
 package com.repair_shop.utility;
 
+import java.util.HashSet;
+
 import javax.swing.DefaultComboBoxModel;
 
 import com.repair_shop.data.DataManager;
@@ -9,11 +11,12 @@ public class CmbModelFactory
 {
 	public static DefaultComboBoxModel<String> getModel(DataType dataType)
 	{
-		String[] items = (String[]) DataManager.getDataTable(dataType)
-											   .getUniqueStringMap()
-											   .keySet().toArray();
+		HashSet<String> items = new HashSet<String>();
+		items.add("");
+		items.addAll(DataManager.getUniqueStringMap(dataType).keySet());
 		
-		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>(items);
+		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>
+												(items.toArray(new String[0]));
 		return model;
 	}
 }

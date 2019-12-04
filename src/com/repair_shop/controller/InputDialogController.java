@@ -12,18 +12,24 @@ import com.repair_shop.utility.InputDialogFactory;
 
 public abstract class InputDialogController implements WindowController
 {
-	protected DataType dataType;
 	protected int id;
 	protected InputDialog gui;
 	
 	protected InputDialogController(WindowController owner, DataType dataType)
 	{
-		this.dataType = dataType;
-		gui = InputDialogFactory.getWindow(owner.getWindow(), dataType);
+		// null parameter to be changed to owner after testing
+		gui = InputDialogFactory.getWindow(null, dataType);
+		
 		id = IDGenerator.getNewID(dataType);
+		
 		gui.getIdPanel().setIdValue(IDGenerator.formatRegularID(id));
-		gui.getInputButtonPanel().setBtnAddActionListener(ActionListenerFactory.saveData(this));
-		gui.getInputButtonPanel().setBtnCancelActionListener(ActionListenerFactory.closeWindow(this));
+		gui.getInputButtonPanel().setBtnAddActionListener
+		   (ActionListenerFactory.saveData(this));
+		
+		gui.getInputButtonPanel().setBtnCancelActionListener
+		   (ActionListenerFactory.closeWindow(this));
+		
+		gui.setVisible(true);
 	}
 	
 	@Override

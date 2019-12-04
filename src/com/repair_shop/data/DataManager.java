@@ -73,6 +73,11 @@ public class DataManager
 	{
 		return getDataTable(dataType).getByUniqueString(uniqueString);
 	}
+	
+	public static boolean isDataTableEmpty(DataType dataType)
+	{
+		return getDataElementCounter(dataType) == 0;
+	}
 
 	public static boolean idCollision(DataType dataType, int id)
 	{

@@ -15,12 +15,15 @@ public class ClientRegistrationController extends InputDialogController
 	public ClientRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
+
 		clientGUI = (ClientRegistrationDialog) super.gui;
-		clientGUI.getMarketingPanel().setMarketingCmbModel(CmbModelFactory.getModel(dataType));
-		clientGUI.getMarketingPanel()
-				 .setBtnMarketingActionListener(ActionListenerFactory
-			     .openNewWindow(this, DataType.MARKETING_TYPE));
 		
+		clientGUI.getMarketingPanel().setMarketingCmbModel
+				 (CmbModelFactory.getModel(DataType.MARKETING_TYPE));
+		
+		clientGUI.getMarketingPanel()
+				 .setBtnMarketingActionListener
+				 (ActionListenerFactory.openNewWindow(this, DataType.MARKETING_TYPE));
 	}
 	
 	public void updateComboBoxes(String item)

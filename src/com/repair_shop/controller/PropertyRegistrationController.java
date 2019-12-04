@@ -8,11 +8,13 @@ import com.repair_shop.utility.DataElementFactory;
 
 public class PropertyRegistrationController extends InputDialogController
 {
+	private DataType dataType;
 	private PropertyRegistrationDialog propertyGUI;
 	
 	public PropertyRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
+		this.dataType = dataType;
 		propertyGUI = (PropertyRegistrationDialog) super.gui;
 	}
 	@Override
