@@ -17,6 +17,7 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog
 	public TicketRegistrationDialog(Window owner)
 	{
 		super(owner);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(new MigLayout("", "[250px:n][250px:n][]", "[::30px][200px:n,grow][][]"));
 		getContentPane().add(idPanel, "cell 0 0 2 1,grow");
 		getContentPane().add(clientPanel, "cell 0 1,grow");
