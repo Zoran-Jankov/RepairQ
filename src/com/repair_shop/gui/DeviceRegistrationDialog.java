@@ -21,6 +21,7 @@ public class DeviceRegistrationDialog extends JDialog implements InputDialog
 		getContentPane().add(idPanel, "cell 0 0,grow");
 		getContentPane().add(devicePanel, "cell 0 1,grow");
 		getContentPane().add(buttonPanel, "cell 0 2,grow");
+		pack();
 	}
 
 	@Override

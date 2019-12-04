@@ -24,6 +24,7 @@ public class ModelRegistrationDialog extends JDialog implements InputDialog
 		getContentPane().add(modelPanel, "cell 0 1,grow");
 		getContentPane().add(propertyPanel, "cell 0 2,grow");
 		getContentPane().add(buttonPanel, "cell 0 3,grow");
+		pack();
 	}
 
 	@Override

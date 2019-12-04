@@ -24,6 +24,7 @@ public class ClientRegistrationDialog extends JDialog implements InputDialog
 		getContentPane().add(personalInfoPanel, "cell 0 1,grow");
 		getContentPane().add(marketingPanel, "cell 0 2,grow");
 		getContentPane().add(buttonPanel, "cell 0 3,grow");
+		pack();
 	}
 
 	@Override

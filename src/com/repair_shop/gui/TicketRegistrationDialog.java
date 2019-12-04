@@ -19,7 +19,6 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog
 	{
 		super(owner);
 		setResizable(false);
-		setSize(550, 550);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(new MigLayout("", "[250px:n,grow][250px:n,grow]", "[::30px][200px:n,grow][][]"));
 		getContentPane().add(idPanel, "cell 0 0 2 1,grow");
@@ -27,6 +26,7 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog
 		getContentPane().add(devicePanel, "cell 1 1,grow");
 		getContentPane().add(ticketPanel, "cell 0 2 2 1,grow");
 		getContentPane().add(buttonPanel, "cell 0 3 2 1,grow");
+		pack();
 	}
 	
 	@Override
