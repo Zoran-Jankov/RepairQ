@@ -4,6 +4,7 @@ import java.awt.Window;
 
 import javax.swing.JDialog;
 import net.miginfocom.swing.MigLayout;
+import java.awt.Window.Type;
 
 public class TicketRegistrationDialog extends JDialog implements InputDialog
 {
@@ -17,8 +18,10 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog
 	public TicketRegistrationDialog(Window owner)
 	{
 		super(owner);
+		setResizable(false);
+		setBounds(100, 100, 550, 550);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		getContentPane().setLayout(new MigLayout("", "[250px:n][250px:n][]", "[::30px][200px:n,grow][][]"));
+		getContentPane().setLayout(new MigLayout("", "[250px:n,grow][250px:n,grow]", "[::30px][200px:n,grow][][]"));
 		getContentPane().add(idPanel, "cell 0 0 2 1,grow");
 		getContentPane().add(clientPanel, "cell 0 1,grow");
 		getContentPane().add(devicePanel, "cell 1 1,grow");
