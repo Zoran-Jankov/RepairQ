@@ -38,11 +38,13 @@ public class ModelRegistrationPanel extends JPanel
 	
 	public String getDeviceType()
 	{
+		cmbDeviceType.setBackground(Color.WHITE);
 		return (String) cmbDeviceType.getSelectedItem();
 	}
 	
 	public void setDeviceType(String item)
 	{
+		cmbDeviceType.setBackground(Color.WHITE);
 		cmbDeviceType.setSelectedItem(item);
 	}
 	
@@ -58,11 +60,13 @@ public class ModelRegistrationPanel extends JPanel
 	
 	public String getBrand()
 	{
+		cmbBrand.setBackground(Color.WHITE);
 		return (String) cmbBrand.getSelectedItem();
 	}
 	
 	public void setBrand(String item)
 	{
+		cmbBrand.setBackground(Color.WHITE);
 		cmbBrand.setSelectedItem(item);
 	}
 	
@@ -76,19 +80,9 @@ public class ModelRegistrationPanel extends JPanel
 		btnNewBrand.addActionListener(listener);
 	}
 	
-	public void showDeviceTypeDefault()
-	{
-		cmbDeviceType.setBackground(Color.WHITE);
-	}
-	
 	public void showDeviceTypeError()
 	{
 		cmbDeviceType.setBackground(Color.YELLOW);
-	}
-	
-	public void showBrandDefault()
-	{
-		cmbBrand.setBackground(Color.WHITE);
 	}
 	
 	public void showBrandError()
