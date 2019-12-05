@@ -30,11 +30,13 @@ public class MarketingPanel extends JPanel
 	
 	public String getMarketing()
 	{
+		cmbMarketing.setBackground(Color.WHITE);
 		return (String) cmbMarketing.getSelectedItem();
 	}
 	
 	public void setMarketing(String item)
 	{
+		cmbMarketing.setBackground(Color.WHITE);
 		cmbMarketing.setSelectedItem(item);
 	}
 	
@@ -46,11 +48,6 @@ public class MarketingPanel extends JPanel
 	public void setBtnMarketingActionListener(ActionListener listener)
 	{
 		btnNewMarketing.addActionListener(listener);
-	}
-	
-	public void showMarketingDefault()
-	{
-		cmbMarketing.setBackground(Color.WHITE);
 	}
 	
 	public void showMarketingError()
