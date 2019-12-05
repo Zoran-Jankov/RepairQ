@@ -16,7 +16,9 @@ public class LoginDialog extends JDialog
 
 	public LoginDialog()
 	{
-		getContentPane().setLayout(new MigLayout("", "[][grow][]", "[30px:n][30px:n][]"));
+		setResizable(false);
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		getContentPane().setLayout(new MigLayout("", "[][grow]", "[30px:n][30px:n][]"));
 		
 		JLabel lblUsername = LabelFactory.createJLabel("Username", new Font("Tahoma", Font.PLAIN, 13));
 		getContentPane().add(lblUsername, "cell 0 0,growy");
@@ -28,10 +30,26 @@ public class LoginDialog extends JDialog
 		
 		getContentPane().add(txtPassword, "cell 1 1,grow");
 		
-		getContentPane().add(buttonPanel, "cell 0 2 3 1,grow");
+		getContentPane().add(buttonPanel, "cell 0 2 2 1,grow");
 		
 		buttonPanel.setBtnAddName("Login");
 		
 		buttonPanel.setBtnCancelName("Quit");
+	}
+	
+	public InputButtonPanel getInputButtonPanel()
+	{
+		return buttonPanel;
+	}
+	
+	public String getUsername()
+	{
+		return txtUsername.getText();
+		
+	}
+	
+	public char[] getPassword()
+	{
+		return txtPassword.getPassword();
 	}
 }
