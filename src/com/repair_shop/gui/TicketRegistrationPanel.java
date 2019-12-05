@@ -31,17 +31,13 @@ public class TicketRegistrationPanel extends JPanel
 	
 	public String getDetails()
 	{
+		txtDetails.setBackground(Color.WHITE);
 		return txtDetails.getText();
 	}
 	
 	public String getImportantNotes()
 	{
 		return txtImportantNotes.getText();
-	}
-	
-	public void showDetailsDefault()
-	{
-		txtDetails.setBackground(Color.WHITE);
 	}
 	
 	public void showDetailsError()
