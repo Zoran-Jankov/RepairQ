@@ -80,7 +80,7 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		if(!isModelSelected())
 		{
-			deviceGUI.getDeviceRegistrationPanel().showModelError();;
+			deviceGUI.getDeviceRegistrationPanel().showModelError();
 		}
 	}
 }
