@@ -12,7 +12,7 @@ public class IDGenerator
 	{
 		if(dataType == DataType.TICKET)
 		{
-			return 0; //TODO ticket ID generator
+			return 1; //TODO ticket ID generator
 		}
 		else
 		{

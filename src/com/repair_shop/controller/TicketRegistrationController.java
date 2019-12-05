@@ -1,22 +1,13 @@
 package com.repair_shop.controller;
 
-import java.awt.Window;
-
-import com.repair_shop.data.DataElement;
 import com.repair_shop.data.DataType;
+import com.repair_shop.data.Ticket;
 
 public class TicketRegistrationController extends InputDialogController
 {
 	public TicketRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-	}
-
-	@Override
-	public Window getWindow()
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -27,7 +18,7 @@ public class TicketRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected DataElement createDataElement()
+	protected Ticket createDataElement()
 	{
 		// TODO Auto-generated method stub
 		return null;
