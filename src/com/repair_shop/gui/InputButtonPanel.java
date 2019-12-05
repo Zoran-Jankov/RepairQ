@@ -19,9 +19,19 @@ public class InputButtonPanel extends JPanel
 		add(btnCancel, "cell 1 0,grow");
 	}
 	
+	public void setBtnAddName(String name)
+	{
+		btnAdd.setText(name);
+	}
+	
 	public void setBtnAddActionListener(ActionListener listener)
 	{
 		btnAdd.addActionListener(listener);
+	}
+	
+	public void setBtnCancelName(String name)
+	{
+		btnCancel.setText(name);
 	}
 	
 	public void setBtnCancelActionListener(ActionListener listener)

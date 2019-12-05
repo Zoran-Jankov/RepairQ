@@ -7,14 +7,14 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 
-public class SignInDialog extends JDialog
+public class LoginDialog extends JDialog
 {
 	private static final long serialVersionUID = 7195384093352450230L;
 	private JTextField txtUsername = TextFieldFactory.createJTextField(10);;
 	private JPasswordField txtPassword = new JPasswordField();
 	private InputButtonPanel buttonPanel = new InputButtonPanel();
 
-	public SignInDialog()
+	public LoginDialog()
 	{
 		getContentPane().setLayout(new MigLayout("", "[][grow][]", "[30px:n][30px:n][]"));
 		
@@ -29,5 +29,9 @@ public class SignInDialog extends JDialog
 		getContentPane().add(txtPassword, "cell 1 1,grow");
 		
 		getContentPane().add(buttonPanel, "cell 0 2 3 1,grow");
+		
+		buttonPanel.setBtnAddName("Login");
+		
+		buttonPanel.setBtnCancelName("Quit");
 	}
 }
