@@ -38,11 +38,13 @@ public class SelectionPanel extends JPanel
 	
 	public String getDataElement()
 	{
+		cmbDataElement.setBackground(Color.WHITE);
 		return (String) cmbDataElement.getSelectedItem();
 	}
 	
 	public void setDataElement(String item)
 	{
+		cmbDataElement.setBackground(Color.WHITE);
 		cmbDataElement.setSelectedItem(item);
 	}
 	
@@ -54,11 +56,6 @@ public class SelectionPanel extends JPanel
 	public void setBtnNewDataElement(ActionListener listener)
 	{
 		btnNewDataElement.addActionListener(listener);
-	}
-	
-	public void showDataElementDefault()
-	{
-		cmbDataElement.setBackground(Color.WHITE);
 	}
 	
 	public void showDataElementError()
