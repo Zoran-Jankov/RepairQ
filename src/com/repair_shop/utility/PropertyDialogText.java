@@ -15,7 +15,7 @@ public class PropertyDialogText
 	
 	public static void loadText(DataType dataType)
 	{
-		if(DataType.isAMatketingType(dataType))
+		if(dataType == DataType.MARKETING_TYPE)
 		{
 			loadMarketingTypeText();
 		}

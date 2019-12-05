@@ -11,7 +11,7 @@ public class InputDialogFactory
 {
 	public static InputDialog getWindow(Window owner, DataType dataType)
 	{
-		if(DataType.isAClient(dataType))
+		if(dataType == DataType.CLIENT)
 		{
 			return new ClientRegistrationDialog(owner);
 		}

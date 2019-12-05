@@ -10,7 +10,7 @@ public class IDGenerator
 	
 	public static int getNewID(DataType dataType)
 	{
-		if(!DataType.isATicket(dataType))
+		if(dataType == DataType.TICKET)
 		{
 			return 0; //TODO ticket ID generator
 		}
