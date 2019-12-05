@@ -73,33 +73,14 @@ public class DeviceRegistrationController extends InputDialogController
 	@Override
 	protected void showInputErrors()
 	{
-		checkSerialNumber();
-		checkModel();
-	}
-	
-	private void checkSerialNumber()
-	{
-		if(isSerialNumberValid())
-		{
-			deviceGUI.getDeviceRegistrationPanel().showSerialDefault();
-		}
-		else
+		if(!isSerialNumberValid())
 		{
 			deviceGUI.getDeviceRegistrationPanel().showSerialError();
-			
 		}
-	}
-
-	private void checkModel()
-	{
-		if(isModelSelected())
+		
+		if(!isModelSelected())
 		{
-			deviceGUI.getDeviceRegistrationPanel().showModelDefault();
-			
-		}
-		else
-		{
-			deviceGUI.getDeviceRegistrationPanel().showModelError();
+			deviceGUI.getDeviceRegistrationPanel().showModelError();;
 		}
 	}
 }

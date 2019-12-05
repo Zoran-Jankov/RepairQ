@@ -54,11 +54,13 @@ public class PersonalInfoPanel extends JPanel
 	
 	public String getPersonName()
 	{
+		txtName.setBackground(Color.WHITE);
 		return txtName.getText();
 	}
 	
 	public String getPrimePhoneNumber()
 	{
+		txtName.setBackground(Color.WHITE);
 		return txtPrimePhone.getText();
 	}
 	
@@ -77,19 +79,9 @@ public class PersonalInfoPanel extends JPanel
 		return txtAddress.getText();
 	}
 	
-	public void showNameDefault()
-	{
-		txtName.setBackground(Color.WHITE);
-	}
-	
 	public void showNameError()
 	{
 		txtName.setBackground(Color.YELLOW);
-	}
-	
-	public void showPhoneDefault()
-	{
-		txtName.setBackground(Color.WHITE);
 	}
 	
 	public void showPhoneError()

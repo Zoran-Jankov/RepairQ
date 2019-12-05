@@ -75,55 +75,34 @@ public class ModelRegistrationController extends InputDialogController
 		Model newModel = new Model();
 		
 		newModel.setId(id);
+		
 		newModel.setName(modelGUI.getPropertyPanel().getName());
+		
 		newModel.setDescription(modelGUI.getPropertyPanel().getDescription());
-		newModel.setDeviceType((DeviceType) DataManager.getDataElement(DataType.DEVICE_TYPE, 
-				                               modelGUI.getModelPanel().getDeviceType()));
+		
+		newModel.setDeviceType((DeviceType) DataManager.getDataElement
+				(DataType.DEVICE_TYPE, modelGUI.getModelPanel().getDeviceType()));
 				                                
-		newModel.setBrand((Brand) DataManager.getDataElement(DataType.BRAND, 
-                                     modelGUI.getModelPanel().getBrand()));
+		newModel.setBrand((Brand) DataManager.getDataElement
+				(DataType.BRAND, modelGUI.getModelPanel().getBrand()));
+		
 		return newModel;
 	}
 
 	@Override
 	protected void showInputErrors()
 	{
-		checkDeviceType();
-		checkBrand();
-		checkModelName();
-	}
-
-	private void checkDeviceType()
-	{
 		if(isDeviceTypeSelected())
-		{
-			modelGUI.getModelPanel().showDeviceTypeDefault();
-		}
-		else
 		{
 			modelGUI.getModelPanel().showDeviceTypeError();
 		}
-	}
-
-	private void checkBrand()
-	{
+		
 		if(isBrandSelected())
-		{
-			modelGUI.getModelPanel().showBrandDefault();
-		}
-		else
 		{
 			modelGUI.getModelPanel().showBrandError();
 		}
-	}
-
-	private void checkModelName()
-	{
+		
 		if(isModelNameValid())
-		{
-			modelGUI.getPropertyPanel().showNameDefault();
-		}
-		else
 		{
 			modelGUI.getPropertyPanel().showNameError();
 		}

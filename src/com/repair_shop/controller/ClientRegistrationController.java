@@ -63,11 +63,17 @@ public class ClientRegistrationController extends InputDialogController
 		Client newClient= new Client();
 		
 		newClient.setId(id);
+		
 		newClient.setName(clientGUI.getPersonalInfoPanel().getName());
+		
 		newClient.setPrimePhoneNumber(clientGUI.getPersonalInfoPanel().getPrimePhoneNumber());
+		
 		newClient.setAlternativePhoneNumber(clientGUI.getPersonalInfoPanel().getAltPoneNumber());
+		
 		newClient.setEmail(clientGUI.getPersonalInfoPanel().getEmail());
+		
 		newClient.setAddress(clientGUI.getPersonalInfoPanel().getAddress());
+		
 		newClient.setMarketing((Marketing) DataManager.getDataElement
 			     (DataType.MARKETING_TYPE, clientGUI.getMarketingPanel().getMarketing()));
 		
@@ -77,44 +83,17 @@ public class ClientRegistrationController extends InputDialogController
 	@Override
 	protected void showInputErrors()
 	{
-		checkName();
-		checkPhoneNumber();
-		checkMarketing();
-	}
-	
-	private void checkName()
-	{
-		if(isNameValid())
-		{
-			clientGUI.getPersonalInfoPanel().showNameDefault();
-		}
-		else
+		if(!isNameValid())
 		{
 			clientGUI.getPersonalInfoPanel().showNameError();
 		}
-	}
-	
-	
-	private void checkPhoneNumber()
-	{
-
-		if(isPhoneNumberValid())
-		{
-			clientGUI.getPersonalInfoPanel().showPhoneDefault();
-		}
-		else
+		
+		if(!isPhoneNumberValid())
 		{
 			clientGUI.getPersonalInfoPanel().showPhoneError();
 		}
-	}
-	
-	private void checkMarketing()
-	{
-		if(isMarketingSelected())
-		{
-			clientGUI.getMarketingPanel().showMarketingDefault();
-		}
-		else
+		
+		if(!isMarketingSelected())
 		{
 			clientGUI.getMarketingPanel().showMarketingError();
 		}
