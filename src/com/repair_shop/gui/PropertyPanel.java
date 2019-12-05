@@ -32,17 +32,13 @@ public class PropertyPanel extends JPanel
 	
 	public String getPropertyName()
 	{
+		txtName.setBackground(Color.WHITE);
 		return txtName.getText();
 	}
 	
 	public String getDescription()
 	{
 		return txtDescription.getText();
-	}
-	
-	public void showNameDefault()
-	{
-		txtName.setBackground(Color.WHITE);
 	}
 	
 	public void showNameError()
