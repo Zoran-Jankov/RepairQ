@@ -23,6 +23,7 @@ public abstract class InputDialogController implements WindowController
 		id = IDGenerator.getNewID(dataType);
 		
 		gui.getIdPanel().setIdValue(IDGenerator.formatRegularID(id));
+		
 		gui.getInputButtonPanel().setBtnAddActionListener
 		   (ActionListenerFactory.saveData(this));
 		

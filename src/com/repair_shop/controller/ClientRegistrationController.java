@@ -68,8 +68,8 @@ public class ClientRegistrationController extends InputDialogController
 		newClient.setAlternativePhoneNumber(clientGUI.getPersonalInfoPanel().getAltPoneNumber());
 		newClient.setEmail(clientGUI.getPersonalInfoPanel().getEmail());
 		newClient.setAddress(clientGUI.getPersonalInfoPanel().getAddress());
-		newClient.setMarketing((Marketing) DataManager.getDataElement(DataType.MARKETING_TYPE, 
-											 clientGUI.getMarketingPanel().getMarketing()));
+		newClient.setMarketing((Marketing) DataManager.getDataElement
+			     (DataType.MARKETING_TYPE, clientGUI.getMarketingPanel().getMarketing()));
 		
 		return newClient;
 	}

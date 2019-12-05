@@ -24,12 +24,12 @@ public class ModelRegistrationController extends InputDialogController
 	private void setComboBoxModels()
 	{
 		modelGUI.getModelPanel()
-		        .setDeviceTypeCmbModel(CmbModelFactory
-		        .getModel(DataType.DEVICE_TYPE));
+		        .setDeviceTypeCmbModel
+		        (CmbModelFactory.getModel(DataType.DEVICE_TYPE));
 		
 		modelGUI.getModelPanel()
-		        .setBrandCmbModel(CmbModelFactory
-		        .getModel(DataType.BRAND));
+		        .setBrandCmbModel
+		        (CmbModelFactory.getModel(DataType.BRAND));
 	}
 	
 	private void setButtonActionListeners()

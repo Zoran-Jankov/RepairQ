@@ -7,6 +7,6 @@ public class Run
 {
 	public static void main(String[] args)
 	{
-		new DeviceRegistrationController(null, DataType.CLIENT);
+		new DeviceRegistrationController(null, DataType.DEVICE);
 	}
 }
