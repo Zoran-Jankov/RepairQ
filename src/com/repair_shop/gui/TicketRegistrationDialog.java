@@ -55,4 +55,10 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog
 	{
 		return buttonPanel;
 	}
+
+	@Override
+	public Window getWindow() 
+	{
+		return this;
+	}
 }
