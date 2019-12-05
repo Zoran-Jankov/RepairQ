@@ -92,17 +92,17 @@ public class ModelRegistrationController extends InputDialogController
 	@Override
 	protected void showInputErrors()
 	{
-		if(isDeviceTypeSelected())
+		if(!isDeviceTypeSelected())
 		{
 			modelGUI.getModelPanel().showDeviceTypeError();
 		}
 		
-		if(isBrandSelected())
+		if(!isBrandSelected())
 		{
 			modelGUI.getModelPanel().showBrandError();
 		}
 		
-		if(isModelNameValid())
+		if(!isModelNameValid())
 		{
 			modelGUI.getPropertyPanel().showNameError();
 		}
