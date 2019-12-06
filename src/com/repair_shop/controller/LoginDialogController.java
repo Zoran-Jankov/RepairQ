@@ -16,7 +16,7 @@ public class LoginDialogController
 	{
 		if(isInputValid())
 		{
-			Login();
+			login();
 		}
 		else
 		{
@@ -30,7 +30,7 @@ public class LoginDialogController
 		return false;
 	}
 
-	private void Login()
+	private void login()
 	{
 		// TODO Implement Login() method
 	}
