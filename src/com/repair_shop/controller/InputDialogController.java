@@ -17,8 +17,7 @@ public abstract class InputDialogController implements WindowController
 	
 	protected InputDialogController(WindowController owner, DataType dataType)
 	{
-		// null parameter to be changed to owner after testing
-		gui = InputDialogFactory.getWindow(null, dataType);
+		gui = InputDialogFactory.getWindow(owner.getWindow(), dataType);
 		
 		id = IDGenerator.getNewID(dataType);
 		
