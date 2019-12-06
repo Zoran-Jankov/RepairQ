@@ -20,7 +20,7 @@ public class DeviceRegistrationPanel extends JPanel
 	private JComboBox<String> cmbBrand = new JComboBox<String>();
 	private JComboBox<String> cmbModel = new JComboBox<String>();
 	private JButton btnNewModel = ButtonFactory.createJButton("New Model", new Font("Tahoma", Font.PLAIN, 13));
-	private JTextField txtSerial = TextFieldFactory.createJTextField(10);;
+	private JTextField txtSerial = TextFieldFactory.createJTextField(10);
 
 	public DeviceRegistrationPanel()
 	{

@@ -12,8 +12,8 @@ public class PersonalInfoPanel extends JPanel
 {
 	private static final long serialVersionUID = -1636004925810635460L;
 	private JTextField txtName = TextFieldFactory.createJTextField(10);
-	private JTextField txtPrimePhone = TextFieldFactory.createJTextField(10);;
-	private JTextField txtAltPhone = TextFieldFactory.createJTextField(10);;
+	private JTextField txtPrimePhone = TextFieldFactory.createJTextField(10);
+	private JTextField txtAltPhone = TextFieldFactory.createJTextField(10);
 	private JTextField txtEmail = TextFieldFactory.createJTextField(10);
 	private JTextField txtAddress = TextFieldFactory.createJTextField(10);
 

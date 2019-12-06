@@ -10,7 +10,7 @@ import javax.swing.JPasswordField;
 public class LoginDialog extends JDialog
 {
 	private static final long serialVersionUID = 7195384093352450230L;
-	private JTextField txtUsername = TextFieldFactory.createJTextField(10);;
+	private JTextField txtUsername = TextFieldFactory.createJTextField(10);
 	private JPasswordField txtPassword = new JPasswordField();
 	private InputButtonPanel buttonPanel = new InputButtonPanel();
 
