@@ -1,6 +1,6 @@
 package com.repair_shop.utility;
 
-public class Title
+public class WindowTitle
 {
 	public static final String NOTIFICATION = "New Notification";
 	public static final String NOTIFICATION_TYPE = "Notification Type Registration";
