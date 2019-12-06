@@ -18,4 +18,9 @@ public class Title
 	public static final String USER = "User Registration";
 	
 	public static String PROPERTY;
+	
+	public static void setPropertyTitle(String text)
+	{
+		PROPERTY = text;
+	}
 }
