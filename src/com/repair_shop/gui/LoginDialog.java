@@ -3,6 +3,9 @@ package com.repair_shop.gui;
 import javax.swing.JDialog;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -44,12 +47,20 @@ public class LoginDialog extends JDialog
 	
 	public String getUsername()
 	{
+		txtUsername.setBackground(Color.WHITE);
 		return txtUsername.getText();
-		
 	}
 	
 	public char[] getPassword()
 	{
+		txtUsername.setBackground(Color.WHITE);
 		return txtPassword.getPassword();
+	}
+	
+	public void showLoginError()
+	{
+		JOptionPane.showMessageDialog
+		           (this, "Wrong username or password", 
+		        		  "Login Error", JOptionPane.ERROR_MESSAGE);
 	}
 }
