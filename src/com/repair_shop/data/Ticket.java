@@ -2,7 +2,7 @@ package com.repair_shop.data;
 
 public class Ticket extends AbstractDataElement
 {
-	private int priority;
+	private Priority priority;
 	private Client client;
 	private Device device;
 	private Status status;
@@ -13,12 +13,12 @@ public class Ticket extends AbstractDataElement
 		return DataType.TICKET;
 	}
 	
-	public int getPriority()
+	public Priority getPriority()
 	{
 		return priority;
 	}
 
-	public void setPriority(int priority)
+	public void setPriority(Priority priority)
 	{
 		this.priority = priority;
 	}
