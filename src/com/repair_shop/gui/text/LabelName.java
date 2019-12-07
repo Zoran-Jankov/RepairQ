@@ -2,6 +2,12 @@ package com.repair_shop.gui.text;
 
 public class LabelName
 {
+	public static String ENTITY = "Entity";
+	public static String ENTITY_DETAILS = "Entity Details";
+	
+	public static String DETAILS = "Details";
+	public static String IMPORTANT_NOTES = "Important Notes";
+	
 	public static String NAME = "Name";
 	public static String DESCRIPTION = "Description";
 	
@@ -12,7 +18,7 @@ public class LabelName
 	public static String ALTERNATIVE_PHONE = "Alternative Phone Number";
 	public static String EMAIL = "Email Address";
 	public static String ADDRESS = "Home Address";
-	
+
 	public static String MARKETING = "Marketing";
 	
 	public static String USER = "User";

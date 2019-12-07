@@ -12,6 +12,7 @@ import javax.swing.JTextPane;
 import com.repair_shop.gui.component.LabelFactory;
 import com.repair_shop.gui.component.TextFieldFactory;
 import com.repair_shop.gui.component.TextPaneFactory;
+import com.repair_shop.gui.text.LabelName;
 
 public class PropertyPanel extends JPanel
 {
@@ -23,12 +24,12 @@ public class PropertyPanel extends JPanel
 	{
 		setLayout(new MigLayout("", "[][grow]", "[20px:n,fill][10px:n][][grow]"));
 		
-		JLabel lblName = LabelFactory.createJLabel("Name", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblName = LabelFactory.createJLabel(LabelName.NAME, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblName, "cell 0 0");
 		
 		add(txtName, "cell 1 0,grow");
 		
-		JLabel lblDescription = LabelFactory.createJLabel("Description", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblDescription = LabelFactory.createJLabel(LabelName.DESCRIPTION, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblDescription, "cell 0 2,growy");
 		
 		add(txtDescription, "cell 0 3 2 1,grow");

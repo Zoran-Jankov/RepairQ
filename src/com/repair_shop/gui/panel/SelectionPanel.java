@@ -12,6 +12,8 @@ import javax.swing.SwingConstants;
 
 import com.repair_shop.gui.component.ButtonFactory;
 import com.repair_shop.gui.component.LabelFactory;
+import com.repair_shop.gui.text.ButtonName;
+import com.repair_shop.gui.text.LabelName;
 
 import javax.swing.JComboBox;
 import javax.swing.ComboBoxModel;
@@ -22,14 +24,14 @@ public class SelectionPanel extends JPanel
 {
 	private static final long serialVersionUID = 6173599805523082955L;
 	private JComboBox<String> cmbDataElement = ComboBoxFactory.createJComboBox();
-	private JLabel lblDataElementDetails = LabelFactory.createJLabel("Data Element details", new Font("Tahoma", Font.PLAIN, 13));
-	private final JButton btnNewDataElement = ButtonFactory.createJButton("New", new Font("Tahoma", Font.PLAIN, 13));
+	private JLabel lblDataElementDetails = LabelFactory.createJLabel(LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 15));
+	private final JButton btnNewDataElement = ButtonFactory.createJButton(ButtonName.ADD_NEW_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
 	
 	public SelectionPanel()
 	{
 		setLayout(new MigLayout("", "[grow][]", "[][][100px:n]"));
 		
-		JLabel lblDataElement = LabelFactory.createJLabel("Data Element", new Font("Tahoma", Font.BOLD, 13));
+		JLabel lblDataElement = LabelFactory.createJLabel(LabelName.ENTITY, new Font("Tahoma", Font.BOLD, 13));
 		lblDataElement.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblDataElement, "cell 0 0 2 1,grow");
 		
@@ -37,7 +39,6 @@ public class SelectionPanel extends JPanel
 		
 		add(btnNewDataElement, "cell 1 1,grow");
 		
-		lblDataElementDetails.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		add(lblDataElementDetails, "cell 0 2 2 1,grow");
 	}
 	

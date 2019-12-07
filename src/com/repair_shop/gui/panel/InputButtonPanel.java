@@ -3,6 +3,7 @@ package com.repair_shop.gui.panel;
 import javax.swing.JPanel;
 
 import com.repair_shop.gui.component.ButtonFactory;
+import com.repair_shop.gui.text.ButtonName;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -12,8 +13,8 @@ import java.awt.Font;
 public class InputButtonPanel extends JPanel
 {
 	private static final long serialVersionUID = -454697132541346234L;
-	private JButton btnAdd = ButtonFactory.createJButton("Add", new Font("Tahoma", Font.PLAIN, 13));
-	private JButton btnCancel = ButtonFactory.createJButton("Cancel", new Font("Tahoma", Font.PLAIN, 13));
+	private JButton btnAdd = ButtonFactory.createJButton(ButtonName.ADD, new Font("Tahoma", Font.PLAIN, 13));
+	private JButton btnCancel = ButtonFactory.createJButton(ButtonName.CANCEL, new Font("Tahoma", Font.PLAIN, 13));
 
 	public InputButtonPanel()
 	{

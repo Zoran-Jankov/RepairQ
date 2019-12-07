@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 
 import com.repair_shop.gui.component.LabelFactory;
 import com.repair_shop.gui.component.TextFieldFactory;
+import com.repair_shop.gui.text.LabelName;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -24,27 +25,27 @@ public class PersonalInfoPanel extends JPanel
 	{
 		setLayout(new MigLayout("", "[][5.00][grow]", "[20px:n,fill][20px:n,fill][20px:n,fill][][20px:n]"));
 		
-		JLabel lblName = LabelFactory.createJLabel("First and Last Name", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblName = LabelFactory.createJLabel(LabelName.FIRST_AND_LAST_NAME, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblName, "cell 0 0,growy");
 		
 		add(txtName, "cell 2 0,grow");
 		
-		JLabel lblPrimePhone = LabelFactory.createJLabel("Primary Phone Number", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblPrimePhone = LabelFactory.createJLabel(LabelName.PRIME_PHONE, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblPrimePhone, "cell 0 1,growy");
 		
 		add(txtPrimePhone, "cell 2 1,grow");
 		
-		JLabel lblAltPhone = LabelFactory.createJLabel("Alternative Phone Number", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblAltPhone = LabelFactory.createJLabel(LabelName.ALTERNATIVE_PHONE, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblAltPhone, "cell 0 2,growy");
 		
 		add(txtAltPhone, "cell 2 2,grow");
 		
-		JLabel lblEmail = LabelFactory.createJLabel("Email Address", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblEmail = LabelFactory.createJLabel(LabelName.EMAIL, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblEmail, "cell 0 3,growy");
 		
 		add(txtEmail, "cell 2 3,growx");
 		
-		JLabel lblHomeAddress = LabelFactory.createJLabel("Home Address", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblHomeAddress = LabelFactory.createJLabel(LabelName.ADDRESS, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblHomeAddress, "cell 0 4,growy");
 		
 		add(txtAddress, "cell 2 4,grow");
