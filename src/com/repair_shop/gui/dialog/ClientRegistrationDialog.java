@@ -8,6 +8,7 @@ import com.repair_shop.gui.panel.IdPanel;
 import com.repair_shop.gui.panel.InputButtonPanel;
 import com.repair_shop.gui.panel.MarketingPanel;
 import com.repair_shop.gui.panel.PersonalInfoPanel;
+import com.repair_shop.gui.text.WindowTitle;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -23,6 +24,7 @@ public class ClientRegistrationDialog extends JDialog implements InputDialog
 	{
 		super(owner);
 		setResizable(false);
+		setTitle(WindowTitle.CLIENT);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(new MigLayout("", "[434px]", "[25px:n][][][]"));
 		getContentPane().add(idPanel, "cell 0 0,grow");

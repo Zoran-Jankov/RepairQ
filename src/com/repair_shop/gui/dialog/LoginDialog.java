@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import com.repair_shop.gui.component.LabelFactory;
 import com.repair_shop.gui.component.TextFieldFactory;
 import com.repair_shop.gui.panel.InputButtonPanel;
+import com.repair_shop.gui.text.WindowTitle;
 
 import javax.swing.JPasswordField;
 
@@ -25,6 +26,7 @@ public class LoginDialog extends JDialog
 	public LoginDialog()
 	{
 		setResizable(false);
+		setTitle(WindowTitle.LOGIN);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(new MigLayout("", "[][grow]", "[30px:n][30px:n][]"));
 		

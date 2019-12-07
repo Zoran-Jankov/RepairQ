@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
 import com.repair_shop.gui.panel.DataTablePanel;
+import com.repair_shop.gui.text.WindowTitle;
 
 import java.awt.GridLayout;
 
@@ -14,6 +15,7 @@ public class MainWindow extends JFrame
 	private DataTablePanel notificationPanel = new DataTablePanel();
 	public MainWindow()
 	{
+		setTitle(WindowTitle.MAIN_WINDOW);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new GridLayout(1, 0, 0, 0));
 		
