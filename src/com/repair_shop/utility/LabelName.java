@@ -2,24 +2,24 @@ package com.repair_shop.utility;
 
 public class LabelName
 {
-	public static String NAME;
-	public static String DESCRIPTION;
+	public static String NAME = "Name";
+	public static String DESCRIPTION = "Description";
 	
-	public static String CLIENT;
+	public static String CLIENT = "Client";
 	
-	public static String FIRST_AND_LAST_NAME;
-	public static String PRIME_PHONE;
-	public static String ALTERNATIVE_PHONE;
-	public static String EMAIL;
-	public static String ADDRESS;
+	public static String FIRST_AND_LAST_NAME = "First and Last Name";
+	public static String PRIME_PHONE = "Prime Phone Number";
+	public static String ALTERNATIVE_PHONE = "Alternative Phone Number";
+	public static String EMAIL = "Email Address";
+	public static String ADDRESS = "Home Address";
 	
-	public static String MARKETING;
+	public static String MARKETING = "Marketing";
 	
-	public static String USER;
-	public static String USER_TYPE;
+	public static String USER = "User";
+	public static String USER_TYPE = "User Type";
 	
-	public static String DEVICE_TYPE;
-	public static String BRAND;
-	public static String MODEL;
-	public static String SERIAL;
+	public static String DEVICE_TYPE = "Device Type";
+	public static String BRAND = "Brand";
+	public static String MODEL = "Model";
+	public static String SERIAL = "Serial";
 }
