@@ -2,21 +2,23 @@ package com.repair_shop.data;
 
 import java.util.HashMap;
 
+import com.repair_shop.data.entity.Entity;
+
 public interface IndexedData
 {
 	public int getDataElementCounter();
 	
-	public HashMap<String, DataElement> getUniqueStringMap();
+	public HashMap<String, Entity> getUniqueStringMap();
 	
-	public DataElement getByID(int id);
+	public Entity getByID(int id);
 	
-	public DataElement getByUniqueString(String uniqueString);
+	public Entity getByUniqueString(String uniqueString);
 	
 	public boolean idCollision(int id);
 	
 	public boolean uniqueStringCollision(String uniqueString);
 	
-	public void save(DataElement newDataElement);
+	public void save(Entity newDataElement);
 	
-	public void delete(DataElement newDataElement);
+	public void delete(Entity newDataElement);
 }

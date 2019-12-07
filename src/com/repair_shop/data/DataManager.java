@@ -2,6 +2,8 @@ package com.repair_shop.data;
 
 import java.util.HashMap;
 
+import com.repair_shop.data.entity.Entity;
+
 public class DataManager
 {	
 	public static IndexedData notificationsDataTable = new IndexedDataTable();
@@ -44,12 +46,12 @@ public class DataManager
 		return dataTables.get(dataType);
 	}
 	
-	public static DataElement getDataElement(DataType dataType, int id)
+	public static Entity getDataElement(DataType dataType, int id)
 	{
 		return getByID(dataType, id);
 	}
 	
-	public static DataElement getDataElement(DataType dataType, String name)
+	public static Entity getDataElement(DataType dataType, String name)
 	{
 		return getByUniqueString(dataType, name);
 	}
@@ -59,17 +61,17 @@ public class DataManager
 		return getDataTable(dataType).getDataElementCounter();
 	}
 
-	public static HashMap<String, DataElement> getUniqueStringMap(DataType dataType)
+	public static HashMap<String, Entity> getUniqueStringMap(DataType dataType)
 	{
 		return getDataTable(dataType).getUniqueStringMap();
 	}
 
-	public static DataElement getByID(DataType dataType, int id)
+	public static Entity getByID(DataType dataType, int id)
 	{
 		return getDataTable(dataType).getByID(id);
 	}
 
-	public static DataElement getByUniqueString(DataType dataType, String uniqueString)
+	public static Entity getByUniqueString(DataType dataType, String uniqueString)
 	{
 		return getDataTable(dataType).getByUniqueString(uniqueString);
 	}
@@ -89,12 +91,12 @@ public class DataManager
 		return getDataTable(dataType).uniqueStringCollision(uniqueString);
 	}
 
-	public static void save(DataElement newDataElement)
+	public static void save(Entity newDataElement)
 	{
 		getDataTable(newDataElement.getDataType()).save(newDataElement);
 	}
 
-	public static void delete(DataElement newDataElement)
+	public static void delete(Entity newDataElement)
 	{
 		getDataTable(newDataElement.getDataType()).delete(newDataElement);
 	}

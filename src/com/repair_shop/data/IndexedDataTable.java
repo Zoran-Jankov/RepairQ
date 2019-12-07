@@ -2,11 +2,13 @@ package com.repair_shop.data;
 
 import java.util.HashMap;
 
+import com.repair_shop.data.entity.Entity;
+
 public class IndexedDataTable implements IndexedData
 {
 	private int dataElementCounter = 1;
-	private HashMap<Integer, DataElement> idMap = new HashMap<Integer, DataElement>();
-	private HashMap<String, DataElement> uniqueStringMap = new HashMap<String, DataElement>();
+	private HashMap<Integer, Entity> idMap = new HashMap<Integer, Entity>();
+	private HashMap<String, Entity> uniqueStringMap = new HashMap<String, Entity>();
 	
 	@Override
 	public int getDataElementCounter()
@@ -15,19 +17,19 @@ public class IndexedDataTable implements IndexedData
 	}
 	
 	@Override
-	public HashMap<String, DataElement> getUniqueStringMap()
+	public HashMap<String, Entity> getUniqueStringMap()
 	{
 		return uniqueStringMap;
 	}
 	
 	@Override
-	public DataElement getByID(int id)
+	public Entity getByID(int id)
 	{
 		return idMap.get(id);
 	}
 	
 	@Override
-	public DataElement getByUniqueString(String uniqueString)
+	public Entity getByUniqueString(String uniqueString)
 	{
 		return uniqueStringMap.get(uniqueString);
 	}
@@ -45,7 +47,7 @@ public class IndexedDataTable implements IndexedData
 	}
 
 	@Override
-	public void save(DataElement newDataElement)
+	public void save(Entity newDataElement)
 	{
 		idMap.put(newDataElement.getID(), newDataElement);
 		
@@ -63,7 +65,7 @@ public class IndexedDataTable implements IndexedData
 	}
 	
 	@Override
-	public void delete(DataElement newDataElement)
+	public void delete(Entity newDataElement)
 	{
 		idMap.remove(newDataElement.getID());
 		

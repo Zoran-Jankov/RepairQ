@@ -3,6 +3,8 @@ package com.repair_shop.gui;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
+import com.repair_shop.gui.panel.DataTablePanel;
+
 import java.awt.GridLayout;
 
 public class MainWindow extends JFrame

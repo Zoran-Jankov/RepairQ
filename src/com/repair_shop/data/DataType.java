@@ -1,5 +1,7 @@
 package com.repair_shop.data;
 
+import com.repair_shop.data.entity.Entity;
+
 public enum DataType
 {
 	NOTIFICATION,
@@ -17,7 +19,7 @@ public enum DataType
 	BRAND,
 	USER;
 	
-	public static boolean hasUniqueString(DataElement dataElement)
+	public static boolean hasUniqueString(Entity dataElement)
 	{
 		DataType dataType = dataElement.getDataType();
 		
@@ -26,7 +28,7 @@ public enum DataType
 			  || dataType == TICKET);
 	}
 	
-	public static boolean makesReferences(DataElement dataElement)
+	public static boolean makesReferences(Entity dataElement)
 	{
 		DataType dataType = dataElement.getDataType();
 		
