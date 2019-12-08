@@ -40,6 +40,7 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog
 		getContentPane().add(ticketPanel, "cell 0 2 2 1,grow");
 		
 		getContentPane().add(buttonPanel, "cell 0 3 2 1,grow");
+		
 		pack();
 	}
 	

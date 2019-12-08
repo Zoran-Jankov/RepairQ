@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import com.repair_shop.gui.component.LabelFactory;
 import com.repair_shop.gui.component.TextFieldFactory;
 import com.repair_shop.gui.panel.InputButtonPanel;
+import com.repair_shop.gui.text.ButtonName;
 import com.repair_shop.gui.text.ErrorMessage;
 import com.repair_shop.gui.text.ErrorTitle;
 import com.repair_shop.gui.text.LabelName;
@@ -45,9 +46,11 @@ public class LoginDialog extends JDialog
 		
 		getContentPane().add(buttonPanel, "cell 0 2 2 1,grow");
 		
-		buttonPanel.setBtnAddName("Login");
+		buttonPanel.setBtnAddName(ButtonName.LOGIN);
 		
-		buttonPanel.setBtnCancelName("Quit");
+		buttonPanel.setBtnCancelName(ButtonName.QUIT);
+		
+		pack();
 	}
 	
 	public InputButtonPanel getInputButtonPanel()
