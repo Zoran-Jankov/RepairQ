@@ -18,6 +18,8 @@ public class LoginDialogController implements WindowController
 		
 		gui.getInputButtonPanel().setBtnCancelActionListener
 		   (ActionFactory.closeWindow(this));
+		
+		gui.setVisible(true);
 	}
 	
 	@Override
