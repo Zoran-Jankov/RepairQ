@@ -18,18 +18,23 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		deviceGUI = (DeviceRegistrationDialog) gui;
 		
-		deviceGUI.getDeviceRegistrationPanel().setDeviceTypeCmbModel
-				 (ComboBoxModelFactory.getModel(DataType.DEVICE_TYPE));
-		
-		deviceGUI.getDeviceRegistrationPanel().setBrandCmbModel
-				 (ComboBoxModelFactory.getModel(DataType.BRAND));
-		
-		deviceGUI.getDeviceRegistrationPanel().setModelCmbModel
-				 (ComboBoxModelFactory.getModel(DataType.MODEL));
+		setComboBoxModels();
 		
 		deviceGUI.getDeviceRegistrationPanel()
 				 .setBtnNewModelActionListener
 				 (ActionFactory.openWindow(this,DataType.MODEL));
+	}
+	
+	private void setComboBoxModels()
+	{
+		deviceGUI.getDeviceRegistrationPanel().setDeviceTypeCmbModel
+		 		 (ComboBoxModelFactory.getModel(DataType.DEVICE_TYPE));
+
+		deviceGUI.getDeviceRegistrationPanel().setBrandCmbModel
+		 		 (ComboBoxModelFactory.getModel(DataType.BRAND));
+
+		deviceGUI.getDeviceRegistrationPanel().setModelCmbModel
+		 		 (ComboBoxModelFactory.getModel(DataType.MODEL));
 	}
 	
 	public void updateComboBoxes(String deviceType,
