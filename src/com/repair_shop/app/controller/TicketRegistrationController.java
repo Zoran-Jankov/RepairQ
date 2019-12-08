@@ -1,5 +1,6 @@
 package com.repair_shop.app.controller;
 
+import com.repair_shop.app.utility.InputDialogController;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Ticket;
 

@@ -1,9 +1,8 @@
-package com.repair_shop.app.controller;
+package com.repair_shop.app.utility;
 
 import java.awt.Window;
 
-import com.repair_shop.app.utility.ActionFactory;
-import com.repair_shop.app.utility.IDGenerator;
+import com.repair_shop.app.controller.WindowController;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Entity;
