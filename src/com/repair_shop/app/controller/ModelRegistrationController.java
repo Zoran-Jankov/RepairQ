@@ -71,7 +71,7 @@ public class ModelRegistrationController extends InputDialogController
 	}
 	
 	@Override
-	protected Model createDataElement()
+	protected Model createEntity()
 	{
 		Model newModel = new Model();
 		

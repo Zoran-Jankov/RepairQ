@@ -48,7 +48,7 @@ public class DeviceRegistrationController extends InputDialogController
 	}
 	
 	@Override
-	protected Device createDataElement()
+	protected Device createEntity()
 	{
 		Device newDevice = new Device();
 		

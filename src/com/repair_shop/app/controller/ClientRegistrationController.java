@@ -59,7 +59,7 @@ public class ClientRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected Client createDataElement()
+	protected Client createEntity()
 	{
 		Client newClient= new Client();
 		

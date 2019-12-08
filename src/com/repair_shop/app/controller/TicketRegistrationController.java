@@ -19,7 +19,7 @@ public class TicketRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected Ticket createDataElement()
+	protected Ticket createEntity()
 	{
 		// TODO Auto-generated method stub
 		return null;

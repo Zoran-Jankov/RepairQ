@@ -41,7 +41,7 @@ public abstract class InputDialogController implements WindowController
 	{
 		if(isInputValid())
 		{
-			DataManager.save(createDataElement());
+			DataManager.save(createEntity());
 			getWindow().dispose();
 		}
 		else
@@ -52,7 +52,7 @@ public abstract class InputDialogController implements WindowController
 
 	protected abstract boolean isInputValid();
 	
-	protected abstract Entity createDataElement();
+	protected abstract Entity createEntity();
 	
 	protected abstract void showInputErrors();
 }

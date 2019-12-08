@@ -28,7 +28,7 @@ public class PropertyRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected Property createDataElement()
+	protected Property createEntity()
 	{
 		Property newProperty = (Property) EntityFactory.create(dataType);
 		
