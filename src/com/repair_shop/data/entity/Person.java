@@ -1,35 +1,61 @@
 package com.repair_shop.data.entity;
 
+/**
+ * The abstract class Person is a abstract entity data class 
+ * that represents personal information about a person.
+ * 
+ * @author Zoran Jankov
+ * @version 1.8
+ */
 public abstract class Person extends AbstractEntity
 {
-	private String name;
+	/**
+	 * Person's full name
+	 */
+	private String fullName;
+	
+	/**
+	 * Person's primary phone number
+	 */
 	private String primePhoneNumber;
+	
+	/**
+	 * Person's alternative phone number
+	 */
 	private String alternativePhoneNumber;
+	
+	/**
+	 * Person's email address
+	 */
 	private String email;
+	
+	/**
+	 * Person's home address
+	 */
 	private String address;
 	
 	/**
-	 * Getter for persons first name.
-	 * @return (String) Persons first name.
+	 * Getter for person's name.
+	 * @return (String) Person's full name.
 	 */
-	public String getName()
+	public String getFullName()
 	{
-		return name;
+		return fullName;
 	}
 	
 	/**
-	 * Setter for persons first name.
-	 * @param (String) firstName - Persons first name.
+	 * Setter for person's full name.
+	 * @param (String) firstName - Person's full name.
 	 */
 
-	public void setName(String name)
+	public void setFullName(String name)
 	{
-		this.name = name;
+		this.fullName = name;
 	}
 	
 	/**
-	 * Getter for persons primary phone number.
-	 * @return (String) Persons primary phone number.
+	 * Getter for person's primary phone number.
+	 * @return (String) Person's primary phone number.
 	 */
 	public String getPrimePhoneNumber()
 	{
@@ -37,8 +63,8 @@ public abstract class Person extends AbstractEntity
 	}
 	
 	/**
-	 * Setter for persons primary phone number.
-	 * @param (String) primePhoneNum - Persons primary phone number.
+	 * Setter for person's primary phone number.
+	 * @param (String) primePhoneNum - Person's primary phone number.
 	 */
 	public void setPrimePhoneNumber(String primePhoneNumber)
 	{
@@ -46,8 +72,8 @@ public abstract class Person extends AbstractEntity
 	}
 
 	/**
-	 * Getter for persons secondary phone number.
-	 * @return (String) Persons secondary phone number.
+	 * Getter for person's secondary phone number.
+	 * @return (String) Person's secondary phone number.
 	 */
 	public String getAlternativePhoneNumber()
 	{
@@ -55,8 +81,8 @@ public abstract class Person extends AbstractEntity
 	}
 	
 	/**
-	 * Setter for persons secondary phone number.
-	 * @param (String) secondPhoneNum - Persons secondary phone number.
+	 * Setter for person's alternative phone number.
+	 * @param (String) alternativePhoneNum - Person's alternative phone number.
 	 */
 	public void setAlternativePhoneNumber(String alternativePhoneNumber)
 	{
@@ -64,8 +90,8 @@ public abstract class Person extends AbstractEntity
 	}
 	
 	/**
-	 * Getter for persons email address.
-	 * @return (String) Persons email address.
+	 * Getter for person's email address.
+	 * @return (String) Person's email address.
 	 */
 	public String getEmail()
 	{
@@ -73,8 +99,8 @@ public abstract class Person extends AbstractEntity
 	}
 	
 	/**
-	 * Setter for persons email address.
-	 * @param (String) email - Persons email address.
+	 * Setter for person's email address.
+	 * @param (String) email - Person's email address.
 	 */
 	public void setEmail(String email)
 	{
@@ -82,8 +108,8 @@ public abstract class Person extends AbstractEntity
 	}
 	
 	/**
-	 * Getter for persons address.
-	 * @return (String) Persons address.
+	 * Getter for person's home address.
+	 * @return (String) Person's home address.
 	 */
 	public String getAddress()
 	{
@@ -91,8 +117,8 @@ public abstract class Person extends AbstractEntity
 	}
 	
 	/**
-	 * Setter for persons address.
-	 * @param (String) address - Persons address.
+	 * Setter for person's home address.
+	 * @param (String) address - Person's home address.
 	 */
 	public void setAddress(String address)
 	{
