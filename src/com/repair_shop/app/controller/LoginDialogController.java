@@ -1,15 +1,29 @@
 package com.repair_shop.app.controller;
 
+import java.awt.Window;
+
+import com.repair_shop.app.utility.ActionFactory;
+import com.repair_shop.app.utility.WindowControllerFactory;
+import com.repair_shop.app.utility.WindowTag;
 import com.repair_shop.gui.dialog.LoginDialog;
 
-public class LoginDialogController
+public class LoginDialogController implements WindowController
 {
 	private LoginDialog gui = new LoginDialog();
 	
 	public LoginDialogController()
 	{
-		gui.getInputButtonPanel().setBtnAddActionListener(null);
-		gui.getInputButtonPanel().setBtnCancelActionListener(null);
+		gui.getInputButtonPanel().setBtnAddActionListener
+		   (ActionFactory.openWindow(WindowTag.MAIN_WINDOW));
+		
+		gui.getInputButtonPanel().setBtnCancelActionListener
+		   (ActionFactory.closeWindow(this));
+	}
+	
+	@Override
+	public Window getWindow()
+	{
+		return gui;
 	}
 	
 	public void tryLogin()
@@ -20,23 +34,23 @@ public class LoginDialogController
 		}
 		else
 		{
-			showLoginErrors();
+			showLoginError();
 		}
 	}
 
 	private boolean isInputValid()
 	{
 		// TODO Implement isInputValid() method
-		return false;
+		return true;
 	}
 
 	private void login()
 	{
-		// TODO Implement Login() method
+		WindowControllerFactory.createController(WindowTag.MAIN_WINDOW);
 	}
 
-	private void showLoginErrors()
+	private void showLoginError()
 	{
-		// TODO Implement showLoginErrors() method
+		gui.showLoginError();
 	}
 }

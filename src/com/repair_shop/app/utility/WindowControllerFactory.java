@@ -1,5 +1,6 @@
 package com.repair_shop.app.utility;
 
+import com.repair_shop.app.controller.LoginDialogController;
 import com.repair_shop.app.controller.MainWindowController;
 import com.repair_shop.app.controller.WindowController;
 
@@ -12,6 +13,8 @@ public class WindowControllerFactory
 			case MAIN_WINDOW:
 				return new MainWindowController();
 		
+			case LOGIN_DIALOG:
+				return new LoginDialogController();
 			default:
 			{
 			return null;
