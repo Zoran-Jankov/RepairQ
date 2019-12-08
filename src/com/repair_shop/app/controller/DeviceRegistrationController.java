@@ -1,7 +1,7 @@
 package com.repair_shop.app.controller;
 
 import com.repair_shop.app.action.ActionFactory;
-import com.repair_shop.app.utility.CmbModelFactory;
+import com.repair_shop.app.utility.ComboBoxModelFactory;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Device;
@@ -19,10 +19,10 @@ public class DeviceRegistrationController extends InputDialogController
 		deviceGUI = (DeviceRegistrationDialog) gui;
 		
 		deviceGUI.getDeviceRegistrationPanel().setDeviceTypeCmbModel
-				 (CmbModelFactory.getModel(DataType.DEVICE_TYPE));
+				 (ComboBoxModelFactory.getModel(DataType.DEVICE_TYPE));
 		
 		deviceGUI.getDeviceRegistrationPanel().setBrandCmbModel
-				 (CmbModelFactory.getModel(DataType.BRAND));
+				 (ComboBoxModelFactory.getModel(DataType.BRAND));
 		
 		deviceGUI.getDeviceRegistrationPanel()
 				 .setBtnNewModelActionListener

@@ -1,7 +1,7 @@
 package com.repair_shop.app.controller;
 
 import com.repair_shop.app.action.ActionFactory;
-import com.repair_shop.app.utility.CmbModelFactory;
+import com.repair_shop.app.utility.ComboBoxModelFactory;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Client;
@@ -19,7 +19,7 @@ public class ClientRegistrationController extends InputDialogController
 		clientGUI = (ClientRegistrationDialog) super.gui;
 		
 		clientGUI.getMarketingPanel().setMarketingCmbModel
-				 (CmbModelFactory.getModel(DataType.MARKETING_TYPE));
+				 (ComboBoxModelFactory.getModel(DataType.MARKETING_TYPE));
 		
 		clientGUI.getMarketingPanel()
 				 .setBtnMarketingActionListener

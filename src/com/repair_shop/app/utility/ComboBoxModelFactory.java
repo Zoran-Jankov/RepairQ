@@ -8,7 +8,7 @@ import javax.swing.DefaultComboBoxModel;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 
-public class CmbModelFactory 
+public class ComboBoxModelFactory 
 {
 	public static ComboBoxModel<String> getModel(DataType dataType)
 	{

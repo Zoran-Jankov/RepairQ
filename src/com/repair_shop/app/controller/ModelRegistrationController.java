@@ -1,7 +1,7 @@
 package com.repair_shop.app.controller;
 
 import com.repair_shop.app.action.ActionFactory;
-import com.repair_shop.app.utility.CmbModelFactory;
+import com.repair_shop.app.utility.ComboBoxModelFactory;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Brand;
@@ -25,11 +25,11 @@ public class ModelRegistrationController extends InputDialogController
 	{
 		modelGUI.getModelPanel()
 		        .setDeviceTypeCmbModel
-		        (CmbModelFactory.getModel(DataType.DEVICE_TYPE));
+		        (ComboBoxModelFactory.getModel(DataType.DEVICE_TYPE));
 		
 		modelGUI.getModelPanel()
 		        .setBrandCmbModel
-		        (CmbModelFactory.getModel(DataType.BRAND));
+		        (ComboBoxModelFactory.getModel(DataType.BRAND));
 	}
 	
 	private void setButtonActionListeners()
