@@ -49,6 +49,7 @@ public class LoginDialogController implements WindowController
 	private void login()
 	{
 		WindowControllerFactory.createController(WindowTag.MAIN_WINDOW);
+		gui.dispose();
 	}
 
 	private void showLoginError()
