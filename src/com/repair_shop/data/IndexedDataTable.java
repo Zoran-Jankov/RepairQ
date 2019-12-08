@@ -6,14 +6,14 @@ import com.repair_shop.data.entity.Entity;
 
 public class IndexedDataTable implements IndexedData
 {
-	private int dataElementCounter = 1;
+	private int entityCounter = 1;
 	private HashMap<Integer, Entity> idMap = new HashMap<Integer, Entity>();
 	private HashMap<String, Entity> uniqueStringMap = new HashMap<String, Entity>();
 	
 	@Override
-	public int getDataElementCounter()
+	public int getEntityCounter()
 	{
-		return dataElementCounter;
+		return entityCounter;
 	}
 	
 	@Override
@@ -47,36 +47,36 @@ public class IndexedDataTable implements IndexedData
 	}
 
 	@Override
-	public void save(Entity newDataElement)
+	public void save(Entity newEntity)
 	{
-		idMap.put(newDataElement.getID(), newDataElement);
+		idMap.put(newEntity.getID(), newEntity);
 		
-		if(DataType.hasUniqueString(newDataElement))
+		if(DataType.hasUniqueString(newEntity))
 		{
-			uniqueStringMap.put(newDataElement.getUniqueString(), newDataElement);
+			uniqueStringMap.put(newEntity.getUniqueString(), newEntity);
 		}
 		
-		if(DataType.makesReferences(newDataElement))
+		if(DataType.makesReferences(newEntity))
 		{
-			newDataElement.createReferences();
+			newEntity.createReferences();
 		}
 		
-		dataElementCounter++;
+		entityCounter++;
 	}
 	
 	@Override
-	public void delete(Entity newDataElement)
+	public void delete(Entity newEntity)
 	{
-		idMap.remove(newDataElement.getID());
+		idMap.remove(newEntity.getID());
 		
-		if(DataType.hasUniqueString(newDataElement))
+		if(DataType.hasUniqueString(newEntity))
 		{
-			uniqueStringMap.remove(newDataElement.getUniqueString());
+			uniqueStringMap.remove(newEntity.getUniqueString());
 		}
 		
-		if(DataType.makesReferences(newDataElement))
+		if(DataType.makesReferences(newEntity))
 		{
-			newDataElement.deleteReferences();
+			newEntity.deleteReferences();
 		}
 	}
 }

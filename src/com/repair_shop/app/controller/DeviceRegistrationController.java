@@ -54,7 +54,7 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		newDevice.setId(id);
 		newDevice.setSerial(deviceGUI.getDeviceRegistrationPanel().getSerial());
-		newDevice.setModel((Model) DataManager.getDataElement(DataType.MODEL,
+		newDevice.setModel((Model) DataManager.getEntity(DataType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
 		
 		return newDevice;

@@ -75,7 +75,7 @@ public class ClientRegistrationController extends InputDialogController
 		
 		newClient.setAddress(clientGUI.getPersonalInfoPanel().getAddress());
 		
-		newClient.setMarketing((Marketing) DataManager.getDataElement
+		newClient.setMarketing((Marketing) DataManager.getEntity
 			     (DataType.MARKETING_TYPE, clientGUI.getMarketingPanel().getMarketing()));
 		
 		return newClient;

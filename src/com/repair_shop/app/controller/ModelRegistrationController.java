@@ -81,10 +81,10 @@ public class ModelRegistrationController extends InputDialogController
 		
 		newModel.setDescription(modelGUI.getPropertyPanel().getDescription());
 		
-		newModel.setDeviceType((DeviceType) DataManager.getDataElement
+		newModel.setDeviceType((DeviceType) DataManager.getEntity
 				(DataType.DEVICE_TYPE, modelGUI.getModelPanel().getDeviceType()));
 				                                
-		newModel.setBrand((Brand) DataManager.getDataElement
+		newModel.setBrand((Brand) DataManager.getEntity
 				(DataType.BRAND, modelGUI.getModelPanel().getBrand()));
 		
 		return newModel;

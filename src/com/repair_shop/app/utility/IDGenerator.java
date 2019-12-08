@@ -16,7 +16,7 @@ public class IDGenerator
 		}
 		else
 		{
-			return DataManager.getDataElementCounter(dataType) 
+			return DataManager.getEntityCounter(dataType) 
 					+ (TERMINAL_NUMBER * COUNTER_MAX_VALUE);
 		}
 	}

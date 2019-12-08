@@ -46,19 +46,19 @@ public class DataManager
 		return dataTables.get(dataType);
 	}
 	
-	public static Entity getDataElement(DataType dataType, int id)
+	public static Entity getEntity(DataType dataType, int id)
 	{
 		return getByID(dataType, id);
 	}
 	
-	public static Entity getDataElement(DataType dataType, String name)
+	public static Entity getEntity(DataType dataType, String name)
 	{
 		return getByUniqueString(dataType, name);
 	}
 
-	public static int getDataElementCounter(DataType dataType)
+	public static int getEntityCounter(DataType dataType)
 	{
-		return getDataTable(dataType).getDataElementCounter();
+		return getDataTable(dataType).getEntityCounter();
 	}
 
 	public static HashMap<String, Entity> getUniqueStringMap(DataType dataType)
@@ -78,7 +78,7 @@ public class DataManager
 	
 	public static boolean isDataTableEmpty(DataType dataType)
 	{
-		return getDataElementCounter(dataType) == 0;
+		return getEntityCounter(dataType) == 0;
 	}
 
 	public static boolean idCollision(DataType dataType, int id)

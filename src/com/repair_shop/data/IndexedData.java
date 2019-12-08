@@ -6,7 +6,7 @@ import com.repair_shop.data.entity.Entity;
 
 public interface IndexedData
 {
-	public int getDataElementCounter();
+	public int getEntityCounter();
 	
 	public HashMap<String, Entity> getUniqueStringMap();
 	
@@ -18,7 +18,7 @@ public interface IndexedData
 	
 	public boolean uniqueStringCollision(String uniqueString);
 	
-	public void save(Entity newDataElement);
+	public void save(Entity newEntity);
 	
-	public void delete(Entity newDataElement);
+	public void delete(Entity newEntity);
 }
