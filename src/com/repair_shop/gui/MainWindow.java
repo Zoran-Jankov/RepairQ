@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
 import com.repair_shop.gui.panel.DataTablePanel;
+import com.repair_shop.gui.text.TabName;
 import com.repair_shop.gui.text.WindowTitle;
 
 import java.awt.GridLayout;
@@ -23,11 +24,11 @@ public class MainWindow extends JFrame
 		getContentPane().add(tabbedPane);
 		
 		tabbedPane.add(ticketPanel);
-		tabbedPane.setTitleAt(0, "Tickets");
+		tabbedPane.setTitleAt(0, TabName.TICKET);
 		tabbedPane.setEnabledAt(0, true);
 		
 		tabbedPane.add(notificationPanel);
-		tabbedPane.setTitleAt(1, "Notifications");
+		tabbedPane.setTitleAt(1, TabName.NOTIFICATION);
 		tabbedPane.setEnabledAt(1, true);
 	}
 }
