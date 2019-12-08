@@ -6,9 +6,14 @@ import com.repair_shop.gui.MainWindow;
 
 public class MainWindowController implements WindowController
 {
-	private MainWindow mainWindow;
+	private MainWindow mainWindow = new MainWindow();
 	
 	//TODO Finish MainWindowController implementation 
+	
+	public MainWindowController()
+	{
+		mainWindow.setVisible(true);
+	}
 	
 	@Override
 	public Window getWindow()

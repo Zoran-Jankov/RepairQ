@@ -14,10 +14,12 @@ public class MainWindow extends JFrame
 	private static final long serialVersionUID = -6003284600077289818L;
 	private DataTablePanel ticketPanel = new DataTablePanel();
 	private DataTablePanel notificationPanel = new DataTablePanel();
+	
 	public MainWindow()
 	{
 		setTitle(WindowTitle.MAIN_WINDOW);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		getContentPane().setLayout(new GridLayout(1, 0, 0, 0));
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
@@ -30,5 +32,7 @@ public class MainWindow extends JFrame
 		tabbedPane.add(notificationPanel);
 		tabbedPane.setTitleAt(1, TabName.NOTIFICATION);
 		tabbedPane.setEnabledAt(1, true);
+		
+		pack();
 	}
 }
