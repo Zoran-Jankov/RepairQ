@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import com.repair_shop.app.controller.LoginDialogController;
-import com.repair_shop.app.controller.WindowController;
 
 public class Login implements ActionListener
 {
