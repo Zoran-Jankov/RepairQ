@@ -12,6 +12,9 @@ import javax.swing.JTextField;
 import com.repair_shop.gui.component.LabelFactory;
 import com.repair_shop.gui.component.TextFieldFactory;
 import com.repair_shop.gui.panel.InputButtonPanel;
+import com.repair_shop.gui.text.ErrorMessage;
+import com.repair_shop.gui.text.ErrorTitle;
+import com.repair_shop.gui.text.LabelName;
 import com.repair_shop.gui.text.WindowTitle;
 
 import javax.swing.JPasswordField;
@@ -30,12 +33,12 @@ public class LoginDialog extends JDialog
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(new MigLayout("", "[][grow]", "[30px:n][30px:n][]"));
 		
-		JLabel lblUsername = LabelFactory.createJLabel("Username", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblUsername = LabelFactory.createJLabel(LabelName.USERNAME, new Font("Tahoma", Font.PLAIN, 13));
 		getContentPane().add(lblUsername, "cell 0 0,growy");
 		
 		getContentPane().add(txtUsername, "cell 1 0,grow");
 		
-		JLabel lblPassword = LabelFactory.createJLabel("Password", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblPassword = LabelFactory.createJLabel(LabelName.PASSWORD, new Font("Tahoma", Font.PLAIN, 13));
 		getContentPane().add(lblPassword, "cell 0 1,growy");
 		
 		getContentPane().add(txtPassword, "cell 1 1,grow");
@@ -66,8 +69,9 @@ public class LoginDialog extends JDialog
 	
 	public void showLoginError()
 	{
-		JOptionPane.showMessageDialog
-		           (this, "Wrong username or password", 
-		        		  "Login Error", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(this, 
+		        					  ErrorMessage.LOGIN, 
+		        					  ErrorTitle.LOGIN,
+		        					  JOptionPane.ERROR_MESSAGE);
 	}
 }

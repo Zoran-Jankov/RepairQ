@@ -24,6 +24,9 @@ public class LabelName
 	public static String USER = "User";
 	public static String USER_TYPE = "User Type";
 	
+	public static String USERNAME = "Username";
+	public static String PASSWORD = "Password";
+	
 	public static String DEVICE_TYPE = "Device Type";
 	public static String BRAND = "Device Brand";
 	public static String MODEL = "Device Model";
