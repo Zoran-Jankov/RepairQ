@@ -1,5 +1,12 @@
-package com.repair_shop.app.controller;
+package com.repair_shop.app.utility;
 
+import com.repair_shop.app.controller.ClientRegistrationController;
+import com.repair_shop.app.controller.DeviceRegistrationController;
+import com.repair_shop.app.controller.InputDialogController;
+import com.repair_shop.app.controller.ModelRegistrationController;
+import com.repair_shop.app.controller.PropertyRegistrationController;
+import com.repair_shop.app.controller.TicketRegistrationController;
+import com.repair_shop.app.controller.WindowController;
 import com.repair_shop.data.DataType;
 
 public class DialogClontrollerFactory

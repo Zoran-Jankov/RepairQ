@@ -3,9 +3,9 @@ package com.repair_shop.app.action;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import com.repair_shop.app.controller.DialogClontrollerFactory;
 import com.repair_shop.app.controller.InputDialogController;
 import com.repair_shop.app.controller.WindowController;
+import com.repair_shop.app.utility.DialogClontrollerFactory;
 import com.repair_shop.data.DataType;
 
 public class ActionFactory
