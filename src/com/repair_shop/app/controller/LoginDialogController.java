@@ -14,7 +14,7 @@ public class LoginDialogController implements WindowController
 	public LoginDialogController()
 	{
 		gui.getInputButtonPanel().setBtnAddActionListener
-		   (ActionFactory.openWindow(WindowTag.MAIN_WINDOW));
+		   (ActionFactory.login(this));
 		
 		gui.getInputButtonPanel().setBtnCancelActionListener
 		   (ActionFactory.closeWindow(this));
