@@ -1,6 +1,6 @@
 package com.repair_shop.app.controller;
 
-import com.repair_shop.app.action.ActionFactory;
+import com.repair_shop.app.utility.ActionFactory;
 import com.repair_shop.app.utility.ComboBoxModelFactory;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
@@ -23,7 +23,7 @@ public class ClientRegistrationController extends InputDialogController
 		
 		clientGUI.getMarketingPanel()
 				 .setBtnMarketingActionListener
-				 (ActionFactory.openNewWindow(this, DataType.MARKETING_TYPE));
+				 (ActionFactory.openWindow(this, DataType.MARKETING_TYPE));
 	}
 	
 	public void updateComboBoxes(String item)

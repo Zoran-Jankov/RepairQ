@@ -1,6 +1,6 @@
 package com.repair_shop.app.controller;
 
-import com.repair_shop.app.action.ActionFactory;
+import com.repair_shop.app.utility.ActionFactory;
 import com.repair_shop.app.utility.ComboBoxModelFactory;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
@@ -36,11 +36,11 @@ public class ModelRegistrationController extends InputDialogController
 	{
 		modelGUI.getModelPanel()
 				.setBtnNewDeviceTypeActionlistener(ActionFactory
-		        .openNewWindow(this, DataType.DEVICE_TYPE));
+		        .openWindow(this, DataType.DEVICE_TYPE));
 		
 		modelGUI.getModelPanel()
 		        .setBtnNewBrandActionlistener(ActionFactory
-		        .openNewWindow(this, DataType.BRAND));
+		        .openWindow(this, DataType.BRAND));
 	}
 
 	@Override

@@ -1,6 +1,6 @@
 package com.repair_shop.app.controller;
 
-import com.repair_shop.app.action.ActionFactory;
+import com.repair_shop.app.utility.ActionFactory;
 import com.repair_shop.app.utility.ComboBoxModelFactory;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
@@ -26,7 +26,7 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		deviceGUI.getDeviceRegistrationPanel()
 				 .setBtnNewModelActionListener
-				 (ActionFactory.openNewWindow(this,DataType.MODEL));
+				 (ActionFactory.openWindow(this,DataType.MODEL));
 	}
 	
 	public void updateComboBoxes(String deviceType,

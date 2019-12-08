@@ -2,7 +2,7 @@ package com.repair_shop.app.controller;
 
 import java.awt.Window;
 
-import com.repair_shop.app.action.ActionFactory;
+import com.repair_shop.app.utility.ActionFactory;
 import com.repair_shop.app.utility.IDGenerator;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
@@ -38,7 +38,7 @@ public abstract class InputDialogController implements WindowController
 		return (Window) gui;
 	}
 
-	public void trySavingDataElement()
+	public void trySavingEntity()
 	{
 		if(isInputValid())
 		{
