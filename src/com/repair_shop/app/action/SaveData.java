@@ -3,7 +3,7 @@ package com.repair_shop.app.action;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import com.repair_shop.app.utility.InputDialogController;
+import com.repair_shop.app.controller.InputDialogController;
 
 public class SaveData implements ActionListener
 {

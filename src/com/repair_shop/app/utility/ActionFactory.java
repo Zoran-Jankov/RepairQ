@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import com.repair_shop.app.action.CloseWindow;
 import com.repair_shop.app.action.OpenWindow;
 import com.repair_shop.app.action.SaveData;
+import com.repair_shop.app.controller.InputDialogController;
 import com.repair_shop.app.controller.WindowController;
 import com.repair_shop.data.DataType;
 
