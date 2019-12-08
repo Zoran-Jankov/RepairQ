@@ -18,6 +18,7 @@ public class MainWindow extends JFrame
 	public MainWindow()
 	{
 		setTitle(WindowTitle.MAIN_WINDOW);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		getContentPane().setLayout(new GridLayout(1, 0, 0, 0));
