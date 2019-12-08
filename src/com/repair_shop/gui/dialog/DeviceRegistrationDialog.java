@@ -21,13 +21,19 @@ public class DeviceRegistrationDialog extends JDialog implements InputDialog
 	public DeviceRegistrationDialog(Window owner)
 	{
 		super(owner);
+		
 		setResizable(false);
 		setTitle(WindowTitle.DEVICE);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		
 		getContentPane().setLayout(new MigLayout("", "[434px]", "[25px:n][][]"));
+		
 		getContentPane().add(idPanel, "cell 0 0,grow");
+		
 		getContentPane().add(devicePanel, "cell 0 1,grow");
+		
 		getContentPane().add(buttonPanel, "cell 0 2,grow");
+		
 		pack();
 	}
 
