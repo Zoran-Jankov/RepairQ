@@ -32,8 +32,9 @@ public class DataTablePanel extends JPanel
 		tblData.setModel(dataModel);
 	}
 	
-	public void setAddNewDataActionListener(ActionListener listener)
+	public void setButtonNewFunction(ActionListener listener, String buttonText)
 	{
+		btnAddNewData.setText(buttonText);
 		btnAddNewData.addActionListener(listener);
 	}
 }
