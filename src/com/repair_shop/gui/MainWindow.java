@@ -35,4 +35,14 @@ public class MainWindow extends JFrame
 		
 		pack();
 	}
+	
+	public DataTablePanel getTicketPanel()
+	{
+		return ticketPanel;	
+	}
+	
+	public DataTablePanel getNotificationPanel()
+	{
+		return notificationPanel;	
+	}
 }
