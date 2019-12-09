@@ -2,6 +2,7 @@ package com.repair_shop.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
+import javax.swing.UIManager;
 
 import com.repair_shop.gui.panel.DataTablePanel;
 import com.repair_shop.gui.text.TabName;
@@ -26,12 +27,10 @@ public class MainWindow extends JFrame
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
 		getContentPane().add(tabbedPane);
 		
-		tabbedPane.add(ticketPanel);
-		tabbedPane.setTitleAt(0, TabName.TICKET);
+		tabbedPane.addTab(TabName.TICKET, UIManager.getIcon("FileView.fileIcon"), ticketPanel, "Tickets View");
 		tabbedPane.setEnabledAt(0, true);
 		
-		tabbedPane.add(notificationPanel);
-		tabbedPane.setTitleAt(1, TabName.NOTIFICATION);
+		tabbedPane.addTab(TabName.NOTIFICATION, UIManager.getIcon("FileChooser.homeFolderIcon"), notificationPanel, "Notifications View");
 		tabbedPane.setEnabledAt(1, true);
 		
 		pack();
