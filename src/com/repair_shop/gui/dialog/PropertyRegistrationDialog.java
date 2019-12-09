@@ -21,13 +21,19 @@ public class PropertyRegistrationDialog extends JDialog implements InputDialog
 	public PropertyRegistrationDialog(Window owner)
 	{
 		super(owner);
+		
 		setResizable(false);
 		setTitle(WindowTitle.PROPERTY);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		
 		getContentPane().setLayout(new MigLayout("", "[434px]", "[20px:n][grow][]"));
+		
 		getContentPane().add(idPanel, "cell 0 0,grow");
+		
 		getContentPane().add(propertyPanel, "cell 0 1,grow");
+		
 		getContentPane().add(buttonPanel, "cell 0 2,grow");
+		
 		pack();
 	}
 
