@@ -1,5 +1,7 @@
 package com.repair_shop.gui.text;
 
+import com.repair_shop.data.DataType;
+
 public class WindowTitle
 {
 	public static String LOGIN = "Login";
@@ -22,8 +24,27 @@ public class WindowTitle
 	
 	public static String PROPERTY ="Unknown Property - ERROR";
 	
-	public static void setPropertyTitle(String text)
+	public static void setPropertyTitle(DataType dataType)
 	{
-		PROPERTY = text;
+		switch(dataType)
+		{
+			case NOTIFICATION_TYPE:
+				PROPERTY = NOTIFICATION_TYPE;
+			
+			case MARKETING_TYPE:
+				PROPERTY = MARKETING_TYPE;
+				
+			case STATUS:
+				PROPERTY = STATUS;
+				
+			case DEVICE_TYPE:
+				PROPERTY = DEVICE_TYPE;
+				
+			case BRAND:
+				PROPERTY = BRAND;
+				
+			default:
+				break;
+		}
 	}
 }
