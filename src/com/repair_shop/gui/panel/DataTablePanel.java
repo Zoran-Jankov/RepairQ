@@ -3,12 +3,14 @@ package com.repair_shop.gui.panel;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JTable;
+import javax.swing.table.TableModel;
 
 import com.repair_shop.gui.component.ButtonFactory;
 import com.repair_shop.gui.text.ButtonName;
 
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionListener;
 
 public class DataTablePanel extends JPanel
 {
@@ -23,5 +25,15 @@ public class DataTablePanel extends JPanel
 		add(tblData, "cell 0 0,grow");
 		
 		add(btnAddNewData, "cell 0 1");
+	}
+	
+	public void setTableModel(TableModel dataModel)
+	{
+		tblData.setModel(dataModel);
+	}
+	
+	public void setAddNewDataActionListener(ActionListener listener)
+	{
+		btnAddNewData.addActionListener(listener);
 	}
 }
