@@ -4,9 +4,11 @@ import java.awt.Window;
 
 import javax.swing.JDialog;
 
+import com.repair_shop.data.DataType;
 import com.repair_shop.gui.panel.IdPanel;
 import com.repair_shop.gui.panel.InputButtonPanel;
 import com.repair_shop.gui.panel.PropertyPanel;
+import com.repair_shop.gui.text.WindowTitle;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -17,11 +19,12 @@ public class PropertyRegistrationDialog extends JDialog implements InputDialog
 	private PropertyPanel propertyPanel = new PropertyPanel();
 	private InputButtonPanel buttonPanel = new InputButtonPanel();
 	
-	public PropertyRegistrationDialog(Window owner, String title)
+	public PropertyRegistrationDialog(Window owner, DataType dataType)
 	{
-		super(owner, title);
+		super(owner);
 		
 		setResizable(false);
+		setTitle(WindowTitle.getPropertyTitle(dataType));
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		getContentPane().setLayout(new MigLayout("", "[434px]", "[20px:n][grow][]"));

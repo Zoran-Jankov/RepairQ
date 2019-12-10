@@ -32,7 +32,7 @@ public class InputDialogFactory
 			{
 				if(DataType.isAProperty(dataType))
 				{
-					return new PropertyRegistrationDialog(owner );
+					return new PropertyRegistrationDialog(owner, dataType);
 				}
 				else
 				{
