@@ -24,8 +24,10 @@ public class SelectionPanel extends JPanel
 {
 	private static final long serialVersionUID = 6173599805523082955L;
 	private JComboBox<String> cmbDataElement = ComboBoxFactory.createJComboBox();
-	private JLabel lblEntityDetails = LabelFactory.createJLabel(LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 15));
-	private final JButton btnNewEntity = ButtonFactory.createJButton(ButtonName.ADD_NEW_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
+	private JLabel lblEntityDetails = LabelFactory.createJLabel
+			                                     (LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 15));
+	private final JButton btnNewEntity = ButtonFactory.createJButton
+													  (ButtonName.ADD_NEW_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
 	
 	public SelectionPanel()
 	{
@@ -54,7 +56,7 @@ public class SelectionPanel extends JPanel
 		cmbDataElement.setSelectedItem(item);
 	}
 	
-	public void setEntityCmbModel(ComboBoxModel<String> model)
+	public void setComboBoxModel(ComboBoxModel<String> model)
 	{
 		cmbDataElement.setModel(model);
 	}

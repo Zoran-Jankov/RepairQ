@@ -52,12 +52,22 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog
 	
 	public String getClient()
 	{
-		return "";
+		return clientPanel.getEntity();
+	}
+	
+	public SelectionPanel getClientPanel()
+	{
+		return clientPanel;
 	}
 	
 	public String getDevice()
 	{
-		return "";
+		return devicePanel.getEntity();
+	}
+	
+	public SelectionPanel getDevicePanel()
+	{
+		return devicePanel;
 	}
 	
 	public TicketRegistrationPanel getTicketPanel()

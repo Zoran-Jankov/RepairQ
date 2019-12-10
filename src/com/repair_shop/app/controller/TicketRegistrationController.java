@@ -1,10 +1,13 @@
 package com.repair_shop.app.controller;
 
+import com.repair_shop.app.utility.ActionFactory;
+import com.repair_shop.app.utility.ComboBoxModelFactory;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Client;
 import com.repair_shop.data.entity.Ticket;
 import com.repair_shop.gui.dialog.TicketRegistrationDialog;
+import com.repair_shop.gui.text.ButtonName;
 
 public class TicketRegistrationController extends InputDialogController
 {
@@ -16,6 +19,41 @@ public class TicketRegistrationController extends InputDialogController
 		
 		ticketGUI = (TicketRegistrationDialog) super.gui;
 		
+		setClientPanelFunction();
+		
+		setDevicePanelFunction();
+	}
+	
+	private void setClientPanelFunction()
+	{
+		ticketGUI.getClientPanel().setComboBoxModel
+				 (ComboBoxModelFactory.getModel(DataType.CLIENT));
+		
+		ticketGUI.getClientPanel().setButtonFunction
+		         (ActionFactory.openWindow(this, DataType.CLIENT), ButtonName.CLIENT);
+		
+		setClientDetails();
+	}
+
+	public void setClientDetails()
+	{
+		// TODO setClientDetails() implementation
+	}
+
+	private void setDevicePanelFunction()
+	{
+		ticketGUI.getDevicePanel().setComboBoxModel
+		         (ComboBoxModelFactory.getModel(DataType.DEVICE));
+
+		ticketGUI.getDevicePanel().setButtonFunction
+                 (ActionFactory.openWindow(this, DataType.DEVICE), ButtonName.DEVICE);
+
+		setDeviceDetails();
+	}
+
+	private void setDeviceDetails()
+	{
+		// TODO setDeviceDetails() implementation
 	}
 
 	@Override
