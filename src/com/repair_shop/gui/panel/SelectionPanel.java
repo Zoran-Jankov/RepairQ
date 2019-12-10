@@ -24,8 +24,8 @@ public class SelectionPanel extends JPanel
 {
 	private static final long serialVersionUID = 6173599805523082955L;
 	private JComboBox<String> cmbDataElement = ComboBoxFactory.createJComboBox();
-	private JLabel lblDataElementDetails = LabelFactory.createJLabel(LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 15));
-	private final JButton btnNewDataElement = ButtonFactory.createJButton(ButtonName.ADD_NEW_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
+	private JLabel lblEntityDetails = LabelFactory.createJLabel(LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 15));
+	private final JButton btnNewEntity = ButtonFactory.createJButton(ButtonName.ADD_NEW_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
 	
 	public SelectionPanel()
 	{
@@ -37,34 +37,40 @@ public class SelectionPanel extends JPanel
 		
 		add(cmbDataElement, "cell 0 1,grow");
 		
-		add(btnNewDataElement, "cell 1 1,grow");
+		add(btnNewEntity, "cell 1 1,grow");
 		
-		add(lblDataElementDetails, "cell 0 2 2 1,grow");
+		add(lblEntityDetails, "cell 0 2 2 1,grow");
 	}
 	
-	public String getDataElement()
+	public String getEntity()
 	{
 		cmbDataElement.setBackground(Color.WHITE);
 		return (String) cmbDataElement.getSelectedItem();
 	}
 	
-	public void setDataElement(String item)
+	public void setEntity(String item)
 	{
 		cmbDataElement.setBackground(Color.WHITE);
 		cmbDataElement.setSelectedItem(item);
 	}
 	
-	public void setDataElementCmbModel(ComboBoxModel<String> model)
+	public void setEntityCmbModel(ComboBoxModel<String> model)
 	{
 		cmbDataElement.setModel(model);
 	}
 	
-	public void setBtnNewDataElement(ActionListener listener)
+	public void setButtonFunction(ActionListener listener, String text)
 	{
-		btnNewDataElement.addActionListener(listener);
+		btnNewEntity.addActionListener(listener);
+		btnNewEntity.setText(text);
 	}
 	
-	public void showDataElementError()
+	public void setEntityDetails(String text)
+	{
+		lblEntityDetails.setText(text);
+	}
+	
+	public void showSelectionError()
 	{
 		cmbDataElement.setBackground(Color.YELLOW);
 	}
