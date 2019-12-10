@@ -18,7 +18,7 @@ public class PropertyRegistrationController extends InputDialogController
 		
 		this.dataType = dataType;
 		
-		WindowTitle.setPropertyTitle(dataType);
+		propertyGUI.setTitle(WindowTitle.getPropertyTitle(dataType));
 		
 		propertyGUI = (PropertyRegistrationDialog) super.gui;
 	}

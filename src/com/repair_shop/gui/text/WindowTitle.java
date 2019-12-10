@@ -24,32 +24,27 @@ public class WindowTitle
 	
 	public static String PROPERTY ="Unknown Property - ERROR";
 	
-	public static void setPropertyTitle(DataType dataType)
+	public static String getPropertyTitle(DataType dataType)
 	{
 		switch(dataType)
 		{
 			case NOTIFICATION_TYPE:
-				PROPERTY = NOTIFICATION_TYPE;
-				break;
+				return NOTIFICATION_TYPE;
 			
 			case MARKETING_TYPE:
-				PROPERTY = MARKETING_TYPE;
-				break;
+				return MARKETING_TYPE;
 				
 			case STATUS:
-				PROPERTY = STATUS;
-				break;
+				return STATUS;
 				
 			case DEVICE_TYPE:
-				PROPERTY = DEVICE_TYPE;
-				break;
+				return DEVICE_TYPE;
 				
 			case BRAND:
-				PROPERTY = BRAND;
-				break;
+				return BRAND;
 				
 			default:
-				break;
+				return PROPERTY;
 		}
 	}
 }
