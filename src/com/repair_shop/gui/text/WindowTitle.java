@@ -30,18 +30,23 @@ public class WindowTitle
 		{
 			case NOTIFICATION_TYPE:
 				PROPERTY = NOTIFICATION_TYPE;
+				break;
 			
 			case MARKETING_TYPE:
 				PROPERTY = MARKETING_TYPE;
+				break;
 				
 			case STATUS:
 				PROPERTY = STATUS;
+				break;
 				
 			case DEVICE_TYPE:
 				PROPERTY = DEVICE_TYPE;
+				break;
 				
 			case BRAND:
 				PROPERTY = BRAND;
+				break;
 				
 			default:
 				break;
