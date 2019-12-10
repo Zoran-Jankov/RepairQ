@@ -8,6 +8,8 @@ import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Entity;
 import com.repair_shop.gui.dialog.InputDialog;
+import com.repair_shop.gui.dialog.PropertyRegistrationDialog;
+import com.repair_shop.gui.text.WindowTitle;
 import com.repair_shop.gui.utility.InputDialogFactory;
 
 public abstract class InputDialogController implements WindowController
@@ -17,9 +19,18 @@ public abstract class InputDialogController implements WindowController
 	
 	protected InputDialogController(WindowController owner, DataType dataType)
 	{
-		gui = InputDialogFactory.getWindow(owner.getWindow(), dataType);
+		if(!DataType.isAProperty(dataType))
+		{
+			gui = InputDialogFactory.getWindow(owner.getWindow(), dataType);
+		}
+		else
+		{
+			gui = new PropertyRegistrationDialog
+					 (owner.getWindow(), WindowTitle.getPropertyTitle(dataType));
+		}
 		
 		id = IDGenerator.getNewID(dataType);
+		
 		
 		gui.getIdPanel().setIdValue(IDGenerator.formatRegularID(id));
 		

@@ -17,9 +17,9 @@ public class PropertyRegistrationDialog extends JDialog implements InputDialog
 	private PropertyPanel propertyPanel = new PropertyPanel();
 	private InputButtonPanel buttonPanel = new InputButtonPanel();
 	
-	public PropertyRegistrationDialog(Window owner)
+	public PropertyRegistrationDialog(Window owner, String title)
 	{
-		super(owner);
+		super(owner, title);
 		
 		setResizable(false);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);

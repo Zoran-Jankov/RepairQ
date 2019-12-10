@@ -5,7 +5,6 @@ import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Property;
 import com.repair_shop.gui.dialog.PropertyRegistrationDialog;
-import com.repair_shop.gui.text.WindowTitle;
 
 public class PropertyRegistrationController extends InputDialogController
 {
@@ -17,8 +16,6 @@ public class PropertyRegistrationController extends InputDialogController
 		super(owner, dataType);
 		
 		this.dataType = dataType;
-		
-		propertyGUI.setTitle(WindowTitle.getPropertyTitle(dataType));
 		
 		propertyGUI = (PropertyRegistrationDialog) super.gui;
 	}
