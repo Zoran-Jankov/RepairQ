@@ -3,9 +3,9 @@ package com.repair_shop.gui.panel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
-import com.repair_shop.gui.component.TextPaneFactory;
 import com.repair_shop.gui.text.LabelName;
-import com.repair_shop.gui.component.LabelFactory;
+import com.repair_shop.gui.utility.LabelFactory;
+import com.repair_shop.gui.utility.TextPaneFactory;
 
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;

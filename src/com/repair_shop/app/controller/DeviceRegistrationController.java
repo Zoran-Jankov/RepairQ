@@ -52,7 +52,9 @@ public class DeviceRegistrationController extends InputDialogController
 		Device newDevice = new Device();
 		
 		newDevice.setId(id);
+		
 		newDevice.setSerial(deviceGUI.getDeviceRegistrationPanel().getSerial());
+		
 		newDevice.setModel((Model) DataManager.getEntity(DataType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
 		
@@ -75,7 +77,8 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		String serial = deviceGUI.getDeviceRegistrationPanel().getSerial();
 		
-		return !("".equals(serial) || DataManager.devicesDataTable.uniqueStringCollision(serial));
+		return !("".equals(serial) 
+			  || DataManager.devicesDataTable.uniqueStringCollision(serial));
 	}
 	
 	@Override

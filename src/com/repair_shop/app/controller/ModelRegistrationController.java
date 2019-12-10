@@ -65,8 +65,9 @@ public class ModelRegistrationController extends InputDialogController
 	private boolean isModelNameValid()
 	{
 		String name = modelGUI.getPropertyPanel().getName();
-		return !("".equals(name)) && DataManager.modelsDataTable
-				                               .uniqueStringCollision(name);
+		
+		return !("".equals(name)) 
+			  || DataManager.modelsDataTable.uniqueStringCollision(name);
 	}
 	
 	@Override

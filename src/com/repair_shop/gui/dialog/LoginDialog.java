@@ -9,14 +9,14 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextField;
 
-import com.repair_shop.gui.component.LabelFactory;
-import com.repair_shop.gui.component.TextFieldFactory;
 import com.repair_shop.gui.panel.InputButtonPanel;
 import com.repair_shop.gui.text.ButtonName;
 import com.repair_shop.gui.text.ErrorMessage;
 import com.repair_shop.gui.text.ErrorTitle;
 import com.repair_shop.gui.text.LabelName;
 import com.repair_shop.gui.text.WindowTitle;
+import com.repair_shop.gui.utility.LabelFactory;
+import com.repair_shop.gui.utility.TextFieldFactory;
 
 import javax.swing.JPasswordField;
 

@@ -9,10 +9,10 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
-import com.repair_shop.gui.component.LabelFactory;
-import com.repair_shop.gui.component.TextFieldFactory;
-import com.repair_shop.gui.component.TextPaneFactory;
 import com.repair_shop.gui.text.LabelName;
+import com.repair_shop.gui.utility.LabelFactory;
+import com.repair_shop.gui.utility.TextFieldFactory;
+import com.repair_shop.gui.utility.TextPaneFactory;
 
 public class PropertyPanel extends JPanel
 {

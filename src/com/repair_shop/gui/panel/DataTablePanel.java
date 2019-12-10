@@ -5,8 +5,8 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
 
-import com.repair_shop.gui.component.ButtonFactory;
 import com.repair_shop.gui.text.ButtonName;
+import com.repair_shop.gui.utility.ButtonFactory;
 
 import javax.swing.JButton;
 import java.awt.Font;

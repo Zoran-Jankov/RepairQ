@@ -27,8 +27,8 @@ public class PropertyRegistrationController extends InputDialogController
 	{
 		String name = propertyGUI.getPropertyPanel().getName();
 		
-		return !(DataManager.clientsDataTable.uniqueStringCollision(name)
-			 || ("".equals(name)));
+		return !("".equals(name)
+			  || DataManager.clientsDataTable.uniqueStringCollision(name));
 	}
 
 	@Override
@@ -37,7 +37,9 @@ public class PropertyRegistrationController extends InputDialogController
 		Property newProperty = (Property) EntityFactory.create(dataType);
 		
 		newProperty.setId(id);
+		
 		newProperty.setName(propertyGUI.getPropertyPanel().getName());
+		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
 		
 		return newProperty;

@@ -5,9 +5,9 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import com.repair_shop.gui.component.LabelFactory;
-import com.repair_shop.gui.component.TextFieldFactory;
 import com.repair_shop.gui.text.LabelName;
+import com.repair_shop.gui.utility.LabelFactory;
+import com.repair_shop.gui.utility.TextFieldFactory;
 
 import java.awt.Color;
 import java.awt.Font;

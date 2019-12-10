@@ -11,15 +11,15 @@ import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
-import com.repair_shop.gui.component.ButtonFactory;
-import com.repair_shop.gui.component.LabelFactory;
-import com.repair_shop.gui.component.TextFieldFactory;
 import com.repair_shop.gui.text.ButtonName;
 import com.repair_shop.gui.text.LabelName;
+import com.repair_shop.gui.utility.ButtonFactory;
+import com.repair_shop.gui.utility.ComboBoxFactory;
+import com.repair_shop.gui.utility.LabelFactory;
+import com.repair_shop.gui.utility.TextFieldFactory;
 
 import javax.swing.ComboBoxModel;
 import javax.swing.JButton;
-import com.repair_shop.gui.component.ComboBoxFactory;
 
 public class DeviceRegistrationPanel extends JPanel
 {

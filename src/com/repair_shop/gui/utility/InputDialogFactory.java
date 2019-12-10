@@ -1,8 +1,14 @@
-package com.repair_shop.gui.dialog;
+package com.repair_shop.gui.utility;
 
 import java.awt.Window;
 
 import com.repair_shop.data.DataType;
+import com.repair_shop.gui.dialog.ClientRegistrationDialog;
+import com.repair_shop.gui.dialog.DeviceRegistrationDialog;
+import com.repair_shop.gui.dialog.InputDialog;
+import com.repair_shop.gui.dialog.ModelRegistrationDialog;
+import com.repair_shop.gui.dialog.PropertyRegistrationDialog;
+import com.repair_shop.gui.dialog.TicketRegistrationDialog;
 
 public class InputDialogFactory
 {

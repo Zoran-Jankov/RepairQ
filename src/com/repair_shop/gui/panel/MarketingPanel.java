@@ -2,11 +2,11 @@ package com.repair_shop.gui.panel;
 
 import javax.swing.JPanel;
 
-import com.repair_shop.gui.component.ButtonFactory;
-import com.repair_shop.gui.component.ComboBoxFactory;
-import com.repair_shop.gui.component.LabelFactory;
 import com.repair_shop.gui.text.ButtonName;
 import com.repair_shop.gui.text.LabelName;
+import com.repair_shop.gui.utility.ButtonFactory;
+import com.repair_shop.gui.utility.ComboBoxFactory;
+import com.repair_shop.gui.utility.LabelFactory;
 
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;

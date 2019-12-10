@@ -1,4 +1,4 @@
-package com.repair_shop.gui.component;
+package com.repair_shop.gui.utility;
 
 import javax.swing.JTextPane;
 

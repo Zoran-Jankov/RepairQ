@@ -2,7 +2,7 @@ package com.repair_shop.gui.panel;
 
 import javax.swing.JPanel;
 
-import com.repair_shop.gui.component.LabelFactory;
+import com.repair_shop.gui.utility.LabelFactory;
 
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;

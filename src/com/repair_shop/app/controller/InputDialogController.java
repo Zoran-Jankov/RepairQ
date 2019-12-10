@@ -8,7 +8,7 @@ import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Entity;
 import com.repair_shop.gui.dialog.InputDialog;
-import com.repair_shop.gui.dialog.InputDialogFactory;
+import com.repair_shop.gui.utility.InputDialogFactory;
 
 public abstract class InputDialogController implements WindowController
 {
