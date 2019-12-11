@@ -10,9 +10,9 @@ public interface IndexedData
 	
 	public HashMap<String, Entity> getUniqueStringMap();
 	
-	public Entity getByID(int id);
+	public Entity getEntity(int id);
 	
-	public Entity getByUniqueString(String uniqueString);
+	public Entity getEntity(String uniqueString);
 	
 	public boolean idCollision(int id);
 	

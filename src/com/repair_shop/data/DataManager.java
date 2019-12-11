@@ -68,12 +68,12 @@ public class DataManager
 
 	public static Entity getByID(DataType dataType, int id)
 	{
-		return getDataTable(dataType).getByID(id);
+		return getDataTable(dataType).getEntity(id);
 	}
 
 	public static Entity getByUniqueString(DataType dataType, String uniqueString)
 	{
-		return getDataTable(dataType).getByUniqueString(uniqueString);
+		return getDataTable(dataType).getEntity(uniqueString);
 	}
 	
 	public static boolean isDataTableEmpty(DataType dataType)

@@ -23,13 +23,13 @@ public class IndexedDataTable implements IndexedData
 	}
 	
 	@Override
-	public Entity getByID(int id)
+	public Entity getEntity(int id)
 	{
 		return idMap.get(id);
 	}
 	
 	@Override
-	public Entity getByUniqueString(String uniqueString)
+	public Entity getEntity(String uniqueString)
 	{
 		return uniqueStringMap.get(uniqueString);
 	}
