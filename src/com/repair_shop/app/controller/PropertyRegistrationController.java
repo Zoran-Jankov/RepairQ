@@ -22,7 +22,7 @@ public class PropertyRegistrationController extends InputDialogController
 	@Override
 	protected boolean isInputValid()
 	{
-		String name = propertyGUI.getPropertyPanel().getName();
+		String name = propertyGUI.getPropertyPanel().getPropertyName();
 		
 		return !("".equals(name)
 			  || DataManager.clientsDataTable.uniqueStringCollision(name));
@@ -35,7 +35,7 @@ public class PropertyRegistrationController extends InputDialogController
 		
 		newProperty.setId(id);
 		
-		newProperty.setName(propertyGUI.getPropertyPanel().getName());
+		newProperty.setName(propertyGUI.getPropertyPanel().getPropertyName());
 		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
 		
