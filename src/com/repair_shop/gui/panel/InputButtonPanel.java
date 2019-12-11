@@ -19,27 +19,31 @@ public class InputButtonPanel extends JPanel
 	public InputButtonPanel()
 	{
 		setLayout(new MigLayout("", "[225px,grow][225px,grow]", "[30px:n]"));
+		
 		add(btnAdd, "cell 0 0,grow");
+		
 		add(btnCancel, "cell 1 0,grow");
 	}
 	
-	public void setBtnAddName(String name)
-	{
-		btnAdd.setText(name);
-	}
-	
-	public void setBtnAddActionListener(ActionListener listener)
+	public void setAddButtonFunction(ActionListener listener)
 	{
 		btnAdd.addActionListener(listener);
 	}
 	
-	public void setBtnCancelName(String name)
+	public void setAddButtonFunction(ActionListener listener, String name)
 	{
-		btnCancel.setText(name);
+		setAddButtonFunction(listener);
+		btnAdd.setText(name);
 	}
 	
-	public void setBtnCancelActionListener(ActionListener listener)
+	public void setCancelButtonFunction(ActionListener listener)
 	{
 		btnCancel.addActionListener(listener);
+	}
+	
+	public void setCancelButtonFunction(ActionListener listener, String name)
+	{
+		setCancelButtonFunction(listener);
+		btnCancel.setText(name);
 	}
 }

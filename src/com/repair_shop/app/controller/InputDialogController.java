@@ -23,10 +23,10 @@ public abstract class InputDialogController implements WindowController
 		
 		gui.getIdPanel().setIdValue(IDGenerator.formatRegularID(id));
 		
-		gui.getInputButtonPanel().setBtnAddActionListener
+		gui.getInputButtonPanel().setAddButtonFunction
 		   (ActionFactory.saveData(this));
 		
-		gui.getInputButtonPanel().setBtnCancelActionListener
+		gui.getInputButtonPanel().setCancelButtonFunction
 		   (ActionFactory.closeWindow(this));
 		
 		gui.setVisible(true);

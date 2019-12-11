@@ -10,7 +10,6 @@ import java.awt.Font;
 import javax.swing.JTextField;
 
 import com.repair_shop.gui.panel.InputButtonPanel;
-import com.repair_shop.gui.text.ButtonName;
 import com.repair_shop.gui.text.ErrorMessage;
 import com.repair_shop.gui.text.ErrorTitle;
 import com.repair_shop.gui.text.LabelName;
@@ -32,6 +31,7 @@ public class LoginDialog extends JDialog
 		setResizable(false);
 		setTitle(WindowTitle.LOGIN);
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		
 		getContentPane().setLayout(new MigLayout("", "[][grow]", "[30px:n][30px:n][]"));
 		
 		JLabel lblUsername = LabelFactory.createJLabel(LabelName.USERNAME, new Font("Tahoma", Font.PLAIN, 13));
@@ -45,10 +45,6 @@ public class LoginDialog extends JDialog
 		getContentPane().add(txtPassword, "cell 1 1,grow");
 		
 		getContentPane().add(buttonPanel, "cell 0 2 2 1,grow");
-		
-		buttonPanel.setBtnAddName(ButtonName.LOGIN);
-		
-		buttonPanel.setBtnCancelName(ButtonName.QUIT);
 		
 		pack();
 	}

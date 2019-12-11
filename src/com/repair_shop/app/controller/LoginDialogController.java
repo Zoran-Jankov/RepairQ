@@ -6,6 +6,7 @@ import com.repair_shop.app.utility.ActionFactory;
 import com.repair_shop.app.utility.WindowControllerFactory;
 import com.repair_shop.app.utility.WindowTag;
 import com.repair_shop.gui.dialog.LoginDialog;
+import com.repair_shop.gui.text.ButtonName;
 
 public class LoginDialogController implements WindowController
 {
@@ -13,11 +14,11 @@ public class LoginDialogController implements WindowController
 	
 	public LoginDialogController()
 	{
-		gui.getInputButtonPanel().setBtnAddActionListener
-		   (ActionFactory.login(this));
+		gui.getInputButtonPanel().setAddButtonFunction
+		   (ActionFactory.login(this), ButtonName.LOGIN);
 		
-		gui.getInputButtonPanel().setBtnCancelActionListener
-		   (ActionFactory.closeWindow(this));
+		gui.getInputButtonPanel().setCancelButtonFunction
+		   (ActionFactory.closeWindow(this), ButtonName.QUIT);
 		
 		gui.setVisible(true);
 	}
