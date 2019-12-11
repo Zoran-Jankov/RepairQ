@@ -28,9 +28,12 @@ public class MarketingPanel extends JPanel
 	public MarketingPanel()
 	{
 		setLayout(new MigLayout("", "[][grow,fill][][][][][][][][][]", "[fill]"));
+		
 		JLabel lblMarketingInformation = LabelFactory.createJLabel(LabelName.MARKETING, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblMarketingInformation, "cell 0 0,alignx trailing,growy");
+		
 		add(cmbMarketing, "cell 1 0 9 1,grow");
+		
 		add(btnNewMarketing, "cell 10 0,growy");
 	}
 	
