@@ -66,8 +66,8 @@ public class ModelRegistrationController extends InputDialogController
 	{
 		String name = modelGUI.getPropertyPanel().getName();
 		
-		return !("".equals(name)) 
-			  || DataManager.modelsDataTable.uniqueStringCollision(name);
+		return !("".equals(name) 
+			  || DataManager.modelsDataTable.uniqueStringCollision(name));
 	}
 	
 	@Override
