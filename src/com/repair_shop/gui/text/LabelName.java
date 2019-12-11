@@ -31,4 +31,6 @@ public class LabelName
 	public static String BRAND = "Device Brand";
 	public static String MODEL = "Device Model";
 	public static String SERIAL = "Serial Number";
+	
+	public static String NULL_ITEM = "--Non Selected--";
 }
