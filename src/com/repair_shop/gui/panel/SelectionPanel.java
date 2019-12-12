@@ -25,9 +25,15 @@ import javax.swing.JButton;
 public class SelectionPanel extends JPanel
 {
 	private static final long serialVersionUID = 6173599805523082955L;
+	
+	private JLabel lblEntityType = LabelFactory.createJLabel
+								               (LabelName.ENTITY, new Font("Tahoma", Font.BOLD, 13));
+	
 	private JComboBox<String> cmbDataElement = ComboBoxFactory.createJComboBox();
+	
 	private JLabel lblEntityDetails = LabelFactory.createJLabel
-			                                     (LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 15));
+			                                      (LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 15));
+	
 	private final JButton btnNewEntity = ButtonFactory.createJButton
 													  (ButtonName.ADD_NEW_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
 	
@@ -35,9 +41,8 @@ public class SelectionPanel extends JPanel
 	{
 		setLayout(new MigLayout("", "[grow][]", "[][][100px:n]"));
 		
-		JLabel lblDataElement = LabelFactory.createJLabel(LabelName.ENTITY, new Font("Tahoma", Font.BOLD, 13));
-		lblDataElement.setHorizontalAlignment(SwingConstants.CENTER);
-		add(lblDataElement, "cell 0 0 2 1,grow");
+		lblEntityType.setHorizontalAlignment(SwingConstants.CENTER);
+		add(lblEntityType, "cell 0 0 2 1,grow");
 		
 		AutoCompleteDecorator.decorate(cmbDataElement);
 		add(cmbDataElement, "cell 0 1,grow");
@@ -57,6 +62,11 @@ public class SelectionPanel extends JPanel
 	{
 		cmbDataElement.setBackground(Color.WHITE);
 		cmbDataElement.setSelectedItem(item);
+	}
+	
+	public void setEntityType(String text)
+	{
+		lblEntityType.setText(text);
 	}
 	
 	public void setComboBoxModel(ComboBoxModel<String> model)

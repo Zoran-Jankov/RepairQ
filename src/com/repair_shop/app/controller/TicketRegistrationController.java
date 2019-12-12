@@ -27,6 +27,8 @@ public class TicketRegistrationController extends InputDialogController
 	
 	private void setClientPanelFunction()
 	{
+		ticketGUI.getClientPanel().setEntityType(LabelName.CLIENT);
+		
 		ticketGUI.getClientPanel().setComboBoxModel
 				 (ComboBoxModelFactory.CLIENT);
 		
@@ -43,6 +45,8 @@ public class TicketRegistrationController extends InputDialogController
 
 	private void setDevicePanelFunction()
 	{
+		ticketGUI.getDevicePanel().setEntityType(LabelName.DEVICE);
+		
 		ticketGUI.getDevicePanel().setComboBoxModel
 		         (ComboBoxModelFactory.DEVICE);
 

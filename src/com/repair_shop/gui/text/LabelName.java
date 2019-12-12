@@ -12,6 +12,7 @@ public class LabelName
 	public static String DESCRIPTION = "Description";
 	
 	public static String CLIENT = "Client";
+	public static String DEVICE = "Device";
 	
 	public static String FIRST_AND_LAST_NAME = "First and Last Name";
 	public static String PRIME_PHONE = "Prime Phone Number";
