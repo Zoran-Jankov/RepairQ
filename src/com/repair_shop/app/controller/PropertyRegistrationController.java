@@ -1,5 +1,6 @@
 package com.repair_shop.app.controller;
 
+import com.repair_shop.app.utility.ComboBoxModelFactory;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.EntityFactory;
@@ -38,6 +39,8 @@ public class PropertyRegistrationController extends InputDialogController
 		newProperty.setName(propertyGUI.getPropertyPanel().getPropertyName());
 		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
+		
+		ComboBoxModelFactory.updateModel(dataType, newProperty.getUniqueString());
 		
 		return newProperty;
 	}
