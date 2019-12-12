@@ -7,18 +7,14 @@ import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Device;
 import com.repair_shop.data.entity.Model;
 import com.repair_shop.gui.dialog.DeviceRegistrationDialog;
-import com.repair_shop.gui.text.LabelName;
 
 public class DeviceRegistrationController extends InputDialogController
 {
-	private Device newDevice = new Device();
 	private DeviceRegistrationDialog deviceGUI;
 	
 	public DeviceRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		
-		newEntity = newDevice;
 		
 		deviceGUI = (DeviceRegistrationDialog) gui;
 		
@@ -42,14 +38,18 @@ public class DeviceRegistrationController extends InputDialogController
 	}
 	
 	@Override
-	protected void createEntity()
+	protected Device createEntity()
 	{
+		Device newDevice = new Device();
+		
 		newDevice.setId(id);
 		
 		newDevice.setSerial(deviceGUI.getDeviceRegistrationPanel().getSerial());
 		
 		newDevice.setModel((Model) DataManager.getEntity(DataType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
+		
+		return newDevice;
 	}
 	
 	@Override
@@ -61,7 +61,7 @@ public class DeviceRegistrationController extends InputDialogController
 
 	private  boolean isModelSelected()
 	{
-		return !(LabelName.NULL_ITEM.equals(deviceGUI.getDeviceRegistrationPanel().getModel()));
+		return !("".equals(deviceGUI.getDeviceRegistrationPanel().getModel()));
 	}
 
 	private  boolean isSerialNumberValid()

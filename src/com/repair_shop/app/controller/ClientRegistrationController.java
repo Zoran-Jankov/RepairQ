@@ -10,14 +10,11 @@ import com.repair_shop.gui.dialog.ClientRegistrationDialog;
 
 public class ClientRegistrationController extends InputDialogController
 {
-	private Client newClient = new Client();
 	private ClientRegistrationDialog clientGUI;
 	
 	public ClientRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		
-		newEntity = newClient;
 
 		clientGUI = (ClientRegistrationDialog) super.gui;
 		
@@ -56,8 +53,10 @@ public class ClientRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected void createEntity()
+	protected Client createEntity()
 	{
+		Client newClient= new Client();
+		
 		newClient.setId(id);
 		
 		newClient.setFullName(clientGUI.getPersonalInfoPanel().getName());
@@ -72,6 +71,8 @@ public class ClientRegistrationController extends InputDialogController
 		
 		newClient.setMarketing((Marketing) DataManager.getEntity
 			     (DataType.MARKETING_TYPE, clientGUI.getMarketingPanel().getMarketing()));
+		
+		return newClient;
 	}
 	
 	@Override

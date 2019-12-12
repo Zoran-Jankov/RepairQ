@@ -11,14 +11,11 @@ import com.repair_shop.gui.text.ButtonName;
 
 public class TicketRegistrationController extends InputDialogController
 {
-	private Ticket newTicket = new Ticket();
 	private TicketRegistrationDialog ticketGUI;
 	
 	public TicketRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		
-		newEntity = newTicket;
 		
 		ticketGUI = (TicketRegistrationDialog) super.gui;
 		
@@ -83,12 +80,13 @@ public class TicketRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected void createEntity()
+	protected Ticket createEntity()
 	{
-		
+		Ticket newTicket = new Ticket();
 		
 		newTicket.setClient((Client) DataManager.getByUniqueString(DataType.CLIENT, ticketGUI.getClient()));
 		
+		return newTicket;
 	}
 
 	@Override

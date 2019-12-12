@@ -8,24 +8,17 @@ import com.repair_shop.data.entity.Brand;
 import com.repair_shop.data.entity.DeviceType;
 import com.repair_shop.data.entity.Model;
 import com.repair_shop.gui.dialog.ModelRegistrationDialog;
-import com.repair_shop.gui.text.LabelName;
 
 public class ModelRegistrationController extends InputDialogController
 {
-	private Model newModel = new Model();
 	private ModelRegistrationDialog modelGUI;
 	
 	public ModelRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
-		
-		newEntity = newModel;
-		
 		modelGUI = (ModelRegistrationDialog) super.gui;
-		
 		setComboBoxModels();
-		
-		setButtonFunctions();
+		setButtonActionListeners();
 	}
 	
 	private void setComboBoxModels()
@@ -37,7 +30,7 @@ public class ModelRegistrationController extends InputDialogController
 		        .setBrandCmbModel(ComboBoxModelFactory.BRAND);
 	}
 	
-	private void setButtonFunctions()
+	private void setButtonActionListeners()
 	{
 		modelGUI.getModelPanel()
 				.setBtnNewDeviceTypeActionlistener
@@ -58,13 +51,13 @@ public class ModelRegistrationController extends InputDialogController
 
 	private boolean isDeviceTypeSelected()
 	{
-		return !(LabelName.NULL_ITEM.equals(modelGUI.getModelPanel().getDeviceType()));
+		return !("".equals(modelGUI.getModelPanel().getDeviceType()));
 	}
 	
 	private boolean isBrandSelected()
 	{
 		
-		return !(LabelName.NULL_ITEM.equals(modelGUI.getModelPanel().getBrand()));
+		return !("".equals(modelGUI.getModelPanel().getBrand()));
 	}
 	
 	private boolean isModelNameValid()
@@ -76,8 +69,10 @@ public class ModelRegistrationController extends InputDialogController
 	}
 	
 	@Override
-	protected void createEntity()
+	protected Model createEntity()
 	{
+		Model newModel = new Model();
+		
 		newModel.setId(id);
 		
 		newModel.setName(modelGUI.getPropertyPanel().getPropertyName());
@@ -89,6 +84,8 @@ public class ModelRegistrationController extends InputDialogController
 				                                
 		newModel.setBrand((Brand) DataManager.getEntity
 				(DataType.BRAND, modelGUI.getModelPanel().getBrand()));
+		
+		return newModel;
 	}
 
 	@Override

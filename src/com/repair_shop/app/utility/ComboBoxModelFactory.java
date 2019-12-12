@@ -57,11 +57,8 @@ public class ComboBoxModelFactory
 		return model;
 	}
 	
-	public static void updateModel(DataType dataType)
+	public static void updateModel(DataType dataType, String item)
 	{
-		if(modelsMap.get(dataType) != null)
-		{
-			loadModel(dataType);
-		}
+		modelsMap.get(dataType).addElement(item);
 	}
 }
