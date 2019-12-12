@@ -19,16 +19,11 @@ public class ClientRegistrationController extends InputDialogController
 		clientGUI = (ClientRegistrationDialog) super.gui;
 		
 		clientGUI.getMarketingPanel().setMarketingCmbModel
-				 (ComboBoxModelFactory.getModel(DataType.MARKETING_TYPE));
+				 (ComboBoxModelFactory.MARKETING_TYPE);
 		
 		clientGUI.getMarketingPanel()
 				 .setBtnMarketingActionListener
 				 (ActionFactory.openWindow(this, DataType.MARKETING_TYPE));
-	}
-	
-	public void updateComboBoxes(String item)
-	{
-		clientGUI.getMarketingPanel().setMarketing(item);
 	}
 	
 	@Override

@@ -28,22 +28,13 @@ public class DeviceRegistrationController extends InputDialogController
 	private void setComboBoxModels()
 	{
 		deviceGUI.getDeviceRegistrationPanel().setDeviceTypeCmbModel
-		 		 (ComboBoxModelFactory.getModel(DataType.DEVICE_TYPE));
+		 		 (ComboBoxModelFactory.DEVICE_TYPE);
 
 		deviceGUI.getDeviceRegistrationPanel().setBrandCmbModel
-		 		 (ComboBoxModelFactory.getModel(DataType.BRAND));
+		 		 (ComboBoxModelFactory.BRAND);
 
 		deviceGUI.getDeviceRegistrationPanel().setModelCmbModel
-		 		 (ComboBoxModelFactory.getModel(DataType.MODEL));
-	}
-	
-	public void updateComboBoxes(String deviceType,
-								 String brand,
-								 String model)
-	{
-		deviceGUI.getDeviceRegistrationPanel().setDeviceType(deviceType);
-		deviceGUI.getDeviceRegistrationPanel().setBrand(brand);
-		deviceGUI.getDeviceRegistrationPanel().setModel(model);
+		 		 (ComboBoxModelFactory.MODEL);
 	}
 	
 	@Override
