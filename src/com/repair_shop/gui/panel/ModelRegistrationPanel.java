@@ -2,6 +2,8 @@ package com.repair_shop.gui.panel;
 
 import javax.swing.JPanel;
 
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+
 import com.repair_shop.gui.text.ButtonName;
 import com.repair_shop.gui.text.LabelName;
 import com.repair_shop.gui.utility.ButtonFactory;
@@ -34,6 +36,7 @@ public class ModelRegistrationPanel extends JPanel
 		JLabel lblDeviceType = LabelFactory.createJLabel(LabelName.DEVICE_TYPE, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblDeviceType, "cell 0 0,growy");
 		
+		AutoCompleteDecorator.decorate(cmbDeviceType);
 		add(cmbDeviceType, "cell 1 0,grow");
 		
 		add(btnNewDeviceType, "cell 2 0,growx");
@@ -41,6 +44,7 @@ public class ModelRegistrationPanel extends JPanel
 		JLabel lblBrand = LabelFactory.createJLabel(LabelName.BRAND, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblBrand, "cell 0 1,growy");
 		
+		AutoCompleteDecorator.decorate(cmbBrand);
 		add(cmbBrand, "cell 1 1,grow");
 		
 		add(btnNewBrand, "cell 2 1,growx");
@@ -48,13 +52,13 @@ public class ModelRegistrationPanel extends JPanel
 	
 	public String getDeviceType()
 	{
-		cmbDeviceType.setBackground(Color.LIGHT_GRAY);
+		cmbDeviceType.setBackground(Color.WHITE);
 		return (String) cmbDeviceType.getSelectedItem();
 	}
 	
 	public void setDeviceType(String item)
 	{
-		cmbDeviceType.setBackground(Color.LIGHT_GRAY);
+		cmbDeviceType.setBackground(Color.WHITE);
 		cmbDeviceType.setSelectedItem(item);
 	}
 	
@@ -70,13 +74,13 @@ public class ModelRegistrationPanel extends JPanel
 	
 	public String getBrand()
 	{
-		cmbBrand.setBackground(Color.LIGHT_GRAY);
+		cmbBrand.setBackground(Color.WHITE);
 		return (String) cmbBrand.getSelectedItem();
 	}
 	
 	public void setBrand(String item)
 	{
-		cmbBrand.setBackground(Color.LIGHT_GRAY);
+		cmbBrand.setBackground(Color.WHITE);
 		cmbBrand.setSelectedItem(item);
 	}
 	

@@ -2,6 +2,8 @@ package com.repair_shop.gui.panel;
 
 import javax.swing.JPanel;
 
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+
 import com.repair_shop.gui.text.ButtonName;
 import com.repair_shop.gui.text.LabelName;
 import com.repair_shop.gui.utility.ButtonFactory;
@@ -32,6 +34,7 @@ public class MarketingPanel extends JPanel
 		JLabel lblMarketingInformation = LabelFactory.createJLabel(LabelName.MARKETING, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblMarketingInformation, "cell 0 0,alignx trailing,growy");
 		
+		AutoCompleteDecorator.decorate(cmbMarketing);
 		add(cmbMarketing, "cell 1 0 9 1,grow");
 		
 		add(btnNewMarketing, "cell 10 0,growy");

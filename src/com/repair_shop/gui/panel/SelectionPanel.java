@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.SwingConstants;
 
+import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
+
 import com.repair_shop.gui.text.ButtonName;
 import com.repair_shop.gui.text.LabelName;
 import com.repair_shop.gui.utility.ButtonFactory;
@@ -37,6 +39,7 @@ public class SelectionPanel extends JPanel
 		lblDataElement.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblDataElement, "cell 0 0 2 1,grow");
 		
+		AutoCompleteDecorator.decorate(cmbDataElement);
 		add(cmbDataElement, "cell 0 1,grow");
 		
 		add(btnNewEntity, "cell 1 1,grow");
