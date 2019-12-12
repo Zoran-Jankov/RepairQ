@@ -7,6 +7,7 @@ import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Client;
 import com.repair_shop.data.entity.Marketing;
 import com.repair_shop.gui.dialog.ClientRegistrationDialog;
+import com.repair_shop.gui.text.LabelName;
 
 public class ClientRegistrationController extends InputDialogController
 {
@@ -49,7 +50,7 @@ public class ClientRegistrationController extends InputDialogController
 
 	private boolean isMarketingSelected()
 	{
-		return !("".equals(clientGUI.getMarketingPanel().getMarketing()));
+		return !(LabelName.NULL_ITEM.equals(clientGUI.getMarketingPanel().getMarketing()));
 	}
 
 	@Override
@@ -71,6 +72,8 @@ public class ClientRegistrationController extends InputDialogController
 		
 		newClient.setMarketing((Marketing) DataManager.getEntity
 			     (DataType.MARKETING_TYPE, clientGUI.getMarketingPanel().getMarketing()));
+		
+		ComboBoxModelFactory.updateModel(DataType.CLIENT, newClient.getUniqueString());
 		
 		return newClient;
 	}

@@ -8,6 +8,7 @@ import com.repair_shop.data.entity.Client;
 import com.repair_shop.data.entity.Ticket;
 import com.repair_shop.gui.dialog.TicketRegistrationDialog;
 import com.repair_shop.gui.text.ButtonName;
+import com.repair_shop.gui.text.LabelName;
 
 public class TicketRegistrationController extends InputDialogController
 {
@@ -66,17 +67,17 @@ public class TicketRegistrationController extends InputDialogController
 
 	private boolean isClientSelected()
 	{
-		return false;
+		return !(LabelName.NULL_ITEM.equals(ticketGUI.getClient()));
 	}
 
 	private boolean isDeviceSelected()
 	{
-		return false;
+		return !(LabelName.NULL_ITEM.equals(ticketGUI.getDevice()));
 	}
 
 	private boolean areDetailsValid()
 	{
-		return false;
+		return !("".equals(ticketGUI.getTicketPanel().getDetails()));
 	}
 
 	@Override

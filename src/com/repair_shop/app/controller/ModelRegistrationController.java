@@ -8,6 +8,7 @@ import com.repair_shop.data.entity.Brand;
 import com.repair_shop.data.entity.DeviceType;
 import com.repair_shop.data.entity.Model;
 import com.repair_shop.gui.dialog.ModelRegistrationDialog;
+import com.repair_shop.gui.text.LabelName;
 
 public class ModelRegistrationController extends InputDialogController
 {
@@ -51,13 +52,13 @@ public class ModelRegistrationController extends InputDialogController
 
 	private boolean isDeviceTypeSelected()
 	{
-		return !("".equals(modelGUI.getModelPanel().getDeviceType()));
+		return !(LabelName.NULL_ITEM.equals(modelGUI.getModelPanel().getDeviceType()));
 	}
 	
 	private boolean isBrandSelected()
 	{
 		
-		return !("".equals(modelGUI.getModelPanel().getBrand()));
+		return !(LabelName.NULL_ITEM.equals(modelGUI.getModelPanel().getBrand()));
 	}
 	
 	private boolean isModelNameValid()
