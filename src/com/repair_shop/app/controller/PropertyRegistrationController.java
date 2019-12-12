@@ -8,12 +8,14 @@ import com.repair_shop.gui.dialog.PropertyRegistrationDialog;
 
 public class PropertyRegistrationController extends InputDialogController
 {
-	private DataType dataType;
+	private Property newProperty = (Property) EntityFactory.create(dataType);
 	private PropertyRegistrationDialog propertyGUI;
 	
 	public PropertyRegistrationController(WindowController owner, DataType dataType)
 	{
 		super(owner, dataType);
+		
+		newEntity = newProperty;
 		
 		this.dataType = dataType;
 		
@@ -29,17 +31,13 @@ public class PropertyRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected Property createEntity()
+	protected void createEntity()
 	{
-		Property newProperty = (Property) EntityFactory.create(dataType);
-		
 		newProperty.setId(id);
 		
 		newProperty.setName(propertyGUI.getPropertyPanel().getPropertyName());
 		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
-		
-		return newProperty;
 	}
 
 	@Override
