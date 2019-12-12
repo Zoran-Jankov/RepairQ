@@ -60,5 +60,6 @@ public class ComboBoxModelFactory
 	public static void updateModel(DataType dataType, String item)
 	{
 		modelsMap.get(dataType).addElement(item);
+		modelsMap.get(dataType).setSelectedItem(item);
 	}
 }

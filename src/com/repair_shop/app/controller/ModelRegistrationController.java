@@ -85,6 +85,8 @@ public class ModelRegistrationController extends InputDialogController
 		newModel.setBrand((Brand) DataManager.getEntity
 				(DataType.BRAND, modelGUI.getModelPanel().getBrand()));
 		
+		ComboBoxModelFactory.updateModel(DataType.MODEL, newModel.getName());
+		
 		return newModel;
 	}
 
