@@ -43,7 +43,7 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		Device newDevice = new Device();
 		
-		newDevice.setId(id);
+		newDevice.setId(super.id);
 		
 		newDevice.setSerial(deviceGUI.getDeviceRegistrationPanel().getSerial());
 		

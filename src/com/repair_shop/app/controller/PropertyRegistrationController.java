@@ -34,7 +34,7 @@ public class PropertyRegistrationController extends InputDialogController
 	{
 		Property newProperty = (Property) EntityFactory.create(dataType);
 		
-		newProperty.setId(id);
+		newProperty.setId(super.id);
 		
 		newProperty.setName(propertyGUI.getPropertyPanel().getPropertyName());
 		

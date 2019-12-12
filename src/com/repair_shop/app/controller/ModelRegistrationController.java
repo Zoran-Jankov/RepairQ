@@ -74,7 +74,7 @@ public class ModelRegistrationController extends InputDialogController
 	{
 		Model newModel = new Model();
 		
-		newModel.setId(id);
+		newModel.setId(super.id);
 		
 		newModel.setName(modelGUI.getPropertyPanel().getPropertyName());
 		
