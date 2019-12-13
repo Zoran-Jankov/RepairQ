@@ -67,11 +67,6 @@ public class DeviceRegistrationPanel extends JPanel
 		return (String) cmbDeviceType.getSelectedItem();
 	}
 	
-	public void setDeviceType(String item)
-	{
-		cmbDeviceType.setSelectedItem(item);
-	}
-	
 	public void setDeviceTypeCmbModel(ComboBoxModel<String> model)
 	{
 		cmbDeviceType.setModel(model);
@@ -80,11 +75,6 @@ public class DeviceRegistrationPanel extends JPanel
 	public String getBrand()
 	{
 		return (String) cmbBrand.getSelectedItem();
-	}
-	
-	public void setBrand(String item)
-	{
-		cmbBrand.setSelectedItem(item);
 	}
 	
 	public void setBrandCmbModel(ComboBoxModel<String> model)
@@ -96,12 +86,6 @@ public class DeviceRegistrationPanel extends JPanel
 	{
 		cmbModel.setBackground(Color.WHITE);
 		return (String) cmbModel.getSelectedItem();
-	}
-	
-	public void setModel(String item)
-	{
-		cmbModel.setBackground(Color.WHITE);
-		cmbModel.setSelectedItem(item);
 	}
 	
 	public void setModelCmbModel(ComboBoxModel<String> model)

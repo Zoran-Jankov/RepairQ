@@ -58,12 +58,6 @@ public class SelectionPanel extends JPanel
 		return (String) cmbDataElement.getSelectedItem();
 	}
 	
-	public void setEntity(String item)
-	{
-		cmbDataElement.setBackground(Color.WHITE);
-		cmbDataElement.setSelectedItem(item);
-	}
-	
 	public void setEntityType(String text)
 	{
 		lblEntityType.setText(text);

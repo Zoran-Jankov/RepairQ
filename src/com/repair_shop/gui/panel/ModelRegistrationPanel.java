@@ -56,12 +56,6 @@ public class ModelRegistrationPanel extends JPanel
 		return (String) cmbDeviceType.getSelectedItem();
 	}
 	
-	public void setDeviceType(String item)
-	{
-		cmbDeviceType.setBackground(Color.WHITE);
-		cmbDeviceType.setSelectedItem(item);
-	}
-	
 	public void setDeviceTypeCmbModel(ComboBoxModel<String> model)
 	{
 		cmbDeviceType.setModel(model);
@@ -76,12 +70,6 @@ public class ModelRegistrationPanel extends JPanel
 	{
 		cmbBrand.setBackground(Color.WHITE);
 		return (String) cmbBrand.getSelectedItem();
-	}
-	
-	public void setBrand(String item)
-	{
-		cmbBrand.setBackground(Color.WHITE);
-		cmbBrand.setSelectedItem(item);
 	}
 	
 	public void setBrandCmbModel(ComboBoxModel<String> model)

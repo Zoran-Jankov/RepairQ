@@ -46,12 +46,6 @@ public class MarketingPanel extends JPanel
 		return (String) cmbMarketing.getSelectedItem();
 	}
 	
-	public void setMarketing(String item)
-	{
-		cmbMarketing.setBackground(Color.WHITE);
-		cmbMarketing.setSelectedItem(item);
-	}
-	
 	public void setMarketingCmbModel(ComboBoxModel<String> model)
 	{
 		cmbMarketing.setModel(model);
