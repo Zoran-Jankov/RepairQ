@@ -6,7 +6,7 @@ import com.repair_shop.data.entity.Entity;
 
 public class IndexedDataTable implements IndexedData
 {
-	private int entityCounter = 1;
+	private int entityCounter = 0;
 	private HashMap<Integer, Entity> idMap = new HashMap<Integer, Entity>();
 	private HashMap<String, Entity> uniqueStringMap = new HashMap<String, Entity>();
 	
@@ -49,6 +49,8 @@ public class IndexedDataTable implements IndexedData
 	@Override
 	public void save(Entity newEntity)
 	{
+		entityCounter++;
+		
 		idMap.put(newEntity.getID(), newEntity);
 		
 		if(DataType.hasUniqueString(newEntity))
@@ -60,8 +62,6 @@ public class IndexedDataTable implements IndexedData
 		{
 			newEntity.createReferences();
 		}
-		
-		entityCounter++;
 	}
 	
 	@Override
