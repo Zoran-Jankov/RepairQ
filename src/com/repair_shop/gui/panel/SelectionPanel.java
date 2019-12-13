@@ -29,7 +29,7 @@ public class SelectionPanel extends JPanel
 	private JLabel lblEntityType = LabelFactory.createJLabel
 								               (LabelName.ENTITY, new Font("Tahoma", Font.BOLD, 13));
 	
-	private JComboBox<String> cmbDataElement = ComboBoxFactory.createJComboBox();
+	private JComboBox<String> cmbEntity = ComboBoxFactory.createJComboBox();
 	
 	private JLabel lblEntityDetails = LabelFactory.createJLabel
 			                                      (LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 15));
@@ -44,8 +44,8 @@ public class SelectionPanel extends JPanel
 		lblEntityType.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblEntityType, "cell 0 0 2 1,grow");
 		
-		AutoCompleteDecorator.decorate(cmbDataElement);
-		add(cmbDataElement, "cell 0 1,grow");
+		AutoCompleteDecorator.decorate(cmbEntity);
+		add(cmbEntity, "cell 0 1,grow");
 		
 		add(btnNewEntity, "cell 1 1,grow");
 		
@@ -54,8 +54,8 @@ public class SelectionPanel extends JPanel
 	
 	public String getEntity()
 	{
-		cmbDataElement.setBackground(Color.WHITE);
-		return (String) cmbDataElement.getSelectedItem();
+		cmbEntity.setBackground(Color.WHITE);
+		return (String) cmbEntity.getSelectedItem();
 	}
 	
 	public void setEntityType(String text)
@@ -65,7 +65,7 @@ public class SelectionPanel extends JPanel
 	
 	public void setComboBoxModel(ComboBoxModel<String> model)
 	{
-		cmbDataElement.setModel(model);
+		cmbEntity.setModel(model);
 	}
 	
 	public void setButtonFunction(ActionListener listener, String text)
@@ -81,6 +81,6 @@ public class SelectionPanel extends JPanel
 	
 	public void showSelectionError()
 	{
-		cmbDataElement.setBackground(Color.YELLOW);
+		cmbEntity.setBackground(Color.YELLOW);
 	}
 }
