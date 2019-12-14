@@ -87,7 +87,7 @@ public class TicketRegistrationController extends InputDialogController
 	{
 		Ticket newTicket = new Ticket();
 		
-		newTicket.setClient((Client) DataManager.getByUniqueString(DataType.CLIENT, ticketGUI.getClient()));
+		newTicket.setClient((Client) DataManager.getEntity(DataType.CLIENT, ticketGUI.getClient()));
 		
 		return newTicket;
 	}

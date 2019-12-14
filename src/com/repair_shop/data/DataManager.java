@@ -48,12 +48,12 @@ public class DataManager
 	
 	public static Entity getEntity(DataType dataType, int id)
 	{
-		return getByID(dataType, id);
+		return getDataTable(dataType).getEntity(id);
 	}
 	
 	public static Entity getEntity(DataType dataType, String name)
 	{
-		return getByUniqueString(dataType, name);
+		return getDataTable(dataType).getEntity(name);
 	}
 
 	public static int getEntityCounter(DataType dataType)
@@ -64,16 +64,6 @@ public class DataManager
 	public static HashMap<String, Entity> getUniqueStringMap(DataType dataType)
 	{
 		return getDataTable(dataType).getUniqueStringMap();
-	}
-
-	public static Entity getByID(DataType dataType, int id)
-	{
-		return getDataTable(dataType).getEntity(id);
-	}
-
-	public static Entity getByUniqueString(DataType dataType, String uniqueString)
-	{
-		return getDataTable(dataType).getEntity(uniqueString);
 	}
 	
 	public static boolean isDataTableEmpty(DataType dataType)
