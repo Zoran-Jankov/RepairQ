@@ -39,7 +39,16 @@ public class TicketRegistrationController extends InputDialogController
 
 	public void setClientDetails()
 	{
-		// TODO setClientDetails() implementation
+		if(ticketGUI.getClient() != LabelName.NULL_ITEM)
+		{
+			Client selectedClient = (Client) DataManager.getEntity(DataType.CLIENT, ticketGUI.getClient());
+		
+			ticketGUI.getClientPanel().setEntityDetails(selectedClient.getFullName() + "%n"
+												      + selectedClient.getPrimePhoneNumber() + "%n"
+												      + selectedClient.getAlternativePhoneNumber() + "%n"
+												      + selectedClient.getEmail() + "%n"
+												      + selectedClient.getAddress());
+		}
 	}
 
 	private void setDevicePanelFunction()
@@ -56,7 +65,7 @@ public class TicketRegistrationController extends InputDialogController
 
 	private void setDeviceDetails()
 	{
-		// TODO setDeviceDetails() implementation
+		
 	}
 
 	@Override

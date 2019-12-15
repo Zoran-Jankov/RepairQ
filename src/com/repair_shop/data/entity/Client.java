@@ -66,7 +66,7 @@ public class Client extends Person
 	@Override
 	public String getUniqueString()
 	{	
-		return getPrimePhoneNumber();
+		return getFullName() + " " +getPrimePhoneNumber();
 	}
 	
 	@Override

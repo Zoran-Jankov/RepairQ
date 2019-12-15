@@ -25,7 +25,7 @@ public class PersonalInfoPanel extends JPanel
 	{
 		setLayout(new MigLayout("", "[][5.00][grow]", "[20px:n,fill][20px:n,fill][20px:n,fill][][20px:n]"));
 		
-		JLabel lblName = LabelFactory.createJLabel(LabelName.FIRST_AND_LAST_NAME, new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblName = LabelFactory.createJLabel(LabelName.FULL_NAME, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblName, "cell 0 0,growy");
 		
 		add(txtName, "cell 2 0,grow");

@@ -60,7 +60,7 @@ public class ClientRegistrationController extends InputDialogController
 		
 		newClient.setId(super.id);
 		
-		newClient.setFullName(clientGUI.getPersonalInfoPanel().getName());
+		newClient.setFullName(clientGUI.getPersonalInfoPanel().getPersonName());
 		
 		newClient.setPrimePhoneNumber(clientGUI.getPersonalInfoPanel().getPrimePhoneNumber());
 		

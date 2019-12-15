@@ -12,7 +12,7 @@ import com.repair_shop.data.DataType;
 public class OpenWindow implements ActionListener
 {
 	private WindowController owner;
-	private DataType dataType;
+	private DataType dataType = null;
 	private WindowTag window;
 
 	public OpenWindow(WindowController owner, DataType dataType)
@@ -33,7 +33,7 @@ public class OpenWindow implements ActionListener
 		{
 			DialogClontrollerFactory.createController(owner, dataType);
 		}
-		else if(window != null)
+		else
 		{
 			WindowControllerFactory.createController(window);
 		}

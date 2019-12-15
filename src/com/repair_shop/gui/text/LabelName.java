@@ -14,7 +14,7 @@ public class LabelName
 	public static String CLIENT = "Client";
 	public static String DEVICE = "Device";
 	
-	public static String FIRST_AND_LAST_NAME = "First and Last Name";
+	public static String FULL_NAME = "Full Name";
 	public static String PRIME_PHONE = "Prime Phone Number";
 	public static String ALTERNATIVE_PHONE = "Alternative Phone Number";
 	public static String EMAIL = "Email Address";
