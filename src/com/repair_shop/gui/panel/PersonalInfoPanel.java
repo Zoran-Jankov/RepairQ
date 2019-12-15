@@ -70,7 +70,7 @@ public class PersonalInfoPanel extends JPanel
 	
 	public String getEmail()
 	{
-		return txtAltPhone.getText();
+		return txtEmail.getText();
 	}
 	
 	public String getAddress()
@@ -85,6 +85,6 @@ public class PersonalInfoPanel extends JPanel
 	
 	public void showPhoneError()
 	{
-		txtName.setBackground(Color.YELLOW);
+		txtPrimePhone.setBackground(Color.YELLOW);
 	}
 }

@@ -43,11 +43,13 @@ public class TicketRegistrationController extends InputDialogController
 		{
 			Client selectedClient = (Client) DataManager.getEntity(DataType.CLIENT, ticketGUI.getClient());
 		
-			ticketGUI.getClientPanel().setEntityDetails(selectedClient.getFullName() + "%n"
-												      + selectedClient.getPrimePhoneNumber() + "%n"
-												      + selectedClient.getAlternativePhoneNumber() + "%n"
-												      + selectedClient.getEmail() + "%n"
-												      + selectedClient.getAddress());
+			ticketGUI.getClientPanel().setEntityDetails
+									  ("<html>" + selectedClient.getFullName() + "<br><br>"
+												+ selectedClient.getPrimePhoneNumber() + "<br><br>"
+												+ selectedClient.getAlternativePhoneNumber() + "<br><br>"
+												+ selectedClient.getEmail() + "<br><br>"
+												+ selectedClient.getAddress() + "</html>");
+												
 		}
 	}
 

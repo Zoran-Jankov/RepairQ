@@ -32,7 +32,7 @@ public class SelectionPanel extends JPanel
 	private JComboBox<String> cmbEntity = ComboBoxFactory.createJComboBox();
 	
 	private JLabel lblEntityDetails = LabelFactory.createJLabel
-			                                      (LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 15));
+			                                      (LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 13));
 	
 	private final JButton btnNewEntity = ButtonFactory.createJButton
 													  (ButtonName.ADD_NEW_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
