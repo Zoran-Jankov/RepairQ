@@ -20,7 +20,7 @@ public interface Entity
 	
 	public void removeReference(int id);
 	
-	public String getUniqueString();
+	public String getDisplayName();
 	
 	public void createReferences();
 	

@@ -68,7 +68,7 @@ public abstract class AbstractEntity implements Entity
 	}
 	
 	@Override
-	public String getUniqueString()
+	public String getDisplayName()
 	{
 		methodNotSupported();
 		return null;

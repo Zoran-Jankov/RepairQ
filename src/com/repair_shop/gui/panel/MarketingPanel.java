@@ -51,7 +51,7 @@ public class MarketingPanel extends JPanel
 		cmbMarketing.setModel(model);
 	}
 	
-	public void setBtnMarketingActionListener(ActionListener listener)
+	public void setMarketingButtonFunction(ActionListener listener)
 	{
 		btnNewMarketing.addActionListener(listener);
 	}

@@ -103,7 +103,7 @@ public class User extends Person
 	}
 
 	@Override
-	public String getUniqueString()
+	public String getDisplayName()
 	{
 		return getUsername();
 	}

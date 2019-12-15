@@ -45,7 +45,7 @@ public class LegalEntity extends AbstractEntity
 	}
 
 	@Override
-	public String getUniqueString()
+	public String getDisplayName()
 	{
 		return getTaxIDNumber();
 	}

@@ -68,12 +68,6 @@ public class Device extends AbstractEntity
 	{
 		this.serial = serial;
 	}
-
-	@Override
-	public String getUniqueString()
-	{
-		return getSerial();
-	}
 	
 	@Override
 	public void createReferences()

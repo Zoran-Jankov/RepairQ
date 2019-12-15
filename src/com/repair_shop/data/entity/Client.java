@@ -64,7 +64,7 @@ public class Client extends Person
 	}
 
 	@Override
-	public String getUniqueString()
+	public String getDisplayName()
 	{	
 		return getFullName() + " " +getPrimePhoneNumber();
 	}

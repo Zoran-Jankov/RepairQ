@@ -61,7 +61,7 @@ public abstract class Property extends AbstractEntity
 	}
 
 	@Override
-	public String getUniqueString()
+	public String getDisplayName()
 	{
 		return getName();
 	}

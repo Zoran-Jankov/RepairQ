@@ -26,7 +26,7 @@ public class PropertyRegistrationController extends InputDialogController
 		String name = propertyGUI.getPropertyPanel().getPropertyName();
 		
 		return !("".equals(name)
-			  || DataManager.clientsDataTable.uniqueStringCollision(name));
+			  || DataManager.clientsDataTable.displayNameCollision(name));
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class PropertyRegistrationController extends InputDialogController
 		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
 		
-		ComboBoxModelFactory.updateModel(dataType, newProperty.getUniqueString());
+		ComboBoxModelFactory.updateModel(dataType, newProperty.getDisplayName());
 		
 		return newProperty;
 	}

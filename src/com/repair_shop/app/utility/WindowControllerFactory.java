@@ -15,10 +15,9 @@ public class WindowControllerFactory
 		
 			case LOGIN_DIALOG:
 				return new LoginDialogController();
+				
 			default:
-			{
-			return null;
-			}
+				return null;
 		}	
 	}
 }

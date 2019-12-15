@@ -17,7 +17,7 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		super(owner, dataType);
 		
-		deviceGUI = (DeviceRegistrationDialog) gui;
+		deviceGUI = (DeviceRegistrationDialog) super.gui;
 		
 		setComboBoxModels();
 		
@@ -50,7 +50,7 @@ public class DeviceRegistrationController extends InputDialogController
 		newDevice.setModel((Model) DataManager.getEntity(DataType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
 		
-		ComboBoxModelFactory.updateModel(DataType.CLIENT, newDevice.getUniqueString());
+		ComboBoxModelFactory.updateModel(DataType.CLIENT, newDevice.getDisplayName());
 		
 		return newDevice;
 	}
@@ -71,8 +71,7 @@ public class DeviceRegistrationController extends InputDialogController
 	{
 		String serial = deviceGUI.getDeviceRegistrationPanel().getSerial();
 		
-		return !("".equals(serial) 
-			  || DataManager.devicesDataTable.uniqueStringCollision(serial));
+		return !("".equals(serial));
 	}
 	
 	@Override

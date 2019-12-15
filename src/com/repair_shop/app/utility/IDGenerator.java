@@ -12,7 +12,7 @@ public class IDGenerator
 	{
 		if(dataType == DataType.TICKET)
 		{
-			return 1; //TODO ticket ID generator
+			return 1; //TODO ticket ID generator implementation
 		}
 		else
 		{
@@ -21,15 +21,22 @@ public class IDGenerator
 		}
 	}
 	
-	public static String formatRegularID(int id)
+	public static String idToString(DataType dataType, int id)
 	{
-		return String.valueOf(id / COUNTER_MAX_VALUE)
-				 + " - " 
-				 + String.valueOf(id % COUNTER_MAX_VALUE);
+		if(dataType == DataType.TICKET)
+		{
+			return "1-Error"; //TODO ticket ID generator implementation
+		}
+		else
+		{
+			return String.valueOf(id / COUNTER_MAX_VALUE)
+					 + " - " 
+					 + String.valueOf(id % COUNTER_MAX_VALUE);
+		}
 	}
 	
-	public static String formatTicketID()
+	public static int stringToId(String displayName)
 	{
-		return null; //TODO formatTicketID()
+		return 0; //TODO stringToId() method implementation
 	}
 }

@@ -63,7 +63,7 @@ public class DataManager
 
 	public static HashMap<String, Entity> getUniqueStringMap(DataType dataType)
 	{
-		return getDataTable(dataType).getUniqueStringMap();
+		return getDataTable(dataType).getDisplayNameMap();
 	}
 	
 	public static boolean isDataTableEmpty(DataType dataType)
@@ -76,9 +76,9 @@ public class DataManager
 		return getDataTable(dataType).idCollision(id);
 	}
 
-	public static boolean uniqueStringCollision(DataType dataType, String uniqueString)
+	public static boolean uniqueStringCollision(DataType dataType, String displayName)
 	{
-		return getDataTable(dataType).uniqueStringCollision(uniqueString);
+		return getDataTable(dataType).displayNameCollision(displayName);
 	}
 
 	public static void save(Entity newDataElement)

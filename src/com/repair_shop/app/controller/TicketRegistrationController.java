@@ -5,6 +5,7 @@ import com.repair_shop.app.utility.ComboBoxModelFactory;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Client;
+import com.repair_shop.data.entity.Device;
 import com.repair_shop.data.entity.Ticket;
 import com.repair_shop.gui.dialog.TicketRegistrationDialog;
 import com.repair_shop.gui.text.ButtonName;
@@ -99,7 +100,7 @@ public class TicketRegistrationController extends InputDialogController
 		Ticket newTicket = new Ticket();
 		
 		newTicket.setClient((Client) DataManager.getEntity(DataType.CLIENT, ticketGUI.getClient()));
-		
+		newTicket.setDevice((Device) DataManager.getEntity(DataType.DEVICE, id));
 		return newTicket;
 	}
 

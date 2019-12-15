@@ -8,7 +8,7 @@ public class IndexedDataTable implements IndexedData
 {
 	private int entityCounter = 0;
 	private HashMap<Integer, Entity> idMap = new HashMap<Integer, Entity>();
-	private HashMap<String, Entity> uniqueStringMap = new HashMap<String, Entity>();
+	private HashMap<String, Entity> displayNameMap = new HashMap<String, Entity>();
 	
 	@Override
 	public int getEntityCounter()
@@ -17,9 +17,9 @@ public class IndexedDataTable implements IndexedData
 	}
 	
 	@Override
-	public HashMap<String, Entity> getUniqueStringMap()
+	public HashMap<String, Entity> getDisplayNameMap()
 	{
-		return uniqueStringMap;
+		return displayNameMap;
 	}
 	
 	@Override
@@ -29,9 +29,9 @@ public class IndexedDataTable implements IndexedData
 	}
 	
 	@Override
-	public Entity getEntity(String uniqueString)
+	public Entity getEntity(String displayName)
 	{
-		return uniqueStringMap.get(uniqueString);
+		return displayNameMap.get(displayName);
 	}
 	
 	@Override
@@ -41,9 +41,9 @@ public class IndexedDataTable implements IndexedData
 	}
 
 	@Override
-	public boolean uniqueStringCollision(String uniqueString)
+	public boolean displayNameCollision(String displayName)
 	{
-		return uniqueStringMap.containsKey(uniqueString);
+		return displayNameMap.containsKey(displayName);
 	}
 
 	@Override
@@ -53,9 +53,9 @@ public class IndexedDataTable implements IndexedData
 		
 		idMap.put(newEntity.getID(), newEntity);
 		
-		if(DataType.hasUniqueString(newEntity))
+		if(DataType.hasDisplayName(newEntity))
 		{
-			uniqueStringMap.put(newEntity.getUniqueString(), newEntity);
+			displayNameMap.put(newEntity.getDisplayName(), newEntity);
 		}
 		
 		if(DataType.makesReferences(newEntity))
@@ -69,9 +69,9 @@ public class IndexedDataTable implements IndexedData
 	{
 		idMap.remove(newEntity.getID());
 		
-		if(DataType.hasUniqueString(newEntity))
+		if(DataType.hasDisplayName(newEntity))
 		{
-			uniqueStringMap.remove(newEntity.getUniqueString());
+			displayNameMap.remove(newEntity.getDisplayName());
 		}
 		
 		if(DataType.makesReferences(newEntity))

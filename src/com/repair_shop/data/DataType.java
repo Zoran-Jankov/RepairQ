@@ -19,13 +19,14 @@ public enum DataType
 	BRAND,
 	USER;
 	
-	public static boolean hasUniqueString(Entity entity)
+	public static boolean hasDisplayName(Entity entity)
 	{
 		DataType dataType = entity.getDataType();
 		
 		return !(dataType == NOTIFICATION
 			  || dataType == SERVICE
-			  || dataType == TICKET);
+			  || dataType == TICKET
+			  || dataType == DEVICE);
 	}
 	
 	public static boolean makesReferences(Entity entity)

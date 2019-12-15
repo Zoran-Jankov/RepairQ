@@ -23,7 +23,7 @@ public class ClientRegistrationController extends InputDialogController
 				 (ComboBoxModelFactory.MARKETING_TYPE);
 		
 		clientGUI.getMarketingPanel()
-				 .setBtnMarketingActionListener
+				 .setMarketingButtonFunction
 				 (ActionFactory.openWindow(this, DataType.MARKETING_TYPE));
 	}
 	
@@ -37,15 +37,12 @@ public class ClientRegistrationController extends InputDialogController
 	
 	private boolean isNameValid( )
 	{
-		return !("".equals(clientGUI.getPersonalInfoPanel().getName()));
+		return !("".equals(clientGUI.getPersonalInfoPanel().getPersonName()));
 	}
 	
 	private boolean isPhoneNumberValid()
 	{
-		String phoneNumber = clientGUI.getPersonalInfoPanel().getPrimePhoneNumber();
-		
-		return !(DataManager.clientsDataTable.uniqueStringCollision(phoneNumber)
-			 || ("".equals(phoneNumber)));
+		return !("".equals(clientGUI.getPersonalInfoPanel().getPrimePhoneNumber()));
 	}
 
 	private boolean isMarketingSelected()
@@ -71,9 +68,10 @@ public class ClientRegistrationController extends InputDialogController
 		newClient.setAddress(clientGUI.getPersonalInfoPanel().getAddress());
 		
 		newClient.setMarketing((Marketing) DataManager.getEntity
-			     (DataType.MARKETING_TYPE, clientGUI.getMarketingPanel().getMarketing()));
+			     									  (DataType.MARKETING_TYPE, 
+			     									   clientGUI.getMarketingPanel().getMarketing()));
 		
-		ComboBoxModelFactory.updateModel(DataType.CLIENT, newClient.getUniqueString());
+		ComboBoxModelFactory.updateModel(DataType.CLIENT, newClient.getDisplayName());
 		
 		return newClient;
 	}
