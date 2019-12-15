@@ -39,17 +39,17 @@ public class SelectionPanel extends JPanel
 	
 	public SelectionPanel()
 	{
-		setLayout(new MigLayout("", "[grow][]", "[][][100px:n]"));
+		setLayout(new MigLayout("", "[grow]", "[][][100px:n][]"));
 		
 		lblEntityType.setHorizontalAlignment(SwingConstants.CENTER);
-		add(lblEntityType, "cell 0 0 2 1,grow");
+		add(lblEntityType, "cell 0 0,grow");
 		
 		AutoCompleteDecorator.decorate(cmbEntity);
 		add(cmbEntity, "cell 0 1,grow");
 		
-		add(btnNewEntity, "cell 1 1,grow");
+		add(lblEntityDetails, "cell 0 2,grow");
 		
-		add(lblEntityDetails, "cell 0 2 2 1,grow");
+		add(btnNewEntity, "cell 0 3,alignx center,growy");
 	}
 	
 	public String getEntity()
