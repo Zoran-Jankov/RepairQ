@@ -50,7 +50,6 @@ public class TicketRegistrationController extends InputDialogController
 												+ selectedClient.getAlternativePhoneNumber() + "<br><br>"
 												+ selectedClient.getEmail() + "<br><br>"
 												+ selectedClient.getAddress() + "</html>");
-												
 		}
 	}
 
@@ -68,7 +67,13 @@ public class TicketRegistrationController extends InputDialogController
 
 	private void setDeviceDetails()
 	{
+		Device selectedDevice = (Device) DataManager.getEntity(DataType.DEVICE, ticketGUI.getDevice());
 		
+		ticketGUI.getDevicePanel().setEntityDetails
+								  ("<html>" + selectedDevice.getModel().getDataType() + "<br><br>"
+											+ selectedDevice.getModel().getBrand() + "<br><br>"
+											+ selectedDevice.getModel().getName() + "<br><br>"
+											+ selectedDevice.getSerial() + "</html>");
 	}
 
 	@Override

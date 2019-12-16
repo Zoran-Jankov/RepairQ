@@ -60,7 +60,7 @@ public class Model extends Property
 	 * Getter for model manufacturer.
 	 * @return Model manufacturer.
 	 */
-	public Brand getManufacturer()
+	public Brand getBrand()
 	{
 		return brand;
 	}
