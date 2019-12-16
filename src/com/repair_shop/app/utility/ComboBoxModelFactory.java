@@ -45,7 +45,7 @@ public class ComboBoxModelFactory
 	public static DefaultComboBoxModel<String> loadModel(DataType dataType)
 	{
 		HashSet<String> items = new HashSet<String>
-								   (DataManager.getUniqueStringMap(dataType).keySet());
+								   (DataManager.getDisplayNameMap(dataType).keySet());
 		
 		if(items.isEmpty())
 		{

@@ -61,7 +61,7 @@ public class DataManager
 		return getDataTable(dataType).getEntityCounter();
 	}
 
-	public static HashMap<String, Entity> getUniqueStringMap(DataType dataType)
+	public static HashMap<String, Entity> getDisplayNameMap(DataType dataType)
 	{
 		return getDataTable(dataType).getDisplayNameMap();
 	}
