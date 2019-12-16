@@ -2,6 +2,7 @@ package com.repair_shop.app.controller;
 
 import com.repair_shop.app.utility.ActionFactory;
 import com.repair_shop.app.utility.ComboBoxModelFactory;
+import com.repair_shop.app.utility.IDGenerator;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Device;
@@ -50,7 +51,7 @@ public class DeviceRegistrationController extends InputDialogController
 		newDevice.setModel((Model) DataManager.getEntity(DataType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
 		
-		ComboBoxModelFactory.updateModel(DataType.CLIENT, newDevice.getDisplayName());
+		ComboBoxModelFactory.updateModel(DataType.CLIENT, IDGenerator.toString(DataType.CLIENT, newDevice.getId()));
 		
 		return newDevice;
 	}

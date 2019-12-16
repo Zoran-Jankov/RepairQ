@@ -78,6 +78,6 @@ public class Device extends AbstractEntity
 	@Override
 	public void deleteReferences()
 	{
-		model.removeReference(this.getID());
+		model.removeReference(this.getId());
 	}
 }

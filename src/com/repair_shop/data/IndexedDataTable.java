@@ -51,7 +51,7 @@ public class IndexedDataTable implements IndexedData
 	{
 		entityCounter++;
 		
-		idMap.put(newEntity.getID(), newEntity);
+		idMap.put(newEntity.getId(), newEntity);
 		
 		if(DataType.hasDisplayName(newEntity))
 		{
@@ -67,7 +67,7 @@ public class IndexedDataTable implements IndexedData
 	@Override
 	public void delete(Entity newEntity)
 	{
-		idMap.remove(newEntity.getID());
+		idMap.remove(newEntity.getId());
 		
 		if(DataType.hasDisplayName(newEntity))
 		{

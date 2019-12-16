@@ -28,7 +28,7 @@ public abstract class AbstractEntity implements Entity
 	 * @return (int) Data element ID number.
 	 */
 	@Override
-	public int getID()
+	public int getId()
 	{
 		return id;
 	}
@@ -58,7 +58,7 @@ public abstract class AbstractEntity implements Entity
 	@Override
 	public void addReference(Entity dataElement)
 	{
-		referenceMap.put(dataElement.getID(), dataElement);
+		referenceMap.put(dataElement.getId(), dataElement);
 	}
 	
 	@Override

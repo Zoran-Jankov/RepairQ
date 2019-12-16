@@ -78,6 +78,6 @@ public class Client extends Person
 	@Override
 	public void deleteReferences()
 	{
-		marketing.removeReference(this.getID());
+		marketing.removeReference(this.getId());
 	}
 }

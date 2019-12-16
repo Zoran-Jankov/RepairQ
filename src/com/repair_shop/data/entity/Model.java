@@ -84,7 +84,7 @@ public class Model extends Property
 	@Override
 	public void deleteReferences()
 	{
-		deviceType.removeReference(this.getID());
+		deviceType.removeReference(this.getId());
 		brand.addReference(this);
 	}
 }

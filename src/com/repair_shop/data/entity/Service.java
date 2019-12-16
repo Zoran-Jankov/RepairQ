@@ -63,6 +63,6 @@ public class Service extends AbstractEntity
 	
 	public void deleteReferences()
 	{
-		serviceType.removeReference(this.getID());
+		serviceType.removeReference(this.getId());
 	}
 }

@@ -21,7 +21,7 @@ public class IDGenerator
 		}
 	}
 	
-	public static String idToString(DataType dataType, int id)
+	public static String toString(DataType dataType, int id)
 	{
 		if(dataType == DataType.TICKET)
 		{
@@ -30,13 +30,15 @@ public class IDGenerator
 		else
 		{
 			return String.valueOf(id / COUNTER_MAX_VALUE)
-					 + " - " 
-					 + String.valueOf(id % COUNTER_MAX_VALUE);
+				 + " - " 
+				 + String.valueOf(id % COUNTER_MAX_VALUE);
 		}
 	}
 	
-	public static int stringToId(String displayName)
+	public static int toInt(String displayName)
 	{
-		return 0; //TODO stringToId() method implementation
+		displayName = displayName.replace(" - ", "");
+		
+		return Integer.parseInt(displayName);
 	}
 }

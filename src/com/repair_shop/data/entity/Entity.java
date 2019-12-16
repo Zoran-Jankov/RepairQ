@@ -8,7 +8,7 @@ public interface Entity
 {
 	public DataType getDataType();
 	
-	public int getID();
+	public int getId();
 	
 	public void setId(int id);
 	

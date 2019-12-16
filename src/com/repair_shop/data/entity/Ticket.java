@@ -66,8 +66,8 @@ public class Ticket extends AbstractEntity
 	@Override
 	public void deleteReferences()
 	{
-		client.removeReference(this.getID());
-		device.removeReference(this.getID());
-		status.removeReference(this.getID());
+		client.removeReference(this.getId());
+		device.removeReference(this.getId());
+		status.removeReference(this.getId());
 	}
 }
