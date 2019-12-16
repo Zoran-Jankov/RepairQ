@@ -51,7 +51,7 @@ public class DeviceRegistrationController extends InputDialogController
 		newDevice.setModel((Model) DataManager.getEntity(DataType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
 		
-		ComboBoxModelFactory.updateModel(DataType.CLIENT, IDGenerator.toString(DataType.CLIENT, newDevice.getId()));
+		ComboBoxModelFactory.updateModel(DataType.DEVICE, IDGenerator.toString(DataType.DEVICE, newDevice.getId()));
 		
 		return newDevice;
 	}

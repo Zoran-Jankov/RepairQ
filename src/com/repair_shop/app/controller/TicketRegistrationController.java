@@ -2,6 +2,7 @@ package com.repair_shop.app.controller;
 
 import com.repair_shop.app.utility.ActionFactory;
 import com.repair_shop.app.utility.ComboBoxModelFactory;
+import com.repair_shop.app.utility.IDGenerator;
 import com.repair_shop.data.DataManager;
 import com.repair_shop.data.DataType;
 import com.repair_shop.data.entity.Client;
@@ -67,7 +68,7 @@ public class TicketRegistrationController extends InputDialogController
 
 	private void setDeviceDetails()
 	{
-		Device selectedDevice = (Device) DataManager.getEntity(DataType.DEVICE, ticketGUI.getDevice());
+		Device selectedDevice = (Device) DataManager.getEntity(DataType.DEVICE, IDGenerator.toInt(ticketGUI.getDevice()));
 		
 		ticketGUI.getDevicePanel().setEntityDetails
 								  ("<html>" + selectedDevice.getModel().getDataType() + "<br><br>"
