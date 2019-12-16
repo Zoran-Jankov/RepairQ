@@ -37,8 +37,8 @@ public class IDGenerator
 	
 	public static int toInt(String displayName)
 	{
-		displayName = displayName.replace(" - ", "");
+		String id = displayName.replace(" - ", "");
 		
-		return Integer.parseInt(displayName);
+		return Integer.parseInt(id);
 	}
 }
