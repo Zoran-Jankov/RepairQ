@@ -25,7 +25,7 @@ public class IDGenerator
 	{
 		if(dataType == DataType.TICKET)
 		{
-			return "1-Error"; //TODO ticket ID generator implementation
+			return "1 - 1"; //TODO ticket ID generator implementation
 		}
 		else
 		{
@@ -37,8 +37,9 @@ public class IDGenerator
 	
 	public static int toInt(String displayName)
 	{
-		String id = displayName.replace(" - ", "");
+		int terminalNumber = Integer.parseInt(displayName.split(" - ")[0]);
+		int entityOrdinalNumber = Integer.parseInt(displayName.split(" - ")[1]);
 		
-		return Integer.parseInt(id);
+		return terminalNumber * COUNTER_MAX_VALUE + entityOrdinalNumber;
 	}
 }
