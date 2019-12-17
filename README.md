@@ -18,7 +18,6 @@ Repair Shop Software is a software application that is aimed for repair shop to 
 5. Device model registration
 6. Device type registration
 7. Device brand registration
-8. 
 
 ### Credits
 Software architect and developer:  [Zoran Jankov](https://www.linkedin.com/in/zoran-jankov-b1054b196/)
