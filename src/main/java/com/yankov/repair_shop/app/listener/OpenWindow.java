@@ -1,4 +1,4 @@
-package main.java.com.yankov.repair_shop.app.action;
+package main.java.com.yankov.repair_shop.app.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +9,11 @@ import main.java.com.yankov.repair_shop.app.utility.WindowControllerFactory;
 import main.java.com.yankov.repair_shop.app.utility.WindowTag;
 import main.java.com.yankov.repair_shop.data.EntityType;
 
+/**
+ * ActionListener for open window action.
+ * 
+ * @author Zoran Jankov
+ */
 public class OpenWindow implements ActionListener
 {
 	private WindowController owner;
