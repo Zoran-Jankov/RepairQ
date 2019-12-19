@@ -17,6 +17,12 @@ public class IndexedDataTable implements IndexedData
 	}
 	
 	@Override
+	public void resetEntityCounter()
+	{
+		entityCounter =0;
+	}
+	
+	@Override
 	public HashMap<String, Entity> getDisplayNameMap()
 	{
 		return displayNameMap;

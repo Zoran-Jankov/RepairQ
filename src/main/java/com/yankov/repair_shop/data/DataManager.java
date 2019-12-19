@@ -90,4 +90,9 @@ public class DataManager
 	{
 		getDataTable(newDataElement.getEntityType()).delete(newDataElement);
 	}
+	
+	public static void resetTicketCounter()
+	{
+		ticketsDataTable.resetEntityCounter();
+	}
 }
