@@ -1,7 +1,7 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
-import main.java.com.yankov.repair_shop.app.utility.ActionFactory;
-import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelFactory;
+import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
+import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
@@ -16,9 +16,9 @@ public class TicketRegistrationController extends InputDialogController
 {
 	private TicketRegistrationDialog ticketGUI;
 	
-	public TicketRegistrationController(WindowController owner, EntityType dataType)
+	public TicketRegistrationController(WindowController owner, EntityType entityType)
 	{
-		super(owner, dataType);
+		super(owner, entityType);
 		
 		ticketGUI = (TicketRegistrationDialog) super.gui;
 		
@@ -31,10 +31,10 @@ public class TicketRegistrationController extends InputDialogController
 	{
 		ticketGUI.getClientPanel().setEntityType(LabelName.CLIENT);
 		
-		ticketGUI.getClientPanel().setComboBoxModel(ComboBoxModelFactory.CLIENT);
+		ticketGUI.getClientPanel().setComboBoxModel(ComboBoxModelManager.CLIENT);
 		
 		ticketGUI.getClientPanel().setButtonFunction
-		         (ActionFactory.openWindow(this, EntityType.CLIENT), ButtonName.CLIENT);
+		         (ListenerFactory.openWindow(this, EntityType.CLIENT), ButtonName.CLIENT);
 		
 		setClientDetails();
 	}
@@ -58,10 +58,10 @@ public class TicketRegistrationController extends InputDialogController
 	{
 		ticketGUI.getDevicePanel().setEntityType(LabelName.DEVICE);
 		
-		ticketGUI.getDevicePanel().setComboBoxModel(ComboBoxModelFactory.DEVICE);
+		ticketGUI.getDevicePanel().setComboBoxModel(ComboBoxModelManager.DEVICE);
 
 		ticketGUI.getDevicePanel().setButtonFunction
-                 (ActionFactory.openWindow(this, EntityType.DEVICE), ButtonName.DEVICE);
+                 (ListenerFactory.openWindow(this, EntityType.DEVICE), ButtonName.DEVICE);
 
 		setDeviceDetails();
 	}

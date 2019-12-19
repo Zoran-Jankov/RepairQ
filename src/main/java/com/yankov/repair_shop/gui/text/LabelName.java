@@ -2,6 +2,8 @@ package main.java.com.yankov.repair_shop.gui.text;
 
 public class LabelName
 {
+	public static String REQUIRED_FIELDS = "Required Fields (*)";
+	
 	public static String ENTITY = "Entity";
 	public static String ENTITY_DETAILS = "Entity Details";
 	

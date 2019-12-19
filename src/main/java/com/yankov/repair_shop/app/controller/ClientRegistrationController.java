@@ -1,7 +1,7 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
-import main.java.com.yankov.repair_shop.app.utility.ActionFactory;
-import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelFactory;
+import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
+import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Client;
@@ -13,18 +13,18 @@ public class ClientRegistrationController extends InputDialogController
 {
 	private ClientRegistrationDialog clientGUI;
 	
-	public ClientRegistrationController(WindowController owner, EntityType dataType)
+	public ClientRegistrationController(WindowController owner, EntityType entityType)
 	{
-		super(owner, dataType);
+		super(owner, entityType);
 
 		clientGUI = (ClientRegistrationDialog) super.gui;
 		
 		clientGUI.getMarketingPanel().setMarketingCmbModel
-				 (ComboBoxModelFactory.MARKETING_TYPE);
+				 (ComboBoxModelManager.MARKETING);
 		
 		clientGUI.getMarketingPanel()
 				 .setMarketingButtonFunction
-				 (ActionFactory.openWindow(this, EntityType.MARKETING_TYPE));
+				 (ListenerFactory.openWindow(this, EntityType.MARKETING));
 	}
 	
 	@Override
@@ -68,10 +68,10 @@ public class ClientRegistrationController extends InputDialogController
 		newClient.setAddress(clientGUI.getPersonalInfoPanel().getAddress());
 		
 		newClient.setMarketing((Marketing) DataManager.getEntity
-			     									  (EntityType.MARKETING_TYPE, 
+			     									  (EntityType.MARKETING, 
 			     									   clientGUI.getMarketingPanel().getMarketing()));
 		
-		ComboBoxModelFactory.updateModel(EntityType.CLIENT, newClient.getDisplayName());
+		ComboBoxModelManager.updateModel(EntityType.CLIENT, newClient.getDisplayName());
 		
 		return newClient;
 	}

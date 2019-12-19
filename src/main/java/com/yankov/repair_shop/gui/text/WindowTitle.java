@@ -14,7 +14,7 @@ public class WindowTitle
 	public static String TICKET = "New Ticket";
 	public static String STATUS = "Status Registration";
 	public static String CLIENT = "Client Registration";
-	public static String MARKETING_TYPE = "Marketing Registration";
+	public static String MARKETING = "Marketing Registration";
 	public static String LEGAL_ENTITY = "Lefal Entity Registration";
 	public static String DEVICE = "Device Registration";
 	public static String MODEL = "Model Registration";
@@ -24,15 +24,15 @@ public class WindowTitle
 	
 	public static String PROPERTY ="Unknown Property - ERROR";
 	
-	public static String getPropertyTitle(EntityType dataType)
+	public static String getPropertyTitle(EntityType entityType)
 	{
-		switch(dataType)
+		switch(entityType)
 		{
 			case NOTIFICATION_TYPE:
 				return NOTIFICATION_TYPE;
 			
-			case MARKETING_TYPE:
-				return MARKETING_TYPE;
+			case MARKETING:
+				return MARKETING;
 				
 			case STATUS:
 				return STATUS;

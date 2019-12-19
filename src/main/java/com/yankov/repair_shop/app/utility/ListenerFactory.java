@@ -17,7 +17,7 @@ import main.java.com.yankov.repair_shop.data.EntityType;
  * @author Zoran Jankov
  *
  */
-public class ActionFactory
+public class ListenerFactory
 {
 	/**
 	 * Returns new SaveData ActionListener

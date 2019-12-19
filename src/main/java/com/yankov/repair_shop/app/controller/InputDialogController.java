@@ -2,7 +2,7 @@ package main.java.com.yankov.repair_shop.app.controller;
 
 import java.awt.Window;
 
-import main.java.com.yankov.repair_shop.app.utility.ActionFactory;
+import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
 import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
@@ -15,19 +15,19 @@ public abstract class InputDialogController implements WindowController
 	protected int id;
 	protected InputDialog gui;
 	
-	protected InputDialogController(WindowController owner, EntityType dataType)
+	protected InputDialogController(WindowController owner, EntityType entityType)
 	{
-		gui = InputDialogFactory.getWindow(owner.getWindow(), dataType);
+		gui = InputDialogFactory.getWindow(owner.getWindow(), entityType);
 		
-		id = IDGenerator.getNewID(dataType);
+		id = IDGenerator.getNewID(entityType);
 		
-		gui.getIdPanel().setIdValue(IDGenerator.toString(dataType, id));
+		gui.getIdPanel().setIdValue(IDGenerator.toString(entityType, id));
 		
 		gui.getInputButtonPanel().setAddButtonFunction
-		   (ActionFactory.saveData(this));
+		   (ListenerFactory.saveData(this));
 		
 		gui.getInputButtonPanel().setCancelButtonFunction
-		   (ActionFactory.closeWindow(this));
+		   (ListenerFactory.closeWindow(this));
 		
 		gui.setVisible(true);
 	}

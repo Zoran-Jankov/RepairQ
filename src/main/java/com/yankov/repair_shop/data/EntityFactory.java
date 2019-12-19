@@ -18,9 +18,9 @@ import main.java.com.yankov.repair_shop.data.entity.User;
 
 public class EntityFactory
 {
-	public static Entity create(EntityType dataType)
+	public static Entity create(EntityType entityType)
 	{
-		switch(dataType)
+		switch(entityType)
 		{
 			case NOTIFICATION:
 				return new Notification();
@@ -43,7 +43,7 @@ public class EntityFactory
 			case CLIENT:
 				return new Client();
 				
-			case MARKETING_TYPE:
+			case MARKETING:
 				return new Marketing();
 			
 			case LEGAL_ENTITY:

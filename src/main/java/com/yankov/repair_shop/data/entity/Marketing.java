@@ -7,6 +7,6 @@ public class Marketing extends Property
 	@Override
 	public EntityType getEntityType()
 	{
-		return EntityType.MARKETING_TYPE;
+		return EntityType.MARKETING;
 	}
 }

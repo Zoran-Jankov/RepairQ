@@ -2,6 +2,7 @@ package main.java.com.yankov.repair_shop.gui.panel;
 
 import javax.swing.JPanel;
 
+import main.java.com.yankov.repair_shop.gui.text.LabelName;
 import main.java.com.yankov.repair_shop.gui.utility.LabelFactory;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
@@ -14,12 +15,15 @@ public class IdPanel extends JPanel
 	
 	public IdPanel()
 	{
-		setLayout(new MigLayout("", "[][][][][][]", "[20px:n]"));
+		setLayout(new MigLayout("", "[20px:n][][][][]", "[20px:n]"));
 		
 		JLabel lblID = LabelFactory.createJLabel("ID", new Font("Tahoma", Font.PLAIN, 13));
 		add(lblID, "cell 0 0 0 1,growy");
 		
 		add(lblIDValue, "cell 2 0,grow");
+		
+		JLabel lblRequiredFields = LabelFactory.createJLabel(LabelName.REQUIRED_FIELDS, new Font("Tahoma", Font.PLAIN, 13));
+		add(lblRequiredFields, "cell 4 0,alignx right,growy");
 	}
 	
 	public void setIdValue(String id)

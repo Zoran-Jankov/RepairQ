@@ -1,7 +1,7 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
-import main.java.com.yankov.repair_shop.app.utility.ActionFactory;
-import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelFactory;
+import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
+import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
@@ -14,9 +14,9 @@ public class DeviceRegistrationController extends InputDialogController
 {
 	private DeviceRegistrationDialog deviceGUI;
 	
-	public DeviceRegistrationController(WindowController owner, EntityType dataType)
+	public DeviceRegistrationController(WindowController owner, EntityType entityType)
 	{
-		super(owner, dataType);
+		super(owner, entityType);
 		
 		deviceGUI = (DeviceRegistrationDialog) super.gui;
 		
@@ -24,19 +24,19 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		deviceGUI.getDeviceRegistrationPanel()
 				 .setBtnNewModelActionListener
-				 (ActionFactory.openWindow(this,EntityType.MODEL));
+				 (ListenerFactory.openWindow(this,EntityType.MODEL));
 	}
 	
 	private void setComboBoxModels()
 	{
 		deviceGUI.getDeviceRegistrationPanel().setDeviceTypeCmbModel
-		 		 (ComboBoxModelFactory.DEVICE_TYPE);
+		 		 (ComboBoxModelManager.DEVICE_TYPE);
 
 		deviceGUI.getDeviceRegistrationPanel().setBrandCmbModel
-		 		 (ComboBoxModelFactory.BRAND);
+		 		 (ComboBoxModelManager.BRAND);
 
 		deviceGUI.getDeviceRegistrationPanel().setModelCmbModel
-		 		 (ComboBoxModelFactory.MODEL);
+		 		 (ComboBoxModelManager.MODEL);
 	}
 	
 	@Override
@@ -51,7 +51,7 @@ public class DeviceRegistrationController extends InputDialogController
 		newDevice.setModel((Model) DataManager.getEntity(EntityType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
 		
-		ComboBoxModelFactory.updateModel(EntityType.DEVICE, IDGenerator.toString(EntityType.DEVICE, newDevice.getId()));
+		ComboBoxModelManager.updateModel(EntityType.DEVICE, IDGenerator.toString(EntityType.DEVICE, newDevice.getId()));
 		
 		return newDevice;
 	}

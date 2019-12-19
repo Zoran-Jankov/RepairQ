@@ -11,7 +11,7 @@ public enum EntityType
 	TICKET,
 	STATUS,
 	CLIENT,
-	MARKETING_TYPE,
+	MARKETING,
 	LEGAL_ENTITY,
 	DEVICE,
 	MODEL,
@@ -44,7 +44,7 @@ public enum EntityType
 	public static boolean isAProperty(EntityType dataType)
 	{
 		return (dataType == NOTIFICATION_TYPE)
-		    || (dataType == MARKETING_TYPE)
+		    || (dataType == MARKETING)
 		    || (dataType == STATUS)
 		    || (dataType == DEVICE_TYPE)
 		    || (dataType == BRAND);

@@ -32,7 +32,7 @@ public class DataManager
 		dataTables.put(EntityType.TICKET, ticketsDataTable);
 		dataTables.put(EntityType.STATUS, statusTypesDataTable);
 		dataTables.put(EntityType.CLIENT, clientsDataTable);
-		dataTables.put(EntityType.MARKETING_TYPE, marketingTypesDataTable);
+		dataTables.put(EntityType.MARKETING, marketingTypesDataTable);
 		dataTables.put(EntityType.LEGAL_ENTITY, legalEntitiesDataTable);
 		dataTables.put(EntityType.DEVICE, devicesDataTable);
 		dataTables.put(EntityType.MODEL, modelsDataTable);

@@ -1,7 +1,7 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
-import main.java.com.yankov.repair_shop.app.utility.ActionFactory;
-import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelFactory;
+import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
+import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Brand;
@@ -14,9 +14,9 @@ public class ModelRegistrationController extends InputDialogController
 {
 	private ModelRegistrationDialog modelGUI;
 	
-	public ModelRegistrationController(WindowController owner, EntityType dataType)
+	public ModelRegistrationController(WindowController owner, EntityType entityType)
 	{
-		super(owner, dataType);
+		super(owner, entityType);
 		modelGUI = (ModelRegistrationDialog) super.gui;
 		setComboBoxModels();
 		setButtonActionListeners();
@@ -25,21 +25,21 @@ public class ModelRegistrationController extends InputDialogController
 	private void setComboBoxModels()
 	{
 		modelGUI.getModelPanel()
-		        .setDeviceTypeCmbModel(ComboBoxModelFactory.DEVICE_TYPE);
+		        .setDeviceTypeCmbModel(ComboBoxModelManager.DEVICE_TYPE);
 		
 		modelGUI.getModelPanel()
-		        .setBrandCmbModel(ComboBoxModelFactory.BRAND);
+		        .setBrandCmbModel(ComboBoxModelManager.BRAND);
 	}
 	
 	private void setButtonActionListeners()
 	{
 		modelGUI.getModelPanel()
 				.setBtnNewDeviceTypeActionlistener
-				(ActionFactory.openWindow(this, EntityType.DEVICE_TYPE));
+				(ListenerFactory.openWindow(this, EntityType.DEVICE_TYPE));
 		
 		modelGUI.getModelPanel()
 		        .setBtnNewBrandActionlistener
-		        (ActionFactory.openWindow(this, EntityType.BRAND));
+		        (ListenerFactory.openWindow(this, EntityType.BRAND));
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public class ModelRegistrationController extends InputDialogController
 		newModel.setBrand((Brand) DataManager.getEntity
 				(EntityType.BRAND, modelGUI.getModelPanel().getBrand()));
 		
-		ComboBoxModelFactory.updateModel(EntityType.MODEL, newModel.getName());
+		ComboBoxModelManager.updateModel(EntityType.MODEL, newModel.getName());
 		
 		return newModel;
 	}

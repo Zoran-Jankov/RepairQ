@@ -11,27 +11,27 @@ import main.java.com.yankov.repair_shop.data.EntityType;
 
 public class DialogClontrollerFactory
 {
-	public static InputDialogController createController(WindowController owner, EntityType dataType)
+	public static InputDialogController createController(WindowController owner, EntityType entityType)
 	{
-		switch(dataType)
+		switch(entityType)
 		{
 			case TICKET:
-				return new TicketRegistrationController(owner, dataType);
+				return new TicketRegistrationController(owner, entityType);
 			
 			case CLIENT:
-				return new ClientRegistrationController(owner, dataType);
+				return new ClientRegistrationController(owner, entityType);
 			
 			case DEVICE:
-				return new DeviceRegistrationController(owner, dataType);
+				return new DeviceRegistrationController(owner, entityType);
 				
 			case MODEL:
-				return new ModelRegistrationController(owner, dataType);
+				return new ModelRegistrationController(owner, entityType);
 				
 			default:
 			{
-				if(EntityType.isAProperty(dataType))
+				if(EntityType.isAProperty(entityType))
 				{
-					return new PropertyRegistrationController(owner, dataType);
+					return new PropertyRegistrationController(owner, entityType);
 				}
 				else
 				{

@@ -2,7 +2,7 @@ package main.java.com.yankov.repair_shop.app.controller;
 
 import java.awt.Window;
 
-import main.java.com.yankov.repair_shop.app.utility.ActionFactory;
+import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
 import main.java.com.yankov.repair_shop.app.utility.WindowControllerFactory;
 import main.java.com.yankov.repair_shop.app.utility.WindowTag;
 import main.java.com.yankov.repair_shop.gui.dialog.LoginDialog;
@@ -15,10 +15,10 @@ public class LoginDialogController implements WindowController
 	public LoginDialogController()
 	{
 		gui.getInputButtonPanel().setAddButtonFunction
-		   (ActionFactory.login(this), ButtonName.LOGIN);
+		   (ListenerFactory.login(this), ButtonName.LOGIN);
 		
 		gui.getInputButtonPanel().setCancelButtonFunction
-		   (ActionFactory.closeWindow(this), ButtonName.QUIT);
+		   (ListenerFactory.closeWindow(this), ButtonName.QUIT);
 		
 		gui.setVisible(true);
 	}
