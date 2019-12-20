@@ -36,7 +36,7 @@ public class PropertyRegistrationController extends InputDialogController
 		
 		newProperty.setId(super.id);
 		
-		newProperty.setName(propertyGUI.getPropertyPanel().getPropertyName());
+		newProperty.setPropertyName(propertyGUI.getPropertyPanel().getPropertyName());
 		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
 		

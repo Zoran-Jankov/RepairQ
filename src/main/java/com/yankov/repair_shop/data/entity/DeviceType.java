@@ -19,4 +19,9 @@ public class DeviceType extends Property
 	{
 		return EntityType.DEVICE_TYPE;
 	}
+	
+	public String getDeviceType()
+	{
+		return getPropertyName();
+	}
 }

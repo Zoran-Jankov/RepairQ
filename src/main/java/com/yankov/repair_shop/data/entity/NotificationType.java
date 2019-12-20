@@ -19,4 +19,9 @@ public class NotificationType extends Property
 	{
 		return EntityType.NOTIFICATION_TYPE;
 	}
+	
+	public String getNotificationType()
+	{
+		return getPropertyName();
+	}
 }

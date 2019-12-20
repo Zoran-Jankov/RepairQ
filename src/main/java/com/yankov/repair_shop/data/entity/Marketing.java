@@ -19,4 +19,9 @@ public class Marketing extends Property
 	{
 		return EntityType.MARKETING;
 	}
+	
+	public String getMarketing()
+	{
+		return getPropertyName();
+	}
 }

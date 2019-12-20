@@ -19,4 +19,9 @@ public class Brand extends Property
 	{
 		return EntityType.BRAND;
 	}
+	
+	public String getBrand()
+	{
+		return getPropertyName();
+	}
 }

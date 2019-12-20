@@ -28,7 +28,7 @@ public abstract class Property extends AbstractEntity
 	 * Getter for general property name.
 	 * @return General property name.
 	 */
-	public String getName()
+	public String getPropertyName()
 	{
 		return name;
 	}
@@ -37,7 +37,7 @@ public abstract class Property extends AbstractEntity
 	 * Setter for general property name.
 	 * @param name - General property name.
 	 */
-	public void setName(String name)
+	public void setPropertyName(String name)
 	{
 		this.name = name;
 	}
@@ -63,6 +63,6 @@ public abstract class Property extends AbstractEntity
 	@Override
 	public String getDisplayName()
 	{
-		return getName();
+		return getPropertyName();
 	}
 }

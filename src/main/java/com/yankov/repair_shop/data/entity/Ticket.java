@@ -1,6 +1,7 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.Priority;
 
 public class Ticket extends AbstractEntity
 {

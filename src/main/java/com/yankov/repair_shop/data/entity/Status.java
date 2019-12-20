@@ -19,4 +19,9 @@ public class Status extends Property
 	{
 		return EntityType.STATUS;
 	}
+	
+	public String getStatus()
+	{
+		return getPropertyName();
+	}
 }
