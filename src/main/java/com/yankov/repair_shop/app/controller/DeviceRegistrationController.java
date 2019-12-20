@@ -2,7 +2,6 @@ package main.java.com.yankov.repair_shop.app.controller;
 
 import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
-import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Device;
@@ -50,8 +49,6 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		newDevice.setModel((Model) DataManager.getEntity(EntityType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
-		
-		ComboBoxModelManager.updateModel(EntityType.DEVICE, IDGenerator.toString(EntityType.DEVICE, newDevice.getId()));
 		
 		return newDevice;
 	}

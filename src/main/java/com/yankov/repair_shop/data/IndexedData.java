@@ -19,6 +19,8 @@ public interface IndexedData
 	
 	public void resetEntityCounter();
 	
+	public HashMap<Integer, Entity> getIdMap();
+	
 	/**
 	 * Getter for the display name map.
 	 * @return (HashMap<String, Entity>) -  Display name map

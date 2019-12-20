@@ -2,6 +2,7 @@ package main.java.com.yankov.repair_shop.data;
 
 import java.util.HashMap;
 
+import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 
 public class DataManager
@@ -41,54 +42,61 @@ public class DataManager
 		dataTables.put(EntityType.USER, usersDataTable);
 	}
 	
-	public static IndexedData getDataTable(EntityType dataType)
+	public static IndexedData getDataTable(EntityType entityType)
 	{
-		return dataTables.get(dataType);
+		return dataTables.get(entityType);
 	}
 	
-	public static Entity getEntity(EntityType dataType, int id)
+	public static Entity getEntity(EntityType entityType, int id)
 	{
-		return getDataTable(dataType).getEntity(id);
+		return getDataTable(entityType).getEntity(id);
 	}
 	
-	public static Entity getEntity(EntityType dataType, String name)
+	public static Entity getEntity(EntityType entityType, String name)
 	{
-		return getDataTable(dataType).getEntity(name);
+		return getDataTable(entityType).getEntity(name);
 	}
 
-	public static int getEntityCounter(EntityType dataType)
+	public static int getEntityCounter(EntityType entityType)
 	{
-		return getDataTable(dataType).getEntityCounter();
-	}
-
-	public static HashMap<String, Entity> getDisplayNameMap(EntityType dataType)
-	{
-		return getDataTable(dataType).getDisplayNameMap();
+		return getDataTable(entityType).getEntityCounter();
 	}
 	
-	public static boolean isDataTableEmpty(EntityType dataType)
+	public static HashMap<Integer, Entity>getIdMap(EntityType entityType)
 	{
-		return getEntityCounter(dataType) == 0;
+		return getDataTable(entityType).getIdMap();
 	}
 
-	public static boolean idCollision(EntityType dataType, int id)
+	public static HashMap<String, Entity> getDisplayNameMap(EntityType entityType)
 	{
-		return getDataTable(dataType).idCollision(id);
+		return getDataTable(entityType).getDisplayNameMap();
+	}
+	
+	public static boolean isDataTableEmpty(EntityType entityType)
+	{
+		return getEntityCounter(entityType) == 0;
 	}
 
-	public static boolean uniqueStringCollision(EntityType dataType, String displayName)
+	public static boolean idCollision(EntityType entityType, int id)
 	{
-		return getDataTable(dataType).displayNameCollision(displayName);
+		return getDataTable(entityType).idCollision(id);
 	}
 
-	public static void save(Entity newDataElement)
+	public static boolean uniqueStringCollision(EntityType entityType, String displayName)
 	{
-		getDataTable(newDataElement.getEntityType()).save(newDataElement);
+		return getDataTable(entityType).displayNameCollision(displayName);
 	}
 
-	public static void delete(Entity newDataElement)
+	public static void save(Entity newEntity)
 	{
-		getDataTable(newDataElement.getEntityType()).delete(newDataElement);
+		getDataTable(newEntity.getEntityType()).save(newEntity);
+		
+		ComboBoxModelManager.updateModel(newEntity);
+	}
+
+	public static void delete(Entity newEntity)
+	{
+		getDataTable(newEntity.getEntityType()).delete(newEntity);
 	}
 	
 	public static void resetTicketCounter()

@@ -23,6 +23,12 @@ public class IndexedDataTable implements IndexedData
 	}
 	
 	@Override
+	public HashMap<Integer, Entity> getIdMap()
+	{
+		return idMap;
+	}
+	
+	@Override
 	public HashMap<String, Entity> getDisplayNameMap()
 	{
 		return displayNameMap;

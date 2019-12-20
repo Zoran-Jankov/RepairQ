@@ -59,8 +59,7 @@ public abstract class AbstractEntity implements Entity
 	@Override
 	public String getDisplayName()
 	{
-		methodNotSupported();
-		return null;
+		return String.valueOf(id);
 	}
 	
 	@Override

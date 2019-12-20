@@ -17,13 +17,13 @@ import main.java.com.yankov.repair_shop.data.EntityType;
 public class OpenWindow implements ActionListener
 {
 	private WindowController owner;
-	private EntityType dataType = null;
+	private EntityType entityType = null;
 	private WindowTag window;
 
-	public OpenWindow(WindowController owner, EntityType dataType)
+	public OpenWindow(WindowController owner, EntityType entityType)
 	{
 		this.owner = owner;
-		this.dataType = dataType;
+		this.entityType = entityType;
 	}
 	
 	public OpenWindow(WindowTag window)
@@ -34,9 +34,9 @@ public class OpenWindow implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		if(dataType != null)
+		if(entityType != null)
 		{
-			DialogClontrollerFactory.createController(owner, dataType);
+			DialogClontrollerFactory.createController(owner, entityType);
 		}
 		else
 		{

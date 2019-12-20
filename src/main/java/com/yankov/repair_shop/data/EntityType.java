@@ -19,15 +19,20 @@ public enum EntityType
 	BRAND,
 	USER;
 	
+	public static boolean hasDisplayName(EntityType entityType)
+	{
+		return !(entityType == NOTIFICATION
+			  || entityType == SERVICE
+			  || entityType == TICKET
+			  || entityType == DEVICE);
+	}
+	
 	public static boolean hasDisplayName(Entity entity)
 	{
-		EntityType dataType = entity.getEntityType();
-		
-		return !(dataType == NOTIFICATION
-			  || dataType == SERVICE
-			  || dataType == TICKET
-			  || dataType == DEVICE);
+		return hasDisplayName(entity.getEntityType());
 	}
+	
+	
 	
 	public static boolean makesReferences(Entity entity)
 	{

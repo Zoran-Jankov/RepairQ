@@ -71,8 +71,6 @@ public class ClientRegistrationController extends InputDialogController
 			     									  (EntityType.MARKETING, 
 			     									   clientGUI.getMarketingPanel().getMarketing()));
 		
-		ComboBoxModelManager.updateModel(EntityType.CLIENT, newClient.getDisplayName());
-		
 		return newClient;
 	}
 	

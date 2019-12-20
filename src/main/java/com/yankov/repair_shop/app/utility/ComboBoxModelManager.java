@@ -2,11 +2,13 @@ package main.java.com.yankov.repair_shop.app.utility;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Set;
 
 import javax.swing.DefaultComboBoxModel;
 
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.gui.text.LabelName;
 
 public class ComboBoxModelManager
@@ -44,18 +46,38 @@ public class ComboBoxModelManager
 	public static DefaultComboBoxModel<String> loadModel(EntityType entityType)
 	{
 		HashSet<String> items = new HashSet<String>();
-								   
+		
 		items.add(LabelName.NULL_ITEM);
-		items.addAll(DataManager.getDisplayNameMap(entityType).keySet());
+		
+		if(EntityType.hasDisplayName(entityType))
+		{
+			items.addAll(DataManager.getDisplayNameMap(entityType).keySet());
+		}
+		else
+		{
+			Set<Integer> idSet = DataManager.getIdMap(entityType).keySet();
+			Set<String> dispalyNames = new HashSet<String>();
+			
+			for(Integer id : idSet)
+			{
+				dispalyNames.add(id.toString());
+			}
+			
+			items.addAll(dispalyNames);
+		}
+		
 		
 		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>
 												(items.toArray(new String[0]));
 		return model;
 	}
 	
-	public static void updateModel(EntityType dataType, String item)
+	public static void updateModel(Entity newEntity)
 	{
-		modelsMap.get(dataType).addElement(item);
-		modelsMap.get(dataType).setSelectedItem(item);
+		EntityType entityType = newEntity.getEntityType();
+		String item = newEntity.getDisplayName();
+		
+		modelsMap.get(entityType).addElement(item);
+		modelsMap.get(entityType).setSelectedItem(item);
 	}
 }

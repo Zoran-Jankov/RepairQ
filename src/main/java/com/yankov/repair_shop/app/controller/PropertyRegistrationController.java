@@ -1,6 +1,5 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
-import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.EntityFactory;
@@ -39,8 +38,6 @@ public class PropertyRegistrationController extends InputDialogController
 		newProperty.setPropertyName(propertyGUI.getPropertyPanel().getPropertyName());
 		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
-		
-		ComboBoxModelManager.updateModel(dataType, newProperty.getDisplayName());
 		
 		return newProperty;
 	}
