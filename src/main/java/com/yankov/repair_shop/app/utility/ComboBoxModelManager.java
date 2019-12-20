@@ -51,27 +51,35 @@ public class ComboBoxModelManager
 		
 		if(EntityType.hasDisplayName(entityType))
 		{
-			items.addAll(DataManager.getDisplayNameMap(entityType).keySet());
+			items.addAll(getDisplayNameSet(entityType));
 		}
 		else
 		{
-			Set<Integer> idSet = DataManager.getIdMap(entityType).keySet();
-			Set<String> dispalyNames = new HashSet<String>();
-			
-			for(Integer id : idSet)
-			{
-				dispalyNames.add(id.toString());
-			}
-			
-			items.addAll(dispalyNames);
+			items.addAll(getIdSet(entityType));
 		}
-		
 		
 		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>
 												(items.toArray(new String[0]));
 		return model;
 	}
 	
+	private static Set<String> getIdSet(EntityType entityType)
+	{
+		Set<Integer> idSet = DataManager.getIdMap(entityType).keySet();
+		Set<String> dispalyNames = new HashSet<String>();
+		
+		for(Integer id : idSet)
+		{
+			dispalyNames.add(id.toString());
+		}
+		return dispalyNames;
+	}
+
+	private static Set<String> getDisplayNameSet(EntityType entityType)
+	{
+		return DataManager.getDisplayNameMap(entityType).keySet();
+	}
+
 	public static void updateModel(Entity newEntity)
 	{
 		EntityType entityType = newEntity.getEntityType();
