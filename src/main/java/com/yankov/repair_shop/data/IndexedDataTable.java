@@ -1,14 +1,15 @@
 package main.java.com.yankov.repair_shop.data;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 
 public class IndexedDataTable implements IndexedData
 {
 	private int entityCounter = 0;
-	private HashMap<Integer, Entity> idMap = new HashMap<Integer, Entity>();
-	private HashMap<String, Entity> displayNameMap = new HashMap<String, Entity>();
+	private Map<Integer, Entity> idMap = new HashMap<Integer, Entity>();
+	private Map<String, Entity> displayNameMap = new HashMap<String, Entity>();
 	
 	@Override
 	public int getEntityCounter()
@@ -23,13 +24,13 @@ public class IndexedDataTable implements IndexedData
 	}
 	
 	@Override
-	public HashMap<Integer, Entity> getIdMap()
+	public Map<Integer, Entity> getIdMap()
 	{
 		return idMap;
 	}
 	
 	@Override
-	public HashMap<String, Entity> getDisplayNameMap()
+	public Map<String, Entity> getDisplayNameMap()
 	{
 		return displayNameMap;
 	}

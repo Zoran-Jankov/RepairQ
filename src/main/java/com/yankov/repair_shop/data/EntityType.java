@@ -21,10 +21,17 @@ public enum EntityType
 	
 	public static boolean hasDisplayName(EntityType entityType)
 	{
-		return !(entityType == NOTIFICATION
-			  || entityType == SERVICE
-			  || entityType == TICKET
-			  || entityType == DEVICE);
+		switch (entityType)
+		{
+        	case NOTIFICATION:
+        	case SERVICE:
+        	case TICKET:
+        	case DEVICE:
+        		return false;
+        		
+        	default:
+        		return true;
+		}
 	}
 	
 	public static boolean hasDisplayName(Entity entity)
@@ -36,22 +43,36 @@ public enum EntityType
 	
 	public static boolean makesReferences(Entity entity)
 	{
-		EntityType dataType = entity.getEntityType();
+		EntityType entityType = entity.getEntityType();
 		
-		return (dataType == NOTIFICATION)
-			|| (dataType == SERVICE)
-			|| (dataType == TICKET)
-			|| (dataType == CLIENT)
-			|| (dataType == DEVICE)
-			|| (dataType == MODEL);
+		switch (entityType)
+		{
+        	case NOTIFICATION:
+        	case SERVICE:
+        	case TICKET:
+        	case CLIENT:
+        	case DEVICE:
+        	case MODEL:
+        		return true;
+        		
+        	default:
+        		return false;
+		}
 	}
 	
-	public static boolean isAProperty(EntityType dataType)
+	public static boolean isAProperty(EntityType entityType)
 	{
-		return (dataType == NOTIFICATION_TYPE)
-		    || (dataType == MARKETING)
-		    || (dataType == STATUS)
-		    || (dataType == DEVICE_TYPE)
-		    || (dataType == BRAND);
+		switch (entityType)
+		{
+        	case NOTIFICATION_TYPE:
+        	case MARKETING:
+        	case STATUS:
+        	case DEVICE_TYPE:
+        	case BRAND:
+        		return true;
+        		
+        	default:
+        		return false;
+		}
 	}
 }

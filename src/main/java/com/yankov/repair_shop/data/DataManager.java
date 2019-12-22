@@ -1,6 +1,7 @@
 package main.java.com.yankov.repair_shop.data;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
@@ -22,29 +23,29 @@ public class DataManager
 	public static IndexedData brandsDataTable = new IndexedDataTable();
 	public static IndexedData usersDataTable = new IndexedDataTable();
 	
-	private static final HashMap<EntityType, IndexedData> dataTables = new HashMap<EntityType, IndexedData>();
+	private static final Map<EntityType, IndexedData> DATA_TABLES = new HashMap<EntityType, IndexedData>();
 	
 	static
 	{
-		dataTables.put(EntityType.NOTIFICATION, notificationsDataTable);
-		dataTables.put(EntityType.NOTIFICATION_TYPE, notificationTypesDataTable);
-		dataTables.put(EntityType.SERVICE, servicesDataTable);
-		dataTables.put(EntityType.SERVICE_TYPE, serviceTypesDataTable);
-		dataTables.put(EntityType.TICKET, ticketsDataTable);
-		dataTables.put(EntityType.STATUS, statusTypesDataTable);
-		dataTables.put(EntityType.CLIENT, clientsDataTable);
-		dataTables.put(EntityType.MARKETING, marketingTypesDataTable);
-		dataTables.put(EntityType.LEGAL_ENTITY, legalEntitiesDataTable);
-		dataTables.put(EntityType.DEVICE, devicesDataTable);
-		dataTables.put(EntityType.MODEL, modelsDataTable);
-		dataTables.put(EntityType.DEVICE_TYPE, deviceTypesDataTable);
-		dataTables.put(EntityType.BRAND, brandsDataTable);
-		dataTables.put(EntityType.USER, usersDataTable);
+		DATA_TABLES.put(EntityType.NOTIFICATION, notificationsDataTable);
+		DATA_TABLES.put(EntityType.NOTIFICATION_TYPE, notificationTypesDataTable);
+		DATA_TABLES.put(EntityType.SERVICE, servicesDataTable);
+		DATA_TABLES.put(EntityType.SERVICE_TYPE, serviceTypesDataTable);
+		DATA_TABLES.put(EntityType.TICKET, ticketsDataTable);
+		DATA_TABLES.put(EntityType.STATUS, statusTypesDataTable);
+		DATA_TABLES.put(EntityType.CLIENT, clientsDataTable);
+		DATA_TABLES.put(EntityType.MARKETING, marketingTypesDataTable);
+		DATA_TABLES.put(EntityType.LEGAL_ENTITY, legalEntitiesDataTable);
+		DATA_TABLES.put(EntityType.DEVICE, devicesDataTable);
+		DATA_TABLES.put(EntityType.MODEL, modelsDataTable);
+		DATA_TABLES.put(EntityType.DEVICE_TYPE, deviceTypesDataTable);
+		DATA_TABLES.put(EntityType.BRAND, brandsDataTable);
+		DATA_TABLES.put(EntityType.USER, usersDataTable);
 	}
 	
 	public static IndexedData getDataTable(EntityType entityType)
 	{
-		return dataTables.get(entityType);
+		return DATA_TABLES.get(entityType);
 	}
 	
 	public static Entity getEntity(EntityType entityType, int id)
@@ -62,12 +63,12 @@ public class DataManager
 		return getDataTable(entityType).getEntityCounter();
 	}
 	
-	public static HashMap<Integer, Entity>getIdMap(EntityType entityType)
+	public static Map<Integer, Entity>getIdMap(EntityType entityType)
 	{
 		return getDataTable(entityType).getIdMap();
 	}
 
-	public static HashMap<String, Entity> getDisplayNameMap(EntityType entityType)
+	public static Map<String, Entity> getDisplayNameMap(EntityType entityType)
 	{
 		return getDataTable(entityType).getDisplayNameMap();
 	}
@@ -82,7 +83,7 @@ public class DataManager
 		return getDataTable(entityType).idCollision(id);
 	}
 
-	public static boolean uniqueStringCollision(EntityType entityType, String displayName)
+	public static boolean displayNameCollision(EntityType entityType, String displayName)
 	{
 		return getDataTable(entityType).displayNameCollision(displayName);
 	}

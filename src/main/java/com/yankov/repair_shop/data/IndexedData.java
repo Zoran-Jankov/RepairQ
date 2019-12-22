@@ -1,6 +1,6 @@
 package main.java.com.yankov.repair_shop.data;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 
@@ -19,13 +19,13 @@ public interface IndexedData
 	
 	public void resetEntityCounter();
 	
-	public HashMap<Integer, Entity> getIdMap();
+	public Map<Integer, Entity> getIdMap();
 	
 	/**
 	 * Getter for the display name map.
 	 * @return (HashMap<String, Entity>) -  Display name map
 	 */
-	public HashMap<String, Entity> getDisplayNameMap();
+	public Map<String, Entity> getDisplayNameMap();
 	
 	/**
 	 * Getter for specific entity by is's id number.

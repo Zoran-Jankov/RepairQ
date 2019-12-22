@@ -5,5 +5,5 @@ public enum Priority
 	NORMAL,
 	TODAY,
 	URGENT,
-	NOT_IMPORTANT;
+	ON_HOLD;
 }
