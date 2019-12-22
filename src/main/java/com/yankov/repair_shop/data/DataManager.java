@@ -1,6 +1,6 @@
 package main.java.com.yankov.repair_shop.data;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
@@ -23,7 +23,7 @@ public class DataManager
 	public static IndexedData brandsDataTable = new IndexedDataTable();
 	public static IndexedData usersDataTable = new IndexedDataTable();
 	
-	private static final Map<EntityType, IndexedData> DATA_TABLES = new HashMap<EntityType, IndexedData>();
+	private static final Map<EntityType, IndexedData> DATA_TABLES = new EnumMap<EntityType, IndexedData>(EntityType.class);
 	
 	static
 	{
