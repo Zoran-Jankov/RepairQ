@@ -1,5 +1,6 @@
 package main.java.com.yankov.repair_shop.app.utility;
 
+import java.security.InvalidAlgorithmParameterException;
 import java.time.LocalDate;
 
 import main.java.com.yankov.repair_shop.data.DataManager;
@@ -8,29 +9,43 @@ import main.java.com.yankov.repair_shop.gui.text.LabelName;
 
 public class IDGenerator
 {
-	private static int WORKSTATION_ID = 1;
-	private static final int ENTITY_COUNTER_MAX_VALUE = 100000000;
-	private static final int DAILY_TICKET_COUNTER_MAX_VALUE = 100;	
-	private static final int WORKSTATION_ID_VALUE = WORKSTATION_ID * ENTITY_COUNTER_MAX_VALUE;
+	private static final int WORKSTATION_ID = 1;
+	private static final int DAY_ID_FORMATER = 100;
+	private static final int MONTH_ID_FORMATER = 10000;	
+	private static final int YEAR_ID_FORMATER = 1000000;
+	private static final int WORKSTATION_ID_FORMATER = 100000000;
+	private static final int WORKSTATION_ID_VALUE = WORKSTATION_ID * WORKSTATION_ID_FORMATER;
+	
 	private static LocalDate lastTicketDate = LocalDate.MIN;
 	
 	public static int getNewID(EntityType entityType)
 	{
-		if(entityType == EntityType.TICKET)
+		EntityType.checkForNullValue(entityType);
+		
+		int entityCounter = DataManager.getEntityCounter(entityType);
+		
+		switch(entityType)
 		{
-			checkNewWorkDay();
-			
-			LocalDate today = LocalDate.now();
-			
-			return DataManager.getEntityCounter(EntityType.TICKET) + 1
-				 + today.getDayOfMonth() * DAILY_TICKET_COUNTER_MAX_VALUE
-				 + today.getMonthValue() * 10000
-				 +(today.getYear() % DAILY_TICKET_COUNTER_MAX_VALUE) * 1000000
-				 + WORKSTATION_ID_VALUE;
-		}
-		else
-		{
-			return DataManager.getEntityCounter(entityType) + 1 + WORKSTATION_ID_VALUE;
+			case TICKET:
+			{
+				checkNewWorkDay();
+				
+				LocalDate today = LocalDate.now();
+				
+				int dayIDValue = today.getDayOfMonth() * DAY_ID_FORMATER;
+				int monthIDValue = today.getMonthValue() * MONTH_ID_FORMATER;
+				int yearIDValue = (today.getYear() % DAY_ID_FORMATER) * YEAR_ID_FORMATER;
+				
+				return entityCounter + 1
+					 + dayIDValue
+					 + monthIDValue
+					 + yearIDValue
+					 + WORKSTATION_ID_VALUE;
+			}
+			default:
+			{
+				return entityCounter + 1 + WORKSTATION_ID_VALUE;
+			}
 		}
 	}
 	
@@ -45,19 +60,16 @@ public class IDGenerator
 
 	public static String toString(EntityType entityType, int id)
 	{
-		if(entityType == null)
-		{
-			return "Null EntityType entered";
-		}
+		EntityType.checkForNullValue(entityType);
 		
-		String workstationID = String.valueOf(id / ENTITY_COUNTER_MAX_VALUE);
+		String workstationID = String.valueOf(id / WORKSTATION_ID_FORMATER);
 		
 		switch(entityType)
 		{
 			case TICKET:
 			{
-				String date = String.valueOf((id % ENTITY_COUNTER_MAX_VALUE) / DAILY_TICKET_COUNTER_MAX_VALUE);
-				String dailyTicketCounter = String.valueOf(id %  DAILY_TICKET_COUNTER_MAX_VALUE);
+				String date = String.valueOf((id % WORKSTATION_ID_FORMATER) / DAY_ID_FORMATER);
+				String dailyTicketCounter = String.valueOf(id %  DAY_ID_FORMATER);
 				
 				if(dailyTicketCounter.length() == 1)
 				{
@@ -69,25 +81,36 @@ public class IDGenerator
 			
 			default:
 			{
-				String entityCounter = String.valueOf(id % ENTITY_COUNTER_MAX_VALUE);
+				String entityCounter = String.valueOf(id % WORKSTATION_ID_FORMATER);
 				
 				return workstationID + "-" + entityCounter;
 			}	
 		}
 	}
 	
-	public static int toInt(String displayName)
+	public static int toInt(EntityType entityType, String displayName)
 	{
-		if(!displayName.equals(LabelName.NULL_ITEM))
-		{
-			int workstationID = Integer.parseInt(displayName.split("-")[0]);
-			int entityCounterNumber = Integer.parseInt(displayName.split("-")[1]);
+		EntityType.checkForNullValue(entityType);
 		
-			return workstationID * ENTITY_COUNTER_MAX_VALUE + entityCounterNumber;
-		}
-		else
-		{
+		if(LabelName.NULL_ITEM.equals(displayName))
 			return 0;
-		}
+		
+		int workstationID = Integer.parseInt(displayName.split("-")[0]) * WORKSTATION_ID_FORMATER;
+		
+		switch(entityType)
+		{
+			case TICKET:
+			{
+				int date = Integer.parseInt(displayName.split("-")[1]) * DAY_ID_FORMATER;
+				int entityCounterNumber = Integer.parseInt(displayName.split("-")[2]);
+				return workstationID + date + entityCounterNumber;
+			}
+			default:
+			{
+				int entityCounterNumber = Integer.parseInt(displayName.split("-")[1]);
+		
+				return workstationID + entityCounterNumber;
+			}
+		}	
 	}
 }

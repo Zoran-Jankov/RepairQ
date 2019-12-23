@@ -48,11 +48,11 @@ class IDGeneratorTest
 		switch(entityType)
 		{
 			case TICKET:
-				assertEquals("1-191223-01", IDGenerator.toString(entityType, 119122301));
+				assertEquals(119122301, IDGenerator.toInt(entityType, "1-191223-01"));
 				break;
 				
 			default:
-				assertEquals("1-21", IDGenerator.toString(entityType, 100000021));
+				assertEquals(100000021, IDGenerator.toInt(entityType, "1-21"));
 		}
 	}
 }

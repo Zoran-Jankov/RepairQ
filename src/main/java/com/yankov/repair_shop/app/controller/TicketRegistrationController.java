@@ -69,7 +69,7 @@ public class TicketRegistrationController extends InputDialogController
 	private void setDeviceDetails()
 	{
 		Device selectedDevice = (Device) DataManager.getEntity
-										(EntityType.DEVICE, IDGenerator.toInt(ticketGUI.getDevice()));
+										(EntityType.DEVICE, IDGenerator.toInt(EntityType.DEVICE, ticketGUI.getDevice()));
 		
 		ticketGUI.getDevicePanel().setEntityDetails
 								  ("<html>" + selectedDevice.getModel().getDeviceType().getPropertyName() + "<br><br>"
