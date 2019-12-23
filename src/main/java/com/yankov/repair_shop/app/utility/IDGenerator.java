@@ -45,6 +45,11 @@ public class IDGenerator
 
 	public static String toString(EntityType entityType, int id)
 	{
+		if(entityType == null)
+		{
+			return "Null EntityType entered";
+		}
+		
 		String workstationID = String.valueOf(id / ENTITY_COUNTER_MAX_VALUE);
 		
 		switch(entityType)

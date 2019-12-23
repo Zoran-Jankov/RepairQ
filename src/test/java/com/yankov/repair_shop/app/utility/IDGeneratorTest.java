@@ -40,4 +40,19 @@ class IDGeneratorTest
 				assertEquals("1-21", IDGenerator.toString(entityType, 100000021));
 		}
 	}
+	
+	@ParameterizedTest
+	@EnumSource(EntityType.class)
+	void toIntTest(EntityType entityType)
+	{
+		switch(entityType)
+		{
+			case TICKET:
+				assertEquals("1-191223-01", IDGenerator.toString(entityType, 119122301));
+				break;
+				
+			default:
+				assertEquals("1-21", IDGenerator.toString(entityType, 100000021));
+		}
+	}
 }
