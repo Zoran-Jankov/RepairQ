@@ -23,6 +23,7 @@ class IDGeneratorTest
 				
 			default:
 				assertEquals(100000001, IDGenerator.getNewID(entityType));
+				break;
 		}
 	}
 	
@@ -38,6 +39,7 @@ class IDGeneratorTest
 				
 			default:
 				assertEquals("1-21", IDGenerator.toString(entityType, 100000021));
+				break;
 		}
 	}
 	
@@ -53,6 +55,7 @@ class IDGeneratorTest
 				
 			default:
 				assertEquals(100000021, IDGenerator.toInt(entityType, "1-21"));
+				break;
 		}
 	}
 }
