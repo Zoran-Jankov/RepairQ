@@ -18,7 +18,7 @@ class IDGeneratorTest
 		switch(entityType)
 		{
 			case TICKET:
-				assertEquals(119122301, IDGenerator.getNewID(entityType));
+				assertEquals(119122401, IDGenerator.getNewID(entityType));
 				break;
 				
 			default:
