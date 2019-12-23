@@ -14,9 +14,9 @@ public class IDGenerator
 	private static final int WORKSTATION_ID_VALUE = WORKSTATION_ID * ENTITY_COUNTER_MAX_VALUE;
 	private static LocalDate lastTicketDate = LocalDate.MIN;
 	
-	public static int getNewID(EntityType dataType)
+	public static int getNewID(EntityType entityType)
 	{
-		if(dataType == EntityType.TICKET)
+		if(entityType == EntityType.TICKET)
 		{
 			checkNewWorkDay();
 			
@@ -30,7 +30,7 @@ public class IDGenerator
 		}
 		else
 		{
-			return DataManager.getEntityCounter(dataType) + 1 + WORKSTATION_ID_VALUE;
+			return DataManager.getEntityCounter(entityType) + 1 + WORKSTATION_ID_VALUE;
 		}
 	}
 	
@@ -43,11 +43,11 @@ public class IDGenerator
 		}
 	}
 
-	public static String toString(EntityType dataType, int id)
+	public static String toString(EntityType entityType, int id)
 	{
 		String workstationID = String.valueOf(id / ENTITY_COUNTER_MAX_VALUE);
 		
-		if(dataType == EntityType.TICKET)
+		if(entityType == EntityType.TICKET)
 		{
 			String date = String.valueOf((id % ENTITY_COUNTER_MAX_VALUE) / DAILY_TICKET_COUNTER_MAX_VALUE);
 			String dailyTicketCounter = String.valueOf(id %  DAILY_TICKET_COUNTER_MAX_VALUE);
