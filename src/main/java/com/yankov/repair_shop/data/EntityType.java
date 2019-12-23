@@ -19,12 +19,6 @@ public enum EntityType
 	BRAND,
 	USER;
 	
-	public static void checkForNullValue(EntityType entityType) throws NullPointerException
-	{
-		if(entityType == null)
-			throw new NullPointerException("EntityType is null");
-	}
-	
 	public static boolean hasDisplayName(EntityType entityType)
 	{
 		switch (entityType)

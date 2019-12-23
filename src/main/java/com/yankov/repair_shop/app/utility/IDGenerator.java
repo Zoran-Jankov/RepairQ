@@ -1,6 +1,7 @@
 package main.java.com.yankov.repair_shop.app.utility;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
@@ -19,7 +20,7 @@ public class IDGenerator
 	
 	public static int getNewID(EntityType entityType)
 	{
-		EntityType.checkForNullValue(entityType);
+		entityType = Objects.requireNonNull(entityType, "EntityType is null");
 		
 		int entityCounter = DataManager.getEntityCounter(entityType);
 		
@@ -59,7 +60,7 @@ public class IDGenerator
 
 	public static String toString(EntityType entityType, int id)
 	{
-		EntityType.checkForNullValue(entityType);
+		entityType = Objects.requireNonNull(entityType, "EntityType is null");
 		
 		String workstationID = String.valueOf(id / WORKSTATION_ID_FORMATER);
 		
@@ -89,7 +90,7 @@ public class IDGenerator
 	
 	public static int toInt(EntityType entityType, String displayName)
 	{
-		EntityType.checkForNullValue(entityType);
+		entityType = Objects.requireNonNull(entityType, "EntityType is null");
 		
 		if(LabelName.NULL_ITEM.equals(displayName))
 			return 0;
