@@ -13,7 +13,7 @@ class IDGeneratorTest
 {
 	@ParameterizedTest
 	@EnumSource(EntityType.class)
-	void getNewIDTest(EntityType entityType)
+	public void getNewIDTest(EntityType entityType)
 	{
 		switch(entityType)
 		{
@@ -29,7 +29,7 @@ class IDGeneratorTest
 	
 	@ParameterizedTest
 	@EnumSource(EntityType.class)
-	void toStringTest(EntityType entityType)
+	public void toStringTest(EntityType entityType)
 	{
 		switch(entityType)
 		{
@@ -45,7 +45,7 @@ class IDGeneratorTest
 	
 	@ParameterizedTest
 	@EnumSource(EntityType.class)
-	void toIntTest(EntityType entityType)
+	public void toIntTest(EntityType entityType)
 	{
 		switch(entityType)
 		{
