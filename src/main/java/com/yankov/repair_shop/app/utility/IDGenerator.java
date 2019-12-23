@@ -47,18 +47,27 @@ public class IDGenerator
 	{
 		String workstationID = String.valueOf(id / ENTITY_COUNTER_MAX_VALUE);
 		
-		if(entityType == EntityType.TICKET)
+		switch(entityType)
 		{
-			String date = String.valueOf((id % ENTITY_COUNTER_MAX_VALUE) / DAILY_TICKET_COUNTER_MAX_VALUE);
-			String dailyTicketCounter = String.valueOf(id %  DAILY_TICKET_COUNTER_MAX_VALUE);
+			case TICKET:
+			{
+				String date = String.valueOf((id % ENTITY_COUNTER_MAX_VALUE) / DAILY_TICKET_COUNTER_MAX_VALUE);
+				String dailyTicketCounter = String.valueOf(id %  DAILY_TICKET_COUNTER_MAX_VALUE);
+				
+				if(dailyTicketCounter.length() == 1)
+				{
+					dailyTicketCounter = '0' + dailyTicketCounter;
+				}
+				
+				return workstationID + "-" + date + "-" + dailyTicketCounter;
+			}
 			
-			return workstationID + "-" + date + "-" + dailyTicketCounter;
-		}
-		else
-		{
-			String entityCounter = String.valueOf(id % ENTITY_COUNTER_MAX_VALUE);
-			
-			return workstationID + "-" + entityCounter;
+			default:
+			{
+				String entityCounter = String.valueOf(id % ENTITY_COUNTER_MAX_VALUE);
+				
+				return workstationID + "-" + entityCounter;
+			}	
 		}
 	}
 	
