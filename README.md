@@ -11,13 +11,13 @@ Repair Shop Software is a software application that is aimed for repair shop to 
 
 ### Table of Contents
 
-1. User login
-2. Ticket registration
-3. Client registration
-4. Device registration
-5. Device model registration
-6. Device type registration
-7. Device brand registration
+1. [User login](https://github.com/EmperorZoran/Repair-Shop-Software/wiki/User-Login)
+2. [Ticket registration](https://github.com/EmperorZoran/Repair-Shop-Software/wiki/Ticket-Registration)
+3. [Client registration](https://github.com/EmperorZoran/Repair-Shop-Software/wiki/Client-Registration)
+4. [Device registration](https://github.com/EmperorZoran/Repair-Shop-Software/wiki/Device-Registration)
+5. [Device model registration](https://github.com/EmperorZoran/Repair-Shop-Software/wiki/Device-Model-Registration)
+6. [Device type registration](https://github.com/EmperorZoran/Repair-Shop-Software/wiki/Device-Type-Registration)
+7. [Device brand registration](https://github.com/EmperorZoran/Repair-Shop-Software/wiki/Device-Brand-Registration)
 
 ### Credits
 Software architect and developer:  [Zoran Jankov](https://www.linkedin.com/in/zoran-jankov-b1054b196/)
