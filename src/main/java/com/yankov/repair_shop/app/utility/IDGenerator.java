@@ -20,7 +20,7 @@ public class IDGenerator
 	
 	public static int getNewID(EntityType entityType)
 	{
-		entityType = Objects.requireNonNull(entityType, "EntityType is null");
+		Objects.requireNonNull(entityType, "EntityType is null");
 		
 		int entityCounter = DataManager.getEntityCounter(entityType);
 		
@@ -60,7 +60,7 @@ public class IDGenerator
 
 	public static String toString(EntityType entityType, int id)
 	{
-		entityType = Objects.requireNonNull(entityType, "EntityType is null");
+		Objects.requireNonNull(entityType, "EntityType is null");
 		
 		String workstationID = String.valueOf(id / WORKSTATION_ID_FORMATER);
 		
@@ -90,7 +90,7 @@ public class IDGenerator
 	
 	public static int toInt(EntityType entityType, String displayName)
 	{
-		entityType = Objects.requireNonNull(entityType, "EntityType is null");
+		Objects.requireNonNull(entityType, "EntityType is null");
 		
 		if(LabelName.NULL_ITEM.equals(displayName))
 			return 0;
