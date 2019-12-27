@@ -57,10 +57,10 @@ public class TicketRegistrationController extends InputDialogController
 		
 		ticketGUI.getClientPanel()
 				 .setEntityDetails("<html>" 
-						 + selectedClient.getFullName() + "<br><br>"
-						 + selectedClient.getPrimePhoneNumber() + "<br><br>"
-						 + selectedClient.getAlternativePhoneNumber() + "<br><br>"
-						 + selectedClient.getEmail() + "<br><br>"
+						 + selectedClient.getFullName() + "<br>"
+						 + selectedClient.getPrimePhoneNumber() + "<br>"
+						 + selectedClient.getAlternativePhoneNumber() + "<br>"
+						 + selectedClient.getEmail() + "<br>"
 						 + selectedClient.getAddress() + "</html>");
 	}
 
@@ -95,9 +95,9 @@ public class TicketRegistrationController extends InputDialogController
 
 		ticketGUI.getDevicePanel()
 				 .setEntityDetails("<html>" 
-						 + selectedDevice.getModel().getDeviceType().getPropertyName() + "<br><br>"
-						 + selectedDevice.getModel().getBrand().getPropertyName() + "<br><br>"
-						 + selectedDevice.getModel().getPropertyName() + "<br><br>"
+						 + selectedDevice.getModel().getDeviceType().getPropertyName() + "<br>"
+						 + selectedDevice.getModel().getBrand().getPropertyName() + "<br>"
+						 + selectedDevice.getModel().getPropertyName() + "<br>"
 						 + selectedDevice.getSerial() + "</html>");
 
 	}
