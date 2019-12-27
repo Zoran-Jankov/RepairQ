@@ -36,22 +36,32 @@ public class TicketRegistrationController extends InputDialogController
 		ticketGUI.getClientPanel().setButtonFunction
 		         (ListenerFactory.openWindow(this, EntityType.CLIENT), ButtonName.CLIENT);
 		
-		setClientDetails();
+		showClientDetails();
 	}
 
-	public void setClientDetails()
+	public void showClientDetails()
 	{
-		if(ticketGUI.getClient() != LabelName.NULL_ITEM)
+		if(isClientSelected())
 		{
-			Client selectedClient = (Client) DataManager.getEntity(EntityType.CLIENT, ticketGUI.getClient());
-		
-			ticketGUI.getClientPanel().setEntityDetails
-									  ("<html>" + selectedClient.getFullName() + "<br><br>"
-												+ selectedClient.getPrimePhoneNumber() + "<br><br>"
-												+ selectedClient.getAlternativePhoneNumber() + "<br><br>"
-												+ selectedClient.getEmail() + "<br><br>"
-												+ selectedClient.getAddress() + "</html>");
+			setClientDetails();
 		}
+		else
+		{
+			ticketGUI.getClientPanel().setEntityDetails(LabelName.NULL_ITEM);
+		}
+	}
+	
+	private void setClientDetails()
+	{
+		Client selectedClient = (Client) DataManager.getEntity(EntityType.CLIENT, ticketGUI.getClient());
+		
+		ticketGUI.getClientPanel()
+				 .setEntityDetails("<html>" 
+						 + selectedClient.getFullName() + "<br><br>"
+						 + selectedClient.getPrimePhoneNumber() + "<br><br>"
+						 + selectedClient.getAlternativePhoneNumber() + "<br><br>"
+						 + selectedClient.getEmail() + "<br><br>"
+						 + selectedClient.getAddress() + "</html>");
 	}
 
 	private void setDevicePanelFunction()
@@ -63,20 +73,33 @@ public class TicketRegistrationController extends InputDialogController
 		ticketGUI.getDevicePanel().setButtonFunction
                  (ListenerFactory.openWindow(this, EntityType.DEVICE), ButtonName.DEVICE);
 
-		setDeviceDetails();
+		showDeviceDetails();
 	}
 
+	private void showDeviceDetails()
+	{
+		if(isDeviceSelected())
+		{
+			setDeviceDetails();
+		}
+		else
+		{
+			ticketGUI.getDevicePanel().setEntityDetails(LabelName.NULL_ITEM);
+		}
+	}
+	
 	private void setDeviceDetails()
 	{
 		Device selectedDevice = (Device) DataManager.getEntity
-										(EntityType.DEVICE, IDGenerator.toInt(EntityType.DEVICE, ticketGUI.getDevice()));
-		
+				(EntityType.DEVICE, IDGenerator.toInt(EntityType.DEVICE, ticketGUI.getDevice()));
+
 		ticketGUI.getDevicePanel()
 				 .setEntityDetails("<html>" 
 						 + selectedDevice.getModel().getDeviceType().getPropertyName() + "<br><br>"
 						 + selectedDevice.getModel().getBrand().getPropertyName() + "<br><br>"
 						 + selectedDevice.getModel().getPropertyName() + "<br><br>"
 						 + selectedDevice.getSerial() + "</html>");
+
 	}
 
 	@Override
@@ -107,8 +130,10 @@ public class TicketRegistrationController extends InputDialogController
 	{
 		Ticket newTicket = new Ticket();
 		
+		newTicket.setId(super.id);
 		newTicket.setClient((Client) DataManager.getEntity(EntityType.CLIENT, ticketGUI.getClient()));
 		newTicket.setDevice((Device) DataManager.getEntity(EntityType.DEVICE, id));
+		
 		return newTicket;
 	}
 
