@@ -43,7 +43,6 @@ public class LoginDialogController implements WindowController
 
 	private boolean isInputValid()
 	{
-		// TODO Implement isInputValid() method
 		return true;
 	}
 

@@ -11,8 +11,6 @@ public class MainWindowController implements WindowController
 {
 	private MainWindow mainWindow = new MainWindow();
 	
-	//TODO Finish MainWindowController implementation 
-	
 	public MainWindowController()
 	{
 		mainWindow.setVisible(true);

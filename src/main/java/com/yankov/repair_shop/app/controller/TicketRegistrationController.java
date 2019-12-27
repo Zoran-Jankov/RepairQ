@@ -114,6 +114,14 @@ public class TicketRegistrationController extends InputDialogController
 	@Override
 	protected void showInputErrors()
 	{
-		// TODO Auto-generated method stub
+		if(isClientSelected())
+		{
+			ticketGUI.getClientPanel().showSelectionError();
+		}
+		
+		if(isDeviceSelected())
+		{
+			ticketGUI.getDevicePanel().showSelectionError();
+		}
 	}
 }
