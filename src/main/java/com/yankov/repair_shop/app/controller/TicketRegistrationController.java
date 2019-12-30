@@ -76,7 +76,7 @@ public class TicketRegistrationController extends InputDialogController
 		showDeviceDetails();
 	}
 
-	private void showDeviceDetails()
+	public void showDeviceDetails()
 	{
 		if(isDeviceSelected())
 		{
