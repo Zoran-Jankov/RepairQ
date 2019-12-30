@@ -63,9 +63,10 @@ public class SelectionPanel extends JPanel
 		lblEntityType.setText(text);
 	}
 	
-	public void setComboBoxModel(ComboBoxModel<String> model)
+	public void setComboBoxFunction(ComboBoxModel<String> model, ActionListener listener)
 	{
 		cmbEntity.setModel(model);
+		cmbEntity.addActionListener(listener);
 	}
 	
 	public void setButtonFunction(ActionListener listener, String text)

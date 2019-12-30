@@ -31,7 +31,10 @@ public class TicketRegistrationController extends InputDialogController
 	{
 		ticketGUI.getClientPanel().setEntityType(LabelName.CLIENT);
 		
-		ticketGUI.getClientPanel().setComboBoxModel(ComboBoxModelManager.CLIENT);
+		ticketGUI.getClientPanel().setComboBoxFunction
+								  (ComboBoxModelManager.CLIENT, 
+								   ListenerFactory.comboBoxListener(EntityType.CLIENT, this));
+		
 		
 		ticketGUI.getClientPanel().setButtonFunction
 		         (ListenerFactory.openWindow(this, EntityType.CLIENT), ButtonName.CLIENT);
@@ -68,7 +71,9 @@ public class TicketRegistrationController extends InputDialogController
 	{
 		ticketGUI.getDevicePanel().setEntityType(LabelName.DEVICE);
 		
-		ticketGUI.getDevicePanel().setComboBoxModel(ComboBoxModelManager.DEVICE);
+		ticketGUI.getDevicePanel().setComboBoxFunction
+								  (ComboBoxModelManager.DEVICE, 
+								   ListenerFactory.comboBoxListener(EntityType.DEVICE, this));
 
 		ticketGUI.getDevicePanel().setButtonFunction
                  (ListenerFactory.openWindow(this, EntityType.DEVICE), ButtonName.DEVICE);
@@ -131,8 +136,11 @@ public class TicketRegistrationController extends InputDialogController
 		Ticket newTicket = new Ticket();
 		
 		newTicket.setId(super.id);
-		newTicket.setClient((Client) DataManager.getEntity(EntityType.CLIENT, ticketGUI.getClient()));
-		newTicket.setDevice((Device) DataManager.getEntity(EntityType.DEVICE, id));
+		newTicket.setClient((Client) DataManager.getEntity
+				 (EntityType.CLIENT, ticketGUI.getClient()));
+		newTicket.setDevice((Device) DataManager.getEntity
+				 (EntityType.DEVICE, 
+						 IDGenerator.toInt(EntityType.DEVICE, ticketGUI.getDevice())));
 		
 		return newTicket;
 	}
