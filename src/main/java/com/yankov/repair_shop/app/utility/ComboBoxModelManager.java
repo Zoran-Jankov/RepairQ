@@ -53,7 +53,6 @@ public class ComboBoxModelManager
 		
 		items.addAll(getDisplayNameSet(entityType));
 	
-		
 		ComboBoxModel<String> model = new DefaultComboBoxModel<String>
 												(items.toArray(new String[0]));
 		return model;
