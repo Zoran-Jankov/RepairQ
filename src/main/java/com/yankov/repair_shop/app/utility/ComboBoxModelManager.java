@@ -51,31 +51,12 @@ public class ComboBoxModelManager
 		
 		items.add(LabelName.NULL_ITEM);
 		
-		if(EntityType.hasDisplayName(entityType))
-		{
-			items.addAll(getDisplayNameSet(entityType));
-		}
-		else
-		{
-			items.addAll(getIdSet(entityType));
-		}
+		items.addAll(getDisplayNameSet(entityType));
+	
 		
 		ComboBoxModel<String> model = new DefaultComboBoxModel<String>
 												(items.toArray(new String[0]));
 		return model;
-	}
-	
-	private static Set<String> getIdSet(EntityType entityType)
-	{
-		Set<Integer> idSet = DataManager.getIdMap(entityType).keySet();
-		Set<String> dispalyNames = new HashSet<String>();
-		
-		for(Integer id : idSet)
-		{
-			dispalyNames.add(id.toString());
-		}
-		
-		return dispalyNames;
 	}
 
 	private static Set<String> getDisplayNameSet(EntityType entityType)

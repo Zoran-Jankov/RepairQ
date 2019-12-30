@@ -2,6 +2,8 @@ package main.java.com.yankov.repair_shop.data.entity;
 
 import java.util.HashMap;
 
+import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
+
 /** 
  * Abstract class AbstractEntity represents a basic data entity, 
  * and it is a superclass for all other data entities in the data 
@@ -59,7 +61,7 @@ public abstract class AbstractEntity implements Entity
 	@Override
 	public String getDisplayName()
 	{
-		return String.valueOf(id);
+		return IDGenerator.toString(getEntityType(), id);
 	}
 	
 	@Override
