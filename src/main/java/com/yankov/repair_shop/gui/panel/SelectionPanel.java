@@ -52,11 +52,11 @@ public class SelectionPanel extends JPanel
 		add(cmbEntity, "cell 0 1 2 1,grow");
 		
 		add(lblEntityDetails, "cell 0 2 2 1,grow");
+		
 		btnUpdateEntity.setHorizontalAlignment(SwingConstants.LEFT);
-		
 		add(btnUpdateEntity, "flowx,cell 0 3,alignx center,growy");
-		btnNewEntity.setHorizontalAlignment(SwingConstants.RIGHT);
 		
+		btnNewEntity.setHorizontalAlignment(SwingConstants.RIGHT);
 		add(btnNewEntity, "cell 1 3,alignx center,growy");
 	}
 	
