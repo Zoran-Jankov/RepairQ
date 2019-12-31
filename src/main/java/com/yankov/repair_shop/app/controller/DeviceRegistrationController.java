@@ -21,8 +21,7 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		setComboBoxModels();
 		
-		deviceGUI.getDeviceRegistrationPanel()
-				 .setBtnNewModelActionListener
+		deviceGUI.getDeviceRegistrationPanel().setBtnNewModelActionListener
 				 (ListenerFactory.openWindow(this,EntityType.MODEL));
 	}
 	

@@ -22,8 +22,7 @@ public class ClientRegistrationController extends InputDialogController
 		clientGUI.getMarketingPanel().setMarketingCmbModel
 				 (ComboBoxModelManager.MARKETING);
 		
-		clientGUI.getMarketingPanel()
-				 .setMarketingButtonFunction
+		clientGUI.getMarketingPanel().setMarketingButtonFunction
 				 (ListenerFactory.openWindow(this, EntityType.MARKETING));
 	}
 	

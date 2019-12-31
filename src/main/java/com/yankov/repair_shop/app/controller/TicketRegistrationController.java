@@ -32,8 +32,8 @@ public class TicketRegistrationController extends InputDialogController
 		ticketGUI.getClientPanel().setEntityType(LabelName.CLIENT);
 		
 		ticketGUI.getClientPanel().setComboBoxFunction
-								  (ComboBoxModelManager.CLIENT, 
-								   ListenerFactory.comboBoxListener(EntityType.CLIENT, this));
+				 (ComboBoxModelManager.CLIENT, 
+				  ListenerFactory.comboBoxListener(EntityType.CLIENT, this));
 		
 		
 		ticketGUI.getClientPanel().setButtonNewEntityFunction
