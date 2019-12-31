@@ -8,6 +8,7 @@ public class ButtonName
 	public static String ADD = "Add";
 	public static String CANCEL = "Cancel";
 	
+	public static String UPDATE_ENTITY = "Update Entity";
 	public static String ADD_NEW_ENTITY = "Add New Entity";
 	
 	public static String NOTIFICATION = "New Notification";

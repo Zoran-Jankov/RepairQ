@@ -34,9 +34,12 @@ public class SelectionPanel extends JPanel
 	private JLabel lblEntityDetails = LabelFactory.createJLabel
 			                                      (LabelName.ENTITY_DETAILS, new Font("Tahoma", Font.PLAIN, 13));
 	
+	private final JButton btnUpdateEntity = ButtonFactory.createJButton
+														 (ButtonName.UPDATE_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
+	
 	private final JButton btnNewEntity = ButtonFactory.createJButton
 													  (ButtonName.ADD_NEW_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
-	private final JButton btnUpdateEntity = ButtonFactory.createJButton("Update Entity", new Font("Tahoma", Font.PLAIN, 13));
+	
 	
 	public SelectionPanel()
 	{
@@ -74,7 +77,13 @@ public class SelectionPanel extends JPanel
 		cmbEntity.addActionListener(listener);
 	}
 	
-	public void setButtonFunction(ActionListener listener, String text)
+	public void setButtonUpdateEntityFunction(ActionListener listener, String text)
+	{
+		btnUpdateEntity.addActionListener(listener);
+		btnUpdateEntity.setText(text);
+	}
+	
+	public void setButtonNewEntityFunction(ActionListener listener, String text)
 	{
 		btnNewEntity.addActionListener(listener);
 		btnNewEntity.setText(text);
