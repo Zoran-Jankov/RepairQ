@@ -36,20 +36,25 @@ public class SelectionPanel extends JPanel
 	
 	private final JButton btnNewEntity = ButtonFactory.createJButton
 													  (ButtonName.ADD_NEW_ENTITY, new Font("Tahoma", Font.PLAIN, 13));
+	private final JButton btnUpdateEntity = ButtonFactory.createJButton("Update Entity", new Font("Tahoma", Font.PLAIN, 13));
 	
 	public SelectionPanel()
 	{
-		setLayout(new MigLayout("", "[grow]", "[][][100px:n][]"));
+		setLayout(new MigLayout("", "[grow][grow]", "[][][100px:n][]"));
 		
 		lblEntityType.setHorizontalAlignment(SwingConstants.CENTER);
-		add(lblEntityType, "cell 0 0,grow");
+		add(lblEntityType, "cell 0 0 2 1,grow");
 		
 		AutoCompleteDecorator.decorate(cmbEntity);
-		add(cmbEntity, "cell 0 1,grow");
+		add(cmbEntity, "cell 0 1 2 1,grow");
 		
-		add(lblEntityDetails, "cell 0 2,grow");
+		add(lblEntityDetails, "cell 0 2 2 1,grow");
+		btnUpdateEntity.setHorizontalAlignment(SwingConstants.LEFT);
 		
-		add(btnNewEntity, "cell 0 3,alignx center,growy");
+		add(btnUpdateEntity, "flowx,cell 0 3,alignx center,growy");
+		btnNewEntity.setHorizontalAlignment(SwingConstants.RIGHT);
+		
+		add(btnNewEntity, "cell 1 3,alignx center,growy");
 	}
 	
 	public String getEntity()

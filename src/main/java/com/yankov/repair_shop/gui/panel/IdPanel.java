@@ -15,7 +15,7 @@ public class IdPanel extends JPanel
 	
 	public IdPanel()
 	{
-		setLayout(new MigLayout("", "[20px:n][][][][]", "[20px:n]"));
+		setLayout(new MigLayout("", "[20px:n][][grow][][grow]", "[20px:n]"));
 		
 		JLabel lblID = LabelFactory.createJLabel("ID", new Font("Tahoma", Font.PLAIN, 13));
 		add(lblID, "cell 0 0 0 1,growy");
