@@ -22,14 +22,17 @@ public class ModelRegistrationDialog extends JDialog implements InputDialog
 	public ModelRegistrationDialog(Window owner)
 	{
 		super(owner);
+		
 		setResizable(false);
 		setTitle(WindowTitle.MODEL);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(new MigLayout("", "[434px]", "[20px:n][][200px:n][]"));
+		
 		getContentPane().add(idPanel, "cell 0 0,grow");
 		getContentPane().add(modelPanel, "cell 0 1,grow");
 		getContentPane().add(propertyPanel, "cell 0 2,grow");
 		getContentPane().add(buttonPanel, "cell 0 3,grow");
+		
 		pack();
 	}
 
