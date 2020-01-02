@@ -17,7 +17,7 @@ public abstract class InputDialogController implements WindowController
 	
 	protected InputDialogController(WindowController owner, EntityType entityType)
 	{
-		gui = InputDialogFactory.getWindow(owner.getWindow(), entityType);
+		initializeController(owner, entityType);
 		
 		id = IDGenerator.getNewID(entityType);
 		
@@ -25,19 +25,25 @@ public abstract class InputDialogController implements WindowController
 		
 		gui.getInputButtonPanel().setAddButtonFunction
 		   (ListenerFactory.saveData(this));
+	}
+	
+	public InputDialogController(WindowController owner, Entity entity)
+	{
+		initializeController(owner, entity.getEntityType());
 		
-		gui.getInputButtonPanel().setCancelButtonFunction
-		   (ListenerFactory.closeWindow(this));
+		gui.getIdPanel().setIdValue(IDGenerator.toString(entity.getEntityType(), entity.getId()));
 		
+		gui.getInputButtonPanel().setAddButtonFunction
+		   (null);
+	}
+	
+	private void initializeController(WindowController owner, EntityType entityType)
+	{
+		gui = InputDialogFactory.getWindow(owner.getWindow(), entityType);
+		gui.getInputButtonPanel().setCancelButtonFunction(ListenerFactory.closeWindow(this));
 		gui.setVisible(true);
 	}
 	
-	@Override
-	public Window getWindow()
-	{
-		return (Window) gui;
-	}
-
 	public void trySavingEntity()
 	{
 		if(isInputValid())
@@ -50,10 +56,30 @@ public abstract class InputDialogController implements WindowController
 			showInputErrors();
 		}
 	}
-
+	
+	public void tryEntityUpdate()
+	{
+		if(isInputValid())
+		{
+			DataManager.delete(null);
+			DataManager.save(createEntity());
+			getWindow().dispose();
+		}
+		else
+		{
+			showInputErrors();
+		}
+	}
+	
 	protected abstract boolean isInputValid();
 	
 	protected abstract Entity createEntity();
 	
 	protected abstract void showInputErrors();
+	
+	@Override
+	public Window getWindow()
+	{
+		return (Window) gui;
+	}
 }
