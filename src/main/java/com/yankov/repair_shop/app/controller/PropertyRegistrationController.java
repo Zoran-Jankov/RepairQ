@@ -8,14 +8,14 @@ import main.java.com.yankov.repair_shop.gui.dialog.PropertyRegistrationDialog;
 
 public class PropertyRegistrationController extends InputDialogController
 {
-	private EntityType dataType;
+	private EntityType entityType;
 	private PropertyRegistrationDialog propertyGUI;
 	
 	public PropertyRegistrationController(WindowController owner, EntityType entityType)
 	{
 		super(owner, entityType);
 		
-		this.dataType = entityType;
+		this.entityType = entityType;
 		
 		propertyGUI = (PropertyRegistrationDialog) super.gui;
 	}
@@ -31,7 +31,7 @@ public class PropertyRegistrationController extends InputDialogController
 	@Override
 	protected Property createEntity()
 	{
-		Property newProperty = (Property) EntityFactory.create(dataType);
+		Property newProperty = (Property) EntityFactory.create(entityType);
 		
 		newProperty.setId(super.id);
 		
