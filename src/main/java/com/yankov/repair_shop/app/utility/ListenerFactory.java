@@ -9,6 +9,7 @@ import main.java.com.yankov.repair_shop.app.listener.CloseWindow;
 import main.java.com.yankov.repair_shop.app.listener.Login;
 import main.java.com.yankov.repair_shop.app.listener.OpenWindow;
 import main.java.com.yankov.repair_shop.app.listener.SaveData;
+import main.java.com.yankov.repair_shop.app.listener.UpdateData;
 import main.java.com.yankov.repair_shop.app.listener.UpdateEntityDetails;
 import main.java.com.yankov.repair_shop.data.EntityType;
 
@@ -30,10 +31,15 @@ public class ListenerFactory
 		return new SaveData(controller);
 	}
 	
+	public static ActionListener updateData(InputDialogController controller)
+	{
+		return new UpdateData(controller);
+	}
+	
 	/**
 	 * Returns new OpenWindow ActionListener
 	 * @param owner - Window owner of the new window
-	 * @param dataType - DataType enum 
+	 * @param dataType - EntityType enum 
 	 * @return new OpenWindow ActionListener
 	 */
 	public static ActionListener openWindow(WindowController owner, EntityType entityType)
