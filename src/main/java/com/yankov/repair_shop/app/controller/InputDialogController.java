@@ -49,10 +49,6 @@ public abstract class InputDialogController implements WindowController
 	
 	protected abstract boolean isNewEntityValid();
 	
-	protected abstract boolean isDisplayNameUniqe();
-	
-	protected abstract String getDisplayName();
-	
 	public void trySavingEntity()
 	{
 		if(isNewEntityValid())
@@ -69,8 +65,6 @@ public abstract class InputDialogController implements WindowController
 	}
 	
 	protected abstract boolean isUpdateValid();
-	
-	protected abstract boolean isDisplayNameUniqe(String displayName);
 	
 	public void tryEntityUpdate()
 	{

@@ -172,23 +172,4 @@ public class TicketRegistrationController extends InputDialogController
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@Override
-	protected boolean isDisplayNameUniqe()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	protected String getDisplayName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected boolean isDisplayNameUniqe(String displayName) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 }
