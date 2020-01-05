@@ -12,6 +12,7 @@ import main.java.com.yankov.repair_shop.gui.text.LabelName;
 public class DeviceRegistrationController extends InputDialogController
 {
 	private DeviceRegistrationDialog deviceGUI;
+	private Device newDevice;
 	
 	public DeviceRegistrationController(WindowController owner, EntityType entityType)
 	{
@@ -38,18 +39,13 @@ public class DeviceRegistrationController extends InputDialogController
 	}
 	
 	@Override
-	protected Device createEntity()
+	protected void getInput()
 	{
-		Device newDevice = new Device();
-		
-		newDevice.setId(super.id);
-		
 		newDevice.setSerial(deviceGUI.getDeviceRegistrationPanel().getSerial());
 		
 		newDevice.setModel((Model) DataManager.getEntity(EntityType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
 		
-		return newDevice;
 	}
 	
 	@Override
@@ -83,5 +79,38 @@ public class DeviceRegistrationController extends InputDialogController
 		{
 			deviceGUI.getDeviceRegistrationPanel().showModelError();
 		}
+	}
+
+	@Override
+	protected boolean isNewEntityValid()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean isUpdateValid()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean isDisplayNameUniqe()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected String getDisplayName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected boolean isDisplayNameUniqe(String displayName) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

@@ -13,6 +13,7 @@ import main.java.com.yankov.repair_shop.gui.utility.InputDialogFactory;
 public abstract class InputDialogController implements WindowController
 {
 	protected int id;
+	protected Entity entity;
 	protected InputDialog gui;
 	
 	protected InputDialogController(WindowController owner, EntityType entityType)
@@ -44,11 +45,21 @@ public abstract class InputDialogController implements WindowController
 		gui.setVisible(true);
 	}
 	
+	protected abstract boolean isInputValid();
+	
+	protected abstract boolean isNewEntityValid();
+	
+	protected abstract boolean isDisplayNameUniqe();
+	
+	protected abstract String getDisplayName();
+	
 	public void trySavingEntity()
 	{
-		if(isInputValid())
+		if(isNewEntityValid())
 		{
-			DataManager.save(createEntity());
+			entity.setId(id);
+			getInput();
+			DataManager.save(entity);
 			getWindow().dispose();
 		}
 		else
@@ -56,13 +67,18 @@ public abstract class InputDialogController implements WindowController
 			showInputErrors();
 		}
 	}
+	
+	protected abstract boolean isUpdateValid();
+	
+	protected abstract boolean isDisplayNameUniqe(String displayName);
 	
 	public void tryEntityUpdate()
 	{
-		if(isInputValid())
+		if(isUpdateValid())
 		{
-			DataManager.delete(null);
-			DataManager.save(createEntity());
+			DataManager.delete(entity);
+			getInput();
+			DataManager.save(entity);
 			getWindow().dispose();
 		}
 		else
@@ -70,10 +86,8 @@ public abstract class InputDialogController implements WindowController
 			showInputErrors();
 		}
 	}
-	
-	protected abstract boolean isInputValid();
-	
-	protected abstract Entity createEntity();
+
+	protected abstract void getInput();
 	
 	protected abstract void showInputErrors();
 	
@@ -82,4 +96,6 @@ public abstract class InputDialogController implements WindowController
 	{
 		return (Window) gui;
 	}
+
+	
 }

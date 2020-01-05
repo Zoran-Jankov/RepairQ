@@ -1,21 +1,40 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
 import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
+
+import javax.swing.JOptionPane;
+
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Client;
+import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Marketing;
 import main.java.com.yankov.repair_shop.gui.dialog.ClientRegistrationDialog;
+import main.java.com.yankov.repair_shop.gui.text.ErrorMessage;
+import main.java.com.yankov.repair_shop.gui.text.ErrorTitle;
 import main.java.com.yankov.repair_shop.gui.text.LabelName;
 
 public class ClientRegistrationController extends InputDialogController
 {
 	private ClientRegistrationDialog clientGUI;
+	private Client newClient;
 	
 	public ClientRegistrationController(WindowController owner, EntityType entityType)
 	{
 		super(owner, entityType);
+		initializeClientDialogController();
+	}
+	
+	public ClientRegistrationController(WindowController owner, Entity entity)
+	{
+		super(owner, entity);
+		initializeClientDialogController();
+	}
+	
+	private void initializeClientDialogController()
+	{
+		newClient = (Client) super.entity;
 
 		clientGUI = (ClientRegistrationDialog) super.gui;
 		
@@ -27,11 +46,46 @@ public class ClientRegistrationController extends InputDialogController
 	}
 	
 	@Override
+	protected boolean isNewEntityValid()
+	{
+		return isInputValid()
+			&& isDisplayNameUniqe();
+	}
+
+	@Override
+	protected boolean isUpdateValid()
+	{
+		return isInputValid()
+			&& isDisplayNameUniqe(getDisplayName());
+	}
+
+	@Override
 	protected boolean isInputValid()
 	{
 		return isNameValid()
 			&& isPhoneNumberValid()
 			&& isMarketingSelected();
+	}
+	
+	@Override
+	protected boolean isDisplayNameUniqe()
+	{
+		return DataManager.displayNameCollision(EntityType.CLIENT, getDisplayName());
+	}
+	
+	@Override
+	protected String getDisplayName()
+	{
+		return clientGUI.getPersonalInfoPanel().getPersonName() 
+			 + " "
+			 + clientGUI.getPersonalInfoPanel().getPrimePhoneNumber();
+	}
+	
+	@Override
+	protected boolean isDisplayNameUniqe(String displayName)
+	{
+		return isDisplayNameUniqe()
+			|| (newClient.equals(DataManager.getEntity(EntityType.CLIENT, displayName)));
 	}
 	
 	private boolean isNameValid( )
@@ -50,12 +104,8 @@ public class ClientRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected Client createEntity()
+	protected void getInput()
 	{
-		Client newClient= new Client();
-		
-		newClient.setId(super.id);
-		
 		newClient.setFullName(clientGUI.getPersonalInfoPanel().getPersonName());
 		
 		newClient.setPrimePhoneNumber(clientGUI.getPersonalInfoPanel().getPrimePhoneNumber());
@@ -69,8 +119,6 @@ public class ClientRegistrationController extends InputDialogController
 		newClient.setMarketing
 				((Marketing) DataManager.getEntity(EntityType.MARKETING, 
 				  clientGUI.getMarketingPanel().getMarketing()));
-		
-		return newClient;
 	}
 	
 	@Override
@@ -89,6 +137,15 @@ public class ClientRegistrationController extends InputDialogController
 		if(!isMarketingSelected())
 		{
 			clientGUI.getMarketingPanel().showMarketingError();
+		}
+		
+		if(!isDisplayNameUniqe())
+		{
+			JOptionPane.showMessageDialog
+					   (getWindow(), 
+						getDisplayName() + " " + ErrorMessage.NOT_UNIQUE, 
+						ErrorTitle.NOT_UNIQUE, 
+						JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }

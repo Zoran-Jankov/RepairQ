@@ -70,7 +70,7 @@ public class ModelRegistrationController extends InputDialogController
 	}
 	
 	@Override
-	protected Model createEntity()
+	protected Model getInput()
 	{
 		Model newModel = new Model();
 		
@@ -106,5 +106,26 @@ public class ModelRegistrationController extends InputDialogController
 		{
 			modelGUI.getPropertyPanel().showNameError();
 		}
+	}
+
+	@Override
+	protected boolean isNewEntityValid()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean isUpdateValid()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean isDisplayNameUniqe()
+	{
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

@@ -8,6 +8,7 @@ import main.java.com.yankov.repair_shop.app.controller.PropertyRegistrationContr
 import main.java.com.yankov.repair_shop.app.controller.TicketRegistrationController;
 import main.java.com.yankov.repair_shop.app.controller.WindowController;
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.entity.Entity;
 
 public class DialogClontrollerFactory
 {
@@ -39,5 +40,36 @@ public class DialogClontrollerFactory
 				}
 			}
 		}
+	}
+
+	public static void createController(WindowController owner, Entity entity)
+	{
+		switch(entity.getEntityType())
+		{
+			case TICKET:
+				return new TicketRegistrationController(owner, entity);
+			
+			case CLIENT:
+				return new ClientRegistrationController(owner, entity);
+			
+			case DEVICE:
+				return new DeviceRegistrationController(owner, entity);
+				
+			case MODEL:
+				return new ModelRegistrationController(owner, entity);
+				
+			default:
+			{
+				if(EntityType.isAProperty(entity.getEntityType()))
+				{
+					return new PropertyRegistrationController(owner, entity);
+				}
+				else
+				{
+					return null;
+				}
+			}
+		}
+	}
 	}
 }

@@ -29,7 +29,7 @@ public class PropertyRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected Property createEntity()
+	protected Property getInput()
 	{
 		Property newProperty = (Property) EntityFactory.create(entityType);
 		
@@ -46,5 +46,20 @@ public class PropertyRegistrationController extends InputDialogController
 	protected void showInputErrors()
 	{
 		propertyGUI.getPropertyPanel().showNameError();
+	}
+	@Override
+	protected boolean isNewEntityValid() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	protected boolean isUpdateValid() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	protected boolean isDisplayNameUniqe() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

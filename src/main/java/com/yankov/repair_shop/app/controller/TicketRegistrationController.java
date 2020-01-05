@@ -15,6 +15,7 @@ import main.java.com.yankov.repair_shop.gui.text.LabelName;
 public class TicketRegistrationController extends InputDialogController
 {
 	private TicketRegistrationDialog ticketGUI;
+	private Ticket newTicket;
 	
 	public TicketRegistrationController(WindowController owner, EntityType entityType)
 	{
@@ -131,9 +132,9 @@ public class TicketRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected Ticket createEntity()
+	protected void getInput()
 	{
-		Ticket newTicket = new Ticket();
+
 		
 		newTicket.setId(super.id);
 		newTicket.setClient((Client) DataManager.getEntity
@@ -142,7 +143,6 @@ public class TicketRegistrationController extends InputDialogController
 				 (EntityType.DEVICE, 
 						 IDGenerator.toInt(EntityType.DEVICE, ticketGUI.getDevice())));
 		
-		return newTicket;
 	}
 
 	@Override
@@ -157,5 +157,38 @@ public class TicketRegistrationController extends InputDialogController
 		{
 			ticketGUI.getDevicePanel().showSelectionError();
 		}
+	}
+
+	@Override
+	protected boolean isNewEntityValid()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean isUpdateValid()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected boolean isDisplayNameUniqe()
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	protected String getDisplayName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected boolean isDisplayNameUniqe(String displayName) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
