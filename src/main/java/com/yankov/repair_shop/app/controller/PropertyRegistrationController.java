@@ -3,6 +3,7 @@ package main.java.com.yankov.repair_shop.app.controller;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.EntityFactory;
+import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Property;
 import main.java.com.yankov.repair_shop.gui.dialog.PropertyRegistrationDialog;
 
@@ -19,6 +20,10 @@ public class PropertyRegistrationController extends InputDialogController
 		
 		propertyGUI = (PropertyRegistrationDialog) super.gui;
 	}
+	public PropertyRegistrationController(WindowController owner, Entity entity)
+	{
+		super(owner, entity);
+	}
 	@Override
 	protected boolean isInputValid()
 	{
@@ -29,7 +34,7 @@ public class PropertyRegistrationController extends InputDialogController
 	}
 
 	@Override
-	protected Property getInput()
+	protected void getInput()
 	{
 		Property newProperty = (Property) EntityFactory.create(entityType);
 		
@@ -38,8 +43,6 @@ public class PropertyRegistrationController extends InputDialogController
 		newProperty.setPropertyName(propertyGUI.getPropertyPanel().getPropertyName());
 		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
-		
-		return newProperty;
 	}
 
 	@Override
@@ -48,27 +51,29 @@ public class PropertyRegistrationController extends InputDialogController
 		propertyGUI.getPropertyPanel().showNameError();
 	}
 	@Override
-	protected boolean isNewEntityValid() {
+	protected boolean isNewEntityValid()
+	{
 		// TODO Auto-generated method stub
 		return false;
 	}
 	@Override
-	protected boolean isUpdateValid() {
+	protected boolean isUpdateValid()
+	{
 		// TODO Auto-generated method stub
 		return false;
 	}
-	@Override
-	protected boolean isDisplayNameUniqe() {
+	protected boolean isDisplayNameUniqe()
+	{
 		// TODO Auto-generated method stub
 		return false;
 	}
-	@Override
-	protected String getDisplayName() {
+	protected String getDisplayName()
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
-	protected boolean isDisplayNameUniqe(String displayName) {
+	protected boolean isDisplayNameUniqe(String displayName)
+	{
 		// TODO Auto-generated method stub
 		return false;
 	}

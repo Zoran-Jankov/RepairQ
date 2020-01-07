@@ -42,7 +42,7 @@ public class DialogClontrollerFactory
 		}
 	}
 
-	public static void createController(WindowController owner, Entity entity)
+	public static InputDialogController createController(WindowController owner, Entity entity)
 	{
 		switch(entity.getEntityType())
 		{
@@ -70,6 +70,5 @@ public class DialogClontrollerFactory
 				}
 			}
 		}
-	}
 	}
 }

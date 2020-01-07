@@ -59,7 +59,6 @@ public class ClientRegistrationController extends InputDialogController
 			&& isDisplayNameUniqe(getDisplayName());
 	}
 
-	@Override
 	protected boolean isInputValid()
 	{
 		return isNameValid()
@@ -67,13 +66,11 @@ public class ClientRegistrationController extends InputDialogController
 			&& isMarketingSelected();
 	}
 	
-	@Override
 	protected boolean isDisplayNameUniqe()
 	{
 		return DataManager.displayNameCollision(EntityType.CLIENT, getDisplayName());
 	}
 	
-	@Override
 	protected String getDisplayName()
 	{
 		return clientGUI.getPersonalInfoPanel().getPersonName() 
@@ -81,7 +78,6 @@ public class ClientRegistrationController extends InputDialogController
 			 + clientGUI.getPersonalInfoPanel().getPrimePhoneNumber();
 	}
 	
-	@Override
 	protected boolean isDisplayNameUniqe(String displayName)
 	{
 		return isDisplayNameUniqe()

@@ -45,8 +45,6 @@ public abstract class InputDialogController implements WindowController
 		gui.setVisible(true);
 	}
 	
-	protected abstract boolean isInputValid();
-	
 	protected abstract boolean isNewEntityValid();
 	
 	public void trySavingEntity()
@@ -90,6 +88,4 @@ public abstract class InputDialogController implements WindowController
 	{
 		return (Window) gui;
 	}
-
-	
 }

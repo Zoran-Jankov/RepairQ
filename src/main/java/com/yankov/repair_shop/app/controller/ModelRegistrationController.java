@@ -6,6 +6,7 @@ import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Brand;
 import main.java.com.yankov.repair_shop.data.entity.DeviceType;
+import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Model;
 import main.java.com.yankov.repair_shop.gui.dialog.ModelRegistrationDialog;
 import main.java.com.yankov.repair_shop.gui.text.LabelName;
@@ -13,6 +14,7 @@ import main.java.com.yankov.repair_shop.gui.text.LabelName;
 public class ModelRegistrationController extends InputDialogController
 {
 	private ModelRegistrationDialog modelGUI;
+	private Model newModel;
 	
 	public ModelRegistrationController(WindowController owner, EntityType entityType)
 	{
@@ -22,6 +24,11 @@ public class ModelRegistrationController extends InputDialogController
 		setButtonActionListeners();
 	}
 	
+	public ModelRegistrationController(WindowController owner, Entity entity)
+	{
+		super(owner, entity);
+	}
+
 	private void setComboBoxModels()
 	{
 		modelGUI.getModelPanel()
@@ -41,13 +48,42 @@ public class ModelRegistrationController extends InputDialogController
 		        .setBtnNewBrandActionlistener
 		        (ListenerFactory.openWindow(this, EntityType.BRAND));
 	}
+	
+	@Override
+	protected boolean isNewEntityValid()
+	{
+		return isInputValid()
+			&& isDisplayNameUniqe();
+	}
 
 	@Override
+	protected boolean isUpdateValid()
+	{
+		return isInputValid()
+			&& isDisplayNameUniqe(getDisplayName());
+	}
+
 	protected boolean isInputValid()
 	{
 		return isDeviceTypeSelected()
 			&& isBrandSelected()
 			&& isModelNameValid();
+	}
+	
+	protected boolean isDisplayNameUniqe()
+	{
+		return DataManager.displayNameCollision(EntityType.MODEL, getDisplayName());
+	}
+	
+	protected String getDisplayName()
+	{
+		return modelGUI.getPropertyPanel().getPropertyName();
+	}
+	
+	protected boolean isDisplayNameUniqe(String displayName)
+	{
+		return isDisplayNameUniqe()
+			|| (newModel.equals(DataManager.getEntity(EntityType.MODEL, displayName)));
 	}
 
 	private boolean isDeviceTypeSelected()
@@ -70,12 +106,8 @@ public class ModelRegistrationController extends InputDialogController
 	}
 	
 	@Override
-	protected Model getInput()
+	protected void getInput()
 	{
-		Model newModel = new Model();
-		
-		newModel.setId(super.id);
-		
 		newModel.setPropertyName(modelGUI.getPropertyPanel().getPropertyName());
 		
 		newModel.setDescription(modelGUI.getPropertyPanel().getDescription());
@@ -85,8 +117,6 @@ public class ModelRegistrationController extends InputDialogController
 				                                
 		newModel.setBrand((Brand) DataManager.getEntity
 				(EntityType.BRAND, modelGUI.getModelPanel().getBrand()));
-		
-		return newModel;
 	}
 
 	@Override
@@ -106,26 +136,5 @@ public class ModelRegistrationController extends InputDialogController
 		{
 			modelGUI.getPropertyPanel().showNameError();
 		}
-	}
-
-	@Override
-	protected boolean isNewEntityValid()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	protected boolean isUpdateValid()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	protected boolean isDisplayNameUniqe()
-	{
-		// TODO Auto-generated method stub
-		return false;
 	}
 }

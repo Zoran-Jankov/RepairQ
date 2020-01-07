@@ -5,6 +5,7 @@ import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Device;
+import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Model;
 import main.java.com.yankov.repair_shop.gui.dialog.DeviceRegistrationDialog;
 import main.java.com.yankov.repair_shop.gui.text.LabelName;
@@ -26,6 +27,11 @@ public class DeviceRegistrationController extends InputDialogController
 				 (ListenerFactory.openWindow(this,EntityType.MODEL));
 	}
 	
+	public DeviceRegistrationController(WindowController owner, Entity entity) 
+	{
+		super(owner, entity);
+	}
+
 	private void setComboBoxModels()
 	{
 		deviceGUI.getDeviceRegistrationPanel().setDeviceTypeCmbModel
@@ -39,28 +45,32 @@ public class DeviceRegistrationController extends InputDialogController
 	}
 	
 	@Override
+	protected boolean isNewEntityValid()
+	{	
+		return isModelSelected()
+			&& isSerialNumberValid();
+	}
+	
+	protected boolean isUpdateValid()
+	{
+		return isNewEntityValid();
+	}
+	
+	@Override
 	protected void getInput()
 	{
 		newDevice.setSerial(deviceGUI.getDeviceRegistrationPanel().getSerial());
 		
 		newDevice.setModel((Model) DataManager.getEntity(EntityType.MODEL,
 									 deviceGUI.getDeviceRegistrationPanel().getModel()));
-		
-	}
-	
-	@Override
-	protected  boolean isInputValid()
-	{
-		return isModelSelected()
-			&& isSerialNumberValid();
 	}
 
-	private  boolean isModelSelected()
+	private boolean isModelSelected()
 	{
 		return !(LabelName.NULL_ITEM.equals(deviceGUI.getDeviceRegistrationPanel().getModel()));
 	}
 
-	private  boolean isSerialNumberValid()
+	private boolean isSerialNumberValid()
 	{
 		String serial = deviceGUI.getDeviceRegistrationPanel().getSerial();
 		
@@ -79,35 +89,5 @@ public class DeviceRegistrationController extends InputDialogController
 		{
 			deviceGUI.getDeviceRegistrationPanel().showModelError();
 		}
-	}
-
-	@Override
-	protected boolean isNewEntityValid()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	protected boolean isUpdateValid()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	protected boolean isDisplayNameUniqe()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	protected String getDisplayName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	protected boolean isDisplayNameUniqe(String displayName)
-	{
-		// TODO Auto-generated method stub
-		return false;
 	}
 }

@@ -7,6 +7,7 @@ import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Client;
 import main.java.com.yankov.repair_shop.data.entity.Device;
+import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Ticket;
 import main.java.com.yankov.repair_shop.gui.dialog.TicketRegistrationDialog;
 import main.java.com.yankov.repair_shop.gui.text.ButtonName;
@@ -28,6 +29,11 @@ public class TicketRegistrationController extends InputDialogController
 		setDevicePanelFunction();
 	}
 	
+	public TicketRegistrationController(WindowController owner, Entity entity)
+	{
+		super(owner, entity);
+	}
+
 	private void setClientPanelFunction()
 	{
 		ticketGUI.getClientPanel().setEntityType(LabelName.CLIENT);
