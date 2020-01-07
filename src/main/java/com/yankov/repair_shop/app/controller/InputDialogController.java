@@ -5,6 +5,7 @@ import java.awt.Window;
 import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
 import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.yankov.repair_shop.data.DataManager;
+import main.java.com.yankov.repair_shop.data.EntityFactory;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.gui.dialog.InputDialog;
@@ -20,6 +21,8 @@ public abstract class InputDialogController implements WindowController
 	{
 		initializeController(owner, entityType);
 		
+		this.entity = EntityFactory.create(entityType);
+		
 		id = IDGenerator.getNewID(entityType);
 		
 		gui.getIdPanel().setIdValue(IDGenerator.toString(entityType, id));
@@ -31,6 +34,8 @@ public abstract class InputDialogController implements WindowController
 	public InputDialogController(WindowController owner, Entity entity)
 	{
 		initializeController(owner, entity.getEntityType());
+		
+		this.entity = entity;
 		
 		gui.getIdPanel().setIdValue(IDGenerator.toString(entity.getEntityType(), entity.getId()));
 		

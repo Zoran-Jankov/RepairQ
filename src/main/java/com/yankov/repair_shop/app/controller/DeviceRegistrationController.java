@@ -18,6 +18,18 @@ public class DeviceRegistrationController extends InputDialogController
 	public DeviceRegistrationController(WindowController owner, EntityType entityType)
 	{
 		super(owner, entityType);
+		initializeDeviceDialogController();
+	}
+	
+	public DeviceRegistrationController(WindowController owner, Entity entity) 
+	{
+		super(owner, entity);
+		initializeDeviceDialogController();
+	}
+	
+	private void initializeDeviceDialogController()
+	{
+		newDevice = (Device) super.entity;
 		
 		deviceGUI = (DeviceRegistrationDialog) super.gui;
 		
@@ -25,11 +37,6 @@ public class DeviceRegistrationController extends InputDialogController
 		
 		deviceGUI.getDeviceRegistrationPanel().setBtnNewModelActionListener
 				 (ListenerFactory.openWindow(this,EntityType.MODEL));
-	}
-	
-	public DeviceRegistrationController(WindowController owner, Entity entity) 
-	{
-		super(owner, entity);
 	}
 
 	private void setComboBoxModels()

@@ -24,7 +24,6 @@ public class PropertyRegistrationController extends InputDialogController
 	{
 		super(owner, entity);
 	}
-	@Override
 	protected boolean isInputValid()
 	{
 		String name = propertyGUI.getPropertyPanel().getPropertyName();

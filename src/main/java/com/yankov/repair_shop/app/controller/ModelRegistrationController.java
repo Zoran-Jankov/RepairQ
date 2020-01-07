@@ -19,34 +19,34 @@ public class ModelRegistrationController extends InputDialogController
 	public ModelRegistrationController(WindowController owner, EntityType entityType)
 	{
 		super(owner, entityType);
-		modelGUI = (ModelRegistrationDialog) super.gui;
-		setComboBoxModels();
-		setButtonActionListeners();
+		initializeModelDialogController();
 	}
 	
 	public ModelRegistrationController(WindowController owner, Entity entity)
 	{
 		super(owner, entity);
-	}
-
-	private void setComboBoxModels()
-	{
-		modelGUI.getModelPanel()
-		        .setDeviceTypeCmbModel(ComboBoxModelManager.DEVICE_TYPE);
-		
-		modelGUI.getModelPanel()
-		        .setBrandCmbModel(ComboBoxModelManager.BRAND);
+		initializeModelDialogController();
 	}
 	
-	private void setButtonActionListeners()
+	private void initializeModelDialogController()
 	{
-		modelGUI.getModelPanel()
-				.setBtnNewDeviceTypeActionlistener
-				(ListenerFactory.openWindow(this, EntityType.DEVICE_TYPE));
+		newModel = (Model) super.entity;
+		
+		modelGUI = (ModelRegistrationDialog) super.gui;
 		
 		modelGUI.getModelPanel()
-		        .setBtnNewBrandActionlistener
-		        (ListenerFactory.openWindow(this, EntityType.BRAND));
+        		.setDeviceTypeCmbModel(ComboBoxModelManager.DEVICE_TYPE);
+
+		modelGUI.getModelPanel()
+        		.setBrandCmbModel(ComboBoxModelManager.BRAND);
+		
+		modelGUI.getModelPanel()
+		.setBtnNewDeviceTypeActionlistener
+		(ListenerFactory.openWindow(this, EntityType.DEVICE_TYPE));
+
+		modelGUI.getModelPanel()
+        .setBtnNewBrandActionlistener
+        (ListenerFactory.openWindow(this, EntityType.BRAND));
 	}
 	
 	@Override
