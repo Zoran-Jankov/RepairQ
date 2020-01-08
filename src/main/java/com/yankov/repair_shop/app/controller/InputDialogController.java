@@ -50,11 +50,19 @@ public abstract class InputDialogController implements WindowController
 		gui.setVisible(true);
 	}
 	
-	protected abstract boolean isNewEntityValid();
+	protected abstract boolean isInputValid();
 	
+	protected boolean isDisplayNameUnique(EntityType entityType)
+	{
+		return !DataManager.displayNameCollision(entityType, getDisplayName()) 
+			 || entity.equals(DataManager.getEntity(entityType, getDisplayName()));
+	}
+	
+	protected abstract String getDisplayName();
+
 	public void trySavingEntity()
 	{
-		if(isNewEntityValid())
+		if(isInputValid())
 		{
 			entity.setId(id);
 			getInput();
@@ -67,11 +75,9 @@ public abstract class InputDialogController implements WindowController
 		}
 	}
 	
-	protected abstract boolean isUpdateValid();
-	
 	public void tryEntityUpdate()
 	{
-		if(isUpdateValid())
+		if(isInputValid())
 		{
 			DataManager.delete(entity);
 			getInput();

@@ -40,28 +40,13 @@ public class ClientRegistrationController extends InputDialogController
 		clientGUI.getMarketingPanel().setMarketingButtonFunction
 				 (ListenerFactory.openWindow(this, EntityType.MARKETING));
 	}
-	
-	@Override
-	protected boolean isNewEntityValid()
-	{
-		return isInputValid()
-			&& DataManager.displayNameCollision(EntityType.CLIENT, getDisplayName());
-	}
-
-	@Override
-	protected boolean isUpdateValid()
-	{
-		return isInputValid()
-			&& (!DataManager.displayNameCollision(EntityType.CLIENT, getDisplayName()) 
-				|| newClient.equals(DataManager.getEntity(EntityType.CLIENT, getDisplayName())))
-			 ;
-	}
 
 	protected boolean isInputValid()
 	{
 		return isNameValid()
 			&& isPhoneNumberValid()
-			&& isMarketingSelected();
+			&& isMarketingSelected()
+			&& super.isDisplayNameUnique(EntityType.CLIENT);
 	}
 	
 	protected String getDisplayName()
