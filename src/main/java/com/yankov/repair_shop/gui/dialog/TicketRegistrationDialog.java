@@ -25,7 +25,7 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog
 		super(owner);
 		
 		setResizable(false);
-		setTitle(WindowTitle.TICKET);
+		setTitle(WindowTitle.TICKET_UPDATE);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		getContentPane().setLayout(new MigLayout("", "[250px:n,grow][250px:n,grow]", "[::30px][200px:n,grow][][]"));

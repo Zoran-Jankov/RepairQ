@@ -22,7 +22,7 @@ public class DeviceRegistrationDialog extends JDialog implements InputDialog
 		super(owner);
 		
 		setResizable(false);
-		setTitle(WindowTitle.DEVICE);
+		setTitle(WindowTitle.DEVICE_UPDATE);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		getContentPane().setLayout(new MigLayout("", "[434px]", "[25px:n][][]"));

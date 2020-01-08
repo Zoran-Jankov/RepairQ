@@ -24,7 +24,7 @@ public class ClientRegistrationDialog extends JDialog implements InputDialog
 		super(owner);
 		
 		setResizable(false);
-		setTitle(WindowTitle.CLIENT);
+		setTitle(WindowTitle.CLIENT_UPDATE);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		getContentPane().setLayout(new MigLayout("", "[434px]", "[25px:n][][][]"));
