@@ -22,24 +22,49 @@ public class WindowTitle
 	public static String NEW_BRAND = "New Brand Registration";
 	public static String NEW_USER = "New User Registration";
 	
-	public static String NOTIFICATION_UPDATE = "New Notification";
-	public static String NOTIFICATION_TYPE_UPDATE = "New Notification Type Registration";
-	public static String SERVICE_UPDATE = "New Service";
-	public static String SERVICE_TYPE_UPDATE = "New Service Type Registration";
-	public static String TICKET_UPDATE = "New Ticket";
-	public static String STATUS_UPDATE = "New Status Registration";
-	public static String CLIENT_UPDATE = "New Client Registration";
-	public static String MARKETING_UPDATE = "New Marketing Registration";
-	public static String LEGAL_ENTITY_UPDATE = "New Lefal Entity Registration";
-	public static String DEVICE_UPDATE = "New Device Registration";
-	public static String MODEL_UPDATE = "New Model Registration";
-	public static String DEVICE_TYPE_UPDATE = "New Device Type Registration";
-	public static String BRAND_UPDATE = "New Brand Registration";
-	public static String USER_UPDATE = "New User Registration";
+	public static String NOTIFICATION_UPDATE = "Notification Update";
+	public static String NOTIFICATION_TYPE_UPDATE = "Notification Type Update";
+	public static String SERVICE_UPDATE = "Service Update";
+	public static String SERVICE_TYPE_UPDATE = "Service Type Update";
+	public static String TICKET_UPDATE = "Ticket Update";
+	public static String STATUS_UPDATE = "Status Update";
+	public static String CLIENT_UPDATE = "Client Update";
+	public static String MARKETING_UPDATE = "Marketing Update";
+	public static String LEGAL_ENTITY_UPDATE = "Lefal Entity Update";
+	public static String DEVICE_UPDATE = "Device Update";
+	public static String MODEL_UPDATE = "Model Update";
+	public static String DEVICE_TYPE_UPDATE = "Device Type Update";
+	public static String BRAND_UPDATE = "Brand Update";
+	public static String USER_UPDATE = "User Update";
 	
-	public static String PROPERTY ="Unknown Property - ERROR";
+	private static String NEW_PROPERTY = "Unknown Property - ERROR";
+	private static String PROPERTY_UPDATE ="Unknown Property - ERROR";
 	
-	public static String getPropertyTitle(EntityType entityType)
+	public static String getNewPropertyTitle(EntityType entityType)
+	{
+		switch(entityType)
+		{
+			case NOTIFICATION_TYPE:
+				return NEW_NOTIFICATION_TYPE;
+			
+			case MARKETING:
+				return NEW_MARKETING;
+				
+			case STATUS:
+				return NEW_STATUS;
+				
+			case DEVICE_TYPE:
+				return NEW_DEVICE_TYPE;
+				
+			case BRAND:
+				return NEW_BRAND;
+				
+			default:
+				return NEW_PROPERTY;
+		}
+	}
+	
+	public static String getPropertyUpdateTitle(EntityType entityType)
 	{
 		switch(entityType)
 		{
@@ -59,7 +84,7 @@ public class WindowTitle
 				return BRAND_UPDATE;
 				
 			default:
-				return PROPERTY;
+				return PROPERTY_UPDATE;
 		}
 	}
 }
