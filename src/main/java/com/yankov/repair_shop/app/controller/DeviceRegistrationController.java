@@ -55,8 +55,13 @@ public class DeviceRegistrationController extends InputDialogController
 	protected boolean isInputValid()
 	{	
 		return isModelSelected()
-			&& isSerialNumberValid()
-			&& super.isDisplayNameUnique(EntityType.DEVICE);
+			&& isSerialNumberValid();
+	}
+	
+	@Override
+	protected String getDisplayName()
+	{
+		return newDevice.getDisplayName();
 	}
 	
 	@Override
@@ -93,4 +98,6 @@ public class DeviceRegistrationController extends InputDialogController
 			deviceGUI.getDeviceRegistrationPanel().showModelError();
 		}
 	}
+
+	
 }

@@ -2,6 +2,8 @@ package main.java.com.yankov.repair_shop.app.controller;
 
 import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
 
+import javax.swing.JOptionPane;
+
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
@@ -9,6 +11,8 @@ import main.java.com.yankov.repair_shop.data.entity.Client;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Marketing;
 import main.java.com.yankov.repair_shop.gui.dialog.ClientRegistrationDialog;
+import main.java.com.yankov.repair_shop.gui.text.ErrorMessage;
+import main.java.com.yankov.repair_shop.gui.text.ErrorTitle;
 import main.java.com.yankov.repair_shop.gui.text.LabelName;
 
 public class ClientRegistrationController extends InputDialogController
@@ -105,6 +109,15 @@ public class ClientRegistrationController extends InputDialogController
 		if(!isMarketingSelected())
 		{
 			clientGUI.getMarketingPanel().showMarketingError();
+		}
+		
+		if(!super.isDisplayNameUnique(EntityType.CLIENT))
+		{
+			JOptionPane.showMessageDialog
+					   (getWindow(), 
+						getDisplayName() + " " + ErrorMessage.NOT_UNIQUE, 
+						ErrorTitle.NOT_UNIQUE, 
+						JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }
