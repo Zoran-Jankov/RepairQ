@@ -52,15 +52,11 @@ public class DeviceRegistrationController extends InputDialogController
 	}
 	
 	@Override
-	protected boolean isNewEntityValid()
+	protected boolean isInputValid()
 	{	
 		return isModelSelected()
-			&& isSerialNumberValid();
-	}
-	
-	protected boolean isUpdateValid()
-	{
-		return isNewEntityValid();
+			&& isSerialNumberValid()
+			&& super.isDisplayNameUnique(EntityType.DEVICE);
 	}
 	
 	@Override
