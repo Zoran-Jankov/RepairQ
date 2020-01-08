@@ -50,10 +50,10 @@ public class ClientRegistrationController extends InputDialogController
 		return isNameValid()
 			&& isPhoneNumberValid()
 			&& isMarketingSelected()
-			&& super.isDisplayNameUnique(EntityType.CLIENT);
+			&& super.isDisplayNameUnique(getDisplayName());
 	}
 	
-	protected String getDisplayName()
+	private String getDisplayName()
 	{
 		return clientGUI.getPersonalInfoPanel().getPersonName() 
 			 + " "
@@ -111,7 +111,7 @@ public class ClientRegistrationController extends InputDialogController
 			clientGUI.getMarketingPanel().showMarketingError();
 		}
 		
-		if(!super.isDisplayNameUnique(EntityType.CLIENT))
+		if(!super.isDisplayNameUnique(getDisplayName()))
 		{
 			JOptionPane.showMessageDialog
 					   (getWindow(), 

@@ -14,6 +14,7 @@ import main.java.com.yankov.repair_shop.gui.utility.InputDialogFactory;
 public abstract class InputDialogController implements WindowController
 {
 	protected int id;
+	protected EntityType entityType;
 	protected Entity entity;
 	protected InputDialog gui;
 	
@@ -21,6 +22,8 @@ public abstract class InputDialogController implements WindowController
 	{
 		initializeController(owner, entityType);
 		
+		this.entityType = entityType;
+			
 		this.entity = EntityFactory.create(entityType);
 		
 		id = IDGenerator.getNewID(entityType);
@@ -37,6 +40,8 @@ public abstract class InputDialogController implements WindowController
 		
 		this.entity = entity;
 		
+		this.entityType = entity.getEntityType();
+		
 		gui.getIdPanel().setIdValue(IDGenerator.toString(entity.getEntityType(), entity.getId()));
 		
 		gui.getInputButtonPanel().setAddButtonFunction
@@ -52,13 +57,11 @@ public abstract class InputDialogController implements WindowController
 	
 	protected abstract boolean isInputValid();
 	
-	protected boolean isDisplayNameUnique(EntityType entityType)
+	protected boolean isDisplayNameUnique(String displayName)
 	{
-		return !DataManager.displayNameCollision(entityType, getDisplayName()) 
-			 || entity.equals(DataManager.getEntity(entityType, getDisplayName()));
+		return !DataManager.displayNameCollision(entityType, displayName) 
+			 || entity.equals(DataManager.getEntity(entityType, displayName));
 	}
-	
-	protected abstract String getDisplayName();
 
 	public void trySavingEntity()
 	{
