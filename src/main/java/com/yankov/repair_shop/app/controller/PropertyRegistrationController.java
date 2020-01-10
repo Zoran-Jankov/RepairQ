@@ -1,14 +1,10 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
-import javax.swing.JOptionPane;
-
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Property;
 import main.java.com.yankov.repair_shop.gui.dialog.PropertyRegistrationDialog;
-import main.java.com.yankov.repair_shop.gui.text.ErrorMessage;
-import main.java.com.yankov.repair_shop.gui.text.ErrorTitle;
 
 public class PropertyRegistrationController extends InputDialogController
 {
@@ -54,15 +50,7 @@ public class PropertyRegistrationController extends InputDialogController
 	protected void showInputErrors()
 	{
 		propertyGUI.getPropertyPanel().showNameError();
-		
-		if(!super.isDisplayNameUnique(getDisplayName()))
-		{
-			JOptionPane.showMessageDialog
-					   (getWindow(), 
-						getDisplayName() + " " + ErrorMessage.NOT_UNIQUE, 
-						ErrorTitle.NOT_UNIQUE, 
-						JOptionPane.ERROR_MESSAGE);
-		}
+		super.checkForDuplicate(getDisplayName());
 	}
 	
 	protected String getDisplayName()
