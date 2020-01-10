@@ -1,6 +1,9 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
 import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
+
+import javax.swing.JOptionPane;
+
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
@@ -9,6 +12,8 @@ import main.java.com.yankov.repair_shop.data.entity.DeviceType;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Model;
 import main.java.com.yankov.repair_shop.gui.dialog.ModelRegistrationDialog;
+import main.java.com.yankov.repair_shop.gui.text.ErrorMessage;
+import main.java.com.yankov.repair_shop.gui.text.ErrorTitle;
 import main.java.com.yankov.repair_shop.gui.text.LabelName;
 
 public class ModelRegistrationController extends InputDialogController
@@ -49,30 +54,12 @@ public class ModelRegistrationController extends InputDialogController
         (ListenerFactory.openWindow(this, EntityType.BRAND));
 	}
 	
-	@Override
-	protected boolean isNewEntityValid()
-	{
-		return isInputValid()
-			&& isDisplayNameUniqe();
-	}
-
-	@Override
-	protected boolean isUpdateValid()
-	{
-		return isInputValid()
-			&& isDisplayNameUniqe(getDisplayName());
-	}
-
 	protected boolean isInputValid()
 	{
 		return isDeviceTypeSelected()
 			&& isBrandSelected()
-			&& isModelNameValid();
-	}
-	
-	protected boolean isDisplayNameUniqe()
-	{
-		return DataManager.displayNameCollision(EntityType.MODEL, getDisplayName());
+			&& isModelNameValid()
+			&& super.isDisplayNameUnique(getDisplayName());
 	}
 	
 	protected String getDisplayName()
@@ -80,12 +67,6 @@ public class ModelRegistrationController extends InputDialogController
 		return modelGUI.getPropertyPanel().getPropertyName();
 	}
 	
-	protected boolean isDisplayNameUniqe(String displayName)
-	{
-		return isDisplayNameUniqe()
-			|| (newModel.equals(DataManager.getEntity(EntityType.MODEL, displayName)));
-	}
-
 	private boolean isDeviceTypeSelected()
 	{
 		return !(LabelName.NULL_ITEM.equals(modelGUI.getModelPanel().getDeviceType()));
@@ -135,6 +116,15 @@ public class ModelRegistrationController extends InputDialogController
 		if(!isModelNameValid())
 		{
 			modelGUI.getPropertyPanel().showNameError();
+		}
+		
+		if(!super.isDisplayNameUnique(getDisplayName()))
+		{
+			JOptionPane.showMessageDialog
+					   (getWindow(), 
+						LabelName.MODEL + " " + getDisplayName() + " " + ErrorMessage.NOT_UNIQUE, 
+						ErrorTitle.NOT_UNIQUE, 
+						JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }

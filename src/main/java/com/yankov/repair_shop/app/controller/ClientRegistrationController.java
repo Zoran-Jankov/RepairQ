@@ -115,7 +115,7 @@ public class ClientRegistrationController extends InputDialogController
 		{
 			JOptionPane.showMessageDialog
 					   (getWindow(), 
-						getDisplayName() + " " + ErrorMessage.NOT_UNIQUE, 
+						LabelName.CLIENT + " " + getDisplayName() + " " + ErrorMessage.NOT_UNIQUE, 
 						ErrorTitle.NOT_UNIQUE, 
 						JOptionPane.ERROR_MESSAGE);
 		}
