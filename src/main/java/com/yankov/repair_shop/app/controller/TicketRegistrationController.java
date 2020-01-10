@@ -111,7 +111,6 @@ public class TicketRegistrationController extends InputDialogController
 						 + selectedDevice.getModel().getBrand().getPropertyName() + "<br>"
 						 + selectedDevice.getModel().getPropertyName() + "<br>"
 						 + selectedDevice.getSerial() + "</html>");
-
 	}
 
 	@Override
@@ -140,15 +139,12 @@ public class TicketRegistrationController extends InputDialogController
 	@Override
 	protected void getInput()
 	{
-
-		
 		newTicket.setId(super.id);
 		newTicket.setClient((Client) DataManager.getEntity
 				 (EntityType.CLIENT, ticketGUI.getClient()));
 		newTicket.setDevice((Device) DataManager.getEntity
 				 (EntityType.DEVICE, 
 						 IDGenerator.toInt(EntityType.DEVICE, ticketGUI.getDevice())));
-		
 	}
 
 	@Override
@@ -163,19 +159,5 @@ public class TicketRegistrationController extends InputDialogController
 		{
 			ticketGUI.getDevicePanel().showSelectionError();
 		}
-	}
-
-	@Override
-	protected boolean isNewEntityValid()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	protected boolean isUpdateValid()
-	{
-		// TODO Auto-generated method stub
-		return false;
 	}
 }
