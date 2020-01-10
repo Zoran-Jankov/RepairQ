@@ -22,6 +22,18 @@ public class TicketRegistrationController extends InputDialogController
 	{
 		super(owner, entityType);
 		
+		initializeTicketDialogController();
+	}
+	
+	public TicketRegistrationController(WindowController owner, Entity entity)
+	{
+		super(owner, entity);
+		
+		initializeTicketDialogController();
+	}
+	
+	private void initializeTicketDialogController()
+	{
 		ticketGUI = (TicketRegistrationDialog) super.gui;
 		
 		setClientPanelFunction();
@@ -29,11 +41,6 @@ public class TicketRegistrationController extends InputDialogController
 		setDevicePanelFunction();
 	}
 	
-	public TicketRegistrationController(WindowController owner, Entity entity)
-	{
-		super(owner, entity);
-	}
-
 	private void setClientPanelFunction()
 	{
 		ticketGUI.getClientPanel().setEntityType(LabelName.CLIENT);
@@ -42,13 +49,12 @@ public class TicketRegistrationController extends InputDialogController
 				 (ComboBoxModelManager.CLIENT, 
 				  ListenerFactory.comboBoxListener(EntityType.CLIENT, this));
 		
-		
 		ticketGUI.getClientPanel().setButtonNewEntityFunction
 		         (ListenerFactory.openWindow(this, EntityType.CLIENT), ButtonName.CLIENT);
 		
 		showClientDetails();
 	}
-
+	
 	public void showClientDetails()
 	{
 		if(isClientSelected())
@@ -73,7 +79,7 @@ public class TicketRegistrationController extends InputDialogController
 						 + selectedClient.getEmail() + "<br>"
 						 + selectedClient.getAddress() + "</html>");
 	}
-
+	
 	private void setDevicePanelFunction()
 	{
 		ticketGUI.getDevicePanel().setEntityType(LabelName.DEVICE);
@@ -87,7 +93,7 @@ public class TicketRegistrationController extends InputDialogController
 
 		showDeviceDetails();
 	}
-
+	
 	public void showDeviceDetails()
 	{
 		if(isDeviceSelected())
@@ -112,7 +118,7 @@ public class TicketRegistrationController extends InputDialogController
 						 + selectedDevice.getModel().getPropertyName() + "<br>"
 						 + selectedDevice.getSerial() + "</html>");
 	}
-
+	
 	@Override
 	protected boolean isInputValid()
 	{
@@ -120,22 +126,22 @@ public class TicketRegistrationController extends InputDialogController
 			&& isDeviceSelected()
 			&& areDetailsValid();
 	}
-
+	
 	private boolean isClientSelected()
 	{
 		return !(LabelName.NULL_ITEM.equals(ticketGUI.getClient()));
 	}
-
+	
 	private boolean isDeviceSelected()
 	{
 		return !(LabelName.NULL_ITEM.equals(ticketGUI.getDevice()));
 	}
-
+	
 	private boolean areDetailsValid()
 	{
 		return !("".equals(ticketGUI.getTicketPanel().getDetails()));
 	}
-
+	
 	@Override
 	protected void getInput()
 	{
@@ -146,18 +152,23 @@ public class TicketRegistrationController extends InputDialogController
 				 (EntityType.DEVICE, 
 						 IDGenerator.toInt(EntityType.DEVICE, ticketGUI.getDevice())));
 	}
-
+	
 	@Override
 	protected void showInputErrors()
 	{
-		if(isClientSelected())
+		if(!isClientSelected())
 		{
 			ticketGUI.getClientPanel().showSelectionError();
 		}
 		
-		if(isDeviceSelected())
+		if(!isDeviceSelected())
 		{
 			ticketGUI.getDevicePanel().showSelectionError();
+		}
+		
+		if(!areDetailsValid())
+		{
+			ticketGUI.getTicketPanel().showDetailsError();
 		}
 	}
 }
