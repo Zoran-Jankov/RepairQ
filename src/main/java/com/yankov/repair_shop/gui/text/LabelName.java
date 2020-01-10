@@ -25,12 +25,12 @@ public class LabelName
 	public static String DEVICE = "Device";
 	public static String MODEL = "Model *";
 	public static String DEVICE_TYPE = "Device Type *";
-	public static String BRAND = "Brand *";
+	public static String BRAND = "Brand";
 	public static String USER = "User";
-	public static String USER_TYPE = "User Type *";
+	public static String USER_TYPE = "User Type";
 	
-	public static String FULL_NAME = "Full Name *";
-	public static String PRIME_PHONE = "Prime Phone Number *";
+	public static String FULL_NAME = "Full Name";
+	public static String PRIME_PHONE = "Prime Phone Number";
 	public static String ALTERNATIVE_PHONE = "Alternative Phone Number";
 	public static String EMAIL = "Email Address";
 	public static String ADDRESS = "Home Address";
@@ -38,7 +38,7 @@ public class LabelName
 	public static String USERNAME = "Username";
 	public static String PASSWORD = "Password";
 	
-	public static String SERIAL = "Serial Number *";
+	public static String SERIAL = "Serial Number";
 	
 	public static String NULL_ITEM = "----Not Selected----";
 }
