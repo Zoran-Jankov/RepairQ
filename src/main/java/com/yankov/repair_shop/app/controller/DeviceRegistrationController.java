@@ -59,12 +59,6 @@ public class DeviceRegistrationController extends InputDialogController
 	}
 	
 	@Override
-	protected String getDisplayName()
-	{
-		return newDevice.getDisplayName();
-	}
-	
-	@Override
 	protected void getInput()
 	{
 		newDevice.setSerial(deviceGUI.getDeviceRegistrationPanel().getSerial());
@@ -98,6 +92,4 @@ public class DeviceRegistrationController extends InputDialogController
 			deviceGUI.getDeviceRegistrationPanel().showModelError();
 		}
 	}
-
-	
 }
