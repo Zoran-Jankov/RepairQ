@@ -1,29 +1,39 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
+import javax.swing.JOptionPane;
+
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
-import main.java.com.yankov.repair_shop.data.EntityFactory;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Property;
 import main.java.com.yankov.repair_shop.gui.dialog.PropertyRegistrationDialog;
+import main.java.com.yankov.repair_shop.gui.text.ErrorMessage;
+import main.java.com.yankov.repair_shop.gui.text.ErrorTitle;
 
 public class PropertyRegistrationController extends InputDialogController
 {
-	private EntityType entityType;
 	private PropertyRegistrationDialog propertyGUI;
+	private Property newProperty;
 	
 	public PropertyRegistrationController(WindowController owner, EntityType entityType)
 	{
 		super(owner, entityType);
-		
-		this.entityType = entityType;
-		
-		propertyGUI = (PropertyRegistrationDialog) super.gui;
+		initializeClientDialogController();
 	}
+	
 	public PropertyRegistrationController(WindowController owner, Entity entity)
 	{
 		super(owner, entity);
+		initializeClientDialogController();
 	}
+	
+	private void initializeClientDialogController()
+	{
+		newProperty = (Property) super.entity;
+		
+		propertyGUI = (PropertyRegistrationDialog) super.gui;
+	}
+	
 	protected boolean isInputValid()
 	{
 		String name = propertyGUI.getPropertyPanel().getPropertyName();
@@ -35,10 +45,6 @@ public class PropertyRegistrationController extends InputDialogController
 	@Override
 	protected void getInput()
 	{
-		Property newProperty = (Property) EntityFactory.create(entityType);
-		
-		newProperty.setId(super.id);
-		
 		newProperty.setPropertyName(propertyGUI.getPropertyPanel().getPropertyName());
 		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
@@ -48,32 +54,19 @@ public class PropertyRegistrationController extends InputDialogController
 	protected void showInputErrors()
 	{
 		propertyGUI.getPropertyPanel().showNameError();
+		
+		if(!super.isDisplayNameUnique(getDisplayName()))
+		{
+			JOptionPane.showMessageDialog
+					   (getWindow(), 
+						getDisplayName() + " " + ErrorMessage.NOT_UNIQUE, 
+						ErrorTitle.NOT_UNIQUE, 
+						JOptionPane.ERROR_MESSAGE);
+		}
 	}
-	@Override
-	protected boolean isNewEntityValid()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-	@Override
-	protected boolean isUpdateValid()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-	protected boolean isDisplayNameUniqe()
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 	protected String getDisplayName()
 	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-	protected boolean isDisplayNameUniqe(String displayName)
-	{
-		// TODO Auto-generated method stub
-		return false;
+		return propertyGUI.getPropertyPanel().getPropertyName();
 	}
 }
