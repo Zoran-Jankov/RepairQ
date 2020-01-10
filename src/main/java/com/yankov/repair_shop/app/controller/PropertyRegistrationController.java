@@ -18,16 +18,16 @@ public class PropertyRegistrationController extends InputDialogController
 	public PropertyRegistrationController(WindowController owner, EntityType entityType)
 	{
 		super(owner, entityType);
-		initializeClientDialogController();
+		initializePropertyDialogController();
 	}
 	
 	public PropertyRegistrationController(WindowController owner, Entity entity)
 	{
 		super(owner, entity);
-		initializeClientDialogController();
+		initializePropertyDialogController();
 	}
 	
-	private void initializeClientDialogController()
+	private void initializePropertyDialogController()
 	{
 		newProperty = (Property) super.entity;
 		
