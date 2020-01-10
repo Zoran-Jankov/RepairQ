@@ -2,6 +2,8 @@ package main.java.com.yankov.repair_shop.app.controller;
 
 import java.awt.Window;
 
+import javax.swing.JOptionPane;
+
 import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
 import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.yankov.repair_shop.data.DataManager;
@@ -9,6 +11,8 @@ import main.java.com.yankov.repair_shop.data.EntityFactory;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.gui.dialog.InputDialog;
+import main.java.com.yankov.repair_shop.gui.text.ErrorMessage;
+import main.java.com.yankov.repair_shop.gui.text.ErrorTitle;
 import main.java.com.yankov.repair_shop.gui.utility.InputDialogFactory;
 
 public abstract class InputDialogController implements WindowController
@@ -96,6 +100,18 @@ public abstract class InputDialogController implements WindowController
 	protected abstract void getInput();
 	
 	protected abstract void showInputErrors();
+	
+	protected void checkForDuplicate(String displayName)
+	{
+		if(!isDisplayNameUnique(displayName))
+		{
+			JOptionPane.showMessageDialog
+					   (getWindow(), 
+						displayName + " " + ErrorMessage.NOT_UNIQUE, 
+						ErrorTitle.NOT_UNIQUE, 
+						JOptionPane.ERROR_MESSAGE);
+		}
+	}
 	
 	@Override
 	public Window getWindow()
