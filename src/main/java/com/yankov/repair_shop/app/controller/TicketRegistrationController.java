@@ -2,7 +2,6 @@ package main.java.com.yankov.repair_shop.app.controller;
 
 import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
 
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
@@ -160,6 +159,8 @@ public class TicketRegistrationController extends InputDialogController
 						 IDGenerator.toInt(EntityType.DEVICE, ticketGUI.getDevice())));
 		
 		newTicket.setPriority(Priority.NORMAL);
+		
+		createNotification();
 	}
 	
 	private void createNotification()
