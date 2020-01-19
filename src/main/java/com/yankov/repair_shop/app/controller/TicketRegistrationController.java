@@ -9,6 +9,7 @@ import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.NotificationType;
 import main.java.com.yankov.repair_shop.data.Priority;
 import main.java.com.yankov.repair_shop.data.entity.Client;
 import main.java.com.yankov.repair_shop.data.entity.Device;
