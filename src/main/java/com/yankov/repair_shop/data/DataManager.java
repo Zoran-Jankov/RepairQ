@@ -5,6 +5,7 @@ import java.util.Map;
 
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
+import main.java.com.yankov.repair_shop.data.entity.User;
 
 public class DataManager
 {	
@@ -22,6 +23,8 @@ public class DataManager
 	public static IndexedData deviceTypesDataTable = new IndexedDataTable();
 	public static IndexedData brandsDataTable = new IndexedDataTable();
 	public static IndexedData usersDataTable = new IndexedDataTable();
+	
+	public static User logedinUser;
 	
 	private static final Map<EntityType, IndexedData> DATA_TABLES = new EnumMap<EntityType, IndexedData>(EntityType.class);
 	
