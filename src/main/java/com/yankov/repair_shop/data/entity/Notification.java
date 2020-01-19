@@ -3,6 +3,7 @@ package main.java.com.yankov.repair_shop.data.entity;
 import java.sql.Timestamp;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.NotificationType;
 
 public class Notification extends AbstractEntity
 {
