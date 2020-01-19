@@ -1,6 +1,6 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
-import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.NotificationType;
@@ -10,7 +10,7 @@ public class Notification extends AbstractEntity
 	private NotificationType notificationType;
 	private Ticket ticket;
 	private User user;
-	private Timestamp timestamp;
+	private LocalDate timestamp;
 	private String comment;
 	
 	@Override
@@ -49,14 +49,14 @@ public class Notification extends AbstractEntity
 		this.user = user;
 	}
 	
-	public Timestamp getDate()
+	public LocalDate getDate()
 	{
 		return timestamp;
 	}
 	
-	public void setDate(Timestamp date)
+	public void setDate(LocalDate localDate)
 	{
-		this.timestamp = date;
+		this.timestamp = localDate;
 	}
 	
 	public String getComment()
