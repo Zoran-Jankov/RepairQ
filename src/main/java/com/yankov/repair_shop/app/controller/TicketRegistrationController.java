@@ -1,13 +1,19 @@
 package main.java.com.yankov.repair_shop.app.controller;
 
 import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
+
+import java.sql.Timestamp;
+import java.time.LocalDate;
+
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.Priority;
 import main.java.com.yankov.repair_shop.data.entity.Client;
 import main.java.com.yankov.repair_shop.data.entity.Device;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
+import main.java.com.yankov.repair_shop.data.entity.Notification;
 import main.java.com.yankov.repair_shop.data.entity.Ticket;
 import main.java.com.yankov.repair_shop.gui.dialog.TicketRegistrationDialog;
 import main.java.com.yankov.repair_shop.gui.text.ButtonName;
@@ -145,12 +151,27 @@ public class TicketRegistrationController extends InputDialogController
 	@Override
 	protected void getInput()
 	{
-		newTicket.setId(super.id);
 		newTicket.setClient((Client) DataManager.getEntity
 				 (EntityType.CLIENT, ticketGUI.getClient()));
+		
 		newTicket.setDevice((Device) DataManager.getEntity
 				 (EntityType.DEVICE, 
 						 IDGenerator.toInt(EntityType.DEVICE, ticketGUI.getDevice())));
+		
+		newTicket.setPriority(Priority.NORMAL);
+	}
+	
+	private void createNotification()
+	{
+		Notification opendTicket = new Notification();
+		
+		opendTicket.setNotificationType(NotificationType.OPEND);
+		opendTicket.setTicket(newTicket);
+		opendTicket.setUser(DataManager.logedinUser);
+		opendTicket.setDate(LocalDate.now());
+		opendTicket.setComment(ticketGUI.getTicketPanel().getDetails());
+		
+		DataManager.save(opendTicket);
 	}
 	
 	@Override
