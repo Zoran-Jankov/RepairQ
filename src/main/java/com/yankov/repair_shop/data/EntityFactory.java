@@ -9,7 +9,6 @@ import main.java.com.yankov.repair_shop.data.entity.LegalEntity;
 import main.java.com.yankov.repair_shop.data.entity.Marketing;
 import main.java.com.yankov.repair_shop.data.entity.Model;
 import main.java.com.yankov.repair_shop.data.entity.Notification;
-import main.java.com.yankov.repair_shop.data.entity.NotificationType;
 import main.java.com.yankov.repair_shop.data.entity.Service;
 import main.java.com.yankov.repair_shop.data.entity.ServiceType;
 import main.java.com.yankov.repair_shop.data.entity.Status;
