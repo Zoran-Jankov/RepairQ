@@ -80,7 +80,7 @@ public class Notification extends AbstractEntity
 	@Override
 	public void deleteReferences()
 	{
-		notificationType.removeReference(this.getId());
+		notificationType.removeReference(EntityType.NOTIFICATION, this.getId());
 		ticket.removeReference(this.getId());
 		user.removeReference(this.getId());
 	}

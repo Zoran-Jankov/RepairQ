@@ -1,14 +1,15 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.NotificationType;
 import main.java.com.yankov.repair_shop.data.Priority;
 
 public class Ticket extends AbstractEntity
 {
 	private Priority priority;
+	private NotificationType status;
 	private Client client;
 	private Device device;
-	private Status status;
 	
 	@Override
 	public EntityType getEntityType()
@@ -24,6 +25,16 @@ public class Ticket extends AbstractEntity
 	public void setPriority(Priority priority)
 	{
 		this.priority = priority;
+	}
+	
+	public NotificationType getStatus()
+	{
+		return status;
+	}
+
+	public void setStatus(NotificationType status)
+	{
+		this.status = status;
 	}
 
 	public Client getClient()
@@ -45,16 +56,6 @@ public class Ticket extends AbstractEntity
 	{
 		this.device = device;
 	}
-
-	public Status getStatus()
-	{
-		return status;
-	}
-
-	public void setStatus(Status status)
-	{
-		this.status = status;
-	}
 	
 	@Override
 	public void createReferences()
@@ -69,6 +70,6 @@ public class Ticket extends AbstractEntity
 	{
 		client.removeReference(this.getId());
 		device.removeReference(this.getId());
-		status.removeReference(this.getId());
+		status.removeReference(EntityType.TICKET, this.getId());
 	}
 }

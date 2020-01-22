@@ -11,7 +11,6 @@ import main.java.com.yankov.repair_shop.data.entity.Model;
 import main.java.com.yankov.repair_shop.data.entity.Notification;
 import main.java.com.yankov.repair_shop.data.entity.Service;
 import main.java.com.yankov.repair_shop.data.entity.ServiceType;
-import main.java.com.yankov.repair_shop.data.entity.Status;
 import main.java.com.yankov.repair_shop.data.entity.Ticket;
 import main.java.com.yankov.repair_shop.data.entity.User;
 
@@ -32,9 +31,6 @@ public class EntityFactory
 				
 			case TICKET:
 				return new Ticket();
-			
-			case STATUS:
-				return new Status();
 			
 			case CLIENT:
 				return new Client();
