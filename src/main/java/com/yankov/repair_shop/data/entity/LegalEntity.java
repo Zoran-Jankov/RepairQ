@@ -3,7 +3,7 @@ package main.java.com.yankov.repair_shop.data.entity;
 import main.java.com.yankov.repair_shop.data.EntityType;
 /**
  * Class LegalEntity is an extended version of the Client class 
- * thatis used to store data about legal entity. Alongside all 
+ * that is used to store data about legal entity. Alongside all 
  * Client's fields, it also contains tax identification number 
  * and the bank account of the legal entity.
  * 
