@@ -25,9 +25,6 @@ public class EntityFactory
 			case NOTIFICATION:
 				return new Notification();
 			
-			case NOTIFICATION_TYPE:
-				return new NotificationType();
-			
 			case SERVICE:
 				return new Service();
 				
