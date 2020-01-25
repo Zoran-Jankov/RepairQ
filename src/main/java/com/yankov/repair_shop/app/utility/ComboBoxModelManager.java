@@ -19,7 +19,7 @@ public class ComboBoxModelManager
 	public static ComboBoxModel<String> SERVICE_TYPE = loadModel(EntityType.SERVICE_TYPE);
 	public static ComboBoxModel<String> TICKET = loadModel(EntityType.TICKET);
 	public static ComboBoxModel<String> STATUS = loadModel(EntityType.STATUS);
-	public static ComboBoxModel<String> CLIENT = loadModel(EntityType.CLIENT);
+	public static ComboBoxModel<String> CLIENT = loadModel(EntityType.CUSTOMER);
 	public static ComboBoxModel<String> MARKETING = loadModel(EntityType.MARKETING);
 	public static ComboBoxModel<String> DEVICE = loadModel(EntityType.DEVICE);
 	public static ComboBoxModel<String> MODEL = loadModel(EntityType.MODEL);
@@ -35,7 +35,7 @@ public class ComboBoxModelManager
 		MODELS_MAP.put(EntityType.SERVICE_TYPE, SERVICE_TYPE);
 		MODELS_MAP.put(EntityType.TICKET, TICKET);
 		MODELS_MAP.put(EntityType.STATUS, STATUS);
-		MODELS_MAP.put(EntityType.CLIENT, CLIENT);
+		MODELS_MAP.put(EntityType.CUSTOMER, CLIENT);
 		MODELS_MAP.put(EntityType.MARKETING, MARKETING);
 		MODELS_MAP.put(EntityType.DEVICE, DEVICE);
 		MODELS_MAP.put(EntityType.MODEL, MODEL);

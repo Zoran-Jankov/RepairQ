@@ -19,7 +19,7 @@ public class InputDialogFactory
 			case TICKET:
 				return new TicketRegistrationDialog(owner);
 			
-			case CLIENT:
+			case CUSTOMER:
 				return new ClientRegistrationDialog(owner);
 			
 			case DEVICE:

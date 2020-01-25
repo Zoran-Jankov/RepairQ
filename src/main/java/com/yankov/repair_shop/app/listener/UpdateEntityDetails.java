@@ -23,7 +23,7 @@ public class UpdateEntityDetails implements ActionListener
 	{
 		switch(entityType)
 		{
-			case CLIENT:
+			case CUSTOMER:
 				((TicketRegistrationController) controller).showClientDetails();
 				break;
 				

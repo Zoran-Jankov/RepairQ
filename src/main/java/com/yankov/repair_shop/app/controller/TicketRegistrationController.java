@@ -53,10 +53,10 @@ public class TicketRegistrationController extends InputDialogController
 		
 		ticketGUI.getClientPanel().setComboBoxFunction
 				 (ComboBoxModelManager.CLIENT, 
-				  ListenerFactory.comboBoxListener(EntityType.CLIENT, this));
+				  ListenerFactory.comboBoxListener(EntityType.CUSTOMER, this));
 		
 		ticketGUI.getClientPanel().setButtonNewEntityFunction
-		         (ListenerFactory.openWindow(this, EntityType.CLIENT), ButtonName.CLIENT);
+		         (ListenerFactory.openWindow(this, EntityType.CUSTOMER), ButtonName.CLIENT);
 		
 		showClientDetails();
 	}
@@ -75,7 +75,7 @@ public class TicketRegistrationController extends InputDialogController
 	
 	private void setClientDetails()
 	{
-		Customer selectedClient = (Customer) DataManager.getEntity(EntityType.CLIENT, ticketGUI.getClient());
+		Customer selectedClient = (Customer) DataManager.getEntity(EntityType.CUSTOMER, ticketGUI.getClient());
 		
 		ticketGUI.getClientPanel()
 				 .setEntityDetails("<html>" 
@@ -152,7 +152,7 @@ public class TicketRegistrationController extends InputDialogController
 	protected void getInput()
 	{
 		newTicket.setClient((Customer) DataManager.getEntity
-				 (EntityType.CLIENT, ticketGUI.getClient()));
+				 (EntityType.CUSTOMER, ticketGUI.getClient()));
 		
 		newTicket.setDevice((Device) DataManager.getEntity
 				 (EntityType.DEVICE, 

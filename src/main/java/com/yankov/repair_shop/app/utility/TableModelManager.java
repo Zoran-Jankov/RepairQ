@@ -13,7 +13,7 @@ public class TableModelManager
 	public static TableModel SERVICE_TYPE = loadModel(EntityType.SERVICE_TYPE);
 	public static TableModel TICKET = loadModel(EntityType.TICKET);
 	public static TableModel STATUS = loadModel(EntityType.STATUS);
-	public static TableModel CLIENT = loadModel(EntityType.CLIENT);
+	public static TableModel CLIENT = loadModel(EntityType.CUSTOMER);
 	public static TableModel MARKETING = loadModel(EntityType.MARKETING);
 	public static TableModel DEVICE = loadModel(EntityType.DEVICE);
 	public static TableModel MODEL = loadModel(EntityType.MODEL);

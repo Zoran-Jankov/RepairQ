@@ -14,7 +14,7 @@ import main.java.com.yankov.repair_shop.data.component.PersonalInfo;
  */
 public class Customer extends AbstractEntity
 {
-	public static final EntityType TYPE = EntityType.CLIENT;
+	public static final EntityType TYPE = EntityType.CUSTOMER;
 	
 	private PersonalInfo personalInfo;
 	private ContactInfo contactInfo;

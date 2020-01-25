@@ -36,7 +36,7 @@ public class DataManager
 		DATA_TABLES.put(EntityType.SERVICE_TYPE, serviceTypesDataTable);
 		DATA_TABLES.put(EntityType.TICKET, ticketsDataTable);
 		DATA_TABLES.put(EntityType.STATUS, statusTypesDataTable);
-		DATA_TABLES.put(EntityType.CLIENT, clientsDataTable);
+		DATA_TABLES.put(EntityType.CUSTOMER, clientsDataTable);
 		DATA_TABLES.put(EntityType.MARKETING, marketingTypesDataTable);
 		DATA_TABLES.put(EntityType.LEGAL_ENTITY, legalEntitiesDataTable);
 		DATA_TABLES.put(EntityType.DEVICE, devicesDataTable);

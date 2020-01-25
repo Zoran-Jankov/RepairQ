@@ -19,7 +19,7 @@ public class DialogClontrollerFactory
 			case TICKET:
 				return new TicketRegistrationController(owner, entityType);
 			
-			case CLIENT:
+			case CUSTOMER:
 				return new ClientRegistrationController(owner, entityType);
 			
 			case DEVICE:

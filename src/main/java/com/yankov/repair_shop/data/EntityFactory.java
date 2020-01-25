@@ -31,7 +31,7 @@ public class EntityFactory
 			case TICKET:
 				return new Ticket();
 			
-			case CLIENT:
+			case CUSTOMER:
 				return new Customer();
 				
 			case MARKETING:

@@ -10,7 +10,7 @@ public enum EntityType
 	SERVICE_TYPE,
 	TICKET,
 	STATUS,
-	CLIENT,
+	CUSTOMER,
 	MARKETING,
 	LEGAL_ENTITY,
 	DEVICE,
@@ -50,7 +50,7 @@ public enum EntityType
         	case NOTIFICATION:
         	case SERVICE:
         	case TICKET:
-        	case CLIENT:
+        	case CUSTOMER:
         	case DEVICE:
         	case MODEL:
         		return true;
