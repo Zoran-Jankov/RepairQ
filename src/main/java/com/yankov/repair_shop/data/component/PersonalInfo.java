@@ -7,7 +7,7 @@ package main.java.com.yankov.repair_shop.data.component;
  * @author Zoran Jankov
  * @version 1.8
  */
-public abstract class PersonalInfo
+public class PersonalInfo
 {
 	private String username;
 	private String firstName;
