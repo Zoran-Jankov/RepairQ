@@ -12,7 +12,7 @@ public class Ticket extends AbstractEntity
 	private Device device;
 	
 	@Override
-	public EntityType getType()
+	public final EntityType getType()
 	{
 		return EntityType.TICKET;
 	}
@@ -61,7 +61,7 @@ public class Ticket extends AbstractEntity
 	public void createReferences()
 	{
 		client.addTicketReference(this);
-		device.addReference(this);
+		//device.addReference(this);
 		status.addReference(this);
 	}
 	
@@ -69,7 +69,7 @@ public class Ticket extends AbstractEntity
 	public void deleteReferences()
 	{
 		client.removeTicketReference(this.getId());
-		device.removeReference(this.getId());
+		//device.removeReference(this.getId());
 		status.removeReference(EntityType.TICKET, this.getId());
 	}
 }
