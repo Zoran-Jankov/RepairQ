@@ -1,6 +1,7 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.component.PersonalInfo;
 
 /** 
  * Class Client extends class Person and represents a client 
@@ -29,7 +30,7 @@ import main.java.com.yankov.repair_shop.data.EntityType;
  * <p>
  * @author Zoran Jankov
  */
-public class Client extends Person
+public class Client extends PersonalInfo
 {
 	private Marketing marketing;
 	

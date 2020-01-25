@@ -2,6 +2,7 @@ package main.java.com.yankov.repair_shop.data.entity;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.UserType;
+import main.java.com.yankov.repair_shop.data.component.PersonalInfo;
 
 /** 
  * Class Employee extends class Person and represents a employee with associated information about that employee.
@@ -36,7 +37,7 @@ import main.java.com.yankov.repair_shop.data.UserType;
  * @since 2019-10-02
  */
 
-public class User extends Person
+public class User extends PersonalInfo
 {
 	private UserType userType;
 	private String username;
