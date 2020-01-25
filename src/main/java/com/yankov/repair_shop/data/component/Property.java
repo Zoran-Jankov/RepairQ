@@ -1,4 +1,4 @@
-package main.java.com.yankov.repair_shop.data.entity;
+package main.java.com.yankov.repair_shop.data.component;
 
 /** 
  * Class Property inherits DataElement class, and represents a property of various data classes with fields that define those classes.
@@ -19,7 +19,7 @@ package main.java.com.yankov.repair_shop.data.entity;
  * @since 2019-10-15
  */
 
-public abstract class Property extends AbstractEntity
+public abstract class Property
 {
 	private String name;
 	private String description;
@@ -58,11 +58,5 @@ public abstract class Property extends AbstractEntity
 	public void setDescription(String description)
 	{
 		this.description = description;
-	}
-
-	@Override
-	public String getDisplayName()
-	{
-		return getPropertyName();
 	}
 }

@@ -2,8 +2,8 @@ package main.java.com.yankov.repair_shop.app.controller;
 
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.component.Property;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
-import main.java.com.yankov.repair_shop.data.entity.Property;
 import main.java.com.yankov.repair_shop.gui.dialog.PropertyRegistrationDialog;
 
 public class PropertyRegistrationController extends InputDialogController
