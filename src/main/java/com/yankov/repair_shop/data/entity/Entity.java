@@ -1,7 +1,5 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
-import main.java.com.yankov.repair_shop.data.EntityType;
-
 /**
  * Interface for all entities in the data structure.
  * 
@@ -9,12 +7,6 @@ import main.java.com.yankov.repair_shop.data.EntityType;
  */
 public interface Entity
 {
-	/**
-	 * Returns the entity type.
-	 * @return (enum) type oF entity.
-	 */
-	public EntityType getEntityType();
-	
 	/**
 	 * Getter for data entity ID number.
 	 * @return (int) Data element ID number.
