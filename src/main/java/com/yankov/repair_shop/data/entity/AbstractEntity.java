@@ -1,7 +1,5 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
-import java.util.HashMap;
-
 import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 
 /** 
@@ -20,7 +18,6 @@ import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 public abstract class AbstractEntity implements Entity
 {
 	private int id;
-	private HashMap<Integer, Entity> referenceMap = new HashMap<Integer, Entity>();
 	
 	@Override
 	public int getId()
@@ -32,30 +29,6 @@ public abstract class AbstractEntity implements Entity
 	public void setId(int id)
 	{
 		this.id = id;
-	}
-	
-	@Override
-	public HashMap<Integer, Entity> getReferenceMap()
-	{
-		return referenceMap;
-	}
-
-	@Override
-	public void setReferenceMap(HashMap<Integer, Entity> referenceMap)
-	{
-		this.referenceMap = referenceMap;
-	}
-	
-	@Override
-	public void addReference(Entity dataElement)
-	{
-		referenceMap.put(dataElement.getId(), dataElement);
-	}
-	
-	@Override
-	public void removeReference(int id)
-	{
-		referenceMap.remove(id);
 	}
 	
 	@Override
