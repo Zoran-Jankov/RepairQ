@@ -1,7 +1,7 @@
 package main.java.com.yankov.repair_shop.data;
 
 import main.java.com.yankov.repair_shop.data.entity.Brand;
-import main.java.com.yankov.repair_shop.data.entity.Client;
+import main.java.com.yankov.repair_shop.data.entity.Customer;
 import main.java.com.yankov.repair_shop.data.entity.Device;
 import main.java.com.yankov.repair_shop.data.entity.DeviceType;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
@@ -32,7 +32,7 @@ public class EntityFactory
 				return new Ticket();
 			
 			case CLIENT:
-				return new Client();
+				return new Customer();
 				
 			case MARKETING:
 				return new Marketing();

@@ -5,7 +5,7 @@ import main.java.com.yankov.repair_shop.app.utility.ListenerFactory;
 import main.java.com.yankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
-import main.java.com.yankov.repair_shop.data.entity.Client;
+import main.java.com.yankov.repair_shop.data.entity.Customer;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Marketing;
 import main.java.com.yankov.repair_shop.gui.dialog.ClientRegistrationDialog;
@@ -14,7 +14,7 @@ import main.java.com.yankov.repair_shop.gui.text.LabelName;
 public class ClientRegistrationController extends InputDialogController
 {
 	private ClientRegistrationDialog clientGUI;
-	private Client newClient;
+	private Customer newClient;
 	
 	public ClientRegistrationController(WindowController owner, EntityType entityType)
 	{
@@ -30,7 +30,7 @@ public class ClientRegistrationController extends InputDialogController
 	
 	private void initializeClientDialogController()
 	{
-		newClient = (Client) super.entity;
+		newClient = (Customer) super.entity;
 
 		clientGUI = (ClientRegistrationDialog) super.gui;
 		

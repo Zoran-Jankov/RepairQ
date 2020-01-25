@@ -10,7 +10,7 @@ import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.NotificationType;
 import main.java.com.yankov.repair_shop.data.Priority;
-import main.java.com.yankov.repair_shop.data.entity.Client;
+import main.java.com.yankov.repair_shop.data.entity.Customer;
 import main.java.com.yankov.repair_shop.data.entity.Device;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.data.entity.Notification;
@@ -75,7 +75,7 @@ public class TicketRegistrationController extends InputDialogController
 	
 	private void setClientDetails()
 	{
-		Client selectedClient = (Client) DataManager.getEntity(EntityType.CLIENT, ticketGUI.getClient());
+		Customer selectedClient = (Customer) DataManager.getEntity(EntityType.CLIENT, ticketGUI.getClient());
 		
 		ticketGUI.getClientPanel()
 				 .setEntityDetails("<html>" 
@@ -151,7 +151,7 @@ public class TicketRegistrationController extends InputDialogController
 	@Override
 	protected void getInput()
 	{
-		newTicket.setClient((Client) DataManager.getEntity
+		newTicket.setClient((Customer) DataManager.getEntity
 				 (EntityType.CLIENT, ticketGUI.getClient()));
 		
 		newTicket.setDevice((Device) DataManager.getEntity

@@ -8,7 +8,7 @@ public class Ticket extends AbstractEntity
 {
 	private Priority priority;
 	private NotificationType status;
-	private Client client;
+	private Customer client;
 	private Device device;
 	
 	@Override
@@ -37,12 +37,12 @@ public class Ticket extends AbstractEntity
 		this.status = status;
 	}
 
-	public Client getClient()
+	public Customer getClient()
 	{
 		return client;
 	}
 
-	public void setClient(Client client)
+	public void setClient(Customer client)
 	{
 		this.client = client;
 	}
