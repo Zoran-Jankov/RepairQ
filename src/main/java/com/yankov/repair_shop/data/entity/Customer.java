@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
+import main.java.com.yankov.repair_shop.data.component.CompanyInfo;
 import main.java.com.yankov.repair_shop.data.component.ContactInfo;
 import main.java.com.yankov.repair_shop.data.component.PersonalInfo;
 

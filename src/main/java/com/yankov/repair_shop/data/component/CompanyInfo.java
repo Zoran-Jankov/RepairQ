@@ -1,4 +1,4 @@
-package main.java.com.yankov.repair_shop.data.entity;
+package main.java.com.yankov.repair_shop.data.component;
 
 /**
  * Class CompanyInfo is a component of the Client class that is used 
@@ -48,9 +48,4 @@ public class CompanyInfo
 	{
 		this.bankAccount = bankAccount;
 	}
-
-	/**
-	 * Getter for legal entity's display name.
-	 * @return (String) Name and tax identification number.
-	 */
 }
