@@ -1,7 +1,6 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
 import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
-import main.java.com.yankov.repair_shop.data.EntityType;
 
 /** 
  * Abstract class AbstractEntity represents a basic data entity, 
@@ -18,7 +17,6 @@ import main.java.com.yankov.repair_shop.data.EntityType;
  */
 public abstract class AbstractEntity implements Entity
 {
-	public static final EntityType TYPE = null;
 	private int id;
 	
 	@Override
