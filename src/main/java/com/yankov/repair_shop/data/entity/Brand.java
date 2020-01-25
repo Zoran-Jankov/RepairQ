@@ -13,7 +13,7 @@ public class Brand extends AbstractEntity
 	private Property brand;
 	
 	@Override
-	public EntityType getType()
+	public final EntityType getType()
 	{
 		return EntityType.BRAND;
 	}
