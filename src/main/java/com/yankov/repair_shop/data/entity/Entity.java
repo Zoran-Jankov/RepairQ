@@ -1,7 +1,5 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
-import java.util.HashMap;
-
 import main.java.com.yankov.repair_shop.data.EntityType;
 
 /**
