@@ -11,8 +11,13 @@ import main.java.com.yankov.repair_shop.data.component.Property;
  */
 public class Brand extends AbstractEntity
 {
-	public static final EntityType TYPE = EntityType.BRAND;
 	private Property brand;
+	
+	@Override
+	public EntityType getEntityType()
+	{
+		return EntityType.BRAND;
+	}
 	
 	public Property getBrand()
 	{

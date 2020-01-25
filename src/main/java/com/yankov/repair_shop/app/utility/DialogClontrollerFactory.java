@@ -44,7 +44,7 @@ public class DialogClontrollerFactory
 
 	public static InputDialogController createController(WindowController owner, Entity entity)
 	{
-		switch(entity.getEntityType())
+		switch(entity.type())
 		{
 			case TICKET:
 				return new TicketRegistrationController(owner, entity);
@@ -60,7 +60,7 @@ public class DialogClontrollerFactory
 				
 			default:
 			{
-				if(EntityType.isAProperty(entity.getEntityType()))
+				if(EntityType.isAProperty(entity.type()))
 				{
 					return new PropertyRegistrationController(owner, entity);
 				}

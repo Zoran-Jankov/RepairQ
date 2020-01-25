@@ -93,14 +93,14 @@ public class DataManager
 
 	public static void save(Entity newEntity)
 	{
-		getDataTable(newEntity.getEntityType()).save(newEntity);
+		getDataTable(newEntity.type()).save(newEntity);
 		
 		ComboBoxModelManager.updateModel(newEntity);
 	}
 
 	public static void delete(Entity newEntity)
 	{
-		getDataTable(newEntity.getEntityType()).delete(newEntity);
+		getDataTable(newEntity.type()).delete(newEntity);
 	}
 	
 	public static void resetTicketCounter()

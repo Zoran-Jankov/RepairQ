@@ -20,7 +20,7 @@ public class Service extends AbstractEntity
 	}
 	
 	@Override
-	public EntityType getEntityType()
+	public EntityType type()
 	{
 		return EntityType.SERVICE;
 	}

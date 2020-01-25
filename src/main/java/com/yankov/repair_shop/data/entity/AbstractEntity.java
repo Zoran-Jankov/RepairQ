@@ -34,7 +34,7 @@ public abstract class AbstractEntity implements Entity
 	@Override
 	public String getDisplayName()
 	{
-		return IDGenerator.toString(getEntityType(), id);
+		return IDGenerator.toString(type(), id);
 	}
 	
 	@Override

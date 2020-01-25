@@ -12,7 +12,7 @@ public class Ticket extends AbstractEntity
 	private Device device;
 	
 	@Override
-	public EntityType getEntityType()
+	public EntityType type()
 	{
 		return EntityType.TICKET;
 	}

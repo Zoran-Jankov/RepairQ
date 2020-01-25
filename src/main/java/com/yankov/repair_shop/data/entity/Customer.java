@@ -22,7 +22,7 @@ public class Customer extends AbstractEntity
 	private Map<Integer, Ticket> referencedTickets = new HashMap<Integer, Ticket>();
 	
 	@Override
-	public EntityType getEntityType()
+	public EntityType type()
 	{
 		return EntityType.CUSTOMER;
 	}
