@@ -15,13 +15,17 @@ import main.java.com.yankov.repair_shop.data.component.PersonalInfo;
  */
 public class Customer extends AbstractEntity
 {
-	public static final EntityType TYPE = EntityType.CUSTOMER;
-	
 	private PersonalInfo personalInfo;
 	private ContactInfo contactInfo;
 	private CompanyInfo companyInfo;
 	
 	private Map<Integer, Ticket> referencedTickets = new HashMap<Integer, Ticket>();
+	
+	@Override
+	public EntityType getEntityType()
+	{
+		return EntityType.CUSTOMER;
+	}
 	
 	public PersonalInfo getPersonalInfo()
 	{
