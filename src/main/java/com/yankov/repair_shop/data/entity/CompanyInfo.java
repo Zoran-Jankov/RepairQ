@@ -1,10 +1,10 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
 /**
- * Class LegalEntity is an extended version of the Client class 
- * that is used to store data about legal entity. Alongside all 
- * Client's fields, it also contains tax identification number 
- * and the bank account of the legal entity.
+ * Class CompanyInfo is a component of the Client class that is used 
+ * to store data about a client if that is a company, legal entity.
+ * It also contains tax identification number, and the bank account 
+ * of the a company or a legal entity.
  * 
  * @author Zoran Jankov
  */
