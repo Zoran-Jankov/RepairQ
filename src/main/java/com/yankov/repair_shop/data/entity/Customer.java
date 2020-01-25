@@ -67,6 +67,16 @@ public class Customer extends AbstractEntity
 		this.referencedTickets = referencedTickets;
 	}
 	
+	public void addTicketReference(Ticket ticket)
+	{
+		referencedTickets.put(ticket.getId(), ticket);
+	}
+	
+	public void removeTicketReference(int id)
+	{
+		referencedTickets.remove(id);
+	}
+	
 	@Override
 	public String getDisplayName()
 	{	
