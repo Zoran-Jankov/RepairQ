@@ -40,13 +40,13 @@ public abstract class InputDialogController implements WindowController
 	
 	public InputDialogController(WindowController owner, Entity entity)
 	{
-		initializeController(owner, entity.type());
+		initializeController(owner, entity.getType());
 		
 		this.entity = entity;
 		
-		this.entityType = entity.type();
+		this.entityType = entity.getType();
 		
-		gui.getIdPanel().setIdValue(IDGenerator.toString(entity.type(), entity.getId()));
+		gui.getIdPanel().setIdValue(IDGenerator.toString(entity.getType(), entity.getId()));
 		
 		gui.getInputButtonPanel().setAddButtonFunction
 		   (null);

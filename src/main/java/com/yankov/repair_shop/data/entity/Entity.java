@@ -9,7 +9,7 @@ import main.java.com.yankov.repair_shop.data.EntityType;
  */
 public interface Entity
 {
-	public EntityType type();
+	public EntityType getType();
 	
 	/**
 	 * Getter for data entity ID number.

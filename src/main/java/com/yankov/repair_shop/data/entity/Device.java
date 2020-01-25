@@ -24,7 +24,7 @@ public class Device extends AbstractEntity
 	private String serial;
 	
 	@Override
-	public EntityType type()
+	public EntityType getType()
 	{
 		return EntityType.DEVICE;
 	}

@@ -65,7 +65,7 @@ public class ComboBoxModelManager
 
 	public static void updateModel(Entity newEntity)
 	{
-		EntityType entityType = newEntity.type();
+		EntityType entityType = newEntity.getType();
 		String item = newEntity.getDisplayName();
 		
         ((DefaultComboBoxModel<String>) MODELS_MAP.get(entityType)).addElement(item);

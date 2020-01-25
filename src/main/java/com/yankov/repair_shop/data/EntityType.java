@@ -36,14 +36,14 @@ public enum EntityType
 	
 	public static boolean hasDisplayName(Entity entity)
 	{
-		return hasDisplayName(entity.type());
+		return hasDisplayName(entity.getType());
 	}
 	
 	
 	
 	public static boolean makesReferences(Entity entity)
 	{
-		EntityType entityType = entity.type();
+		EntityType entityType = entity.getType();
 		
 		switch (entityType)
 		{

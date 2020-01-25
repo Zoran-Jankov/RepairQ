@@ -14,7 +14,7 @@ public class Notification extends AbstractEntity
 	private String comment;
 	
 	@Override
-	public EntityType type()
+	public EntityType getType()
 	{
 		return EntityType.NOTIFICATION;
 	}
