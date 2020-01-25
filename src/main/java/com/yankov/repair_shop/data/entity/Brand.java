@@ -8,20 +8,18 @@ import main.java.com.yankov.repair_shop.data.EntityType;
  * 
  * @author Zoran Jankov
  */
-public class Brand extends Property
+public class Brand extends AbstractEntity
 {
-	/**
-	 * Returns EntityType.BRAND enum.
-	 * @return (enum EntityType) BRAND
-	 */
-	@Override
-	public EntityType getEntityType()
+	public static final EntityType TYPE = EntityType.BRAND;
+	private Property brand;
+	
+	public Property getBrand()
 	{
-		return EntityType.BRAND;
+		return brand;
 	}
 	
-	public String getBrand()
+	public void setBrand(Property brand)
 	{
-		return getPropertyName();
+		this.brand = brand;
 	}
 }
