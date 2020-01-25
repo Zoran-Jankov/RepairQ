@@ -4,8 +4,7 @@ import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.component.Property;
 
 /**
- * Class DeviceType extends abstract class Property and represents
- * a device type.
+ * Class DeviceType represents a device type.
  * 
  * @author Zoran Jankov
  */
@@ -24,9 +23,9 @@ public class DeviceType extends AbstractEntity
 		return deviceType;
 	}
 	
-	public void setBrand(Property brand)
+	public void setBrand(Property deviceType)
 	{
-		this.deviceType = brand;
+		this.deviceType = deviceType;
 	}
 	
 	@Override
