@@ -24,13 +24,14 @@ import main.java.com.yankov.repair_shop.data.component.Property;
  * <p>	
  * @author Zoran Jankov
  */
-public class Model extends Property
+public class Model extends AbstractEntity
 {
 	private DeviceType deviceType;
 	private Brand brand;
+	private Property model;
 	
 	@Override
-	public EntityType getEntityType()
+	public final EntityType getType()
 	{
 		return EntityType.MODEL;
 	}
@@ -69,6 +70,16 @@ public class Model extends Property
 	public void setBrand(Brand brand)
 	{
 		this.brand = brand;	
+	}
+	
+	public Property getModel()
+	{
+		return model;
+	}
+
+	public void setModel(Property model)
+	{
+		this.model = model;
 	}
 	
 	@Override
