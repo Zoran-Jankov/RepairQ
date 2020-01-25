@@ -9,20 +9,29 @@ import main.java.com.yankov.repair_shop.data.component.Property;
  * 
  * @author Zoran Jankov
  */
-public class DeviceType extends Property
+public class DeviceType extends AbstractEntity
 {
-	/**
-	 * Returns EntityType.DEVICE_TYPE enum.
-	 * @return (enum EntityType) DEVICE_TYPE
-	 */
+	private Property deviceType;
+	
 	@Override
-	public EntityType getEntityType()
+	public EntityType getType()
 	{
 		return EntityType.DEVICE_TYPE;
 	}
 	
-	public String getDeviceType()
+	public Property getBrand()
 	{
-		return getPropertyName();
+		return deviceType;
+	}
+	
+	public void setBrand(Property brand)
+	{
+		this.deviceType = brand;
+	}
+	
+	@Override
+	public String getDisplayName()
+	{
+		return deviceType.getPropertyName();
 	}
 }
