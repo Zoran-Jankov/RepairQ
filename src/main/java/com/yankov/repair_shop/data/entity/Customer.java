@@ -19,7 +19,7 @@ public class Customer extends AbstractEntity
 	private ContactInfo contactInfo;
 	private CompanyInfo companyInfo;
 	
-	private Map<Integer, Ticket> referencedTickets = new HashMap<Integer, Ticket>();
+	private Map<Integer, Ticket> ticketsReferencingCustomer = new HashMap<Integer, Ticket>();
 	
 	@Override
 	public final EntityType getType()
@@ -57,24 +57,24 @@ public class Customer extends AbstractEntity
 		this.companyInfo = companyInfo;
 	}
 
-	public Map<Integer, Ticket> getReferencedTickets()
+	public Map<Integer, Ticket> getTicketsReferencingCustomer()
 	{
-		return referencedTickets;
+		return ticketsReferencingCustomer;
 	}
 
-	public void setReferencedTickets(Map<Integer, Ticket> referencedTickets)
+	public void setTicketsReferencingCustomer(Map<Integer, Ticket> referencedTickets)
 	{
-		this.referencedTickets = referencedTickets;
+		this.ticketsReferencingCustomer = referencedTickets;
 	}
 	
-	public void addTicketReference(Ticket ticket)
+	public void addTicketReferencingCustomer(Ticket ticket)
 	{
-		referencedTickets.put(ticket.getId(), ticket);
+		ticketsReferencingCustomer.put(ticket.getId(), ticket);
 	}
 	
-	public void removeTicketReference(int id)
+	public void removeTicketReferencingCustomer(int id)
 	{
-		referencedTickets.remove(id);
+		ticketsReferencingCustomer.remove(id);
 	}
 	
 	@Override
