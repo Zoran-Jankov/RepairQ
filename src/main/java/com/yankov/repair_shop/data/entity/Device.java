@@ -1,5 +1,8 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import main.java.com.yankov.repair_shop.data.EntityType;
 
 /** 
@@ -22,6 +25,8 @@ public class Device extends AbstractEntity
 {
 	private Model model;
 	private String serial;
+	
+	private Map<Integer, Ticket> ticketsReferencingDevice = new HashMap<Integer, Ticket>();
 	
 	@Override
 	public EntityType getType()
@@ -65,15 +70,23 @@ public class Device extends AbstractEntity
 		this.serial = serial;
 	}
 	
-	@Override
-	public void createReferences()
+	public Map<Integer, Ticket> getTicketsReferencingDevice()
 	{
-		model.addReference(this);
+		return ticketsReferencingDevice;
+	}
+
+	public void setTicketsReferencingDevice(Map<Integer, Ticket> ticketsReferencingDevice)
+	{
+		this.ticketsReferencingDevice = ticketsReferencingDevice;
 	}
 	
-	@Override
-	public void deleteReferences()
+	public void addTicketReferencingDevice(Ticket ticket)
 	{
-		model.removeReference(this.getId());
+		ticketsReferencingDevice.put(ticket.getId(), ticket);
+	}
+	
+	public void removeTicketReferencingDevice(int id)
+	{
+		ticketsReferencingDevice.remove(id);
 	}
 }
