@@ -8,7 +8,7 @@ public class Ticket extends AbstractEntity
 {
 	private Priority priority;
 	private NotificationType status;
-	private Customer client;
+	private Customer customer;
 	private Device device;
 	
 	@Override
@@ -39,12 +39,12 @@ public class Ticket extends AbstractEntity
 
 	public Customer getClient()
 	{
-		return client;
+		return customer;
 	}
 
-	public void setClient(Customer client)
+	public void setClient(Customer customer)
 	{
-		this.client = client;
+		this.customer = customer;
 	}
 
 	public Device getDevice()
@@ -60,16 +60,16 @@ public class Ticket extends AbstractEntity
 	@Override
 	public void createReferences()
 	{
-		client.addTicketReferencingCustomer(this);
-		//device.addReference(this);
+		customer.addTicketReferencingCustomer(this);
+		device.addTicketReferencingDevice(this);
 		status.addReference(this);
 	}
 	
 	@Override
 	public void deleteReferences()
 	{
-		client.removeTicketReferencingCustomer(this.getId());
-		//device.removeReference(this.getId());
+		customer.removeTicketReferencingCustomer(this.getId());
+		device.removeTicketReferencingDevice(this.getId());
 		status.removeReference(EntityType.TICKET, this.getId());
 	}
 }
