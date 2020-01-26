@@ -1,19 +1,8 @@
 package main.java.com.yankov.repair_shop.data.component;
 
 /** 
- * Class Property inherits DataElement class, and represents a property of various data classes with fields that define those classes.
- * <p>
- * Inherits field:
- * <p>
- * (int) ID number - must be unique
- * <p>
- * Fields:
- * <p>
- * (String) Property name - must be unique
- * <p>
- * (String) Property description
- * <p>
- *		
+ * Class BasicInfo represents a basic information of various entity classes.
+ * 
  * @author Zoran Jankov
  * @version 1.2
  * @since 2019-10-15
