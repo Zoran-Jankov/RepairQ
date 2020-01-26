@@ -1,7 +1,7 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
-import main.java.com.yankov.repair_shop.data.component.Property;
+import main.java.com.yankov.repair_shop.data.component.BasicInfo;
 
 /**
  * Class ServiceType extends abstract class Property and represents
@@ -9,7 +9,7 @@ import main.java.com.yankov.repair_shop.data.component.Property;
  * 
  * @author Zoran Jankov
  */
-public class ServiceType extends Property
+public class ServiceType extends BasicInfo
 {
 	private int defaultPrice;
 	

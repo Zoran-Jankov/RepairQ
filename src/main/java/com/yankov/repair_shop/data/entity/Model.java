@@ -1,7 +1,7 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
-import main.java.com.yankov.repair_shop.data.component.Property;
+import main.java.com.yankov.repair_shop.data.component.BasicInfo;
 
 /** 
  * Class Model extends class GeneralProperty and represents 
@@ -28,7 +28,7 @@ public class Model extends AbstractEntity
 {
 	private DeviceType deviceType;
 	private Brand brand;
-	private Property model;
+	private BasicInfo model;
 	
 	@Override
 	public final EntityType getType()
@@ -72,12 +72,12 @@ public class Model extends AbstractEntity
 		this.brand = brand;	
 	}
 	
-	public Property getModel()
+	public BasicInfo getModel()
 	{
 		return model;
 	}
 
-	public void setModel(Property model)
+	public void setModel(BasicInfo model)
 	{
 		this.model = model;
 	}

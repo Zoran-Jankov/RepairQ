@@ -2,14 +2,14 @@ package main.java.com.yankov.repair_shop.app.controller;
 
 import main.java.com.yankov.repair_shop.data.DataManager;
 import main.java.com.yankov.repair_shop.data.EntityType;
-import main.java.com.yankov.repair_shop.data.component.Property;
+import main.java.com.yankov.repair_shop.data.component.BasicInfo;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
 import main.java.com.yankov.repair_shop.gui.dialog.PropertyRegistrationDialog;
 
 public class PropertyRegistrationController extends InputDialogController
 {
 	private PropertyRegistrationDialog propertyGUI;
-	private Property newProperty;
+	private BasicInfo newProperty;
 	
 	public PropertyRegistrationController(WindowController owner, EntityType entityType)
 	{
@@ -25,7 +25,7 @@ public class PropertyRegistrationController extends InputDialogController
 	
 	private void initializePropertyDialogController()
 	{
-		newProperty = (Property) super.entity;
+		newProperty = (BasicInfo) super.entity;
 		
 		propertyGUI = (PropertyRegistrationDialog) super.gui;
 	}

@@ -1,7 +1,7 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
-import main.java.com.yankov.repair_shop.data.component.Property;
+import main.java.com.yankov.repair_shop.data.component.BasicInfo;
 
 /**
  * Class Brand represents a device brand.
@@ -10,7 +10,7 @@ import main.java.com.yankov.repair_shop.data.component.Property;
  */
 public class Brand extends AbstractEntity
 {
-	private Property brand;
+	private BasicInfo brand;
 	
 	@Override
 	public final EntityType getType()
@@ -18,12 +18,12 @@ public class Brand extends AbstractEntity
 		return EntityType.BRAND;
 	}
 	
-	public Property getBrand()
+	public BasicInfo getBrand()
 	{
 		return brand;
 	}
 	
-	public void setBrand(Property brand)
+	public void setBrand(BasicInfo brand)
 	{
 		this.brand = brand;
 	}
