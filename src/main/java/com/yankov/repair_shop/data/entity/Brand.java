@@ -32,12 +32,6 @@ public class Brand extends AbstractEntity
 	{
 		this.brand = brand;
 	}
-	
-	@Override
-	public String getDisplayName()
-	{
-		return brand.getPropertyName();
-	}
 
 	public Map<Integer, Model> getModelsReferencingBrand()
 	{
@@ -57,5 +51,11 @@ public class Brand extends AbstractEntity
 	public void removeModelReferencingBrand(int id)
 	{
 		modelsReferencingBrand.remove(id);
+	}
+	
+	@Override
+	public String getDisplayName()
+	{
+		return brand.getPropertyName();
 	}
 }
