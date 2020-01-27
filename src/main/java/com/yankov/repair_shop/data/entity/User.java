@@ -2,49 +2,25 @@ package main.java.com.yankov.repair_shop.data.entity;
 
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.UserType;
+import main.java.com.yankov.repair_shop.data.component.ContactInfo;
 import main.java.com.yankov.repair_shop.data.component.PersonalInfo;
 
 /** 
- * Class Employee extends class Person and represents a employee with associated information about that employee.
- * <p>
- * Inherits fields:
- * <p>
- * (int) ID number - must be unique
- * <p>
- * (String) First Name
- * <p>
- * (String) Last Name
- * <p>
- * (String) Primary Phone Number
- * <p>
- * (String) Second Phone Number
- * <p>
- * (String) Email Address
- * <p>
- * (String) Home Address
- * <p>
- * Fields:
- * <p>
- * (UserType) User Type
- * <p>
- * (String) Username - must be unique
- * <p>
- * (char[]) Password
- * <p>
+ * Class User represents a employee with associated information about that employee.
  * 				
  * @author Zoran Jankov
  * @version 1.2
- * @since 2019-10-02
  */
 
-public class User extends PersonalInfo
+public class User extends AbstractEntity
 {
 	private UserType userType;
-	private String username;
-	private char[] password;
+	private PersonalInfo personalInfo;
+	private ContactInfo contactInfo;
+	private UserInfo userInfo;
 
 	@Override
-	public EntityType getEntityType()
+	public EntityType getType()
 	{
 		return EntityType.USER;
 	}
