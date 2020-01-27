@@ -1,5 +1,8 @@
 package main.java.com.yankov.repair_shop.data.entity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.component.BasicInfo;
 
@@ -29,6 +32,8 @@ public class Model extends AbstractEntity
 	private DeviceType deviceType;
 	private Brand brand;
 	private BasicInfo model;
+	
+	private Map<Integer, Device> devicesReferencingModel = new HashMap<Integer, Device>();
 	
 	@Override
 	public final EntityType getType()
@@ -82,17 +87,43 @@ public class Model extends AbstractEntity
 		this.model = model;
 	}
 	
+	public Map<Integer, Device> getDevicesReferencingModel()
+	{
+		return devicesReferencingModel;
+	}
+
+	public void setDevicesReferencingModel(Map<Integer, Device> devicesReferencingModel)
+	{
+		this.devicesReferencingModel = devicesReferencingModel;
+	}
+	
+	public void addDeviceReferencingModel(Device device)
+	{
+		devicesReferencingModel.put(device.getId(), device);
+	}
+	
+	public void removeDeviceReferencingModel(int id)
+	{
+		devicesReferencingModel.remove(id);
+	}
+	
+	@Override
+	public String getDisplayName()
+	{
+		return model.getPropertyName();
+	}
+	
 	@Override
 	public void createReferences()
 	{
-		deviceType.addReference(this);
-		brand.addReference(this);
+		deviceType.addModelReferencingDeviceType(this);
+		brand.addModelReferencingBrand(this);
 	}
 	
 	@Override
 	public void deleteReferences()
 	{
-		deviceType.removeReference(this.getId());
-		brand.addReference(this);
+		deviceType.removeModelReferencingDeviceType(this.getId());
+		brand.removeModelReferencingBrand(this.getId());
 	}
 }
