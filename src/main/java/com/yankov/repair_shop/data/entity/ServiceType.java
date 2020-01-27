@@ -9,8 +9,9 @@ import main.java.com.yankov.repair_shop.data.component.BasicInfo;
  * 
  * @author Zoran Jankov
  */
-public class ServiceType extends BasicInfo
+public class ServiceType extends AbstractEntity
 {
+	private BasicInfo serviceType;
 	private int defaultPrice;
 	
 	/**
@@ -18,9 +19,19 @@ public class ServiceType extends BasicInfo
 	 * @return (enum EntityType) SERVICE_TYPE
 	 */
 	@Override
-	public EntityType getEntityType()
+	public EntityType getType()
 	{
 		return EntityType.SERVICE_TYPE;
+	}
+	
+	public BasicInfo getServiceType()
+	{
+		return serviceType;
+	}
+
+	public void setServiceType(BasicInfo serviceType)
+	{
+		this.serviceType = serviceType;
 	}
 	
 	/**
