@@ -13,6 +13,12 @@ public abstract class BasicInfo
 	private String name;
 	private String description;
 	
+	public BasicInfo(String name, String description)
+	{
+		this.name = name;
+		this.description = description;
+	}
+	
 	/**
 	 * Getter for general property name.
 	 * @return General property name.
