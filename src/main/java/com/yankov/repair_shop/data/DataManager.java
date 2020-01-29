@@ -10,113 +10,77 @@ import main.java.com.yankov.repair_shop.data.entity.User;
 public class DataManager
 {	
 	private static final DataManager instance = new DataManager();
-	
-	private IndexedData notificationsDataTable = new IndexedDataTable();
-	private IndexedData notificationTypesDataTable = new IndexedDataTable();
-	private IndexedData servicesDataTable = new IndexedDataTable();
-	private IndexedData serviceTypesDataTable = new IndexedDataTable();
-	private IndexedData ticketsDataTable = new IndexedDataTable();
-	private IndexedData statusTypesDataTable = new IndexedDataTable();
-	private IndexedData clientsDataTable = new IndexedDataTable();
-	private IndexedData marketingTypesDataTable = new IndexedDataTable();
-	private IndexedData legalEntitiesDataTable = new IndexedDataTable();
-	private IndexedData devicesDataTable = new IndexedDataTable();
-	private IndexedData modelsDataTable = new IndexedDataTable();
-	private IndexedData deviceTypesDataTable = new IndexedDataTable();
-	private IndexedData brandsDataTable = new IndexedDataTable();
-	private IndexedData usersDataTable = new IndexedDataTable();
-	
-	public static User logedinUser;
-	
-	private static final Map<EntityType, IndexedData> DATA_TABLES = new EnumMap<EntityType, IndexedData>(EntityType.class);
-	
-	static
-	{
 		
-	}
+	public User logedinUser;
 	
-	private DataManager()
-	{
-		DATA_TABLES.put(EntityType.NOTIFICATION, notificationsDataTable);
-		DATA_TABLES.put(EntityType.NOTIFICATION_TYPE, notificationTypesDataTable);
-		DATA_TABLES.put(EntityType.SERVICE, servicesDataTable);
-		DATA_TABLES.put(EntityType.SERVICE_TYPE, serviceTypesDataTable);
-		DATA_TABLES.put(EntityType.TICKET, ticketsDataTable);
-		DATA_TABLES.put(EntityType.STATUS, statusTypesDataTable);
-		DATA_TABLES.put(EntityType.CUSTOMER, clientsDataTable);
-		DATA_TABLES.put(EntityType.MARKETING, marketingTypesDataTable);
-		DATA_TABLES.put(EntityType.LEGAL_ENTITY, legalEntitiesDataTable);
-		DATA_TABLES.put(EntityType.DEVICE, devicesDataTable);
-		DATA_TABLES.put(EntityType.MODEL, modelsDataTable);
-		DATA_TABLES.put(EntityType.DEVICE_TYPE, deviceTypesDataTable);
-		DATA_TABLES.put(EntityType.BRAND, brandsDataTable);
-		DATA_TABLES.put(EntityType.USER, usersDataTable);
-	}
+	private final Map<EntityType, IndexedData> DATA_TABLES = new EnumMap<EntityType, IndexedData>(EntityType.class);
+	
+	private DataManager(){}
 	
 	public static DataManager accessData()
 	{
 		return instance;
 	}
 	
-	public static IndexedData getDataTable(EntityType entityType)
+	public IndexedData getDataTable(EntityType entityType)
 	{
 		return DATA_TABLES.get(entityType);
 	}
 	
-	public static Entity getEntity(EntityType entityType, int id)
+	public Entity getEntity(EntityType entityType, int id)
 	{
 		return getDataTable(entityType).getEntity(id);
 	}
 	
-	public static Entity getEntity(EntityType entityType, String name)
+	public Entity getEntity(EntityType entityType, String name)
 	{
 		return getDataTable(entityType).getEntity(name);
 	}
 
-	public static int getEntityCounter(EntityType entityType)
+	public int getEntityCounter(EntityType entityType)
 	{
 		return getDataTable(entityType).getEntityCounter();
 	}
 	
-	public static Map<Integer, Entity>getIdMap(EntityType entityType)
+	public Map<Integer, Entity>getIdMap(EntityType entityType)
 	{
 		return getDataTable(entityType).getIdMap();
 	}
 
-	public static Map<String, Entity> getDisplayNameMap(EntityType entityType)
+	public Map<String, Entity> getDisplayNameMap(EntityType entityType)
 	{
 		return getDataTable(entityType).getDisplayNameMap();
 	}
 	
-	public static boolean isDataTableEmpty(EntityType entityType)
+	public boolean isDataTableEmpty(EntityType entityType)
 	{
 		return getEntityCounter(entityType) == 0;
 	}
 
-	public static boolean idCollision(EntityType entityType, int id)
+	public boolean idCollision(EntityType entityType, int id)
 	{
 		return getDataTable(entityType).idCollision(id);
 	}
 
-	public static boolean displayNameCollision(EntityType entityType, String displayName)
+	public boolean displayNameCollision(EntityType entityType, String displayName)
 	{
 		return getDataTable(entityType).displayNameCollision(displayName);
 	}
 
-	public static void save(Entity newEntity)
+	public void save(Entity newEntity)
 	{
 		getDataTable(newEntity.getType()).save(newEntity);
 		
 		ComboBoxModelManager.updateModel(newEntity);
 	}
 
-	public static void delete(Entity newEntity)
+	public void delete(Entity newEntity)
 	{
 		getDataTable(newEntity.getType()).delete(newEntity);
 	}
 	
 	public void resetTicketCounter()
 	{
-		ticketsDataTable.resetEntityCounter();
+		getDataTable(EntityType.TICKET).resetEntityCounter();
 	}
 }
