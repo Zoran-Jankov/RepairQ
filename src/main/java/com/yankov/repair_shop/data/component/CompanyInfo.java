@@ -13,6 +13,12 @@ public class CompanyInfo
 	private String taxIDNumber;
 	private String bankAccount;
 	
+	public CompanyInfo(String taxIDNumber, String bankAccount)
+	{
+		this.taxIDNumber = taxIDNumber;
+		this.bankAccount = bankAccount;
+	}
+	
 	/**
 	 * Getter for the tax identification number of this legal entity.
 	 * @return (String) Tax identification number
