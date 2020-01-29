@@ -9,21 +9,11 @@ package main.java.com.yankov.repair_shop.data.component;
  */
 public class PersonalInfo
 {
-	private String username;
 	private String firstName;
 	private String lastName;
 	
-	public String getUsername()
+	public String getFirstName()
 	{
-		return username;
-	}
-	
-	public void setUsername(String username)
-	{
-		this.username = username;
-	}
-	
-	public String getFirstName() {
 		return firstName;
 	}
 	
@@ -32,7 +22,8 @@ public class PersonalInfo
 		this.firstName = firstName;
 	}
 	
-	public String getLastName() {
+	public String getLastName()
+	{
 		return lastName;
 	}
 	
