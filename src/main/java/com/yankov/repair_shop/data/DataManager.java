@@ -9,26 +9,33 @@ import main.java.com.yankov.repair_shop.data.entity.User;
 
 public class DataManager
 {	
-	public static IndexedData notificationsDataTable = new IndexedDataTable();
-	public static IndexedData notificationTypesDataTable = new IndexedDataTable();
-	public static IndexedData servicesDataTable = new IndexedDataTable();
-	public static IndexedData serviceTypesDataTable = new IndexedDataTable();
-	public static IndexedData ticketsDataTable = new IndexedDataTable();
-	public static IndexedData statusTypesDataTable = new IndexedDataTable();
-	public static IndexedData clientsDataTable = new IndexedDataTable();
-	public static IndexedData marketingTypesDataTable = new IndexedDataTable();
-	public static IndexedData legalEntitiesDataTable = new IndexedDataTable();
-	public static IndexedData devicesDataTable = new IndexedDataTable();
-	public static IndexedData modelsDataTable = new IndexedDataTable();
-	public static IndexedData deviceTypesDataTable = new IndexedDataTable();
-	public static IndexedData brandsDataTable = new IndexedDataTable();
-	public static IndexedData usersDataTable = new IndexedDataTable();
+	private static final DataManager instance = new DataManager();
+	
+	private IndexedData notificationsDataTable = new IndexedDataTable();
+	private IndexedData notificationTypesDataTable = new IndexedDataTable();
+	private IndexedData servicesDataTable = new IndexedDataTable();
+	private IndexedData serviceTypesDataTable = new IndexedDataTable();
+	private IndexedData ticketsDataTable = new IndexedDataTable();
+	private IndexedData statusTypesDataTable = new IndexedDataTable();
+	private IndexedData clientsDataTable = new IndexedDataTable();
+	private IndexedData marketingTypesDataTable = new IndexedDataTable();
+	private IndexedData legalEntitiesDataTable = new IndexedDataTable();
+	private IndexedData devicesDataTable = new IndexedDataTable();
+	private IndexedData modelsDataTable = new IndexedDataTable();
+	private IndexedData deviceTypesDataTable = new IndexedDataTable();
+	private IndexedData brandsDataTable = new IndexedDataTable();
+	private IndexedData usersDataTable = new IndexedDataTable();
 	
 	public static User logedinUser;
 	
 	private static final Map<EntityType, IndexedData> DATA_TABLES = new EnumMap<EntityType, IndexedData>(EntityType.class);
 	
 	static
+	{
+		
+	}
+	
+	private DataManager()
 	{
 		DATA_TABLES.put(EntityType.NOTIFICATION, notificationsDataTable);
 		DATA_TABLES.put(EntityType.NOTIFICATION_TYPE, notificationTypesDataTable);
@@ -44,6 +51,11 @@ public class DataManager
 		DATA_TABLES.put(EntityType.DEVICE_TYPE, deviceTypesDataTable);
 		DATA_TABLES.put(EntityType.BRAND, brandsDataTable);
 		DATA_TABLES.put(EntityType.USER, usersDataTable);
+	}
+	
+	public static DataManager accessData()
+	{
+		return instance;
 	}
 	
 	public static IndexedData getDataTable(EntityType entityType)
@@ -103,7 +115,7 @@ public class DataManager
 		getDataTable(newEntity.getType()).delete(newEntity);
 	}
 	
-	public static void resetTicketCounter()
+	public void resetTicketCounter()
 	{
 		ticketsDataTable.resetEntityCounter();
 	}
