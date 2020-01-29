@@ -63,8 +63,8 @@ public abstract class InputDialogController implements WindowController
 	
 	protected boolean isDisplayNameUnique(String displayName)
 	{
-		return !DataManager.displayNameCollision(entityType, displayName) 
-			 || entity.equals(DataManager.getEntity(entityType, displayName));
+		return !DataManager.accessData().displayNameCollision(entityType, displayName) 
+			 || entity.equals(DataManager.accessData().getEntity(entityType, displayName));
 	}
 
 	public void trySavingEntity()
@@ -73,7 +73,7 @@ public abstract class InputDialogController implements WindowController
 		{
 			entity.setId(id);
 			getInput();
-			DataManager.save(entity);
+			DataManager.accessData().save(entity);
 			getWindow().dispose();
 		}
 		else
@@ -86,9 +86,9 @@ public abstract class InputDialogController implements WindowController
 	{
 		if(isInputValid())
 		{
-			DataManager.delete(entity);
+			DataManager.accessData().delete(entity);
 			getInput();
-			DataManager.save(entity);
+			DataManager.accessData().save(entity);
 			getWindow().dispose();
 		}
 		else
