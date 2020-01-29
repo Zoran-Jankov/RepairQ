@@ -3,7 +3,6 @@ package main.java.com.yankov.repair_shop.data.entity;
 import java.util.HashMap;
 import java.util.Map;
 
-import main.java.com.yankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.yankov.repair_shop.data.EntityType;
 import main.java.com.yankov.repair_shop.data.component.CompanyInfo;
 import main.java.com.yankov.repair_shop.data.component.ContactInfo;
@@ -81,6 +80,6 @@ public class Customer extends AbstractEntity
 	@Override
 	public String getDisplayName()
 	{	
-		return super.getDisplayName() + " " + personalInfo.getFirstName();
+		return super.getDisplayName() + " " + personalInfo.toString();
 	}
 }
