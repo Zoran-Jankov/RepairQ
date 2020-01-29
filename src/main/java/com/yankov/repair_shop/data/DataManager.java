@@ -13,9 +13,15 @@ public class DataManager
 		
 	public User logedinUser;
 	
-	private final Map<EntityType, IndexedData> DATA_TABLES = new EnumMap<EntityType, IndexedData>(EntityType.class);
+	private final Map<EntityType, IndexedData> dataTables = new EnumMap<EntityType, IndexedData>(EntityType.class);
 	
-	private DataManager(){}
+	private DataManager()
+	{
+		for(EntityType entityType : EntityType.values())
+		{
+			dataTables.put(entityType, new IndexedDataTable());
+		}
+	}
 	
 	public static DataManager accessData()
 	{
@@ -24,7 +30,7 @@ public class DataManager
 	
 	public IndexedData getDataTable(EntityType entityType)
 	{
-		return DATA_TABLES.get(entityType);
+		return dataTables.get(entityType);
 	}
 	
 	public Entity getEntity(EntityType entityType, int id)
