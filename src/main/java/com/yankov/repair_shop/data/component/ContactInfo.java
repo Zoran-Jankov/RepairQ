@@ -8,11 +8,6 @@ public class ContactInfo
 	private String primePhoneNumber;
 	
 	/**
-	 * Person's alternative phone number
-	 */
-	private String alternativePhoneNumber;
-	
-	/**
 	 * Person's email address
 	 */
 	private String email;
@@ -38,24 +33,6 @@ public class ContactInfo
 	public void setPrimePhoneNumber(String primePhoneNumber)
 	{
 		this.primePhoneNumber = primePhoneNumber;
-	}
-
-	/**
-	 * Getter for person's secondary phone number.
-	 * @return (String) Person's secondary phone number.
-	 */
-	public String getAlternativePhoneNumber()
-	{
-		return alternativePhoneNumber;
-	}
-	
-	/**
-	 * Setter for person's alternative phone number.
-	 * @param (String) alternativePhoneNum - Person's alternative phone number.
-	 */
-	public void setAlternativePhoneNumber(String alternativePhoneNumber)
-	{
-		this.alternativePhoneNumber = alternativePhoneNumber;
 	}
 	
 	/**
