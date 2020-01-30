@@ -20,7 +20,7 @@ public class IndexedDataTable implements IndexedData
 	@Override
 	public void resetEntityCounter()
 	{
-		entityCounter =0;
+		entityCounter = 0;
 	}
 	
 	@Override
