@@ -5,7 +5,6 @@ import main.java.com.yankov.repair_shop.data.entity.Customer;
 import main.java.com.yankov.repair_shop.data.entity.Device;
 import main.java.com.yankov.repair_shop.data.entity.DeviceType;
 import main.java.com.yankov.repair_shop.data.entity.Entity;
-import main.java.com.yankov.repair_shop.data.entity.Marketing;
 import main.java.com.yankov.repair_shop.data.entity.Model;
 import main.java.com.yankov.repair_shop.data.entity.Notification;
 import main.java.com.yankov.repair_shop.data.entity.Service;
@@ -33,9 +32,6 @@ public class EntityFactory
 			
 			case CUSTOMER:
 				return new Customer();
-				
-			case MARKETING:
-				return new Marketing();
 			
 			case DEVICE:
 				return new Device();
