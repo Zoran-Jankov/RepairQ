@@ -8,7 +8,7 @@ package main.java.com.yankov.repair_shop.data.component;
  * @since 2019-10-15
  */
 
-public abstract class BasicInfo
+public class BasicInfo
 {
 	private String name;
 	private String description;
