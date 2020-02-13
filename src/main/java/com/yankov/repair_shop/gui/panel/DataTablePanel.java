@@ -1,7 +1,6 @@
 package main.java.com.yankov.repair_shop.gui.panel;
 
 import javax.swing.JPanel;
-import net.miginfocom.swing.MigLayout;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
 
