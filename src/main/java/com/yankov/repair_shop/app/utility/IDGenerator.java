@@ -22,7 +22,7 @@ public class IDGenerator
 	{
 		Objects.requireNonNull(entityType, "EntityType is null");
 		
-		int entityCounter = DataManager.getEntityCounter(entityType);
+		int entityCounter = DataManager.accessData().getEntityCounter(entityType);
 		
 		switch(entityType)
 		{
@@ -53,7 +53,7 @@ public class IDGenerator
 	{
 		if(lastTicketDate != LocalDate.now())
 		{
-			DataManager.resetTicketCounter();
+			DataManager.accessData().resetTicketCounter();
 			lastTicketDate = LocalDate.now();
 		}
 	}
