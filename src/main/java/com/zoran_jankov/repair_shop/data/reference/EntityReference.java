@@ -11,7 +11,7 @@ public interface EntityReference
 
 	public void setReferenceMap(Map<Integer, Entity> referenceMap);
 	
-	public void addReference();
+	public void addReference(Entity entity);
 	
-	public void removeReference();
+	public void removeReference(int id);
 }
