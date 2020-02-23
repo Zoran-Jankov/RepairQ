@@ -1,9 +1,8 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
+import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReference;
+import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReference;
 
 /** 
  * Class Device inherits AbstractEntity class, and represents a device with
@@ -25,8 +24,7 @@ public class Device extends AbstractEntity
 {
 	private Model model;
 	private String serial;
-	
-	private Map<Integer, Ticket> ticketsReferencingDevice = new HashMap<Integer, Ticket>();
+	private SingleReference reference;
 	
 	@Override
 	public EntityType getType()
@@ -69,24 +67,16 @@ public class Device extends AbstractEntity
 	{
 		this.serial = serial;
 	}
-	
-	public Map<Integer, Ticket> getTicketsReferencingDevice()
+
+	public EntityReference getReference()
 	{
-		return ticketsReferencingDevice;
+		return reference;
 	}
 
-	public void setTicketsReferencingDevice(Map<Integer, Ticket> ticketsReferencingDevice)
+	public void setReference(EntityReference reference)
 	{
-		this.ticketsReferencingDevice = ticketsReferencingDevice;
+		this.reference = (SingleReference) reference;
 	}
 	
-	public void addTicketReferencingDevice(Ticket ticket)
-	{
-		ticketsReferencingDevice.put(ticket.getId(), ticket);
-	}
 	
-	public void removeTicketReferencingDevice(int id)
-	{
-		ticketsReferencingDevice.remove(id);
-	}
 }

@@ -2,6 +2,7 @@ package main.java.com.zoran_jankov.repair_shop.data.entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
+import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReference;
 import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReference;
 
 /**
@@ -12,8 +13,7 @@ import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReference;
 public class Brand extends AbstractEntity
 {
 	private BasicInfo brand;
-	
-	private SingleReference reference;
+	private SingleReference reference = new SingleReference();
 	
 	@Override
 	public final EntityType getType()
@@ -31,14 +31,14 @@ public class Brand extends AbstractEntity
 		this.brand = brand;
 	}
 	
-	public SingleReference getReference()
+	public EntityReference getReference()
 	{
-		return reference;
+		return (EntityReference) reference;
 	}
 
-	public void setReference(SingleReference reference)
+	public void setReference(EntityReference reference)
 	{
-		this.reference = reference;
+		this.reference = (SingleReference) reference;
 	}
 	
 	@Override
