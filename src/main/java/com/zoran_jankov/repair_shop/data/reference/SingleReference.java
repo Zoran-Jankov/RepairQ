@@ -6,31 +6,31 @@ import java.util.Map;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
 
-public class BrandReference implements EntityReference
+public class SingleReference implements EntityReference
 {
-	private Map<Integer, Entity> modelsReferencingBrand = new HashMap<Integer, Entity>();
+	private Map<Integer, Entity> referenceMap = new HashMap<Integer, Entity>();
 
 	@Override
 	public Map<Integer, Entity> getReferenceMap(EntityType entityType)
 	{
-		return modelsReferencingBrand;
+		return referenceMap;
 	}
 
 	@Override
 	public void setReferenceMap(Map<Integer, Entity> referenceMap)
 	{
-		this.modelsReferencingBrand = referenceMap;
+		this.referenceMap = referenceMap;
 	}
 
 	@Override
 	public void addReference(Entity entity)
 	{
-		modelsReferencingBrand.put(entity.getId(), entity);
+		referenceMap.put(entity.getId(), entity);
 	}
 
 	@Override
 	public void removeReference(int id)
 	{
-		modelsReferencingBrand.remove(id);
+		referenceMap.remove(id);
 	}
 }

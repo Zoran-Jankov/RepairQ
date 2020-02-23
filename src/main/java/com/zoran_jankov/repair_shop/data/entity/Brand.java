@@ -2,7 +2,7 @@ package main.java.com.zoran_jankov.repair_shop.data.entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
-import main.java.com.zoran_jankov.repair_shop.data.reference.BrandReference;
+import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReference;
 
 /**
  * Class Brand represents a device brand.
@@ -13,7 +13,7 @@ public class Brand extends AbstractEntity
 {
 	private BasicInfo brand;
 	
-	private BrandReference reference;
+	private SingleReference reference;
 	
 	@Override
 	public final EntityType getType()
@@ -31,12 +31,12 @@ public class Brand extends AbstractEntity
 		this.brand = brand;
 	}
 	
-	public BrandReference getReference()
+	public SingleReference getReference()
 	{
 		return reference;
 	}
 
-	public void setReference(BrandReference reference)
+	public void setReference(SingleReference reference)
 	{
 		this.reference = reference;
 	}
