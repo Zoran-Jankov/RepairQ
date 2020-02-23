@@ -19,17 +19,17 @@ public class CompanyInfoPanel extends JPanel
 	 */
 	public CompanyInfoPanel()
 	{
-		setLayout(new MigLayout("", "[][grow]", "[25px:n:25px][25px:n:25px]"));
+		setLayout(new MigLayout("", "[][grow]", "[20px:n:20px][20px:n:20px][20px:n:20px][20px:n:20px]"));
 		
 		JLabel lblTaxIdNumber = LabelFactory.createJLabel("\"Tax ID Number\"", new Font("Tahoma", Font.PLAIN, 13));
-		add(lblTaxIdNumber, "cell 0 0,growy");
+		add(lblTaxIdNumber, "cell 0 2,growy");
 		
 		textField = new JTextField();
-		add(textField, "cell 1 0,grow");
+		add(textField, "cell 1 2,grow");
 		textField.setColumns(10);
 		
 		JLabel lblBanckAccount = LabelFactory.createJLabel("Banck Account", new Font("Tahoma", Font.PLAIN, 13));
-		add(lblBanckAccount, "cell 0 1,growy");
+		add(lblBanckAccount, "cell 0 3,growy");
 		
 	}
 }
