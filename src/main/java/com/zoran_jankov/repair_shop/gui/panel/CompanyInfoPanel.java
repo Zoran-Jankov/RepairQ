@@ -71,11 +71,11 @@ public class CompanyInfoPanel extends JPanel
 
 	public String getBankAccount()
 	{
-		return txtBankAccount;
-	}
-
-	public void setBankAccount(JTextField txtBankAccount)
+		return txtBankAccount.getText();
+	}                       
+	
+	public void setBankAccount(String bankAccount)
 	{
-		this.txtBankAccount = txtBankAccount;
+		this.txtBankAccount.setText(bankAccount);
 	}
 }
