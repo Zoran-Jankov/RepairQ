@@ -1,8 +1,5 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
 import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
@@ -34,7 +31,7 @@ public class Model extends AbstractEntity
 	private DeviceType deviceType;
 	private Brand brand;
 	private BasicInfo model;
-	private ModelReferenceMap refernce = new ModelRefernceMap();
+	private ModelReferenceMap referenceMap = new ModelReferenceMap();
 	
 	@Override
 	public final EntityType getType()
@@ -89,9 +86,9 @@ public class Model extends AbstractEntity
 	}
 	
 	@Override
-	public String getDisplayName()
+	public EntityReferenceMap getReferenceMap()
 	{
-		return model.getPropertyName();
+		return referenceMap;
 	}
 	
 	@Override
@@ -107,10 +104,10 @@ public class Model extends AbstractEntity
 		deviceType.getReferenceMap().removeReference(this.getId());
 		brand.getReferenceMap().removeReference(this.getId());
 	}
-
+	
 	@Override
-	public EntityReferenceMap getReferenceMap()
+	public String getDisplayName()
 	{
-		return null;
+		return model.getPropertyName();
 	}
 }
