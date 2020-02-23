@@ -11,80 +11,47 @@ import main.java.com.zoran_jankov.repair_shop.gui.utility.TextFieldFactory;
 
 import java.awt.Color;
 import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class PersonalInfoPanel extends JPanel
 {
 	private static final long serialVersionUID = -1636004925810635460L;
-	private JTextField txtName = TextFieldFactory.createJTextField(10);
-	private JTextField txtPrimePhone = TextFieldFactory.createJTextField(10);
-	private JTextField txtAltPhone = TextFieldFactory.createJTextField(10);
-	private JTextField txtEmail = TextFieldFactory.createJTextField(10);
-	private JTextField txtAddress = TextFieldFactory.createJTextField(10);
+	private JTextField txtFirstName = TextFieldFactory.createJTextField(10);
+	private JTextField txtLastName = TextFieldFactory.createJTextField(10);
+	private final JLabel lblPersonalInformation = LabelFactory.createJLabel("Personal Information", new Font("Tahoma", Font.BOLD, 13));
 
 	public PersonalInfoPanel()
 	{
-		setLayout(new MigLayout("", "[][5.00][grow]", "[20px:n,fill][20px:n,fill][20px:n,fill][][20px:n]"));
+		setLayout(new MigLayout("", "[][grow]", "[20px:n:20px][20px:n:20px,fill][20px:n:20px,fill]"));
+		lblPersonalInformation.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		JLabel lblName = LabelFactory.createJLabel(LabelName.FULL_NAME, new Font("Tahoma", Font.PLAIN, 13));
-		add(lblName, "cell 0 0,growy");
+		add(lblPersonalInformation, "cell 0 0 2 1,grow");
 		
-		add(txtName, "cell 2 0,grow");
+		JLabel lblFirstName = LabelFactory.createJLabel("First Name", new Font("Tahoma", Font.PLAIN, 13));
+		add(lblFirstName, "cell 0 1,growy");
 		
-		JLabel lblPrimePhone = LabelFactory.createJLabel(LabelName.PRIME_PHONE, new Font("Tahoma", Font.PLAIN, 13));
-		add(lblPrimePhone, "cell 0 1,growy");
+		add(txtFirstName, "cell 1 1,grow");
 		
-		add(txtPrimePhone, "cell 2 1,grow");
+		JLabel lblLastName = LabelFactory.createJLabel(LabelName.PRIME_PHONE, new Font("Tahoma", Font.PLAIN, 13));
+		add(lblLastName, "cell 0 2,growy");
 		
-		JLabel lblAltPhone = LabelFactory.createJLabel(LabelName.ALTERNATIVE_PHONE, new Font("Tahoma", Font.PLAIN, 13));
-		add(lblAltPhone, "cell 0 2,growy");
-		
-		add(txtAltPhone, "cell 2 2,grow");
-		
-		JLabel lblEmail = LabelFactory.createJLabel(LabelName.EMAIL, new Font("Tahoma", Font.PLAIN, 13));
-		add(lblEmail, "cell 0 3,growy");
-		
-		add(txtEmail, "cell 2 3,growx");
-		
-		JLabel lblHomeAddress = LabelFactory.createJLabel(LabelName.ADDRESS, new Font("Tahoma", Font.PLAIN, 13));
-		add(lblHomeAddress, "cell 0 4,growy");
-		
-		add(txtAddress, "cell 2 4,grow");
+		add(txtLastName, "cell 1 2,grow");
 	}
 	
-	public String getPersonName()
+	public String getFirstName()
 	{
-		txtName.setBackground(Color.WHITE);
-		return txtName.getText();
+		txtFirstName.setBackground(Color.WHITE);
+		return txtFirstName.getText();
 	}
 	
-	public String getPrimePhoneNumber()
+	public String getLastName()
 	{
-		txtName.setBackground(Color.WHITE);
-		return txtPrimePhone.getText();
+		txtLastName.setBackground(Color.WHITE);
+		return txtLastName.getText();
 	}
 	
-	public String getAltPoneNumber()
+	public void showFirstNameError()
 	{
-		return txtAltPhone.getText();
-	}
-	
-	public String getEmail()
-	{
-		return txtEmail.getText();
-	}
-	
-	public String getAddress()
-	{
-		return txtAddress.getText();
-	}
-	
-	public void showNameError()
-	{
-		txtName.setBackground(Color.YELLOW);
-	}
-	
-	public void showPhoneError()
-	{
-		txtPrimePhone.setBackground(Color.YELLOW);
+		txtFirstName.setBackground(Color.YELLOW);
 	}
 }

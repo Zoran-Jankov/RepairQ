@@ -6,6 +6,7 @@ import javax.swing.table.TableModel;
 
 import main.java.com.zoran_jankov.repair_shop.gui.text.ButtonName;
 import main.java.com.zoran_jankov.repair_shop.gui.utility.ButtonFactory;
+import net.miginfocom.swing.MigLayout;
 
 import javax.swing.JButton;
 import java.awt.Font;
