@@ -5,6 +5,8 @@ import java.util.Map;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
+import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
+import main.java.com.zoran_jankov.repair_shop.data.reference.ModelReferenceMap;
 
 /** 
  * Class Model extends class GeneralProperty and represents 
@@ -32,8 +34,7 @@ public class Model extends AbstractEntity
 	private DeviceType deviceType;
 	private Brand brand;
 	private BasicInfo model;
-	
-	private Map<Integer, Device> devicesReferencingModel = new HashMap<Integer, Device>();
+	private ModelReferenceMap refernce = new ModelRefernceMap();
 	
 	@Override
 	public final EntityType getType()
@@ -87,26 +88,6 @@ public class Model extends AbstractEntity
 		this.model = model;
 	}
 	
-	public Map<Integer, Device> getDevicesReferencingModel()
-	{
-		return devicesReferencingModel;
-	}
-
-	public void setDevicesReferencingModel(Map<Integer, Device> devicesReferencingModel)
-	{
-		this.devicesReferencingModel = devicesReferencingModel;
-	}
-	
-	public void addDeviceReferencingModel(Device device)
-	{
-		devicesReferencingModel.put(device.getId(), device);
-	}
-	
-	public void removeDeviceReferencingModel(int id)
-	{
-		devicesReferencingModel.remove(id);
-	}
-	
 	@Override
 	public String getDisplayName()
 	{
@@ -116,14 +97,20 @@ public class Model extends AbstractEntity
 	@Override
 	public void createReferences()
 	{
-		deviceType.addModelReferencingDeviceType(this);
-		brand.addModelReferencingBrand(this);
+		deviceType.getReferenceMap().addReference(this);
+		brand.getReferenceMap().addReference(this);
 	}
 	
 	@Override
 	public void deleteReferences()
 	{
-		deviceType.removeModelReferencingDeviceType(this.getId());
-		brand.removeModelReferencingBrand(this.getId());
+		deviceType.getReferenceMap().removeReference(this.getId());
+		brand.getReferenceMap().removeReference(this.getId());
+	}
+
+	@Override
+	public EntityReferenceMap getReferenceMap()
+	{
+		return null;
 	}
 }

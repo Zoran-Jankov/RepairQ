@@ -26,8 +26,6 @@ public interface Entity
 	
 	public EntityReferenceMap getReferenceMap();
 	
-	public void setReferenceMap(EntityReferenceMap entityReference);
-	
 	/**
 	 * Adds references in the entities that are referenced in this entity.
 	 */

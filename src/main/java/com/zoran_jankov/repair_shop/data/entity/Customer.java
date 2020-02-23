@@ -55,14 +55,10 @@ public class Customer extends AbstractEntity
 		this.companyInfo = companyInfo;
 	}
 	
+	@Override
 	public EntityReferenceMap getReferenceMap()
 	{
 		return (EntityReferenceMap) referenceMap;
-	}
-
-	public void setReferenceMap(EntityReferenceMap reference)
-	{
-		this.referenceMap = (SingleReferenceMap) reference;
 	}
 	
 	@Override

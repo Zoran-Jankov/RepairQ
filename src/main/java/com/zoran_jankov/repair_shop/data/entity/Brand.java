@@ -31,14 +31,10 @@ public class Brand extends AbstractEntity
 		this.brand = brand;
 	}
 	
+	@Override
 	public EntityReferenceMap getReferenceMap()
 	{
 		return (EntityReferenceMap) reference;
-	}
-
-	public void setReferenceMap(EntityReferenceMap reference)
-	{
-		this.reference = (SingleReferenceMap) reference;
 	}
 	
 	@Override

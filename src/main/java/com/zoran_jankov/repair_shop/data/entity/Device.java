@@ -68,14 +68,10 @@ public class Device extends AbstractEntity
 		this.serial = serial;
 	}
 
+	@Override
 	public EntityReferenceMap getReferenceMap()
 	{
 		return reference;
-	}
-
-	public void setReferenceMap(EntityReferenceMap reference)
-	{
-		this.reference = (SingleReferenceMap) reference;
 	}
 	
 	@Override
