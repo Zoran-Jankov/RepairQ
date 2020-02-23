@@ -26,7 +26,7 @@ public class LabelName
 	public static String PASSWORD = "Password";
 	
 	//Device Information
-	public static String DEVICE_TYPE = "Device Type *";
+	public static String DEVICE_TYPE = "Device Type";
 	public static String BRAND = "Brand";
 	public static String MODEL = "Model";
 	public static String SERIAL = "Serial Number";

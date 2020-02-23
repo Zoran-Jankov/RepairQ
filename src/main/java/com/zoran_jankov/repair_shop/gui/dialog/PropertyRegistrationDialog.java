@@ -7,7 +7,7 @@ import javax.swing.JDialog;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.gui.panel.IdPanel;
 import main.java.com.zoran_jankov.repair_shop.gui.panel.InputButtonPanel;
-import main.java.com.zoran_jankov.repair_shop.gui.panel.PropertyPanel;
+import main.java.com.zoran_jankov.repair_shop.gui.panel.BasicInfoPanel;
 import main.java.com.zoran_jankov.repair_shop.gui.text.WindowTitle;
 import net.miginfocom.swing.MigLayout;
 
@@ -15,7 +15,7 @@ public class PropertyRegistrationDialog extends JDialog implements InputDialog
 {
 	private static final long serialVersionUID = 6674166830353586592L;
 	private IdPanel idPanel = new IdPanel();
-	private PropertyPanel propertyPanel = new PropertyPanel();
+	private BasicInfoPanel propertyPanel = new BasicInfoPanel();
 	private InputButtonPanel buttonPanel = new InputButtonPanel();
 	
 	public PropertyRegistrationDialog(Window owner, EntityType entityType)
@@ -43,7 +43,7 @@ public class PropertyRegistrationDialog extends JDialog implements InputDialog
 		return idPanel;
 	}
 	
-	public PropertyPanel getPropertyPanel()
+	public BasicInfoPanel getPropertyPanel()
 	{
 		return propertyPanel;
 	}

@@ -30,7 +30,7 @@ public class ModelRegistrationPanel extends JPanel
 	
 	public ModelRegistrationPanel()
 	{
-		setLayout(new MigLayout("", "[][grow][]", "[20px:n][20px:n]"));
+		setLayout(new MigLayout("", "[][grow][]", "[20px:n:20px][20px:n:20px]"));
 		
 		JLabel lblDeviceType = LabelFactory.createJLabel(LabelName.DEVICE_TYPE, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblDeviceType, "cell 0 0,growy");
@@ -55,7 +55,7 @@ public class ModelRegistrationPanel extends JPanel
 		return (String) cmbDeviceType.getSelectedItem();
 	}
 	
-	public void setDeviceTypeCmbModel(ComboBoxModel<String> model)
+	public void setDeviceType(ComboBoxModel<String> model)
 	{
 		cmbDeviceType.setModel(model);
 	}
@@ -71,7 +71,7 @@ public class ModelRegistrationPanel extends JPanel
 		return (String) cmbBrand.getSelectedItem();
 	}
 	
-	public void setBrandCmbModel(ComboBoxModel<String> model)
+	public void setBrand(ComboBoxModel<String> model)
 	{
 		cmbBrand.setModel(model);
 	}

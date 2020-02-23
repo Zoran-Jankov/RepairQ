@@ -14,13 +14,13 @@ import main.java.com.zoran_jankov.repair_shop.gui.utility.LabelFactory;
 import main.java.com.zoran_jankov.repair_shop.gui.utility.TextFieldFactory;
 import main.java.com.zoran_jankov.repair_shop.gui.utility.TextPaneFactory;
 
-public class PropertyPanel extends JPanel
+public class BasicInfoPanel extends JPanel
 {
 	private static final long serialVersionUID = 5315153141202094448L;
 	private JTextField txtName = TextFieldFactory.createJTextField(10);
 	private JTextPane txtDescription = TextPaneFactory.createJEditorPane();
 
-	public PropertyPanel()
+	public BasicInfoPanel()
 	{
 		setLayout(new MigLayout("", "[][grow]", "[20px:n,fill][10px:n][][grow]"));
 		

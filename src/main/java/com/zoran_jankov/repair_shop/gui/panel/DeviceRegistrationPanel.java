@@ -26,60 +26,26 @@ import javax.swing.JButton;
 public class DeviceRegistrationPanel extends JPanel
 {
 	private static final long serialVersionUID = -4810443150610740707L;
-	private JComboBox<String> cmbDeviceType = ComboBoxFactory.createJComboBox();
-	private JComboBox<String> cmbBrand = ComboBoxFactory.createJComboBox();
 	private JComboBox<String> cmbModel = ComboBoxFactory.createJComboBox();
 	private JButton btnNewModel = ButtonFactory.createJButton(ButtonName.MODEL, new Font("Tahoma", Font.PLAIN, 13));
 	private JTextField txtSerial = TextFieldFactory.createJTextField(10);
 
 	public DeviceRegistrationPanel()
 	{
-		setLayout(new MigLayout("", "[][grow]", "[25px:n][25px:n][25px:n][25px:n][25px:n]"));
-		
-		JLabel lblDeviceType = LabelFactory.createJLabel(LabelName.DEVICE_TYPE, new Font("Tahoma", Font.PLAIN, 13));
-		add(lblDeviceType, "cell 0 0,growy");
-		
-		AutoCompleteDecorator.decorate(cmbDeviceType);
-		add(cmbDeviceType, "cell 1 0,grow");
-		
-		JLabel lblBrand = LabelFactory.createJLabel(LabelName.BRAND, new Font("Tahoma", Font.PLAIN, 13));
-		add(lblBrand, "cell 0 1,growy");
-		
-		AutoCompleteDecorator.decorate(cmbBrand);
-		add(cmbBrand, "cell 1 1,grow");
+		setLayout(new MigLayout("", "[][grow][]", "[20px:n:20px][20px:n:20px]"));
 		
 		JLabel lblModel = LabelFactory.createJLabel(LabelName.MODEL, new Font("Tahoma", Font.PLAIN, 13));
-		add(lblModel, "cell 0 2,growy");
+		add(lblModel, "cell 0 0,growy");
 		
 		AutoCompleteDecorator.decorate(cmbModel);
-		add(cmbModel, "cell 1 2,grow");
+		add(cmbModel, "flowx,cell 1 0,grow");
 		
-		add(btnNewModel, "cell 1 3,alignx center,growy");
+		add(btnNewModel, "cell 2 0,alignx center,growy");
 		
 		JLabel lblSerial = LabelFactory.createJLabel(LabelName.SERIAL, new Font("Tahoma", Font.PLAIN, 13));
-		add(lblSerial, "cell 0 4,growy");
+		add(lblSerial, "cell 0 1,growy");
 		
-		add(txtSerial, "cell 1 4,grow");
-	}
-	
-	public String getDeviceType()
-	{
-		return (String) cmbDeviceType.getSelectedItem();
-	}
-	
-	public void setDeviceTypeCmbModel(ComboBoxModel<String> model)
-	{
-		cmbDeviceType.setModel(model);
-	}
-	
-	public String getBrand()
-	{
-		return (String) cmbBrand.getSelectedItem();
-	}
-	
-	public void setBrandCmbModel(ComboBoxModel<String> model)
-	{
-		cmbBrand.setModel(model);
+		add(txtSerial, "cell 1 1 2 1,grow");
 	}
 	
 	public String getModel()
@@ -88,7 +54,7 @@ public class DeviceRegistrationPanel extends JPanel
 		return (String) cmbModel.getSelectedItem();
 	}
 	
-	public void setModelCmbModel(ComboBoxModel<String> model)
+	public void setModel(ComboBoxModel<String> model)
 	{
 		cmbModel.setModel(model);
 	}
@@ -97,6 +63,11 @@ public class DeviceRegistrationPanel extends JPanel
 	{
 		txtSerial.setBackground(Color.WHITE);
 		return txtSerial.getText();
+	}
+	
+	public void setSerial(String serial)
+	{
+		txtSerial.setText(serial);
 	}
 	
 	public void setBtnNewModelActionListener(ActionListener listener)
