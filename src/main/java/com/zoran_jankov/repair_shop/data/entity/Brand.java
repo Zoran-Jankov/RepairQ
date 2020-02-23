@@ -1,10 +1,8 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
+import main.java.com.zoran_jankov.repair_shop.data.reference.BrandReference;
 
 /**
  * Class Brand represents a device brand.
@@ -15,7 +13,7 @@ public class Brand extends AbstractEntity
 {
 	private BasicInfo brand;
 	
-	private Map<Integer, Model> modelsReferencingBrand = new HashMap<Integer, Model>();
+	private BrandReference reference;
 	
 	@Override
 	public final EntityType getType()
@@ -32,25 +30,15 @@ public class Brand extends AbstractEntity
 	{
 		this.brand = brand;
 	}
-
-	public Map<Integer, Model> getModelsReferencingBrand()
-	{
-		return modelsReferencingBrand;
-	}
-
-	public void setModelsReferencingBrand(Map<Integer, Model> modelsReferencingBrand)
-	{
-		this.modelsReferencingBrand = modelsReferencingBrand;
-	}
 	
-	public void addModelReferencingBrand(Model model)
+	public BrandReference getReference()
 	{
-		modelsReferencingBrand.put(model.getId(), model);
+		return reference;
 	}
-	
-	public void removeModelReferencingBrand(int id)
+
+	public void setReference(BrandReference reference)
 	{
-		modelsReferencingBrand.remove(id);
+		this.reference = reference;
 	}
 	
 	@Override

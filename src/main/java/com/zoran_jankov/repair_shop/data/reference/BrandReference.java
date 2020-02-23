@@ -23,14 +23,14 @@ public class BrandReference implements EntityReference
 	}
 
 	@Override
-	public void addReference()
+	public void addReference(Entity entity)
 	{
-		
+		modelsReferencingBrand.put(entity.getId(), entity);
 	}
 
 	@Override
-	public void removeReference()
+	public void removeReference(int id)
 	{
-
+		modelsReferencingBrand.remove(id);
 	}
 }
