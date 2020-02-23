@@ -50,7 +50,4 @@ public class LabelName
 	public static String CLIENT = "Client";
 	public static String MARKETING = "Marketing";
 	public static String DEVICE = "Device";
-	
-	
-	
 }
