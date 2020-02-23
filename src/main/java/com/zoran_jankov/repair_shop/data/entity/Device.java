@@ -87,6 +87,6 @@ public class Device extends AbstractEntity
 	@Override
 	public void deleteReferences()
 	{
-		model.removeReference(EntityType.NOTIFICATION, this.getId());
+		model.getReferenceMap().removeReference(this.getId());
 	}
 }
