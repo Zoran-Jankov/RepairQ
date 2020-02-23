@@ -19,7 +19,6 @@ public class CompanyInfoPanel extends JPanel
 	private JTextField txtTaxId;
 	private JTextField txtBankAccount;
 	
-
 	/**
 	 * Create the panel.
 	 */
@@ -48,5 +47,35 @@ public class CompanyInfoPanel extends JPanel
 		
 		txtBankAccount = TextFieldFactory.createJTextField(10);
 		add(txtBankAccount, "cell 1 3,grow");
+	}
+	
+	public String getCompanyName()
+	{
+		return txtCompanyName.getText();
+	}
+
+	public void setCompanyName(String companyName)
+	{
+		this.txtCompanyName.setText(companyName);
+	}
+	
+	public String getTaxId()
+	{
+		return txtTaxId.getText();
+	}
+	
+	public void setTaxId(String taxId)
+	{
+		this.txtTaxId.setText(taxId);
+	}
+
+	public String getBankAccount()
+	{
+		return txtBankAccount;
+	}
+
+	public void setBankAccount(JTextField txtBankAccount)
+	{
+		this.txtBankAccount = txtBankAccount;
 	}
 }
