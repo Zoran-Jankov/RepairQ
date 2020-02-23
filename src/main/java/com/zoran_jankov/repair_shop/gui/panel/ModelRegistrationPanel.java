@@ -55,7 +55,7 @@ public class ModelRegistrationPanel extends JPanel
 		return (String) cmbDeviceType.getSelectedItem();
 	}
 	
-	public void setDeviceType(ComboBoxModel<String> model)
+	public void setDeviceTypeCmbModel(ComboBoxModel<String> model)
 	{
 		cmbDeviceType.setModel(model);
 	}
@@ -71,7 +71,7 @@ public class ModelRegistrationPanel extends JPanel
 		return (String) cmbBrand.getSelectedItem();
 	}
 	
-	public void setBrand(ComboBoxModel<String> model)
+	public void setBrandCmbModel(ComboBoxModel<String> model)
 	{
 		cmbBrand.setModel(model);
 	}
