@@ -4,8 +4,8 @@ import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.CompanyInfo;
 import main.java.com.zoran_jankov.repair_shop.data.component.ContactInfo;
 import main.java.com.zoran_jankov.repair_shop.data.component.PersonalInfo;
-import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReference;
-import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReference;
+import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
+import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReferenceMap;
 
 /** 
  * Class Client represents a client 
@@ -17,7 +17,7 @@ public class Customer extends AbstractEntity
 	private PersonalInfo personalInfo;
 	private ContactInfo contactInfo;
 	private CompanyInfo companyInfo;
-	private SingleReference reference = new SingleReference();
+	private SingleReferenceMap referenceMap = new SingleReferenceMap();
 	
 	@Override
 	public final EntityType getType()
@@ -55,14 +55,14 @@ public class Customer extends AbstractEntity
 		this.companyInfo = companyInfo;
 	}
 	
-	public EntityReference getReference()
+	public EntityReferenceMap getReferenceMap()
 	{
-		return (EntityReference) reference;
+		return (EntityReferenceMap) referenceMap;
 	}
 
-	public void setReference(EntityReference reference)
+	public void setReferenceMap(EntityReferenceMap reference)
 	{
-		this.reference = (SingleReference) reference;
+		this.referenceMap = (SingleReferenceMap) reference;
 	}
 	
 	@Override

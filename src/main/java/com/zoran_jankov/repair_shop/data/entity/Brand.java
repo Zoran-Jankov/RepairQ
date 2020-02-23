@@ -2,8 +2,8 @@ package main.java.com.zoran_jankov.repair_shop.data.entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
-import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReference;
-import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReference;
+import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
+import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReferenceMap;
 
 /**
  * Class Brand represents a device brand.
@@ -13,7 +13,7 @@ import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReference;
 public class Brand extends AbstractEntity
 {
 	private BasicInfo brand;
-	private SingleReference reference = new SingleReference();
+	private SingleReferenceMap reference = new SingleReferenceMap();
 	
 	@Override
 	public final EntityType getType()
@@ -31,14 +31,14 @@ public class Brand extends AbstractEntity
 		this.brand = brand;
 	}
 	
-	public EntityReference getReference()
+	public EntityReferenceMap getReferenceMap()
 	{
-		return (EntityReference) reference;
+		return (EntityReferenceMap) reference;
 	}
 
-	public void setReference(EntityReference reference)
+	public void setReferenceMap(EntityReferenceMap reference)
 	{
-		this.reference = (SingleReference) reference;
+		this.reference = (SingleReferenceMap) reference;
 	}
 	
 	@Override

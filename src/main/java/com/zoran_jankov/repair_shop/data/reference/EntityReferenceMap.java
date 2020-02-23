@@ -5,7 +5,7 @@ import java.util.Map;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
 
-public interface EntityReference
+public interface EntityReferenceMap
 {
 	public Map<Integer, Entity> getReferenceMap(EntityType entityType);
 

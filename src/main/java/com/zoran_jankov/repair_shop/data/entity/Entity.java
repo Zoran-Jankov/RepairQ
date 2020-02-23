@@ -1,7 +1,7 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReference;
+import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
 
 /**
  * Interface for all entities in the data structure.
@@ -24,9 +24,9 @@ public interface Entity
 	 */
 	public void setId(int id);
 	
-	public EntityReference getReference();
+	public EntityReferenceMap getReferenceMap();
 	
-	public void setReference(EntityReference entityReference);
+	public void setReferenceMap(EntityReferenceMap entityReference);
 	
 	/**
 	 * Adds references in the entities that are referenced in this entity.

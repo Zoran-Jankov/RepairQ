@@ -6,7 +6,7 @@ import java.util.Map;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
 
-public class SingleReference implements EntityReference
+public class SingleReferenceMap implements EntityReferenceMap
 {
 	private Map<Integer, Entity> referenceMap = new HashMap<Integer, Entity>();
 
