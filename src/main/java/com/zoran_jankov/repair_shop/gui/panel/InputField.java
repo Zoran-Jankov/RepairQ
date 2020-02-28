@@ -1,4 +1,4 @@
-package main.java.com.zoran_jankov.repair_shop.gui.utility;
+package main.java.com.zoran_jankov.repair_shop.gui.panel;
 
 import java.awt.Component;
 
@@ -7,26 +7,24 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import main.java.com.zoran_jankov.repair_shop.data.FieldType;
+import net.miginfocom.swing.MigLayout;
 
-public class InputField
+public class InputField extends JPanel
 {
-	JPanel panel = new JPanel();
+	private static final long serialVersionUID = 1483321300390555144L;
 	
 	public InputField(FieldType type)
 	{
+		setLayout(new MigLayout("", "[]", "[]"));
 		
-		
-		panel.add(createLabel(type));
-		panel.add(createInputFeild(type));
-		
-		if(isSelectable())
+		if(isSelectable(type))
 		{
-			panel.add(createButton());
+			add(createButton());
 		}
 		
 	}
 
-	private boolean isSelectable()
+	private boolean isSelectable(FieldType type)
 	{
 		return false;
 	}
