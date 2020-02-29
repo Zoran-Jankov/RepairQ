@@ -24,5 +24,11 @@
   		<version>5.4.2</version>
   		<scope>test</scope>
   	</dependency>
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-agroal</artifactId>
+  		<version>5.4.12.Final</version>
+  		<type>pom</type>
+	</dependency>
   </dependencies>
 </project>
