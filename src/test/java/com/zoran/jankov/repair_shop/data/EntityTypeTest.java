@@ -1,4 +1,4 @@
-package test.java.com.zoran.jankov.repair_shop.entity;
+package test.java.com.zoran.jankov.repair_shop.data;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

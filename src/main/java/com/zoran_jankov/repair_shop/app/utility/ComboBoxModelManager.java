@@ -60,7 +60,7 @@ public class ComboBoxModelManager
 
 	private static Set<String> getDisplayNameSet(EntityType entityType)
 	{
-		return DataManager.getDisplayNameMap(entityType).keySet();
+		return DataManager.accessData().getDisplayNameMap(entityType).keySet();
 	}
 
 	public static void updateModel(Entity newEntity)
