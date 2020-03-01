@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.NotificationType;
+import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
 
 public class Notification extends AbstractEntity
 {
@@ -83,5 +84,11 @@ public class Notification extends AbstractEntity
 		notificationType.removeReference(EntityType.NOTIFICATION, this.getId());
 		ticket.removeReference(this.getId());
 		user.removeReference(this.getId());
+	}
+
+	@Override
+	public EntityReferenceMap getReferenceMap() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

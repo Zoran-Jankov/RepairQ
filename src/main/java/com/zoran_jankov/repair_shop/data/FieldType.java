@@ -37,11 +37,16 @@ public enum FieldType
 	NAME,
 	DESCRIPTION;
 	
-	public boolean isTextField(FieldType type)
+	public boolean isEntity(FieldType type)
 	{
 		switch(type)
 		{
-			case 
+			case CUSTOMER:
+			case DEVICE:
+			case DEVICE_TYPE:
+				return true;
+			default:
+				return false;
 		}
 	}
 }
