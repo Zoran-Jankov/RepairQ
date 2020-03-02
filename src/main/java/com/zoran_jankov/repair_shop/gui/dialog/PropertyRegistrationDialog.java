@@ -26,7 +26,7 @@ public class PropertyRegistrationDialog extends JDialog implements InputDialog
 		setTitle(WindowTitle.getNewPropertyTitle(entityType));
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
-		getContentPane().setLayout(new MigLayout("", "[434px]", "[20px:n][grow][]"));
+		getContentPane().setLayout(new MigLayout("", "[434px]", "[20px:n][200px,grow][]"));
 		
 		getContentPane().add(idPanel, "cell 0 0,grow");
 		
