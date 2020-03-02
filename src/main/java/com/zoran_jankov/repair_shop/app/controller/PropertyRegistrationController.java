@@ -35,7 +35,7 @@ public class PropertyRegistrationController extends InputDialogController
 		String name = propertyGUI.getPropertyPanel().getPropertyName();
 		
 		return !("".equals(name)
-			  || DataManager.clientsDataTable.displayNameCollision(name));
+			  || DataManager.accessData().getDataTable(entityType).displayNameCollision(name));
 	}
 
 	@Override

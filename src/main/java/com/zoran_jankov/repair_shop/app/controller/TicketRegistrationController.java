@@ -74,7 +74,7 @@ public class TicketRegistrationController extends InputDialogController
 	
 	private void setClientDetails()
 	{
-		Customer selectedClient = (Customer) DataManager.getEntity(EntityType.CUSTOMER, ticketGUI.getClient());
+		Customer selectedClient = (Customer) DataManager.accessData().getEntity(EntityType.CUSTOMER, ticketGUI.getClient());
 		
 		ticketGUI.getClientPanel()
 				 .setEntityDetails("<html>" 

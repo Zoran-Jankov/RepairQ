@@ -78,13 +78,13 @@ public class ModelRegistrationController extends InputDialogController
 		String name = modelGUI.getPropertyPanel().getPropertyName();
 		
 		return !("".equals(name) 
-			  || DataManager.modelsDataTable.displayNameCollision(name));
+			  || DataManager.accessData().getDataTable(entityType).displayNameCollision(name));
 	}
 	
 	@Override
 	protected void getInput()
 	{
-		newModel.setPropertyName(modelGUI.getPropertyPanel().getPropertyName());
+		newModel.setBrand((modelGUI.getPropertyPanel().getPropertyName()));
 		
 		newModel.setDescription(modelGUI.getPropertyPanel().getDescription());
 		
