@@ -1,5 +1,6 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
@@ -15,8 +16,11 @@ import main.java.com.zoran_jankov.repair_shop.data.component.PersonalInfo;
 @Entity
 public class Customer extends AbstractEntity
 {
+	@Embedded
 	private PersonalInfo personalInfo;
+	@Embedded
 	private ContactInfo contactInfo;
+	@Embedded
 	private CompanyInfo companyInfo;
 	
 	@Override
