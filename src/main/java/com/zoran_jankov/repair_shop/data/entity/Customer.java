@@ -1,23 +1,23 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Entity;
+
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.CompanyInfo;
 import main.java.com.zoran_jankov.repair_shop.data.component.ContactInfo;
 import main.java.com.zoran_jankov.repair_shop.data.component.PersonalInfo;
-import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
-import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReferenceMap;
 
 /** 
  * Class Client represents a client 
  * with associated information about that client.
  * @author Zoran Jankov
  */
+@Entity
 public class Customer extends AbstractEntity
 {
 	private PersonalInfo personalInfo;
 	private ContactInfo contactInfo;
 	private CompanyInfo companyInfo;
-	private SingleReferenceMap referenceMap = new SingleReferenceMap();
 	
 	@Override
 	public final EntityType getType()
@@ -53,12 +53,6 @@ public class Customer extends AbstractEntity
 	public void setCompanyInfo(CompanyInfo companyInfo)
 	{
 		this.companyInfo = companyInfo;
-	}
-	
-	@Override
-	public EntityReferenceMap getReferenceMap()
-	{
-		return (EntityReferenceMap) referenceMap;
 	}
 	
 	@Override

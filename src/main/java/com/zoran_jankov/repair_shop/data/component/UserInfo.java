@@ -1,7 +1,10 @@
 package main.java.com.zoran_jankov.repair_shop.data.component;
 
+import javax.persistence.Embeddable;
+
 import main.java.com.zoran_jankov.repair_shop.data.UserType;
 
+@Embeddable
 public class UserInfo
 {
 	private UserType userType;

@@ -1,7 +1,10 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Entity;
+
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 
+@Entity
 public class Service extends AbstractEntity
 {
 	private int price;
@@ -53,16 +56,5 @@ public class Service extends AbstractEntity
 	public void setServiceType(ServiceType serviceType)
 	{
 		this.serviceType = serviceType;
-	}
-	
-	@Override
-	public void createReferences()
-	{
-		serviceType.addReference(this);
-	}
-	
-	public void deleteReferences()
-	{
-		serviceType.removeReference(this.getId());
 	}
 }

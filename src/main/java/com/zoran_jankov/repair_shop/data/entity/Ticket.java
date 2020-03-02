@@ -1,9 +1,12 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Entity;
+
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.NotificationType;
 import main.java.com.zoran_jankov.repair_shop.data.Priority;
 
+@Entity
 public class Ticket extends AbstractEntity
 {
 	private Priority priority;
@@ -55,21 +58,5 @@ public class Ticket extends AbstractEntity
 	public void setDevice(Device device)
 	{
 		this.device = device;
-	}
-	
-	@Override
-	public void createReferences()
-	{
-		customer.addTicketReferencingCustomer(this);
-		device.addTicketReferencingDevice(this);
-		status.addReference(this);
-	}
-	
-	@Override
-	public void deleteReferences()
-	{
-		customer.removeTicketReferencingCustomer(this.getId());
-		device.removeTicketReferencingDevice(this.getId());
-		status.removeReference(EntityType.TICKET, this.getId());
 	}
 }

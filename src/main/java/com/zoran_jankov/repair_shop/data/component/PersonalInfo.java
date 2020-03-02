@@ -1,5 +1,7 @@
 package main.java.com.zoran_jankov.repair_shop.data.component;
 
+import javax.persistence.Embeddable;
+
 /**
  * The abstract class Person is a abstract entity data class 
  * that represents personal information about a person.
@@ -7,6 +9,7 @@ package main.java.com.zoran_jankov.repair_shop.data.component;
  * @author Zoran Jankov
  * @version 1.8
  */
+@Embeddable
 public class PersonalInfo
 {
 	private String firstName;

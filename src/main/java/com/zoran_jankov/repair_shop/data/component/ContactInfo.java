@@ -1,5 +1,8 @@
 package main.java.com.zoran_jankov.repair_shop.data.component;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class ContactInfo
 {
 	/**

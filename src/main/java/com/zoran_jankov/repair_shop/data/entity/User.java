@@ -1,5 +1,7 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Entity;
+
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.ContactInfo;
 import main.java.com.zoran_jankov.repair_shop.data.component.PersonalInfo;
@@ -11,7 +13,7 @@ import main.java.com.zoran_jankov.repair_shop.data.component.UserInfo;
  * @author Zoran Jankov
  * @version 1.2
  */
-
+@Entity
 public class User extends AbstractEntity
 {
 	private PersonalInfo personalInfo;

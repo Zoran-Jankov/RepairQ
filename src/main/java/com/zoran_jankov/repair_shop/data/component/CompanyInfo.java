@@ -1,5 +1,7 @@
 package main.java.com.zoran_jankov.repair_shop.data.component;
 
+import javax.persistence.Embeddable;
+
 /**
  * Class CompanyInfo is a component of the Client class that is used 
  * to store data about a client if that is a company, legal entity.
@@ -8,6 +10,7 @@ package main.java.com.zoran_jankov.repair_shop.data.component;
  * 
  * @author Zoran Jankov
  */
+@Embeddable
 public class CompanyInfo
 {
 	private String taxIDNumber;

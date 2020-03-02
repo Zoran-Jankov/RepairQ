@@ -1,8 +1,8 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Entity;
+
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
-import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReferenceMap;
 
 /** 
  * Class Device inherits AbstractEntity class, and represents a device with
@@ -20,11 +20,11 @@ import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReferenceMap;
  * <p>			
  * @author Zoran Jankov
  */
+@Entity
 public class Device extends AbstractEntity
 {
 	private Model model;
 	private String serial;
-	private SingleReferenceMap reference;
 	
 	@Override
 	public EntityType getType()
@@ -66,23 +66,5 @@ public class Device extends AbstractEntity
 	public void setSerial(String serial)
 	{
 		this.serial = serial;
-	}
-
-	@Override
-	public EntityReferenceMap getReferenceMap()
-	{
-		return reference;
-	}
-	
-	@Override
-	public void createReferences()
-	{
-		model.getReferenceMap().addReference(this);
-	}
-	
-	@Override
-	public void deleteReferences()
-	{
-		model.getReferenceMap().removeReference(this.getId());
 	}
 }

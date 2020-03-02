@@ -1,5 +1,7 @@
 package main.java.com.zoran_jankov.repair_shop.data.component;
 
+import javax.persistence.Embeddable;
+
 /** 
  * Class BasicInfo represents a basic information of various entity classes.
  * 
@@ -7,7 +9,7 @@ package main.java.com.zoran_jankov.repair_shop.data.component;
  * @version 1.2
  * @since 2019-10-15
  */
-
+@Embeddable
 public class BasicInfo
 {
 	private String name;

@@ -1,26 +1,28 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
-import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
-import main.java.com.zoran_jankov.repair_shop.data.reference.SingleReferenceMap;
 
 /**
  * Class Brand represents a device brand.
  * 
  * @author Zoran Jankov
  */
+@Entity
 public class Brand extends AbstractEntity
 {
+	@Embedded
 	private BasicInfo brand;
-	private SingleReferenceMap reference = new SingleReferenceMap();
 	
 	@Override
 	public final EntityType getType()
 	{
 		return EntityType.BRAND;
 	}
-	
+
 	public BasicInfo getBrand()
 	{
 		return brand;
@@ -29,12 +31,6 @@ public class Brand extends AbstractEntity
 	public void setBrand(BasicInfo brand)
 	{
 		this.brand = brand;
-	}
-	
-	@Override
-	public EntityReferenceMap getReferenceMap()
-	{
-		return (EntityReferenceMap) reference;
 	}
 	
 	@Override

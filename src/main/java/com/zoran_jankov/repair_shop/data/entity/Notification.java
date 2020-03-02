@@ -2,10 +2,12 @@ package main.java.com.zoran_jankov.repair_shop.data.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.NotificationType;
-import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
 
+@Entity
 public class Notification extends AbstractEntity
 {
 	private NotificationType notificationType;
@@ -68,27 +70,5 @@ public class Notification extends AbstractEntity
 	public void setComment(String notification)
 	{
 		this.comment = notification;
-	}
-	
-	@Override
-	public void createReferences()
-	{
-		notificationType.addReference(this);
-		ticket.addReference(this);
-		user.addReference(this);
-	}
-	
-	@Override
-	public void deleteReferences()
-	{
-		notificationType.removeReference(EntityType.NOTIFICATION, this.getId());
-		ticket.removeReference(this.getId());
-		user.removeReference(this.getId());
-	}
-
-	@Override
-	public EntityReferenceMap getReferenceMap() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

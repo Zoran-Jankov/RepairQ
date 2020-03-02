@@ -1,9 +1,9 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Entity;
+
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
-import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
-import main.java.com.zoran_jankov.repair_shop.data.reference.ModelReferenceMap;
 
 /** 
  * Class Model extends class GeneralProperty and represents 
@@ -26,12 +26,12 @@ import main.java.com.zoran_jankov.repair_shop.data.reference.ModelReferenceMap;
  * <p>	
  * @author Zoran Jankov
  */
+@Entity
 public class Model extends AbstractEntity
 {
 	private DeviceType deviceType;
 	private Brand brand;
 	private BasicInfo model;
-	private ModelReferenceMap referenceMap = new ModelReferenceMap();
 	
 	@Override
 	public final EntityType getType()
@@ -83,26 +83,6 @@ public class Model extends AbstractEntity
 	public void setModel(BasicInfo model)
 	{
 		this.model = model;
-	}
-	
-	@Override
-	public EntityReferenceMap getReferenceMap()
-	{
-		return referenceMap;
-	}
-	
-	@Override
-	public void createReferences()
-	{
-		deviceType.getReferenceMap().addReference(this);
-		brand.getReferenceMap().addReference(this);
-	}
-	
-	@Override
-	public void deleteReferences()
-	{
-		deviceType.getReferenceMap().removeReference(this.getId());
-		brand.getReferenceMap().removeReference(this.getId());
 	}
 	
 	@Override

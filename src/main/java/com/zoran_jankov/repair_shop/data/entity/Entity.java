@@ -1,7 +1,6 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.reference.EntityReferenceMap;
 
 /**
  * Interface for all entities in the data structure.
@@ -23,18 +22,6 @@ public interface Entity
 	 * @param (int) id - Data element ID number.
 	 */
 	public void setId(int id);
-	
-	public EntityReferenceMap getReferenceMap();
-	
-	/**
-	 * Adds references in the entities that are referenced in this entity.
-	 */
-	public void createReferences();
-	
-	/**
-	 * Removes references in the entities that are referenced in this entity.
-	 */
-	public void deleteReferences();
 	
 	/**
 	 * Getter for entity display name used in user interface.

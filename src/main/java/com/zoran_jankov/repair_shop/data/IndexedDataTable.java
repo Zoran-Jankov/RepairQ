@@ -70,11 +70,6 @@ public class IndexedDataTable implements IndexedData
 		{
 			displayNameMap.put(newEntity.getDisplayName(), newEntity);
 		}
-		
-		if(EntityType.makesReferences(newEntity))
-		{
-			newEntity.createReferences();
-		}
 	}
 	
 	@Override
@@ -85,11 +80,6 @@ public class IndexedDataTable implements IndexedData
 		if(EntityType.hasDisplayName(newEntity))
 		{
 			displayNameMap.remove(newEntity.getDisplayName());
-		}
-		
-		if(EntityType.makesReferences(newEntity))
-		{
-			newEntity.deleteReferences();
 		}
 	}
 }

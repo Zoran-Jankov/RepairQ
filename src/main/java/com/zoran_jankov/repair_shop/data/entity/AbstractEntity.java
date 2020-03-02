@@ -36,21 +36,4 @@ public abstract class AbstractEntity implements Entity
 	{
 		return IDGenerator.toString(getType(), id);
 	}
-	
-	@Override
-	public void createReferences()
-	{
-		methodNotSupported();
-	}
-	
-	@Override
-	public void deleteReferences()
-	{
-		methodNotSupported();
-	}
-	
-	private void methodNotSupported()
-	{
-		throw new UnsupportedOperationException(this.getClass().getName() + " class does not support this method");
-	}
 }
