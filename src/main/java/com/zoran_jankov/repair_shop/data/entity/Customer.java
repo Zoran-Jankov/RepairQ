@@ -2,6 +2,7 @@ package main.java.com.zoran_jankov.repair_shop.data.entity;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.embeddable.CompanyInfo;
@@ -14,6 +15,7 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.PersonalInfo;
  * @author Zoran Jankov
  */
 @Entity
+@Table(name = "customer")
 public class Customer extends AbstractEntity
 {
 	@Embedded

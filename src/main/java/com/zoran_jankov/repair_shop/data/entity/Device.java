@@ -1,6 +1,11 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 
@@ -21,9 +26,14 @@ import main.java.com.zoran_jankov.repair_shop.data.EntityType;
  * @author Zoran Jankov
  */
 @Entity
+@Table(name = "device")
 public class Device extends AbstractEntity
 {
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="id", nullable=false)
 	private Model model;
+	
+	@Column(name = "serial")
 	private String serial;
 	
 	@Override
