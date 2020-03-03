@@ -3,9 +3,9 @@ package main.java.com.zoran_jankov.repair_shop.data.entity;
 import javax.persistence.Entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.component.ContactInfo;
-import main.java.com.zoran_jankov.repair_shop.data.component.PersonalInfo;
-import main.java.com.zoran_jankov.repair_shop.data.component.UserInfo;
+import main.java.com.zoran_jankov.repair_shop.data.embeddable.ContactInfo;
+import main.java.com.zoran_jankov.repair_shop.data.embeddable.PersonalInfo;
+import main.java.com.zoran_jankov.repair_shop.data.embeddable.UserInfo;
 
 /** 
  * Class User represents a employee with associated information about that employee.

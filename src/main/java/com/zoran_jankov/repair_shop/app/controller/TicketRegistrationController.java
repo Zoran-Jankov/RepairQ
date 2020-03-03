@@ -79,7 +79,7 @@ public class TicketRegistrationController extends InputDialogController
 		ticketGUI.getClientPanel()
 				 .setEntityDetails("<html>" 
 						 + selectedClient.getFullName() + "<br>"
-						 + selectedClient.getPrimePhoneNumber() + "<br>"
+						 + selectedClient.getPhoneNumber() + "<br>"
 						 + selectedClient.getAlternativePhoneNumber() + "<br>"
 						 + selectedClient.getEmail() + "<br>"
 						 + selectedClient.getAddress() + "</html>");

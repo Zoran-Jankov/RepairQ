@@ -4,7 +4,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
+import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 
 /**
  * Class Brand represents a device brand.

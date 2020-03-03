@@ -1,5 +1,6 @@
-package main.java.com.zoran_jankov.repair_shop.data.component;
+package main.java.com.zoran_jankov.repair_shop.data.embeddable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 /** 
@@ -12,14 +13,11 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class BasicInfo
 {
+	@Column(name = "name")
 	private String name;
-	private String description;
 	
-	public BasicInfo(String name, String description)
-	{
-		this.name = name;
-		this.description = description;
-	}
+	@Column(name = "description")
+	private String description;
 	
 	/**
 	 * Getter for general property name.

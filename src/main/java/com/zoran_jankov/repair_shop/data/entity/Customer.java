@@ -4,9 +4,9 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.component.CompanyInfo;
-import main.java.com.zoran_jankov.repair_shop.data.component.ContactInfo;
-import main.java.com.zoran_jankov.repair_shop.data.component.PersonalInfo;
+import main.java.com.zoran_jankov.repair_shop.data.embeddable.CompanyInfo;
+import main.java.com.zoran_jankov.repair_shop.data.embeddable.ContactInfo;
+import main.java.com.zoran_jankov.repair_shop.data.embeddable.PersonalInfo;
 
 /** 
  * Class Client represents a client 

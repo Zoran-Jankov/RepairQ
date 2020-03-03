@@ -1,5 +1,6 @@
-package main.java.com.zoran_jankov.repair_shop.data.component;
+package main.java.com.zoran_jankov.repair_shop.data.embeddable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 /**
@@ -12,14 +13,11 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class PersonalInfo
 {
+	@Column(name = "first _name")
 	private String firstName;
-	private String lastName;
 	
-	public PersonalInfo(String firstName, String lastName)
-	{
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
+	@Column(name = "last_name")
+	private String lastName;
 	
 	public String getFirstName()
 	{

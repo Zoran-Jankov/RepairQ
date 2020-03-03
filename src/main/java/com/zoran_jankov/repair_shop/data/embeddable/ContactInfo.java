@@ -1,41 +1,36 @@
-package main.java.com.zoran_jankov.repair_shop.data.component;
+package main.java.com.zoran_jankov.repair_shop.data.embeddable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class ContactInfo
 {
-	/**
-	 * Person's primary phone number
-	 */
-	private String primePhoneNumber;
+	@Column(name = "phone_number")
+	private String phoneNumber;
 	
-	/**
-	 * Person's email address
-	 */
+	@Column(name = "email")
 	private String email;
 	
-	/**
-	 * Person's home address
-	 */
+	@Column(name = "address")
 	private String address;
 	
 	/**
 	 * Getter for person's primary phone number.
 	 * @return (String) Person's primary phone number.
 	 */
-	public String getPrimePhoneNumber()
+	public String getPhoneNumber()
 	{
-		return primePhoneNumber;
+		return phoneNumber;
 	}
 	
 	/**
 	 * Setter for person's primary phone number.
 	 * @param (String) primePhoneNum - Person's primary phone number.
 	 */
-	public void setPrimePhoneNumber(String primePhoneNumber)
+	public void setPrimePhoneNumber(String phoneNumber)
 	{
-		this.primePhoneNumber = primePhoneNumber;
+		this.phoneNumber = phoneNumber;
 	}
 	
 	/**

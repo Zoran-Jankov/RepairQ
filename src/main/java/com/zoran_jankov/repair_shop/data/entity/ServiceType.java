@@ -3,7 +3,7 @@ package main.java.com.zoran_jankov.repair_shop.data.entity;
 import javax.persistence.Entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.component.BasicInfo;
+import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 
 /**
  * Class ServiceType extends abstract class Property and represents

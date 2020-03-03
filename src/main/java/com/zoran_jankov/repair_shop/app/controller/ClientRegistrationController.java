@@ -52,7 +52,7 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		return clientGUI.getPersonalInfoPanel().getPersonName() 
 			 + " "
-			 + clientGUI.getPersonalInfoPanel().getPrimePhoneNumber();
+			 + clientGUI.getPersonalInfoPanel().getPhoneNumber();
 	}
 	
 	private boolean isNameValid( )
@@ -62,7 +62,7 @@ public class ClientRegistrationController extends InputDialogController
 	
 	private boolean isPhoneNumberValid()
 	{
-		return !("".equals(clientGUI.getPersonalInfoPanel().getPrimePhoneNumber()));
+		return !("".equals(clientGUI.getPersonalInfoPanel().getPhoneNumber()));
 	}
 
 	private boolean isMarketingSelected()
@@ -75,7 +75,7 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		newClient.setFullName(clientGUI.getPersonalInfoPanel().getPersonName());
 		
-		newClient.setPrimePhoneNumber(clientGUI.getPersonalInfoPanel().getPrimePhoneNumber());
+		newClient.setPrimePhoneNumber(clientGUI.getPersonalInfoPanel().getPhoneNumber());
 		
 		newClient.setAlternativePhoneNumber(clientGUI.getPersonalInfoPanel().getAltPoneNumber());
 		

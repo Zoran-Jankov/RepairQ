@@ -1,5 +1,6 @@
-package main.java.com.zoran_jankov.repair_shop.data.component;
+package main.java.com.zoran_jankov.repair_shop.data.embeddable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 /**
@@ -13,13 +14,31 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class CompanyInfo
 {
+	@Column(name = "company_name")
+	private String companyName;
+	
+	@Column(name = "tax_id")
 	private String taxIDNumber;
+	
+	@Column(name = "bank_account")
 	private String bankAccount;
 	
-	public CompanyInfo(String taxIDNumber, String bankAccount)
+	/**
+	 * Getter for the name of this legal entity.
+	 * @return (String) Company name
+	 */
+	public String getCompanyName()
 	{
-		this.taxIDNumber = taxIDNumber;
-		this.bankAccount = bankAccount;
+		return companyName;
+	}
+
+	/**
+	 * Setter for the name of this legal entity.
+	 * @param companyName - Company name
+	 */
+	public void setCompanyName(String companyName)
+	{
+		this.companyName = companyName;
 	}
 	
 	/**
