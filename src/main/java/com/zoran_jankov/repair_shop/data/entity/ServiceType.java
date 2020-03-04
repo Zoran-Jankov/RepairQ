@@ -1,5 +1,7 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
@@ -14,7 +16,10 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 @Entity
 public class ServiceType extends AbstractEntity
 {
+	@Embedded
 	private BasicInfo serviceType;
+	
+	@Column(name = "default_price")
 	private int defaultPrice;
 	
 	/**

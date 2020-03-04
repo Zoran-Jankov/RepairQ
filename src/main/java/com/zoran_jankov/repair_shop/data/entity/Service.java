@@ -1,15 +1,30 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 
 @Entity
 public class Service extends AbstractEntity
 {
+	@Column(name = "price")
 	private int price;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id")
 	private Notification notification;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id")
 	private Ticket ticket;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id")
 	private ServiceType serviceType;
 	
 	public double getPrice()
