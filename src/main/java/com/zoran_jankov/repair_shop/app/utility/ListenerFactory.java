@@ -2,9 +2,9 @@ package main.java.com.zoran_jankov.repair_shop.app.utility;
 
 import java.awt.event.ActionListener;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.InputDialogController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.LoginDialogController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.WindowController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.InputDialogController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.LoginDialogController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.WindowController;
 import main.java.com.zoran_jankov.repair_shop.app.listener.CloseWindow;
 import main.java.com.zoran_jankov.repair_shop.app.listener.Login;
 import main.java.com.zoran_jankov.repair_shop.app.listener.OpenWindow;

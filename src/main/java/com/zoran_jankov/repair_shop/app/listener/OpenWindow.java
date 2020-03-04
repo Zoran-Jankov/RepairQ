@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.WindowController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.WindowController;
 import main.java.com.zoran_jankov.repair_shop.app.utility.DialogClontrollerFactory;
 import main.java.com.zoran_jankov.repair_shop.app.utility.WindowControllerFactory;
 import main.java.com.zoran_jankov.repair_shop.app.utility.WindowTag;

@@ -1,4 +1,4 @@
-package main.java.com.zoran_jankov.repair_shop.app.controller;
+package main.java.com.zoran_jankov.repair_shop.app.controller.dialog;
 
 import main.java.com.zoran_jankov.repair_shop.app.utility.ComboBoxModelManager;
 import main.java.com.zoran_jankov.repair_shop.app.utility.ListenerFactory;

@@ -3,7 +3,7 @@ package main.java.com.zoran_jankov.repair_shop.app.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.LoginDialogController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.LoginDialogController;
 
 /**
  * ActionListener for login action.

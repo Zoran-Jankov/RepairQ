@@ -3,8 +3,8 @@ package main.java.com.zoran_jankov.repair_shop.app.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.InputDialogController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.TicketRegistrationController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.InputDialogController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.TicketRegistrationController;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 
 public class UpdateEntityDetails implements ActionListener

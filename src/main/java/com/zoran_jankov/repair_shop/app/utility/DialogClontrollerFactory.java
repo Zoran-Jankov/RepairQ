@@ -1,12 +1,12 @@
 package main.java.com.zoran_jankov.repair_shop.app.utility;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.ClientRegistrationController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.DeviceRegistrationController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.InputDialogController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.ModelRegistrationController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.PropertyRegistrationController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.TicketRegistrationController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.WindowController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.ClientRegistrationController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.DeviceRegistrationController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.InputDialogController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.ModelRegistrationController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.PropertyRegistrationController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.TicketRegistrationController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.WindowController;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
 
