@@ -166,7 +166,7 @@ public class TicketRegistrationController extends InputDialogController
 	{
 		Notification opendTicket = new Notification();
 		
-		opendTicket.setNotificationType(NotificationType.OPEND);
+		opendTicket.setStatus(NotificationType.OPEND);
 		opendTicket.setTicket(newTicket);
 		opendTicket.setUser(DataManager.logedinUser);
 		opendTicket.setDate(LocalDate.now());

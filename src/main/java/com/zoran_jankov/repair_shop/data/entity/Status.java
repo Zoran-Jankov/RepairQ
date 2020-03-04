@@ -16,12 +16,12 @@ public class Status extends AbstractEntity
 		return EntityType.NOTIFICATION;
 	}
 
-	public BasicInfo getNotificationType()
+	public BasicInfo getStatus()
 	{
 		return status;
 	}
 
-	public void setNotificationType(BasicInfo status)
+	public void setStatus(BasicInfo status)
 	{
 		this.status = status;
 	}
