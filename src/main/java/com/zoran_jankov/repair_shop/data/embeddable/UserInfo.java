@@ -2,13 +2,15 @@ package main.java.com.zoran_jankov.repair_shop.data.embeddable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import main.java.com.zoran_jankov.repair_shop.data.UserType;
 
 @Embeddable
 public class UserInfo
 {
-	@Column(name = "userType")
+	@Enumerated(EnumType.ORDINAL)
 	private UserType userType;
 	
 	@Column(name = "username")
