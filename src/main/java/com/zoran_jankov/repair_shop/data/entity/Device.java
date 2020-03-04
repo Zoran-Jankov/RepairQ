@@ -30,7 +30,7 @@ import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 public class Device extends AbstractEntity
 {
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="id", nullable=false)
+	@JoinColumn(name = "id", nullable = false)
 	private Model model;
 	
 	@Column(name = "serial")
