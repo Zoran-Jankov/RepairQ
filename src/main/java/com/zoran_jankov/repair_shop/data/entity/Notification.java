@@ -7,10 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 
 @Entity
+@Table(name = "notification")
 public class Notification extends AbstractEntity
 {
 	@ManyToOne(fetch = FetchType.LAZY)

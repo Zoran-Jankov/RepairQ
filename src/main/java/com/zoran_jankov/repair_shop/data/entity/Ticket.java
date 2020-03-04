@@ -5,11 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.Priority;
 
 @Entity
+@Table(name = "ticket")
 public class Ticket extends AbstractEntity
 {
 	@Column(name = "priority")
