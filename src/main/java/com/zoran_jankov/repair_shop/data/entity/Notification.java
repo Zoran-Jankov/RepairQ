@@ -1,6 +1,6 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +26,7 @@ public class Notification extends AbstractEntity
 	private User user;
 	
 	@Column(name = "timestamp")
-	private LocalDate timestamp;
+	private LocalDateTime timestamp;
 	
 	@Column(name = "comment")
 	private String comment;
@@ -67,14 +67,14 @@ public class Notification extends AbstractEntity
 		this.user = user;
 	}
 	
-	public LocalDate getDate()
+	public LocalDateTime getDate()
 	{
 		return timestamp;
 	}
 	
-	public void setDate(LocalDate localDate)
+	public void setDate(LocalDateTime timestamp)
 	{
-		this.timestamp = localDate;
+		this.timestamp = timestamp;
 	}
 	
 	public String getComment()
