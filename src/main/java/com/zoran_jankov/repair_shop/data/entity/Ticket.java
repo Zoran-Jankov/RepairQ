@@ -1,6 +1,10 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.Priority;
@@ -8,9 +12,19 @@ import main.java.com.zoran_jankov.repair_shop.data.Priority;
 @Entity
 public class Ticket extends AbstractEntity
 {
+	@Column(name = "priority")
 	private Priority priority;
-	private NotificationType status;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id", nullable = false)
+	private Status status;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id", nullable = false)
 	private Customer customer;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id", nullable = false)
 	private Device device;
 	
 	@Override
@@ -29,12 +43,12 @@ public class Ticket extends AbstractEntity
 		this.priority = priority;
 	}
 	
-	public NotificationType getStatus()
+	public Status getStatus()
 	{
 		return status;
 	}
 
-	public void setStatus(NotificationType status)
+	public void setStatus(Status status)
 	{
 		this.status = status;
 	}
