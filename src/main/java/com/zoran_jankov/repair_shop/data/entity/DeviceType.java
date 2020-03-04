@@ -38,6 +38,6 @@ public class DeviceType extends AbstractEntity
 	@Override
 	public String getDisplayName()
 	{
-		return deviceType.getPropertyName();
+		return deviceType.getName();
 	}
 }

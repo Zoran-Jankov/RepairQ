@@ -38,6 +38,6 @@ public class Brand extends AbstractEntity
 	@Override
 	public String getDisplayName()
 	{
-		return brand.getPropertyName();
+		return brand.getName();
 	}
 }

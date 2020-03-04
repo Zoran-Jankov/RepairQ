@@ -7,12 +7,12 @@ import main.java.com.zoran_jankov.repair_shop.app.utility.IDGenerator;
 import main.java.com.zoran_jankov.repair_shop.app.utility.ListenerFactory;
 import main.java.com.zoran_jankov.repair_shop.data.DataManager;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.NotificationType;
 import main.java.com.zoran_jankov.repair_shop.data.Priority;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Customer;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Device;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Notification;
+import main.java.com.zoran_jankov.repair_shop.data.entity.NotificationType;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Ticket;
 import main.java.com.zoran_jankov.repair_shop.gui.dialog.TicketRegistrationDialog;
 import main.java.com.zoran_jankov.repair_shop.gui.text.ButtonName;
@@ -118,9 +118,9 @@ public class TicketRegistrationController extends InputDialogController
 
 		ticketGUI.getDevicePanel()
 				 .setEntityDetails("<html>" 
-						 + selectedDevice.getModel().getDeviceType().getPropertyName() + "<br>"
-						 + selectedDevice.getModel().getBrand().getPropertyName() + "<br>"
-						 + selectedDevice.getModel().getPropertyName() + "<br>"
+						 + selectedDevice.getModel().getDeviceType().getName() + "<br>"
+						 + selectedDevice.getModel().getBrand().getName() + "<br>"
+						 + selectedDevice.getModel().getName() + "<br>"
 						 + selectedDevice.getSerial() + "</html>");
 	}
 	

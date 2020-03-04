@@ -41,7 +41,7 @@ public class PropertyRegistrationController extends InputDialogController
 	@Override
 	protected void getInput()
 	{
-		newProperty.setPropertyName(propertyGUI.getPropertyPanel().getPropertyName());
+		newProperty.setName(propertyGUI.getPropertyPanel().getPropertyName());
 		
 		newProperty.setDescription(propertyGUI.getPropertyPanel().getDescription());
 	}

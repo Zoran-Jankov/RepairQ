@@ -23,7 +23,7 @@ public class BasicInfo
 	 * Getter for general property name.
 	 * @return General property name.
 	 */
-	public String getPropertyName()
+	public String getName()
 	{
 		return name;
 	}
@@ -32,7 +32,7 @@ public class BasicInfo
 	 * Setter for general property name.
 	 * @param name - General property name.
 	 */
-	public void setPropertyName(String name)
+	public void setName(String name)
 	{
 		this.name = name;
 	}

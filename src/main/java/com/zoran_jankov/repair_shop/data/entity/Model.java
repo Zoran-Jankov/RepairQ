@@ -2,40 +2,30 @@ package main.java.com.zoran_jankov.repair_shop.data.entity;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 
 /** 
- * Class Model extends class GeneralProperty and represents 
- * a device model with associated information about that model.
- * <p>
- * Inherits fields:
- * <p>
- * (int) ID number - must be unique
- * <p>
- * (String) Model name - must be unique
- * <p>
- * (String) Model description
- * <p>
- * 
- * Has fields are:
- * <p>
- * (Property) Model device type
- * <p>
- * (Property) Model manufacturer
- * <p>	
+ * Class Model represents a device model with associated 
+ * information about that model.
+ *
  * @author Zoran Jankov
  */
 @Entity
 @Table(name = "model")
 public class Model extends AbstractEntity
 {
-	@Embedded
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id", nullable = false)
 	private DeviceType deviceType;
 	
-	@Embedded
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id", nullable = false)
 	private Brand brand;
 	
 	@Embedded
@@ -96,6 +86,6 @@ public class Model extends AbstractEntity
 	@Override
 	public String getDisplayName()
 	{
-		return model.getPropertyName();
+		return model.getName();
 	}
 }
