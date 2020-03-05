@@ -10,7 +10,7 @@ import javax.persistence.TemporalType;
 import main.java.com.zoran_jankov.repair_shop.data.entity.User;
 
 @Embeddable
-public class UserInputData
+public class CreationInfo
 {
 	@Column(name = "user")
 	private

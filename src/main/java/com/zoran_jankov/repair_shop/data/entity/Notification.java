@@ -1,8 +1,7 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -10,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
+import main.java.com.zoran_jankov.repair_shop.data.embeddable.CreationInfo;
 
 @Entity
 @Table(name = "notification")
@@ -23,12 +23,8 @@ public class Notification extends AbstractEntity
 	@JoinColumn(name = "id", nullable = false)
 	private Ticket ticket;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
-	private User user;
-	
-	@Column(name = "timestamp")
-	private LocalDateTime timestamp;
+	@Embedded
+	private CreationInfo crationInfo;
 	
 	@Column(name = "comment")
 	private String comment;
@@ -59,26 +55,6 @@ public class Notification extends AbstractEntity
 		this.ticket = ticket;
 	}
 	
-	public User getUser()
-	{
-		return user;
-	}
-	
-	public void setUser(User user)
-	{
-		this.user = user;
-	}
-	
-	public LocalDateTime getDate()
-	{
-		return timestamp;
-	}
-	
-	public void setDate(LocalDateTime timestamp)
-	{
-		this.timestamp = timestamp;
-	}
-	
 	public String getComment()
 	{
 		return comment;
@@ -87,5 +63,15 @@ public class Notification extends AbstractEntity
 	public void setComment(String notification)
 	{
 		this.comment = notification;
+	}
+
+	public CreationInfo getCrationInfo()
+	{
+		return crationInfo;
+	}
+
+	public void setCrationInfo(CreationInfo crationInfo)
+	{
+		this.crationInfo = crationInfo;
 	}
 }
