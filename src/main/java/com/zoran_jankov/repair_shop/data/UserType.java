@@ -5,5 +5,5 @@ public enum UserType
 	FRONT_DESK,
 	REPAIR_TECHNICIAN,
 	MANAGER,
-	ADMINISTRATOR;
+	ADMIN;
 }
