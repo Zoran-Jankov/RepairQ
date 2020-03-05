@@ -1,5 +1,9 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 import main.java.com.zoran_jankov.repair_shop.app.utility.IDGenerator;
 
 /** 
@@ -17,6 +21,9 @@ import main.java.com.zoran_jankov.repair_shop.app.utility.IDGenerator;
  */
 public abstract class AbstractEntity implements Entity
 {
+	@Id
+	@GeneratedValue
+	@Column(name = "id", updatable = false, nullable = false)
 	private int id;
 	
 	@Override
