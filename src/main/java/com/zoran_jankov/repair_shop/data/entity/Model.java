@@ -1,6 +1,5 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -10,7 +9,6 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 
 /** 
  * Class Model represents a device model with associated 
@@ -22,7 +20,7 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "model")
-public class Model extends AbstractEntity
+public class Model extends BasicInfo
 {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id", nullable = false)
@@ -32,18 +30,9 @@ public class Model extends AbstractEntity
 	@JoinColumn(name = "id", nullable = false)
 	private Brand brand;
 	
-	@Embedded
-	private BasicInfo basicInfo;
-	
 	@Override
 	public final EntityType getType()
 	{
 		return EntityType.MODEL;
-	}
-	
-	@Override
-	public String getDisplayName()
-	{
-		return basicInfo.getName();
 	}
 }

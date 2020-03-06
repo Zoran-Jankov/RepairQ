@@ -1,32 +1,21 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "status")
-public class Status extends AbstractEntity
+public class Status extends BasicInfo
 {
-	@Embedded
-	private BasicInfo basicInfo;
-	
 	@Override
 	public EntityType getType()
 	{
 		return EntityType.NOTIFICATION;
-	}
-	
-	@Override
-	public String getDisplayName()
-	{
-		return basicInfo.getName();
 	}
 }

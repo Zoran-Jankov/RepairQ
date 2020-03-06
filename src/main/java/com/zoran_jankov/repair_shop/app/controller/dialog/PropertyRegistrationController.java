@@ -2,7 +2,7 @@ package main.java.com.zoran_jankov.repair_shop.app.controller.dialog;
 
 import main.java.com.zoran_jankov.repair_shop.data.DataManager;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
+import main.java.com.zoran_jankov.repair_shop.data.entity.BasicInfo;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
 import main.java.com.zoran_jankov.repair_shop.gui.dialog.PropertyRegistrationDialog;
 

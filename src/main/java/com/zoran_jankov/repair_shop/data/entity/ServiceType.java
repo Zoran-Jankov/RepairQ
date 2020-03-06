@@ -1,14 +1,12 @@
 package main.java.com.zoran_jankov.repair_shop.data.entity;
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 
 /**
  * Class ServiceType extends abstract class Property and represents
@@ -20,11 +18,8 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "service_type")
-public class ServiceType extends AbstractEntity
+public class ServiceType extends BasicInfo
 {
-	@Embedded
-	private BasicInfo basicInfo;
-	
 	@Column(name = "default_price")
 	private int defaultPrice;
 	
@@ -36,11 +31,5 @@ public class ServiceType extends AbstractEntity
 	public EntityType getType()
 	{
 		return EntityType.SERVICE_TYPE;
-	}
-	
-	@Override
-	public String getDisplayName()
-	{
-		return basicInfo.getName();
 	}
 }
