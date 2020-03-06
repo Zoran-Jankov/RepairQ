@@ -7,6 +7,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 
 /** 
@@ -25,6 +27,8 @@ import main.java.com.zoran_jankov.repair_shop.data.EntityType;
  * <p>			
  * @author Zoran Jankov
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "device")
 public class Device extends AbstractEntity
@@ -40,41 +44,5 @@ public class Device extends AbstractEntity
 	public EntityType getType()
 	{
 		return EntityType.DEVICE;
-	}
-	
-	/**
-	 * Getter for device model.
-	 * @return Device model.
-	 */
-	public Model getModel()
-	{
-		return model;
-	}
-	
-	/**
-	 * Setter for device model.
-	 * @param model - Device model.
-	 */
-	public void setModel(Model model)
-	{
-		this.model = model;
-	}
-	
-	/**
-	 * Getter for device serial number.
-	 * @return device serial number.
-	 */
-	public String getSerial()
-	{
-		return serial;
-	}
-	
-	/**
-	 * Setter for device serial number.
-	 * @param serial - Device serial number.
-	 */
-	public void setSerial(String serial)
-	{
-		this.serial = serial;
 	}
 }

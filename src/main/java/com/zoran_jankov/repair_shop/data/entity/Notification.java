@@ -8,9 +8,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.embeddable.CreationInfo;
-
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "notification")
 public class Notification extends AbstractEntity
@@ -33,45 +36,5 @@ public class Notification extends AbstractEntity
 	public EntityType getType()
 	{
 		return EntityType.NOTIFICATION;
-	}
-	
-	public NotificationType getNotificationType()
-	{
-		return notificationType;
-	}
-	
-	public void setNotificationType(NotificationType notificationType)
-	{
-		this.notificationType = notificationType;
-	}
-	
-	public Ticket getTicket()
-	{
-		return ticket;
-	}
-	
-	public void setTicket(Ticket ticket)
-	{
-		this.ticket = ticket;
-	}
-	
-	public String getComment()
-	{
-		return comment;
-	}
-	
-	public void setComment(String notification)
-	{
-		this.comment = notification;
-	}
-
-	public CreationInfo getCrationInfo()
-	{
-		return crationInfo;
-	}
-
-	public void setCrationInfo(CreationInfo crationInfo)
-	{
-		this.crationInfo = crationInfo;
 	}
 }

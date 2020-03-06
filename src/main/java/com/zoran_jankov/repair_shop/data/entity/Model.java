@@ -7,6 +7,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 
@@ -16,6 +18,8 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
  *
  * @author Zoran Jankov
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "model")
 public class Model extends AbstractEntity
@@ -29,7 +33,7 @@ public class Model extends AbstractEntity
 	private Brand brand;
 	
 	@Embedded
-	private BasicInfo model;
+	private BasicInfo basicInfo;
 	
 	@Override
 	public final EntityType getType()
@@ -37,55 +41,9 @@ public class Model extends AbstractEntity
 		return EntityType.MODEL;
 	}
 	
-	/**
-	 * Getter for model device type.
-	 * @return Model device type.
-	 */
-	public DeviceType getDeviceType()
-	{
-		return deviceType;
-	}
-	
-	/**
-	 * Setter for model device type.
-	 * @param deviceType - Model device type.
-	 */
-	public void setDeviceType(DeviceType deviceType)
-	{
-		this.deviceType = deviceType;
-	}
-	
-	/**
-	 * Getter for model manufacturer.
-	 * @return Model manufacturer.
-	 */
-	public Brand getBrand()
-	{
-		return brand;
-	}
-	
-	/**
-	 * Setter for model manufacturer.
-	 * @param brand - Model manufacturer.
-	 */
-	public void setBrand(Brand brand)
-	{
-		this.brand = brand;	
-	}
-	
-	public BasicInfo getModel()
-	{
-		return model;
-	}
-
-	public void setModel(BasicInfo model)
-	{
-		this.model = model;
-	}
-	
 	@Override
 	public String getDisplayName()
 	{
-		return model.getName();
+		return basicInfo.getName();
 	}
 }

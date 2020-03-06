@@ -4,6 +4,8 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 
@@ -12,32 +14,24 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
  * 
  * @author Zoran Jankov
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "brand")
 public class Brand extends AbstractEntity
 {
 	@Embedded
-	private BasicInfo brand;
+	private BasicInfo basicInfo;
 	
 	@Override
 	public final EntityType getType()
 	{
 		return EntityType.BRAND;
 	}
-
-	public BasicInfo getBrand()
-	{
-		return brand;
-	}
-	
-	public void setBrand(BasicInfo brand)
-	{
-		this.brand = brand;
-	}
 	
 	@Override
 	public String getDisplayName()
 	{
-		return brand.getName();
+		return basicInfo.getName();
 	}
 }

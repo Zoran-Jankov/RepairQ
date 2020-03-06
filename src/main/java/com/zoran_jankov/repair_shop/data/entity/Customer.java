@@ -4,6 +4,8 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.embeddable.CompanyInfo;
 import main.java.com.zoran_jankov.repair_shop.data.embeddable.ContactInfo;
@@ -14,6 +16,8 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.PersonalInfo;
  * with associated information about that client.
  * @author Zoran Jankov
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "customer")
 public class Customer extends AbstractEntity
@@ -29,36 +33,6 @@ public class Customer extends AbstractEntity
 	public final EntityType getType()
 	{
 		return EntityType.CUSTOMER;
-	}
-	
-	public PersonalInfo getPersonalInfo()
-	{
-		return personalInfo;
-	}
-
-	public void setPersonalInfo(PersonalInfo personalInfo)
-	{
-		this.personalInfo = personalInfo;
-	}
-
-	public ContactInfo getContactInfo()
-	{
-		return contactInfo;
-	}
-
-	public void setContactInfo(ContactInfo contactInfo)
-	{
-		this.contactInfo = contactInfo;
-	}
-	
-	public CompanyInfo getCompanyInfo()
-	{
-		return companyInfo;
-	}
-
-	public void setCompanyInfo(CompanyInfo companyInfo)
-	{
-		this.companyInfo = companyInfo;
 	}
 	
 	@Override
