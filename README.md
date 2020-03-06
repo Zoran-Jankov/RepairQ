@@ -1,5 +1,7 @@
 # Repair Shop Software
 
+<a href="https://stackexchange.com/users/12947676/zoran-jankov"><img src="https://stackexchange.com/users/flair/12947676.png" width="208" height="58" alt="profile for Zoran Jankov on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Zoran Jankov on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
+
 ### Description
 
 Repair Shop Software is a software application that is aimed for repair shop to track all business related things, from adding new tickets, registering customers, devices that are being repaired, repair parts inventory and more.
