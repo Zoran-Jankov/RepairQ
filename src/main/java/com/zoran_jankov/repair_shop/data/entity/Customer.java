@@ -17,7 +17,7 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.PersonalInfo;
  * @author Zoran Jankov
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "customer")
 public class Customer extends AbstractEntity

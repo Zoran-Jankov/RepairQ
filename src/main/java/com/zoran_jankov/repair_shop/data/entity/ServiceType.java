@@ -17,7 +17,7 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
  * @author Zoran Jankov
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "service_type")
 public class ServiceType extends AbstractEntity
