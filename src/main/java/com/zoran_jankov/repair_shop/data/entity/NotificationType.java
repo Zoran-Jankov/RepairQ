@@ -16,6 +16,6 @@ public class NotificationType extends BasicInfo
 	@Override
 	public EntityType getType()
 	{
-		return EntityType.NOTIFICATION;
+		return EntityType.NOTIFICATION_TYPE;
 	}
 }
