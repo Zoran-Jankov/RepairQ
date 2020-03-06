@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @Embeddable
 public class PersonalInfo
 {
-	@Column(name = "first _name")
+	@Column(name = "first_name")
 	private String firstName;
 	
 	@Column(name = "last_name")

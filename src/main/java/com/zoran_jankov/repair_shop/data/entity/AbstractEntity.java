@@ -3,8 +3,9 @@ package main.java.com.zoran_jankov.repair_shop.data.entity;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
-import main.java.com.zoran_jankov.repair_shop.app.utility.IDGenerator;
+import lombok.Data;
 
 /** 
  * Abstract class AbstractEntity represents a basic data entity, 
@@ -19,6 +20,8 @@ import main.java.com.zoran_jankov.repair_shop.app.utility.IDGenerator;
  * <p>
  * @author Zoran Jankov
  */
+@Data
+@MappedSuperclass
 public abstract class AbstractEntity implements Entity
 {
 	@Id
@@ -27,20 +30,8 @@ public abstract class AbstractEntity implements Entity
 	private int id;
 	
 	@Override
-	public int getId()
-	{
-		return id;
-	}
-
-	@Override
-	public void setId(int id)
-	{
-		this.id = id;
-	}
-	
-	@Override
 	public String getDisplayName()
 	{
-		return IDGenerator.toString(getType(), id);
+		return Integer.toString(id);
 	}
 }
