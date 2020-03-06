@@ -8,8 +8,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "service")
 public class Service extends AbstractEntity
@@ -23,55 +27,11 @@ public class Service extends AbstractEntity
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id")
-	private Ticket ticket;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id")
 	private ServiceType serviceType;
-	
-	public double getPrice()
-	{
-		return price;
-	}
-	
-	public void setPrice(int price)
-	{
-		this.price = price;
-	}
-	
+
 	@Override
 	public EntityType getType()
 	{
 		return EntityType.SERVICE;
-	}
-	
-	public Notification getNotification()
-	{
-		return notification;
-	}
-
-	public void setNotification(Notification notification)
-	{
-		this.notification = notification;
-	}
-	
-	public Ticket getTicket()
-	{
-		return ticket;
-	}
-
-	public void setTicket(Ticket ticket)
-	{
-		this.ticket = ticket;
-	}
-
-	public ServiceType getServiceType()
-	{
-		return serviceType;
-	}
-
-	public void setServiceType(ServiceType serviceType)
-	{
-		this.serviceType = serviceType;
 	}
 }

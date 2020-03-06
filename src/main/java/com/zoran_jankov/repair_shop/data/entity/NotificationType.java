@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
+
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Entity

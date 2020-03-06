@@ -7,8 +7,12 @@ import javax.persistence.Embeddable;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.entity.User;
 
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Embeddable
 public class CreationInfo
 {
@@ -20,23 +24,4 @@ public class CreationInfo
 	@Temporal(TemporalType.TIMESTAMP)
 	private
 	LocalDateTime timestmp;
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user)
-	{
-		this.user = user;
-	}
-
-	public LocalDateTime getTimestmp()
-	{
-		return timestmp;
-	}
-
-	public void setTimestmp(LocalDateTime timestmp)
-	{
-		this.timestmp = timestmp;
-	}
 }

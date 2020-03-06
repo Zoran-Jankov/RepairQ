@@ -7,9 +7,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.Priority;
 
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "ticket")
 public class Ticket extends AbstractEntity
@@ -33,45 +37,5 @@ public class Ticket extends AbstractEntity
 	public final EntityType getType()
 	{
 		return EntityType.TICKET;
-	}
-	
-	public Priority getPriority()
-	{
-		return priority;
-	}
-
-	public void setPriority(Priority priority)
-	{
-		this.priority = priority;
-	}
-	
-	public Status getStatus()
-	{
-		return status;
-	}
-
-	public void setStatus(Status status)
-	{
-		this.status = status;
-	}
-
-	public Customer getClient()
-	{
-		return customer;
-	}
-
-	public void setClient(Customer customer)
-	{
-		this.customer = customer;
-	}
-
-	public Device getDevice()
-	{
-		return device;
-	}
-
-	public void setDevice(Device device)
-	{
-		this.device = device;
 	}
 }

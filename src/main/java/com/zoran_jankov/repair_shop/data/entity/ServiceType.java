@@ -5,6 +5,8 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
 
@@ -14,12 +16,14 @@ import main.java.com.zoran_jankov.repair_shop.data.embeddable.BasicInfo;
  * 
  * @author Zoran Jankov
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "service_type")
 public class ServiceType extends AbstractEntity
 {
 	@Embedded
-	private BasicInfo serviceType;
+	private BasicInfo basicInfo;
 	
 	@Column(name = "default_price")
 	private int defaultPrice;
@@ -34,31 +38,9 @@ public class ServiceType extends AbstractEntity
 		return EntityType.SERVICE_TYPE;
 	}
 	
-	public BasicInfo getServiceType()
+	@Override
+	public String getDisplayName()
 	{
-		return serviceType;
-	}
-
-	public void setServiceType(BasicInfo serviceType)
-	{
-		this.serviceType = serviceType;
-	}
-	
-	/**
-	 * Getter for default price of the service type.
-	 * @return (int) Default price of the service type
-	 */
-	public int getDefaultPrice()
-	{
-		return defaultPrice;
-	}
-
-	/**
-	 * Setter for default price of the service type.
-	 * @param defaultPrice
-	 */
-	public void setDefaultPrice(int defaultPrice)
-	{
-		this.defaultPrice = defaultPrice;
+		return basicInfo.getName();
 	}
 }
