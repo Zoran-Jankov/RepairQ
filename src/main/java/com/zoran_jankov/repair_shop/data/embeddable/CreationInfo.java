@@ -23,5 +23,5 @@ public class CreationInfo
 	@Column(name = "creation_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	private
-	LocalDateTime timestmp;
+	LocalDateTime creationDate;
 }
