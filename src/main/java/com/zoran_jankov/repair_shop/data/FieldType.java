@@ -22,7 +22,6 @@ public enum FieldType
 	//User information
 	USERNAME,
 	PASSWORD,
-	USER_TYPE,
 	
 	//Device information
 	SERIAL,
@@ -37,11 +36,18 @@ public enum FieldType
 		{
 			case COMMENT:
 			case FIRST_NAME:
-			break;
+			case PHONE_NUMBER:
+			case COMPANY_NAME:
+			case TAX_ID:
+			case USERNAME:
+			case PASSWORD:
+			case SERIAL:
+			case NAME:
+				
+				return true;
 
-		default:
-			break;
+			default:
+				return false;
 		}
-		
 	}
 }
