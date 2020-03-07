@@ -1,6 +1,6 @@
 package main.java.com.zoran_jankov.repair_shop.app.utility;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.ClientRegistrationController;
+import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.CustomerRegistrationController;
 import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.DeviceRegistrationController;
 import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.InputDialogController;
 import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.ModelRegistrationController;
@@ -20,7 +20,7 @@ public class DialogClontrollerFactory
 				return new TicketRegistrationController(owner, entityType);
 			
 			case CUSTOMER:
-				return new ClientRegistrationController(owner, entityType);
+				return new CustomerRegistrationController(owner, entityType);
 			
 			case DEVICE:
 				return new DeviceRegistrationController(owner, entityType);
@@ -50,7 +50,7 @@ public class DialogClontrollerFactory
 				return new TicketRegistrationController(owner, entity);
 			
 			case CUSTOMER:
-				return new ClientRegistrationController(owner, entity);
+				return new CustomerRegistrationController(owner, entity);
 			
 			case DEVICE:
 				return new DeviceRegistrationController(owner, entity);

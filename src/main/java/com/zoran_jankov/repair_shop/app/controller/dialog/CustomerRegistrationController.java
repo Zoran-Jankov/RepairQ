@@ -9,18 +9,18 @@ import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
 import main.java.com.zoran_jankov.repair_shop.gui.dialog.CustomerRegistrationDialog;
 import main.java.com.zoran_jankov.repair_shop.gui.text.LabelName;
 
-public class ClientRegistrationController extends InputDialogController
+public class CustomerRegistrationController extends InputDialogController
 {
 	private CustomerRegistrationDialog clientGUI;
 	private
 	
-	public ClientRegistrationController(WindowController owner, EntityType entityType)
+	public CustomerRegistrationController(WindowController owner, EntityType entityType)
 	{
 		super(owner, entityType);
 		initializeClientDialogController();
 	}
 	
-	public ClientRegistrationController(WindowController owner, Entity entity)
+	public CustomerRegistrationController(WindowController owner, Entity entity)
 	{
 		super(owner, entity);
 		initializeClientDialogController();
