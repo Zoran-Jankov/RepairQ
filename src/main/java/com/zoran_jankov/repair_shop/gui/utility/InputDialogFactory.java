@@ -3,7 +3,7 @@ package main.java.com.zoran_jankov.repair_shop.gui.utility;
 import java.awt.Window;
 
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.gui.dialog.ClientRegistrationDialog;
+import main.java.com.zoran_jankov.repair_shop.gui.dialog.CustomerRegistrationDialog;
 import main.java.com.zoran_jankov.repair_shop.gui.dialog.DeviceRegistrationDialog;
 import main.java.com.zoran_jankov.repair_shop.gui.dialog.InputDialog;
 import main.java.com.zoran_jankov.repair_shop.gui.dialog.ModelRegistrationDialog;
@@ -20,7 +20,7 @@ public class InputDialogFactory
 				return new TicketRegistrationDialog(owner);
 			
 			case CUSTOMER:
-				return new ClientRegistrationDialog(owner);
+				return new CustomerRegistrationDialog(owner);
 			
 			case DEVICE:
 				return new DeviceRegistrationDialog(owner);

@@ -12,7 +12,7 @@ import main.java.com.zoran_jankov.repair_shop.gui.panel.PersonalInfoPanel;
 import main.java.com.zoran_jankov.repair_shop.gui.text.WindowTitle;
 import net.miginfocom.swing.MigLayout;
 
-public class ClientRegistrationDialog extends JDialog implements InputDialog
+public class CustomerRegistrationDialog extends JDialog implements InputDialog
 {
 	private static final long serialVersionUID = -394107433140693140L;
 	private IdPanel idPanel = new IdPanel();
@@ -21,7 +21,7 @@ public class ClientRegistrationDialog extends JDialog implements InputDialog
 	private CompanyInfoPanel companyInfoPanel = new CompanyInfoPanel();
 	private InputButtonPanel buttonPanel = new InputButtonPanel();
 	
-	public ClientRegistrationDialog(Window owner)
+	public CustomerRegistrationDialog(Window owner)
 	{
 		super(owner);
 		

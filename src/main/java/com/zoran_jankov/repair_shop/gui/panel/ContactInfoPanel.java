@@ -29,7 +29,7 @@ public class ContactInfoPanel extends JPanel
 		
 		add(lblContactInforamtion, "cell 0 0 2 1,grow");
 		
-		JLabel lblPrimePhone = LabelFactory.createJLabel(LabelName.PRIME_PHONE, new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblPrimePhone = LabelFactory.createJLabel(LabelName.PHONE_NUMBER, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblPrimePhone, "cell 0 1,growy");
 		
 		add(txtPrimePhone, "cell 1 1,grow");

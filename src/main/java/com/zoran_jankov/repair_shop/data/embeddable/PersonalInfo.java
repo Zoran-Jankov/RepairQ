@@ -24,8 +24,7 @@ public class PersonalInfo
 	@Column(name = "last_name")
 	private String lastName;
 	
-	@Override
-	public String toString()
+	public String getDispalyName()
 	{
 		return firstName + " " + lastName;
 	}

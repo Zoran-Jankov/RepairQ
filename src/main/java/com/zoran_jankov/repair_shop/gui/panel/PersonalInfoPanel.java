@@ -27,12 +27,12 @@ public class PersonalInfoPanel extends JPanel
 		
 		add(lblPersonalInformation, "cell 0 0 2 1,grow");
 		
-		JLabel lblFirstName = LabelFactory.createJLabel("First Name", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblFirstName = LabelFactory.createJLabel(LabelName.FIRST_NAME, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblFirstName, "cell 0 1,growy");
 		
 		add(txtFirstName, "cell 1 1,grow");
 		
-		JLabel lblLastName = LabelFactory.createJLabel(LabelName.PRIME_PHONE, new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblLastName = LabelFactory.createJLabel(LabelName.LAST_NAME, new Font("Tahoma", Font.PLAIN, 13));
 		add(lblLastName, "cell 0 2,growy");
 		
 		add(txtLastName, "cell 1 2,grow");

@@ -3,7 +3,7 @@ package main.java.com.zoran_jankov.repair_shop.data;
 public enum FieldType
 {	
 	//Ticket information
-	DETAILS,
+	COMMENT,
 	
 	//Personal information
 	FIRST_NAME,
@@ -30,4 +30,18 @@ public enum FieldType
 	//Basic information
 	NAME,
 	DESCRIPTION;
+	
+	public static boolean isRequired(FieldType type)
+	{
+		switch (type)
+		{
+			case COMMENT:
+			case FIRST_NAME:
+			break;
+
+		default:
+			break;
+		}
+		
+	}
 }

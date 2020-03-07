@@ -2,6 +2,7 @@ package main.java.com.zoran_jankov.repair_shop.gui.panel;
 
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
+
 import javax.swing.JLabel;
 
 import main.java.com.zoran_jankov.repair_shop.data.FieldType;
@@ -14,7 +15,10 @@ import main.java.com.zoran_jankov.repair_shop.gui.utility.TextFieldFactory;
 public class TextInputField extends JPanel
 {
 	private static final long serialVersionUID = -1839158784863217197L;
-	private JTextField textField = TextFieldFactory.createJTextField(10);;
+	
+	private JTextField textField = TextFieldFactory.createJTextField(10);
+	
+	 
 
 	/**
 	 * Create the panel.
@@ -33,7 +37,12 @@ public class TextInputField extends JPanel
 		add(textField, "cell 2 0,grow");
 		
 	}
-
+	
+	public void setFunction(FieldType type)
+	{
+		
+	}
+	
 	public String getInput()
 	{
 		return textField.getText();

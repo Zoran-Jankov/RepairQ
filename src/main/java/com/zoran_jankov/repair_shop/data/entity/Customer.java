@@ -38,6 +38,6 @@ public class Customer extends AbstractEntity
 	@Override
 	public String getDisplayName()
 	{	
-		return super.getDisplayName() + " " + personalInfo.toString();
+		return super.getDisplayName() + " " + personalInfo.getDispalyName();
 	}
 }

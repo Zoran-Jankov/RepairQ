@@ -6,12 +6,12 @@ import main.java.com.zoran_jankov.repair_shop.data.DataManager;
 import main.java.com.zoran_jankov.repair_shop.data.EntityType;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Customer;
 import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
-import main.java.com.zoran_jankov.repair_shop.gui.dialog.ClientRegistrationDialog;
+import main.java.com.zoran_jankov.repair_shop.gui.dialog.CustomerRegistrationDialog;
 import main.java.com.zoran_jankov.repair_shop.gui.text.LabelName;
 
 public class ClientRegistrationController extends InputDialogController
 {
-	private ClientRegistrationDialog clientGUI;
+	private CustomerRegistrationDialog clientGUI;
 	private
 	
 	public ClientRegistrationController(WindowController owner, EntityType entityType)
@@ -30,7 +30,7 @@ public class ClientRegistrationController extends InputDialogController
 	{
 		newClient = (Customer) super.entity;
 
-		clientGUI = (ClientRegistrationDialog) super.gui;
+		clientGUI = (CustomerRegistrationDialog) super.gui;
 	}
 
 	protected boolean isInputValid()

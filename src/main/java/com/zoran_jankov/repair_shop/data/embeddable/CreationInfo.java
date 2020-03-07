@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -16,7 +19,8 @@ import main.java.com.zoran_jankov.repair_shop.data.entity.User;
 @Embeddable
 public class CreationInfo
 {
-	@Column(name = "user")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id", nullable = false)
 	private
 	User user;
 	

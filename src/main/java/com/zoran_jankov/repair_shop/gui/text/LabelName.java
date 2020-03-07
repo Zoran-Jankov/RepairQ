@@ -10,7 +10,7 @@ public class LabelName
 	public static String LAST_NAME = "Last Name";
 		
 	//Contact Information
-	public static String PRIME_PHONE = "Prime Phone Number";
+	public static String PHONE_NUMBER = "Phone Number";
 	public static String EMAIL = "Email Address";
 	public static String ADDRESS = "Home Address";
 		
@@ -41,6 +41,7 @@ public class LabelName
 	public static String NAME = "Name";
 	public static String DESCRIPTION = "Description";
 	
+	//Entity names
 	public static String NOTIFICATION = "Notification";
 	public static String NOTIFICATION_TYPE = "Notification Type";
 	public static String SERVICE = "Service";

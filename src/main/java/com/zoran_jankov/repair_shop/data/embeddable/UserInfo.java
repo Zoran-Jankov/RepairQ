@@ -15,6 +15,7 @@ import main.java.com.zoran_jankov.repair_shop.data.UserType;
 public class UserInfo
 {
 	@Enumerated(EnumType.ORDINAL)
+	@Column(name = "user_type")
 	private UserType userType;
 	
 	@Column(name = "username")
