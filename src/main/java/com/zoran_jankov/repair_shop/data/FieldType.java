@@ -2,8 +2,11 @@ package main.java.com.zoran_jankov.repair_shop.data;
 
 public enum FieldType
 {	
-	//Ticket information
+	//Notification information
 	COMMENT,
+	
+	//Ticket information
+	DETAILS,
 	
 	//Personal information
 	FIRST_NAME,
@@ -34,20 +37,14 @@ public enum FieldType
 	{
 		switch (type)
 		{
-			case COMMENT:
-			case FIRST_NAME:
-			case PHONE_NUMBER:
-			case COMPANY_NAME:
-			case TAX_ID:
-			case USERNAME:
-			case PASSWORD:
-			case SERIAL:
-			case NAME:
-				
-				return true;
+			case EMAIL:
+			case ADDRESS:
+			case BANK_ACCOUNT:
+			case DESCRIPTION:		
+				return false;
 
 			default:
-				return false;
+				return true;
 		}
 	}
 }
