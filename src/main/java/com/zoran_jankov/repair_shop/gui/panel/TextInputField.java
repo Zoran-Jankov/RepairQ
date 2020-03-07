@@ -6,6 +6,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 
 import main.java.com.zoran_jankov.repair_shop.data.FieldType;
+import main.java.com.zoran_jankov.repair_shop.gui.text.LabelName;
 import main.java.com.zoran_jankov.repair_shop.gui.utility.LabelFactory;
 import java.awt.Font;
 import javax.swing.JTextField;
@@ -16,10 +17,9 @@ public class TextInputField extends JPanel
 {
 	private static final long serialVersionUID = -1839158784863217197L;
 	
+	
 	private JTextField textField = TextFieldFactory.createJTextField(10);
 	
-	 
-
 	/**
 	 * Create the panel.
 	 */
@@ -27,20 +27,15 @@ public class TextInputField extends JPanel
 	{
 		setLayout(new MigLayout("", "[][][grow]", "[25px:25px:25px]"));
 		
-		JLabel lblFeildName = LabelFactory.createJLabel("Feild Name", new Font("Tahoma", Font.PLAIN, 13));
+		JLabel lblFeildName = LabelFactory.createJLabel(LabelName.getFieldName(type), new Font("Tahoma", Font.PLAIN, 13));
 		add(lblFeildName, "cell 0 0,grow");
 		
 		JLabel requiredField = LabelFactory.createJLabel("*", new Font("Tahoma", Font.BOLD, 16));
 		requiredField.setForeground(Color.RED);
+		requiredField.setEnabled(FieldType.isRequired(type));
 		add(requiredField, "cell 1 0,grow");
-
-		add(textField, "cell 2 0,grow");
 		
-	}
-	
-	public void setFunction(FieldType type)
-	{
-		
+		add(textField, "cell 2 0,grow");	
 	}
 	
 	public String getInput()
