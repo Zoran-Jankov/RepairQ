@@ -6,7 +6,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
 		<attributes>
 			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -18,7 +18,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="swingx-all-1.6.4.jar"/>
-	<classpathentry kind="lib" path="miglayout15-swing.jar"/>
+	<classpathentry exported="true" kind="lib" path="swingx-all-1.6.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="miglayout15-swing.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

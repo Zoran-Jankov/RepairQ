@@ -17,14 +17,15 @@ public class TextInputField extends JPanel
 {
 	private static final long serialVersionUID = -1839158784863217197L;
 	
-	
 	private JTextField textField = TextFieldFactory.createJTextField(10);
-	
+	private boolean isRequiredField;
 	/**
 	 * Create the panel.
 	 */
 	public TextInputField(FieldType type)
 	{
+		isRequiredField = FieldType.isRequired(type);
+		
 		setLayout(new MigLayout("", "[][][grow]", "[25px:25px:25px]"));
 		
 		JLabel lblFeildName = LabelFactory.createJLabel(LabelName.getFieldName(type), new Font("Tahoma", Font.PLAIN, 13));
@@ -32,7 +33,7 @@ public class TextInputField extends JPanel
 		
 		JLabel requiredField = LabelFactory.createJLabel("*", new Font("Tahoma", Font.BOLD, 16));
 		requiredField.setForeground(Color.RED);
-		requiredField.setEnabled(FieldType.isRequired(type));
+		requiredField.setVisible(isRequiredField);
 		add(requiredField, "cell 1 0,grow");
 		
 		add(textField, "cell 2 0,grow");	
@@ -40,11 +41,25 @@ public class TextInputField extends JPanel
 	
 	public String getInput()
 	{
+		if(isRequiredField && isEmpty())
+		{
+			textField.setBackground(Color.YELLOW);
+		}
+		else
+		{
+			textField.setBackground(Color.YELLOW);
+		}
+		
 		return textField.getText();
 	}
 
 	public void setInput(String input)
 	{
 		this.textField.setText(input);
+	}
+	
+	private boolean isEmpty()
+	{
+		return "".equals(textField.getText());
 	}
 }
