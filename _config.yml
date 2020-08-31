@@ -1,1 +1,4 @@
 theme: jekyll-theme-midnight
+
+- name: Dependency Checker
+  uses: Marcisbee/dependency-check-action@1.0.1
