@@ -2,16 +2,15 @@ package com.zoran_jankov.repairq.app.utility;
 
 import java.awt.event.ActionListener;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.InputDialogController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.LoginDialogController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.WindowController;
-import main.java.com.zoran_jankov.repair_shop.app.listener.CloseWindow;
-import main.java.com.zoran_jankov.repair_shop.app.listener.Login;
-import main.java.com.zoran_jankov.repair_shop.app.listener.OpenWindow;
-import main.java.com.zoran_jankov.repair_shop.app.listener.SaveData;
-import main.java.com.zoran_jankov.repair_shop.app.listener.UpdateData;
-import main.java.com.zoran_jankov.repair_shop.app.listener.UpdateEntityDetails;
-import main.java.com.zoran_jankov.repair_shop.data.EntityType;
+import com.zoran_jankov.repairq.app.controller.dialog.InputDialogController;
+import com.zoran_jankov.repairq.app.controller.dialog.LoginDialogController;
+import com.zoran_jankov.repairq.app.controller.dialog.WindowController;
+import com.zoran_jankov.repairq.app.listener.CloseWindow;
+import com.zoran_jankov.repairq.app.listener.Login;
+import com.zoran_jankov.repairq.app.listener.OpenWindow;
+import com.zoran_jankov.repairq.app.listener.SaveData;
+import com.zoran_jankov.repairq.app.listener.UpdateData;
+import com.zoran_jankov.repairq.data.EntityType;
 
 /**
  * The ActionFactory class is a factory for action listeners.
@@ -75,10 +74,5 @@ public class ListenerFactory
 	public static ActionListener login(LoginDialogController controller)
 	{
 		return new Login(controller);
-	}
-	
-	public static ActionListener comboBoxListener(EntityType entityType, InputDialogController controller)
-	{
-		return new UpdateEntityDetails(entityType, controller);
 	}
 }

@@ -7,11 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
-import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.entity.Device;
-import main.java.com.zoran_jankov.repair_shop.data.entity.Notification;
-import main.java.com.zoran_jankov.repair_shop.data.entity.Service;
-import main.java.com.zoran_jankov.repair_shop.data.entity.Ticket;
+import com.zoran_jankov.repairq.data.entity.Device;
+import com.zoran_jankov.repairq.data.entity.Notification;
+import com.zoran_jankov.repairq.data.entity.Service;
+import com.zoran_jankov.repairq.data.entity.Ticket;
 
 class EntityTypeTest
 {

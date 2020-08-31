@@ -17,4 +17,10 @@ public class DataManager
 	{
 		return logedinUser;
 	}
+
+	public int getEntityCounter(EntityType entityType)
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

@@ -1,8 +1,10 @@
 package com.zoran_jankov.repairq.app.utility;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
-import com.zoran_jankov.repairq.app.utility.IDGenerator;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
+
 import com.zoran_jankov.repairq.data.EntityType;
 
 public class IDGeneratorTest

@@ -1,18 +1,18 @@
-package main.java.com.zoran_jankov.repair_shop.app.listener;
+package com.zoran_jankov.repairq.app.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.WindowController;
-import main.java.com.zoran_jankov.repair_shop.app.utility.DialogClontrollerFactory;
-import main.java.com.zoran_jankov.repair_shop.app.utility.WindowControllerFactory;
-import main.java.com.zoran_jankov.repair_shop.app.utility.WindowTag;
-import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
-import main.java.com.zoran_jankov.repair_shop.gui.text.ErrorMessage;
-import main.java.com.zoran_jankov.repair_shop.gui.text.ErrorTitle;
+import com.zoran_jankov.repairq.app.controller.dialog.InputDialogController;
+import com.zoran_jankov.repairq.app.controller.dialog.WindowController;
+import com.zoran_jankov.repairq.app.utility.WindowControllerFactory;
+import com.zoran_jankov.repairq.app.utility.WindowTag;
+import com.zoran_jankov.repairq.data.EntityType;
+import com.zoran_jankov.repairq.data.entity.Entity;
+import com.zoran_jankov.repairq.gui.text.ErrorMessage;
+import com.zoran_jankov.repairq.gui.text.ErrorTitle;
 
 /**
  * ActionListener for open window action.
@@ -48,11 +48,11 @@ public class OpenWindow implements ActionListener
 	{
 		if(entityType != null)
 		{
-			DialogClontrollerFactory.createController(owner, entityType);
+			InputDialogController.createController(owner, entityType);
 		}
 		else if(entity != null)
 		{
-			DialogClontrollerFactory.createController(owner, entity);
+			InputDialogController.createController(owner, entity);
 		}
 		else if(window != null)
 		{

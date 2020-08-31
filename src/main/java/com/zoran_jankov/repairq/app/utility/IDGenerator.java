@@ -53,7 +53,7 @@ public class IDGenerator
 	{
 		if(lastTicketDate != LocalDate.now())
 		{
-			DataManager.accessData().resetTicketCounter();
+			//DataManager.accessData().resetTicketCounter();
 			lastTicketDate = LocalDate.now();
 		}
 	}
