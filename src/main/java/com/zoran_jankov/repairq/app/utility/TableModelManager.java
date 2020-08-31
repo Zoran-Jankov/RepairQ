@@ -5,7 +5,7 @@ import java.util.Map;
 
 import javax.swing.table.TableModel;
 
-import main.java.com.zoran_jankov.repair_shop.data.EntityType;
+import com.zoran_jankov.repairq.data.EntityType;
 
 public class TableModelManager
 {
@@ -26,5 +26,6 @@ public class TableModelManager
 	private static TableModel loadModel(EntityType entityType)
 	{
 		return null;
+		//TODO Table Model Manager
 	}
 }
