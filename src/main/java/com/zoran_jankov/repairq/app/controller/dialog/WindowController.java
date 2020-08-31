@@ -1,4 +1,4 @@
-package main.java.com.zoran_jankov.repair_shop.app.controller.dialog;
+package com.zoran_jankov.repairq.app.controller.dialog;
 
 import java.awt.Window;
 

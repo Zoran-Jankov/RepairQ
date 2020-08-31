@@ -1,4 +1,4 @@
-package main.java.com.zoran_jankov.repair_shop.app.utility;
+package com.zoran_jankov.repairq.app.utility;
 
 import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.CustomerRegistrationController;
 import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.DeviceRegistrationController;

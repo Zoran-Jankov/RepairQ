@@ -1,4 +1,4 @@
-package main.java.com.zoran_jankov.repair_shop.data.embeddable;
+package com.zoran_jankov.repairq.data.embeddable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;

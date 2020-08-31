@@ -1,9 +1,9 @@
-package main.java.com.zoran_jankov.repair_shop.data;
+package com.zoran_jankov.repairq.data;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
+import com.zoran_jankov.repairq.data.entity.Entity;
 
 public class IndexedDataTable implements IndexedData
 {

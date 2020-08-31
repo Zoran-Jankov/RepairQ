@@ -1,8 +1,8 @@
-package main.java.com.zoran_jankov.repair_shop.app.utility;
+package com.zoran_jankov.repairq.app.utility;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.LoginDialogController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.MainWindowController;
-import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.WindowController;
+import com.zoran_jankov.repairq.app.controller.dialog.LoginDialogController;
+import com.zoran_jankov.repairq.app.controller.dialog.MainWindowController;
+import com.zoran_jankov.repairq.app.controller.dialog.WindowController;
 
 public class WindowControllerFactory
 {

@@ -1,11 +1,11 @@
-package main.java.com.zoran_jankov.repair_shop.app.controller.dialog;
+package com.zoran_jankov.repairq.app.controller.dialog;
 
 import java.awt.Window;
 
-import main.java.com.zoran_jankov.repair_shop.app.utility.ListenerFactory;
-import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.gui.MainWindow;
-import main.java.com.zoran_jankov.repair_shop.gui.text.ButtonName;
+import com.zoran_jankov.repairq.app.utility.ListenerFactory;
+import com.zoran_jankov.repairq.data.EntityType;
+import com.zoran_jankov.repairq.gui.MainWindow;
+import com.zoran_jankov.repairq.gui.text.ButtonName;
 
 public class MainWindowController implements WindowController
 {

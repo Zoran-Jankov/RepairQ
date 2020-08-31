@@ -1,12 +1,14 @@
-package main.java.com.zoran_jankov.repair_shop.app.controller.dialog;
+package com.zoran_jankov.repairq.app.controller.dialog;
 
 import java.awt.Window;
 
-import main.java.com.zoran_jankov.repair_shop.app.utility.ListenerFactory;
-import main.java.com.zoran_jankov.repair_shop.app.utility.WindowControllerFactory;
-import main.java.com.zoran_jankov.repair_shop.app.utility.WindowTag;
-import main.java.com.zoran_jankov.repair_shop.gui.dialog.LoginDialog;
-import main.java.com.zoran_jankov.repair_shop.gui.text.ButtonName;
+import com.zoran_jankov.repairq.gui.dialog.LoginDialog;
+import com.zoran_jankov.repairq.gui.text.ButtonName;
+
+import com.zoran_jankov.repairq.app.utility.WindowControllerFactory;
+import com.zoran_jankov.repairq.app.utility.WindowTag;
+
+import com.zoran_jankov.repairq.app.utility.ListenerFactory;
 
 public class LoginDialogController implements WindowController
 {

@@ -1,4 +1,4 @@
-package main.java.com.zoran_jankov.repair_shop.app.utility;
+package com.zoran_jankov.repairq.app.utility;
 
 import java.util.EnumMap;
 import java.util.HashSet;
@@ -8,10 +8,10 @@ import java.util.Set;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 
-import main.java.com.zoran_jankov.repair_shop.data.DataManager;
-import main.java.com.zoran_jankov.repair_shop.data.EntityType;
-import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
-import main.java.com.zoran_jankov.repair_shop.gui.text.LabelName;
+import com.zoran_jankov.repairq.data.DataManager;
+import com.zoran_jankov.repairq.data.EntityType;
+import com.zoran_jankov.repairq.data.entity.Entity;
+import com.zoran_jankov.repairq.gui.text.LabelName;
 
 public class ComboBoxModelManager
 {

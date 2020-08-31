@@ -1,7 +1,7 @@
-package main.java.com.zoran_jankov.repair_shop.app;
+package com.zoran_jankov.repairq.app;
 
-import main.java.com.zoran_jankov.repair_shop.app.utility.WindowControllerFactory;
-import main.java.com.zoran_jankov.repair_shop.app.utility.WindowTag;
+import com.zoran_jankov.repairq.app.utility.WindowControllerFactory;
+import com.zoran_jankov.repairq.app.utility.WindowTag;
 
 public class Run
 {

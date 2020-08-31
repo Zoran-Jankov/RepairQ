@@ -1,9 +1,9 @@
-package main.java.com.zoran_jankov.repair_shop.app.listener;
+package com.zoran_jankov.repairq.app.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import main.java.com.zoran_jankov.repair_shop.app.controller.dialog.WindowController;
+import com.zoran_jankov.repairq.app.controller.dialog.WindowController;
 
 /**
  * ActionListener for action of closing window.

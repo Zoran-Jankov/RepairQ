@@ -1,4 +1,4 @@
-package main.java.com.zoran_jankov.repair_shop.app.utility;
+package com.zoran_jankov.repairq.app.utility;
 
 import java.awt.event.ActionListener;
 

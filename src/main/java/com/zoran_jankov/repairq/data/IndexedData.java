@@ -1,8 +1,8 @@
-package main.java.com.zoran_jankov.repair_shop.data;
+package com.zoran_jankov.repairq.data;
 
 import java.util.Map;
 
-import main.java.com.zoran_jankov.repair_shop.data.entity.Entity;
+import com.zoran_jankov.repairq.data.entity.Entity;
 
 /**
  * Interface for Indexed Data Table.
