@@ -1,6 +1,6 @@
 # RepairQ
 
-[![codebeat badge](https://codebeat.co/badges/f1fbb124-af83-464c-9fba-92d6838aef24)](https://codebeat.co/projects/github-com-zoran-jankov-repairq-master)
+[![codebeat badge](https://codebeat.co/badges/a3fe0b76-70a5-48fb-9ce7-2b659886908b)](https://codebeat.co/projects/github-com-zoran-jankov-repairq-master)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/507d57bbe1004c3db963364e4b87bc02)](https://www.codacy.com/manual/zoran.jankov.87/RepairQ?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Zoran-Jankov/RepairQ&amp;utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/zoran-jankov/repairq/badge)](https://www.codefactor.io/repository/github/zoran-jankov/repairq)
 [![BCH compliance](https://bettercodehub.com/edge/badge/Zoran-Jankov/RepairQ?branch=master)](https://bettercodehub.com/)
