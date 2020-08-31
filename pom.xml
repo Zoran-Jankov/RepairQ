@@ -1,43 +1,55 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.zoran.jankov.repairq</groupId>
   <artifactId>RepairQ</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>RepairQ</name>
+  
   <properties>
     <maven.compiler.source>14</maven.compiler.source>
     <maven.compiler.target>14</maven.compiler.target>
+    
 </properties>
-  <dependencies>
-  	<dependency>
-   		<groupId>org.hibernate</groupId>
-   		<artifactId>hibernate-core</artifactId>
-   		<version>5.4.13.Final</version>
-	</dependency>
-	<dependency>
-		<groupId>org.projectlombok</groupId>
-		<artifactId>lombok</artifactId>
-		<version>1.18.12</version>
-		<scope>provided</scope>
-	</dependency>
+
+	<dependencies>
+  	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
-    	<groupId>com.miglayout</groupId>
-    	<artifactId>miglayout-swing</artifactId>
-  	  	<version>5.0</version>
-	</dependency>
-	<dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>5.6.2</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>5.6.2</version>
-        <scope>test</scope>
-    </dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-core</artifactId>
+    		<version>5.4.21.Final</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.12</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+    		<groupId>com.miglayout</groupId>
+    		<artifactId>miglayout-swing</artifactId>
+  	  		<version>5.0</version>
+		</dependency>
+		
+		<dependency>
+        	<groupId>org.junit.jupiter</groupId>
+        	<artifactId>junit-jupiter-api</artifactId>
+        	<version>5.6.2</version>
+        	<scope>test</scope>
+    	</dependency>
+    	
+    	<dependency>
+        	<groupId>org.junit.jupiter</groupId>
+        	<artifactId>junit-jupiter-engine</artifactId>
+        	<version>5.6.2</version>
+        	<scope>test</scope>
+    	</dependency>
+    	
 </dependencies>
-  <description>RepairQ is a software application that is aimed for repair shops. It is used to track all business related things, from creating and tracing tickets, registering customers, devices that are being repaired, repair parts inventory and more.
+
+ <description>RepairQ is a software application that is aimed for repair shops. It is used to track all business related things, from creating and tracing tickets, registering customers, devices that are being repaired, repair parts inventory and more.
 </description>
+
 </project>
