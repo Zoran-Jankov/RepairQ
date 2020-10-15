@@ -7,7 +7,7 @@ import com.zoran_jankov.repairq.data.DataManager;
 import com.zoran_jankov.repairq.data.EntityType;
 import com.zoran_jankov.repairq.gui.text.LabelName;
 
-public class IDGenerator
+public class IDGeneratorUtils
 {
 	private static final int WORKSTATION_ID = 1;
 	private static final int DAY_ID_FORMATER = 100;
