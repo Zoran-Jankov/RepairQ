@@ -6,7 +6,7 @@ import javax.persistence.MappedSuperclass;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-/** 
+/**
  * Class BasicInfo represents a basic information of various entity classes.
  * 
  * @author Zoran Jankov
@@ -15,17 +15,15 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @MappedSuperclass
-public abstract class BasicInfo extends AbstractEntity
-{
-	@Column(name = "name", nullable = false, unique = true)
-	private String name;
-	
-	@Column(name = "description")
-	private String description;
-	
-	@Override
-	public String getDisplayName()
-	{
-		return name;
-	}
+public abstract class BasicInfo extends AbstractEntity {
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Override
+    public String getDisplayName() {
+	return name;
+    }
 }

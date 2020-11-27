@@ -11,15 +11,14 @@ import lombok.Data;
 
 @Data
 @Embeddable
-public class UserInfo
-{
-	@Enumerated(EnumType.ORDINAL)
-	@Column(name = "user_type", nullable = false)
-	private UserType userType;
-	
-	@Column(name = "username", nullable = false, unique = true)
-	private String username;
-	
-	@Column(name = "password",nullable = false)
-	private char[] password;
+public class UserInfo {
+    @Enumerated(EnumType.ORDINAL)
+    @Column(name = "user_type", nullable = false)
+    private UserType userType;
+
+    @Column(name = "username", nullable = false, unique = true)
+    private String username;
+
+    @Column(name = "password", nullable = false)
+    private char[] password;
 }

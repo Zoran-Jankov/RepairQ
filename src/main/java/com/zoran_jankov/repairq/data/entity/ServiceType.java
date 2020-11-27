@@ -10,8 +10,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Class ServiceType extends abstract class Property and represents
- * a the type of a service.
+ * Class ServiceType extends abstract class Property and represents a the type
+ * of a service.
  * 
  * @author Zoran Jankov
  */
@@ -19,18 +19,17 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "service_type")
-public class ServiceType extends BasicInfo
-{
-	@Column(name = "default_price", nullable = false )
-	private int defaultPrice;
-	
-	/**
-	 * Returns EntityType.SERVICE_TYPE enum.
-	 * @return (enum EntityType) SERVICE_TYPE
-	 */
-	@Override
-	public EntityType getType()
-	{
-		return EntityType.SERVICE_TYPE;
-	}
+public class ServiceType extends BasicInfo {
+    @Column(name = "default_price", nullable = false)
+    private int defaultPrice;
+
+    /**
+     * Returns EntityType.SERVICE_TYPE enum.
+     * 
+     * @return (enum EntityType) SERVICE_TYPE
+     */
+    @Override
+    public EntityType getType() {
+	return EntityType.SERVICE_TYPE;
+    }
 }

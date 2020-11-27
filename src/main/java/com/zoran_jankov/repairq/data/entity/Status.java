@@ -12,11 +12,9 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "status")
-public class Status extends BasicInfo
-{
-	@Override
-	public EntityType getType()
-	{
-		return EntityType.NOTIFICATION;
-	}
+public class Status extends BasicInfo {
+    @Override
+    public EntityType getType() {
+	return EntityType.NOTIFICATION;
+    }
 }

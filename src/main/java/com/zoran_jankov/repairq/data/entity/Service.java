@@ -17,22 +17,20 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "service")
-public class Service extends AbstractEntity
-{
-	@Column(name = "price", nullable = false)
-	private int price;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id")
-	private Notification notification;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id")
-	private ServiceType serviceType;
+public class Service extends AbstractEntity {
+    @Column(name = "price", nullable = false)
+    private int price;
 
-	@Override
-	public EntityType getType()
-	{
-		return EntityType.SERVICE;
-	}
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private Notification notification;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private ServiceType serviceType;
+
+    @Override
+    public EntityType getType() {
+	return EntityType.SERVICE;
+    }
 }

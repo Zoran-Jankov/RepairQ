@@ -12,35 +12,33 @@ import com.zoran_jankov.repairq.data.embeddable.UserInfo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-/** 
- * Class User represents a employee with associated information about that employee.
- * 				
+/**
+ * Class User represents a employee with associated information about that
+ * employee.
+ * 
  * @author Zoran Jankov
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "user")
-public class User extends AbstractEntity
-{
-	@Embedded
-	private PersonalInfo personalInfo;
-	
-	@Embedded
-	private ContactInfo contactInfo;
-	
-	@Embedded
-	private UserInfo userInfo;
+public class User extends AbstractEntity {
+    @Embedded
+    private PersonalInfo personalInfo;
 
-	@Override
-	public EntityType getType()
-	{
-		return EntityType.USER;
-	}
-	
-	@Override
-	public String getDisplayName()
-	{
-		return userInfo.getUsername();
-	}
+    @Embedded
+    private ContactInfo contactInfo;
+
+    @Embedded
+    private UserInfo userInfo;
+
+    @Override
+    public EntityType getType() {
+	return EntityType.USER;
+    }
+
+    @Override
+    public String getDisplayName() {
+	return userInfo.getUsername();
+    }
 }

@@ -11,9 +11,9 @@ import com.zoran_jankov.repairq.data.EntityType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-/** 
- * Class Model represents a device model with associated 
- * information about that model.
+/**
+ * Class Model represents a device model with associated information about that
+ * model.
  *
  * @author Zoran Jankov
  */
@@ -21,19 +21,17 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "model")
-public class Model extends BasicInfo
-{
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
-	private DeviceType deviceType;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
-	private Brand brand;
-	
-	@Override
-	public final EntityType getType()
-	{
-		return EntityType.MODEL;
-	}
+public class Model extends BasicInfo {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id", nullable = false)
+    private DeviceType deviceType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id", nullable = false)
+    private Brand brand;
+
+    @Override
+    public final EntityType getType() {
+	return EntityType.MODEL;
+    }
 }

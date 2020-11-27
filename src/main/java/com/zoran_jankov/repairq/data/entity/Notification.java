@@ -17,25 +17,23 @@ import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "notification")
-public class Notification extends AbstractEntity
-{
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
-	private NotificationType notificationType;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
-	private Ticket ticket;
-	
-	@Embedded
-	private CreationInfo crationInfo;
-	
-	@Column(name = "comment")
-	private String comment;
-	
-	@Override
-	public EntityType getType()
-	{
-		return EntityType.NOTIFICATION;
-	}
+public class Notification extends AbstractEntity {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id", nullable = false)
+    private NotificationType notificationType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id", nullable = false)
+    private Ticket ticket;
+
+    @Embedded
+    private CreationInfo crationInfo;
+
+    @Column(name = "comment")
+    private String comment;
+
+    @Override
+    public EntityType getType() {
+	return EntityType.NOTIFICATION;
+    }
 }

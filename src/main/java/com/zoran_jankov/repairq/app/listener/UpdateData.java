@@ -5,18 +5,15 @@ import java.awt.event.ActionListener;
 
 import com.zoran_jankov.repairq.app.controller.dialog.InputDialogController;
 
-public class UpdateData implements ActionListener
-{
-	private InputDialogController controller;
+public class UpdateData implements ActionListener {
+    private InputDialogController controller;
 
-	public UpdateData(InputDialogController controller)
-	{
-		this.controller = controller;
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-		controller.tryEntityUpdate();
-	}
+    public UpdateData(InputDialogController controller) {
+	this.controller = controller;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+	controller.tryEntityUpdate();
+    }
 }

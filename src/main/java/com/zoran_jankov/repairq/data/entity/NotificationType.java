@@ -11,11 +11,9 @@ import com.zoran_jankov.repairq.data.EntityType;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "notification_type")
-public class NotificationType extends BasicInfo
-{
-	@Override
-	public EntityType getType()
-	{
-		return EntityType.NOTIFICATION_TYPE;
-	}
+public class NotificationType extends BasicInfo {
+    @Override
+    public EntityType getType() {
+	return EntityType.NOTIFICATION_TYPE;
+    }
 }

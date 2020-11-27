@@ -17,11 +17,9 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "device_type")
-public class DeviceType extends BasicInfo
-{
-	@Override
-	public EntityType getType()
-	{
-		return EntityType.DEVICE_TYPE;
-	}
+public class DeviceType extends BasicInfo {
+    @Override
+    public EntityType getType() {
+	return EntityType.DEVICE_TYPE;
+    }
 }

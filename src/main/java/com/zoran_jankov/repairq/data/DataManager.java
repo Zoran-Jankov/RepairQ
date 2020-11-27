@@ -2,25 +2,21 @@ package com.zoran_jankov.repairq.data;
 
 import com.zoran_jankov.repairq.data.entity.User;
 
-public class DataManager
-{	
-	private static final DataManager instance = new DataManager();
-		
-	private User logedinUser;
-	
-	public static DataManager accessData()
-	{
-		return instance;
-	}
-	
-	public User getLogedinUser()
-	{
-		return logedinUser;
-	}
+public class DataManager {
+    private static final DataManager instance = new DataManager();
 
-	public int getEntityCounter(EntityType entityType)
-	{
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    private User logedinUser;
+
+    public static DataManager accessData() {
+	return instance;
+    }
+
+    public User getLogedinUser() {
+	return logedinUser;
+    }
+
+    public int getEntityCounter(EntityType entityType) {
+	// TODO Auto-generated method stub
+	return 0;
+    }
 }

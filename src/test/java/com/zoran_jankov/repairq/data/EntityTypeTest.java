@@ -12,33 +12,29 @@ import com.zoran_jankov.repairq.data.entity.Notification;
 import com.zoran_jankov.repairq.data.entity.Service;
 import com.zoran_jankov.repairq.data.entity.Ticket;
 
-class EntityTypeTest
-{
-	@ParameterizedTest
-	@EnumSource(EntityType.class)
-	public void hasDisplayNameTest(EntityType entityType)
-	{
-		switch (entityType)
-		{
-        	case NOTIFICATION:
-        	case SERVICE:
-        	case TICKET:
-        	case DEVICE:
-        		assertFalse(EntityType.hasDisplayName(entityType));
-        		break;
-        		
-        	default:
-        		assertTrue(EntityType.hasDisplayName(entityType));
-        		break;
-		}
+class EntityTypeTest {
+    @ParameterizedTest
+    @EnumSource(EntityType.class)
+    public void hasDisplayNameTest(EntityType entityType) {
+	switch (entityType) {
+	case NOTIFICATION:
+	case SERVICE:
+	case TICKET:
+	case DEVICE:
+	    assertFalse(EntityType.hasDisplayName(entityType));
+	    break;
+
+	default:
+	    assertTrue(EntityType.hasDisplayName(entityType));
+	    break;
 	}
-	
-	@Test
-	public void hasDisplayNameTest()
-	{
-		assertFalse(EntityType.hasDisplayName(new Notification()));
-		assertFalse(EntityType.hasDisplayName(new Service()));
-		assertFalse(EntityType.hasDisplayName(new Ticket()));
-		assertFalse(EntityType.hasDisplayName(new Device()));
-	}
+    }
+
+    @Test
+    public void hasDisplayNameTest() {
+	assertFalse(EntityType.hasDisplayName(new Notification()));
+	assertFalse(EntityType.hasDisplayName(new Service()));
+	assertFalse(EntityType.hasDisplayName(new Ticket()));
+	assertFalse(EntityType.hasDisplayName(new Device()));
+    }
 }

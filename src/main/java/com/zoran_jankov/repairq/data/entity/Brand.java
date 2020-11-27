@@ -17,11 +17,9 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "brand")
-public class Brand extends BasicInfo
-{
-	@Override
-	public final EntityType getType()
-	{
-		return EntityType.BRAND;
-	}
+public class Brand extends BasicInfo {
+    @Override
+    public final EntityType getType() {
+	return EntityType.BRAND;
+    }
 }

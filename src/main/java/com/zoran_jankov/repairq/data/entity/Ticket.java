@@ -17,26 +17,24 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "ticket")
-public class Ticket extends AbstractEntity
-{
-	@Column(name = "priority")
-	private Priority priority;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
-	private Status status;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
-	private Customer customer;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
-	private Device device;
-	
-	@Override
-	public final EntityType getType()
-	{
-		return EntityType.TICKET;
-	}
+public class Ticket extends AbstractEntity {
+    @Column(name = "priority")
+    private Priority priority;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id", nullable = false)
+    private Status status;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id", nullable = false)
+    private Customer customer;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id", nullable = false)
+    private Device device;
+
+    @Override
+    public final EntityType getType() {
+	return EntityType.TICKET;
+    }
 }

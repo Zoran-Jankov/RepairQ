@@ -19,52 +19,37 @@ import com.zoran_jankov.repairq.gui.text.ErrorTitle;
  * 
  * @author Zoran Jankov
  */
-public class OpenWindow implements ActionListener
-{
-	private WindowController owner;
-	private Entity entity = null;
-	private EntityType entityType = null;
-	private WindowTag window = null;
+public class OpenWindow implements ActionListener {
+    private WindowController owner;
+    private Entity entity = null;
+    private EntityType entityType = null;
+    private WindowTag window = null;
 
-	public OpenWindow(WindowController owner, EntityType entityType)
-	{
-		this.owner = owner;
-		this.entityType = entityType;
+    public OpenWindow(WindowController owner, EntityType entityType) {
+	this.owner = owner;
+	this.entityType = entityType;
+    }
+
+    public OpenWindow(WindowController owner, Entity entity) {
+	this.owner = owner;
+	this.entity = entity;
+    }
+
+    public OpenWindow(WindowTag window) {
+	this.window = window;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+	if (entityType != null) {
+	    InputDialogController.createController(owner, entityType);
+	} else if (entity != null) {
+	    InputDialogController.createController(owner, entity);
+	} else if (window != null) {
+	    WindowControllerFactory.createController(window);
+	} else {
+	    JOptionPane.showMessageDialog(owner.getWindow(), ErrorMessage.OPEN_WINDOW, ErrorTitle.OPEN_WINDOW,
+		    JOptionPane.ERROR_MESSAGE);
 	}
-	
-	public OpenWindow(WindowController owner, Entity entity)
-	{
-		this.owner = owner;
-		this.entity = entity;
-	}
-	
-	public OpenWindow(WindowTag window)
-	{
-		this.window = window;
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-		if(entityType != null)
-		{
-			InputDialogController.createController(owner, entityType);
-		}
-		else if(entity != null)
-		{
-			InputDialogController.createController(owner, entity);
-		}
-		else if(window != null)
-		{
-			WindowControllerFactory.createController(window);
-		}
-		else
-		{
-			JOptionPane.showMessageDialog
-					   (owner.getWindow(), 
-						ErrorMessage.OPEN_WINDOW, 
-						ErrorTitle.OPEN_WINDOW, 
-						JOptionPane.ERROR_MESSAGE);
-		}
-	}
+    }
 }

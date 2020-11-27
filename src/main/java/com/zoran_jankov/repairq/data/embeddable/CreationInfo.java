@@ -16,15 +16,12 @@ import lombok.Data;
 
 @Data
 @Embeddable
-public class CreationInfo
-{
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable = false)
-	private
-	User user;
-	
-	@Column(name = "creation_date")
-	@Temporal(TemporalType.TIMESTAMP)
-	private
-	LocalDateTime creationDate;
+public class CreationInfo {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id", nullable = false)
+    private User user;
+
+    @Column(name = "creation_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime creationDate;
 }

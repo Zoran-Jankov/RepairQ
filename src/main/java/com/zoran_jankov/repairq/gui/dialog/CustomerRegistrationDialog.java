@@ -12,49 +12,44 @@ import com.zoran_jankov.repairq.gui.text.WindowTitle;
 
 import net.miginfocom.swing.MigLayout;
 
-public class CustomerRegistrationDialog extends JDialog implements InputDialog
-{
-	private static final long serialVersionUID = -394107433140693140L;
-	private IdPanel idPanel = new IdPanel();
-	private PersonalInfoPanel personalInfoPanel = new PersonalInfoPanel();
-	private ContactInfoPanel contactInfoPanel = new ContactInfoPanel();
-	private InputButtonPanel buttonPanel = new InputButtonPanel();
-	
-	public CustomerRegistrationDialog(Window owner)
-	{
-		super(owner);
-		
-		setResizable(false);
-		setTitle(WindowTitle.NEW_CLIENT);
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		
-		getContentPane().setLayout(new MigLayout("", "[]", "[][][][][][]"));
-		
-		getContentPane().add(idPanel, "cell 0 0,grow");
-		
-		getContentPane().add(personalInfoPanel, "cell 0 1,grow");
-		
-		getContentPane().add(contactInfoPanel, "cell 0 2,grow");
-		
-		getContentPane().add(buttonPanel, "cell 0 5,grow");
-		
-		pack();
-	}
+public class CustomerRegistrationDialog extends JDialog implements InputDialog {
+    private static final long serialVersionUID = -394107433140693140L;
+    private IdPanel idPanel = new IdPanel();
+    private PersonalInfoPanel personalInfoPanel = new PersonalInfoPanel();
+    private ContactInfoPanel contactInfoPanel = new ContactInfoPanel();
+    private InputButtonPanel buttonPanel = new InputButtonPanel();
 
-	@Override
-	public IdPanel getIdPanel()
-	{
-		return idPanel;
-	}
-	
-	public PersonalInfoPanel getPersonalInfoPanel()
-	{
-		return personalInfoPanel;
-	}
+    public CustomerRegistrationDialog(Window owner) {
+	super(owner);
 
-	@Override
-	public InputButtonPanel getInputButtonPanel()
-	{
-		return buttonPanel;
-	}
+	setResizable(false);
+	setTitle(WindowTitle.NEW_CLIENT);
+	setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+	getContentPane().setLayout(new MigLayout("", "[]", "[][][][][][]"));
+
+	getContentPane().add(idPanel, "cell 0 0,grow");
+
+	getContentPane().add(personalInfoPanel, "cell 0 1,grow");
+
+	getContentPane().add(contactInfoPanel, "cell 0 2,grow");
+
+	getContentPane().add(buttonPanel, "cell 0 5,grow");
+
+	pack();
+    }
+
+    @Override
+    public IdPanel getIdPanel() {
+	return idPanel;
+    }
+
+    public PersonalInfoPanel getPersonalInfoPanel() {
+	return personalInfoPanel;
+    }
+
+    @Override
+    public InputButtonPanel getInputButtonPanel() {
+	return buttonPanel;
+    }
 }
