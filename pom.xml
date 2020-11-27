@@ -1,45 +1,48 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.zoran.jankov.repairq</groupId>
 	<artifactId>RepairQ</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RepairQ</name>
-  
-<properties>
 
-	<maven.compiler.source>14</maven.compiler.source>
-    <maven.compiler.target>14</maven.compiler.target>
-    
-</properties>
+	<properties>
+
+		<maven.compiler.source>14</maven.compiler.source>
+		<maven.compiler.target>14</maven.compiler.target>
+
+	</properties>
 
 	<dependencies>
-	
-  	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
-    		<groupId>org.hibernate</groupId>
-    		<artifactId>hibernate-core</artifactId>
-    		<version>5.4.24.Final</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.24.Final</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
-    		<groupId>org.projectlombok</groupId>
-    		<artifactId>lombok</artifactId>
-    		<version>1.18.16</version>
-    		<scope>provided</scope>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.16</version>
+			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/com.miglayout/miglayout -->
 		<dependency>
-    		<groupId>com.miglayout</groupId>
-    		<artifactId>miglayout</artifactId>
-    		<version>3.7.4</version>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout</artifactId>
+			<version>3.7.4</version>
 		</dependency>
-    	
-</dependencies>
 
- <description>RepairQ is a software application that is aimed for repair shops. It is used to track all business related things, from creating and tracing tickets, registering customers, devices that are being repaired, repair parts inventory and more.
+	</dependencies>
+
+	<description>RepairQ is a software application that is aimed for repair shops. It is used to track all business related things, from creating and tracing tickets, registering customers, devices that are being repaired, repair parts inventory and more.
+	
 </description>
 
 </project>
