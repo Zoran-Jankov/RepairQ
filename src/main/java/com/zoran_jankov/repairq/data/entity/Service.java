@@ -22,11 +22,11 @@ public class Service extends AbstractEntity {
     private int price;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "notification_id")
     private Notification notification;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "service_type_id")
     private ServiceType serviceType;
 
     @Override

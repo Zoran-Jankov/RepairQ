@@ -23,11 +23,11 @@ import lombok.EqualsAndHashCode;
 @Table(name = "model")
 public class Model extends BasicInfo {
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "device_type_id", nullable = false)
     private DeviceType deviceType;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
 
     @Override

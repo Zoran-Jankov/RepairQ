@@ -24,7 +24,7 @@ import lombok.EqualsAndHashCode;
 @Table(name = "device")
 public class Device extends AbstractEntity {
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "model_id", nullable = false)
     private Model model;
 
     @Column(name = "serial", nullable = false)

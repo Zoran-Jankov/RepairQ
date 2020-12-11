@@ -18,11 +18,11 @@ import lombok.Data;
 @Embeddable
 public class UpdateInfo {
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "last_updated_by_user_id",
-    		nullable = false,
-    		updatable = false,
-    		referencedColumnName = "id")
+    @JoinColumn(name = "last_updated_by_user_id", nullable = false, updatable = true)
     private User user;
+    
+    @Column(name = "version")
+    private short version;
 
     @Column(name = "last_update_date")
     @Temporal(TemporalType.TIMESTAMP)

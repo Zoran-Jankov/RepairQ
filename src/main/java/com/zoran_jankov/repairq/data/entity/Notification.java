@@ -17,11 +17,11 @@ import com.zoran_jankov.repairq.data.EntityType;
 @Table(name = "notification")
 public class Notification extends AbstractEntity {
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "notification_type_id", nullable = false)
     private NotificationType notificationType;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "ticket_id", nullable = false)
     private Ticket ticket;
 
     @Column(name = "comment")

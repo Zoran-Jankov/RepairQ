@@ -1,10 +1,14 @@
 package com.zoran_jankov.repairq.data.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
+import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
+import com.zoran_jankov.repairq.data.embeddable.UpdateInfo;
 
 import lombok.Getter;
 
@@ -26,12 +30,15 @@ public abstract class AbstractEntity implements Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
+    @Getter
     private int id;
 
-    @Override
-    public int getId() {
-        return id;
-    }
+    @Embedded
+    private CreationInfo creationInfo;
+    
+    @Embedded
+    private UpdateInfo updateInfo;
+    
     @Override
     public String getDisplayName() {
 	return Integer.toString(id);

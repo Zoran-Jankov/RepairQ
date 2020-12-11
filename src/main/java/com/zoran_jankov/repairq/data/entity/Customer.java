@@ -24,6 +24,7 @@ import lombok.EqualsAndHashCode;
 public class Customer extends AbstractEntity {
     @Embedded
     private PersonalInfo personalInfo;
+    
     @Embedded
     private ContactInfo contactInfo;
 
