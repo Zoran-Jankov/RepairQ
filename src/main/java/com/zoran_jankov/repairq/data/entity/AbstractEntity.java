@@ -26,9 +26,13 @@ public abstract class AbstractEntity implements Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
-    @Getter
     private int id;
 
+    @Override
+    public int getId() {
+        return id;
+    }
+    @Override
     public String getDisplayName() {
 	return Integer.toString(id);
     }
