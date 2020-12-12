@@ -11,9 +11,9 @@ public class ContactInfo {
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
-    @Column(name = "email")
+    @Column(name = "email_address")
     private String email;
 
-    @Column(name = "address")
+    @Column(name = "street_address")
     private String address;
 }
