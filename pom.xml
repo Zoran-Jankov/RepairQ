@@ -39,23 +39,8 @@
 			<version>3.7.4</version>
 		</dependency>
 		
-		<dependency>
-    		<groupId>org.junit</groupId>
-    		<artifactId>junit5-engine</artifactId>
-    		<version>5.0.0-ALPHA</version>
-		</dependency>
-		
-		<dependency>
-    		<groupId>org.junit.jupiter</groupId>
-    		<artifactId>junit-jupiter-api</artifactId>
-    		<version>5.7.0</version>
-    		<scope>test</scope>
-		</dependency>
-
 	</dependencies>
 
-	<description>RepairQ is a software application that is aimed for repair shops. It is used to track all business related things, from creating and tracing tickets, registering customers, devices that are being repaired, repair parts inventory and more.
-	
-</description>
+	<description>RepairQ is a software application that is aimed for repair shops. It is used to track all business related things, from creating and tracing tickets, registering customers, devices that are being repaired, repair parts inventory and more.</description>
 
 </project>
