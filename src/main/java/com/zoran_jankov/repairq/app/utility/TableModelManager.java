@@ -23,7 +23,6 @@ public class TableModelManager {
     private static Map<EntityType, TableModel> MODELS_MAP = new EnumMap<EntityType, TableModel>(EntityType.class);
 
     private static TableModel loadModel(EntityType entityType) {
-	return null;
-	// TODO Table Model Manager
+	return MODELS_MAP.get(entityType);
     }
 }
