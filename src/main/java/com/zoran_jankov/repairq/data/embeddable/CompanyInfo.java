@@ -7,8 +7,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Class CompanyInfo is a component of the Client class that is used to store
- * data about a client if that is a company, legal entity. It also contains tax
+ * Class CompanyInfo is a component of the Customer class that is used to store
+ * data about a customer if that is a company, legal entity. It also contains tax
  * identification number, and the bank account of the a company or a legal
  * entity.
  * 
