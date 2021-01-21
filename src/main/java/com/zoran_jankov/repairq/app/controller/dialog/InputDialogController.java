@@ -3,7 +3,7 @@ package com.zoran_jankov.repairq.app.controller.dialog;
 import com.zoran_jankov.repairq.data.EntityType;
 import com.zoran_jankov.repairq.data.entity.Entity;
 
-public class InputDialogController {
+public abstract class InputDialogController {
 
     public static void createController(WindowController owner, EntityType entityType) {
 	// TODO Auto-generated method stub
