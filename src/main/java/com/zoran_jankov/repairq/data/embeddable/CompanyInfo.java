@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * Class CompanyInfo is a component of the Customer class that is used to store
@@ -15,7 +14,6 @@ import lombok.EqualsAndHashCode;
  * @author Zoran Jankov
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 @Embeddable
 public class CompanyInfo {
     @Column(columnDefinition = "",
