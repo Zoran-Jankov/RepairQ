@@ -8,12 +8,24 @@ import lombok.Data;
 @Data
 @Embeddable
 public class ContactInfo {
-    @Column(name = "phone_number", nullable = false)
+    @Column(columnDefinition = "",
+	    name = "phone_number",
+	    nullable = false,
+	    unique = false,
+	    updatable = true)
     private String phoneNumber;
 
-    @Column(name = "email_address")
+    @Column(columnDefinition = "",
+	    name = "email_address",
+	    nullable = true,
+	    unique = false,
+	    updatable = true)
     private String email;
 
-    @Column(name = "street_address")
+    @Column(columnDefinition = "",
+	    name = "street_address",
+	    nullable = true,
+	    unique = false,
+	    updatable = true)
     private String address;
 }

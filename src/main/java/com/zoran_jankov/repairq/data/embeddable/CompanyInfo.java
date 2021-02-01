@@ -18,12 +18,24 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @Embeddable
 public class CompanyInfo {
-    @Column(name = "company_name")
+    @Column(columnDefinition = "",
+	    name = "company_name",
+	    nullable = false,
+	    unique = false,
+	    updatable = true)
     private String companyName;
 
-    @Column(name = "tax_id")
+    @Column(columnDefinition = "",
+	    name = "tax_id",
+	    nullable = true,
+	    unique = false,
+	    updatable = true)
     private String taxIDNumber;
 
-    @Column(name = "bank_account")
+    @Column(columnDefinition = "",
+	    name = "bank_account",
+	    nullable = true,
+	    unique = false,
+	    updatable = true)
     private String bankAccount;
 }
