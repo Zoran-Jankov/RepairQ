@@ -11,7 +11,7 @@ public class DataManager {
 	return instance;
     }
 
-    public User getLogedinUser() {
+    public User getLoggedInUser() {
 	return logedinUser;
     }
 

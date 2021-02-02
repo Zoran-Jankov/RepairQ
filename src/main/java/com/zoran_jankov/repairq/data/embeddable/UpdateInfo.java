@@ -36,13 +36,13 @@ public class UpdateInfo {
     private LocalDateTime lastUpdateDate;
     
     public UpdateInfo() {
-	this.user = DataManager.accessData().getLogedinUser();
+	this.user = DataManager.accessData().getLoggedInUser();
 	this.version = 1;
 	this.lastUpdateDate = LocalDateTime.now();
     }
     
     public void update() {
-	this.user = DataManager.accessData().getLogedinUser();
+	this.user = DataManager.accessData().getLoggedInUser();
 	this.version ++;
 	this.lastUpdateDate = LocalDateTime.now();
     }

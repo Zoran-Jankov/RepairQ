@@ -25,12 +25,14 @@ public class CreationInfo {
     		referencedColumnName = "id")
     private User owner;
 
-    @Column(name = "creation_date")
+    @Column(name = "creation_date",
+	    nullable = false,
+	    updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime creationDate;
     
     public CreationInfo() {
-	this.owner = DataManager.accessData().getLogedinUser();
+	this.owner = DataManager.accessData().getLoggedInUser();
 	creationDate = LocalDateTime.now();
     }
 }
