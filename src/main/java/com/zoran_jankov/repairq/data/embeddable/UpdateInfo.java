@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.zoran_jankov.repairq.data.DataManager;
 import com.zoran_jankov.repairq.data.entity.User;
 
 import lombok.Data;
@@ -18,13 +19,31 @@ import lombok.Data;
 @Embeddable
 public class UpdateInfo {
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "last_updated_by_user_id", nullable = false, updatable = true)
+    @JoinColumn(name = "last_updated_by_user_id",
+    		nullable = false,
+    		updatable = true)
     private User user;
     
-    @Column(name = "version")
+    @Column(name = "version",
+	    nullable = false,
+	    updatable = true)
     private short version;
 
-    @Column(name = "last_update_date")
+    @Column(name = "last_update_date",
+	    nullable = false,
+	    updatable = true)
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime lastUpdateDate;
+    
+    public UpdateInfo() {
+	this.user = DataManager.accessData().getLogedinUser();
+	this.version = 1;
+	this.lastUpdateDate = LocalDateTime.now();
+    }
+    
+    public void update() {
+	this.user = DataManager.accessData().getLogedinUser();
+	this.version ++;
+	this.lastUpdateDate = LocalDateTime.now();
+    }
 }
