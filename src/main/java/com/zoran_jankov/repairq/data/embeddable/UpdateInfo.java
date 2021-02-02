@@ -35,15 +35,15 @@ public class UpdateInfo {
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime lastUpdateDate;
     
-    public UpdateInfo() {
-	this.user = DataManager.accessData().getLoggedInUser();
+    public UpdateInfo(User user, LocalDateTime lastUpdateDate) {
+	this.user = user;
 	this.version = 1;
-	this.lastUpdateDate = LocalDateTime.now();
+	this.lastUpdateDate = lastUpdateDate;
     }
     
-    public void update() {
-	this.user = DataManager.accessData().getLoggedInUser();
+    public void update(User user, LocalDateTime lastUpdateDate) {
+	this.user = user;
 	this.version ++;
-	this.lastUpdateDate = LocalDateTime.now();
+	this.lastUpdateDate = lastUpdateDate;
     }
 }

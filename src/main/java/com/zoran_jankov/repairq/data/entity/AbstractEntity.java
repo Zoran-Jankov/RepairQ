@@ -32,7 +32,9 @@ import lombok.Getter;
 public abstract class AbstractEntity implements Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, nullable = false)
+    @Column(name = "id",
+    	    updatable = false,
+    	    nullable = false)
     @Getter
     private int id;
 
@@ -43,9 +45,9 @@ public abstract class AbstractEntity implements Entity {
     private UpdateInfo updateInfo;
     
     public AbstractEntity() {
-	User owner = DataManager.accessData().getLoggedInUser();
-	this.creationInfo = new CreationInfo(owner, LocalDateTime.now());
-	this.updateInfo = new UpdateInfo();
+	User user = DataManager.accessData().getLoggedInUser();
+	this.creationInfo = new CreationInfo(user, LocalDateTime.now());
+	this.updateInfo = new UpdateInfo(user, LocalDateTime.now());
     }
     
     @Override
