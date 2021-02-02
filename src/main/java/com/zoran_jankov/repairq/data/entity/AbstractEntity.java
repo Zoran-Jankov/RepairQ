@@ -14,6 +14,7 @@ import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
 import com.zoran_jankov.repairq.data.embeddable.UpdateInfo;
 
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Abstract class AbstractEntity represents a basic data entity, and it is a
@@ -39,9 +40,13 @@ public abstract class AbstractEntity implements Entity {
     private int id;
 
     @Embedded
+    @Getter
+    @Setter
     private CreationInfo creationInfo;
     
     @Embedded
+    @Getter
+    @Setter
     private UpdateInfo updateInfo;
     
     public AbstractEntity() {
