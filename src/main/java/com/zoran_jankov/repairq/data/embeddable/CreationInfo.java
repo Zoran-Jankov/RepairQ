@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.zoran_jankov.repairq.data.DataManager;
 import com.zoran_jankov.repairq.data.entity.User;
 
 import lombok.Data;
@@ -27,4 +28,9 @@ public class CreationInfo {
     @Column(name = "creation_date")
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime creationDate;
+    
+    public CreationInfo() {
+	this.owner = DataManager.accessData().getLogedinUser();
+	creationDate = LocalDateTime.now();
+    }
 }
