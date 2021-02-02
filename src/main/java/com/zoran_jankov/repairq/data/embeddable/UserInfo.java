@@ -5,7 +5,7 @@ import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
-import org.hibernate.usertype.UserType;
+import com.zoran_jankov.repairq.data.UserRole;
 
 import lombok.Data;
 
@@ -14,7 +14,7 @@ import lombok.Data;
 public class UserInfo {
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "user_type", nullable = false)
-    private UserType userType;
+    private UserRole userType;
 
     @Column(name = "username", nullable = false, unique = true)
     private String username;
