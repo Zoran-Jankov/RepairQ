@@ -1,7 +1,11 @@
 package com.zoran_jankov.repairq.data.embeddable;
 
+import java.util.Map;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+
+import com.zoran_jankov.repairq.data.FieldType;
 
 import lombok.Data;
 
@@ -36,4 +40,19 @@ public class CompanyInfo {
 	    unique = false,
 	    updatable = true)
     private String bankAccount;
+    
+    @SuppressWarnings("unused")
+    private CompanyInfo() {}
+    
+    public CompanyInfo(Map<FieldType, String> data) {
+	this.companyName = data.get(FieldType.COMPANY_NAME);
+	this.taxIDNumber = data.get(FieldType.TAX_ID);
+	this.bankAccount = data.get(FieldType.BANK_ACCOUNT);
+    }
+    
+    public void update(Map<FieldType, String> data) {
+	this.companyName = data.get(FieldType.COMPANY_NAME);
+	this.taxIDNumber = data.get(FieldType.TAX_ID);
+	this.bankAccount = data.get(FieldType.BANK_ACCOUNT);
+    }
 }
