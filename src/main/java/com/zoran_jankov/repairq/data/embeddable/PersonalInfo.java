@@ -30,8 +30,6 @@ public class PersonalInfo {
 	    updatable = true)
     private String lastName;
     
-    
-
     public String getDispalyName() {
 	return firstName + " " + lastName;
     }
@@ -40,6 +38,11 @@ public class PersonalInfo {
     private PersonalInfo() {}
     
     public PersonalInfo(Map<FieldType, String> data) {
+	this.firstName = data.get(FieldType.FIRST_NAME);
+	this.lastName = data.get(FieldType.LAST_NAME);
+    }
+    
+    public void update(Map<FieldType, String> data) {
 	this.firstName = data.get(FieldType.FIRST_NAME);
 	this.lastName = data.get(FieldType.LAST_NAME);
     }

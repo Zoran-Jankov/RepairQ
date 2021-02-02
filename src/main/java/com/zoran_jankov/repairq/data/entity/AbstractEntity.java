@@ -1,5 +1,7 @@
 package com.zoran_jankov.repairq.data.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import com.zoran_jankov.repairq.data.DataManager;
 import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
 import com.zoran_jankov.repairq.data.embeddable.UpdateInfo;
 
@@ -38,6 +41,12 @@ public abstract class AbstractEntity implements Entity {
     
     @Embedded
     private UpdateInfo updateInfo;
+    
+    public AbstractEntity() {
+	User owner = DataManager.accessData().getLoggedInUser();
+	this.creationInfo = new CreationInfo(owner, LocalDateTime.now());
+	this.updateInfo = new UpdateInfo();
+    }
     
     @Override
     public String getDisplayName() {
