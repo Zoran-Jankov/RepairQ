@@ -23,7 +23,10 @@ public enum FieldType {
     SERIAL,
 
     // Basic information
-    NAME, DESCRIPTION;
+    NAME, DESCRIPTION,
+    
+    //Foren Keyes
+    USER;
 
     public static boolean isRequired(FieldType type) {
 	switch (type) {
