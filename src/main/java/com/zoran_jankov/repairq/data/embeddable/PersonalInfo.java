@@ -23,7 +23,7 @@ public class PersonalInfo {
 	    unique = false,
 	    updatable = true)
     private String firstName;
-
+    
     @Column(name = "last_name",
 	    nullable = false,
 	    unique = false,
@@ -38,12 +38,11 @@ public class PersonalInfo {
     private PersonalInfo() {}
     
     public PersonalInfo(Map<FieldType, String> data) {
-	this.firstName = data.get(FieldType.FIRST_NAME);
-	this.lastName = data.get(FieldType.LAST_NAME);
+	update(data);
     }
     
     public void update(Map<FieldType, String> data) {
-	this.firstName = data.get(FieldType.FIRST_NAME);
-	this.lastName = data.get(FieldType.LAST_NAME);
+	setFirstName(data.get(FieldType.FIRST_NAME));
+	setLastName(data.get(FieldType.LAST_NAME));
     }
 }
