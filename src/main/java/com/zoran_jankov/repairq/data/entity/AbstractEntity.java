@@ -13,7 +13,8 @@ import com.zoran_jankov.repairq.data.DataManager;
 import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
 import com.zoran_jankov.repairq.data.embeddable.UpdateInfo;
 
-import lombok.Getter;
+import lombok.AccessLevel;
+import lombok.Data;
 import lombok.Setter;
 
 /**
@@ -29,6 +30,7 @@ import lombok.Setter;
  * 
  * @author Zoran Jankov
  */
+@Data
 @MappedSuperclass
 public abstract class AbstractEntity implements Entity {
     @Id
@@ -36,23 +38,19 @@ public abstract class AbstractEntity implements Entity {
     @Column(name = "id",
     	    updatable = false,
     	    nullable = false)
-    @Getter
+    @Setter(AccessLevel.PRIVATE)
     private int id;
 
     @Embedded
-    @Getter
-    @Setter
     private CreationInfo creationInfo;
     
     @Embedded
-    @Getter
-    @Setter
     private UpdateInfo updateInfo;
     
     public AbstractEntity() {
 	User user = DataManager.accessData().getLoggedInUser();
-	this.creationInfo = new CreationInfo(user, LocalDateTime.now());
-	this.updateInfo = new UpdateInfo(user, LocalDateTime.now());
+	setCreationInfo(new CreationInfo(user, LocalDateTime.now()));
+	setUpdateInfo(new UpdateInfo(user, LocalDateTime.now()));
     }
     
     @Override
