@@ -44,13 +44,13 @@ public class CompanyInfo {
     @SuppressWarnings("unused")
     private CompanyInfo() {}
     
-    public CompanyInfo(Map<FieldType, String> data) {
+    public CompanyInfo(Map<FieldType, Object> data) {
 	update(data);
     }
     
-    public void update(Map<FieldType, String> data) {
-	setCompanyName(data.get(FieldType.COMPANY_NAME));
-	setTaxIDNumber(data.get(FieldType.TAX_ID));
-	setBankAccount(data.get(FieldType.BANK_ACCOUNT));
+    public void update(Map<FieldType, Object> data) {
+	setCompanyName((String) data.get(FieldType.COMPANY_NAME));
+	setTaxIDNumber((String) data.get(FieldType.TAX_ID));
+	setBankAccount((String) data.get(FieldType.BANK_ACCOUNT));
     }
 }
