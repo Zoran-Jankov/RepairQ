@@ -45,14 +45,12 @@ public class CompanyInfo {
     private CompanyInfo() {}
     
     public CompanyInfo(Map<FieldType, String> data) {
-	this.companyName = data.get(FieldType.COMPANY_NAME);
-	this.taxIDNumber = data.get(FieldType.TAX_ID);
-	this.bankAccount = data.get(FieldType.BANK_ACCOUNT);
+	update(data);
     }
     
     public void update(Map<FieldType, String> data) {
-	this.companyName = data.get(FieldType.COMPANY_NAME);
-	this.taxIDNumber = data.get(FieldType.TAX_ID);
-	this.bankAccount = data.get(FieldType.BANK_ACCOUNT);
+	setCompanyName(data.get(FieldType.COMPANY_NAME));
+	setTaxIDNumber(data.get(FieldType.TAX_ID));
+	setBankAccount(data.get(FieldType.BANK_ACCOUNT));
     }
 }
