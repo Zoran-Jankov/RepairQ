@@ -12,7 +12,9 @@ import javax.persistence.TemporalType;
 
 import com.zoran_jankov.repairq.data.entity.User;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
 
 @Data
 @Embeddable
@@ -22,16 +24,18 @@ public class CreationInfo {
     		nullable = false,
     		updatable = false,
     		referencedColumnName = "id")
+    @Setter(AccessLevel.PRIVATE)
     private User owner;
 
     @Column(name = "creation_date",
 	    nullable = false,
 	    updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
+    @Setter(AccessLevel.PRIVATE)
     private LocalDateTime creationDate;
     
     public CreationInfo(User owner, LocalDateTime creationDate) {
-	this.owner = owner;
-	this.creationDate = creationDate;
+	setOwner(owner);;
+	setCreationDate(creationDate);;
     }
 }
