@@ -36,13 +36,13 @@ public class ContactInfo {
     @SuppressWarnings("unused")
     private ContactInfo() {}
     
-    public ContactInfo(Map<FieldType, String> data) {
+    public ContactInfo(Map<FieldType, Object> data) {
 	update(data);
     }
     
-    public void update(Map<FieldType, String> data) {
-	setPhoneNumber(data.get(FieldType.PHONE_NUMBER));
-	setEmail(data.get(FieldType.EMAIL));
-	setAddress(data.get(FieldType.ADDRESS));
+    public void update(Map<FieldType, Object> data) {
+	setPhoneNumber((String) data.get(FieldType.PHONE_NUMBER));
+	setEmail((String) data.get(FieldType.EMAIL));
+	setAddress((String) data.get(FieldType.ADDRESS));
     }
 }
