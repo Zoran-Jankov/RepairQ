@@ -23,7 +23,7 @@ public class UpdateInfo {
 	    nullable = false,
 	    updatable = true)
     @Setter(AccessLevel.PRIVATE)
-    private short version = 1;
+    private short version = 0;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "last_updated_by_user_id",
