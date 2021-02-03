@@ -1,6 +1,7 @@
 package com.zoran_jankov.repairq.data.embeddable;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -10,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.zoran_jankov.repairq.data.FieldType;
 import com.zoran_jankov.repairq.data.entity.User;
 
 import lombok.AccessLevel;
@@ -34,8 +36,8 @@ public class CreationInfo {
     @Setter(AccessLevel.PRIVATE)
     private LocalDateTime creationDate;
     
-    public CreationInfo(User owner, LocalDateTime creationDate) {
-	setOwner(owner);;
-	setCreationDate(creationDate);;
+    public CreationInfo(Map<FieldType, Object> data) {
+	setOwner((User) data.get(FieldType.USER));
+	setCreationDate((LocalDateTime) data.get(FieldType.TIMESTAMP));
     }
 }

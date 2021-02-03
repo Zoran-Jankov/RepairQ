@@ -1,6 +1,7 @@
 package com.zoran_jankov.repairq.data;
 
 public enum FieldType {
+    TIMESTAMP,
     // Notification information
     COMMENT,
 
