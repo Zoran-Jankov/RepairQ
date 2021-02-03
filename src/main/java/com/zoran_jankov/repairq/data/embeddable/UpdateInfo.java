@@ -23,7 +23,7 @@ public class UpdateInfo {
 	    nullable = false,
 	    updatable = true)
     @Setter(AccessLevel.PRIVATE)
-    private short version;
+    private short version = 1;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "last_updated_by_user_id",
@@ -38,9 +38,7 @@ public class UpdateInfo {
     private LocalDateTime lastUpdateDate;
     
     public UpdateInfo(User user, LocalDateTime lastUpdateDate) {
-	setVersion((short) 1);
-	setUser(user);
-	setLastUpdateDate(lastUpdateDate);
+	update(user, lastUpdateDate);
     }
     
     public void update(User user, LocalDateTime lastUpdateDate) {
