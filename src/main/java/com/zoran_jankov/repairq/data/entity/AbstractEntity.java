@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import com.zoran_jankov.repairq.data.DataManager;
 import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
 import com.zoran_jankov.repairq.data.embeddable.UpdateInfo;
 
@@ -47,8 +46,7 @@ public abstract class AbstractEntity implements Entity {
     @Embedded
     private UpdateInfo updateInfo;
     
-    public AbstractEntity() {
-	User user = DataManager.accessData().getLoggedInUser();
+    public AbstractEntity(User user, LocalDateTime lastUpdateDate) {
 	setCreationInfo(new CreationInfo(user, LocalDateTime.now()));
 	setUpdateInfo(new UpdateInfo(user, LocalDateTime.now()));
     }
