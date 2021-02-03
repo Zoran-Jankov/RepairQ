@@ -1,5 +1,7 @@
 package com.zoran_jankov.repairq.data.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -31,6 +33,10 @@ public class User extends AbstractEntity {
 
     @Embedded
     private UserInfo userInfo;
+    
+    public User(User user, LocalDateTime lastUpdateDate) {
+	super(user, lastUpdateDate);
+    }
 
     @Override
     public EntityType getType() {
