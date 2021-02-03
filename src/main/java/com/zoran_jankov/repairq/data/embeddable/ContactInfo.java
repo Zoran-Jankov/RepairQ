@@ -37,14 +37,12 @@ public class ContactInfo {
     private ContactInfo() {}
     
     public ContactInfo(Map<FieldType, String> data) {
-	this.phoneNumber = data.get(FieldType.PHONE_NUMBER);
-	this.email = data.get(FieldType.EMAIL);
-	this.address = data.get(FieldType.ADDRESS);
+	update(data);
     }
     
     public void update(Map<FieldType, String> data) {
-	this.phoneNumber = data.get(FieldType.PHONE_NUMBER);
-	this.email = data.get(FieldType.EMAIL);
-	this.address = data.get(FieldType.ADDRESS);
+	setPhoneNumber(data.get(FieldType.PHONE_NUMBER));
+	setEmail(data.get(FieldType.EMAIL));
+	setAddress(data.get(FieldType.ADDRESS));
     }
 }
