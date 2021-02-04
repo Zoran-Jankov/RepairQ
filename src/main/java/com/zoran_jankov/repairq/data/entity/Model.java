@@ -1,5 +1,7 @@
 package com.zoran_jankov.repairq.data.entity;
 
+import java.util.Map;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -7,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.zoran_jankov.repairq.data.EntityType;
+import com.zoran_jankov.repairq.data.FieldType;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -29,6 +32,12 @@ public class Model extends BasicInfo {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
+    
+    public Model(Map<FieldType, Object> data) {
+	super(data);
+	setDeviceType((DeviceType) data.get(FieldType.DEVICE_TYPE));
+	setBrand((Brand) data.get(FieldType.BRAND));
+    }
 
     @Override
     public final EntityType getType() {

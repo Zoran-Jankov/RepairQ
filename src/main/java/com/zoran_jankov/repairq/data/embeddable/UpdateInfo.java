@@ -1,6 +1,7 @@
 package com.zoran_jankov.repairq.data.embeddable;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -10,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.zoran_jankov.repairq.data.FieldType;
 import com.zoran_jankov.repairq.data.entity.User;
 
 import lombok.AccessLevel;
@@ -37,13 +39,13 @@ public class UpdateInfo {
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime lastUpdateDate;
     
-    public UpdateInfo(User user, LocalDateTime lastUpdateDate) {
-	update(user, lastUpdateDate);
+    public UpdateInfo(Map<FieldType, Object> data) {
+	update(data);
     }
-    
-    public void update(User user, LocalDateTime lastUpdateDate) {
+
+    public void update(Map<FieldType, Object> data) {
 	setVersion(version ++);
-	setUser(user);
-	setLastUpdateDate(lastUpdateDate);
+	setUser((User) data.get(FieldType.USER));
+	setLastUpdateDate((LocalDateTime) data.get(FieldType.TIMESTAMP));
     }
 }

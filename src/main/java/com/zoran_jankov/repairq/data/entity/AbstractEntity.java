@@ -1,6 +1,6 @@
 package com.zoran_jankov.repairq.data.entity;
 
-import java.time.LocalDateTime;
+import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import com.zoran_jankov.repairq.data.FieldType;
 import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
 import com.zoran_jankov.repairq.data.embeddable.UpdateInfo;
 
@@ -46,9 +47,17 @@ public abstract class AbstractEntity implements Entity {
     @Embedded
     private UpdateInfo updateInfo;
     
-    public AbstractEntity(User user, LocalDateTime lastUpdateDate) {
-	setCreationInfo(new CreationInfo(user, LocalDateTime.now()));
-	setUpdateInfo(new UpdateInfo(user, LocalDateTime.now()));
+    @SuppressWarnings("unused")
+    private AbstractEntity() {}
+    
+    public AbstractEntity(Map<FieldType, Object> data) {
+	setCreationInfo(new CreationInfo(data));
+	setUpdateInfo(new UpdateInfo(data));
+    }
+    
+    @Override
+    public void update(Map<FieldType, Object> data) {
+	updateInfo.update(data);
     }
     
     @Override

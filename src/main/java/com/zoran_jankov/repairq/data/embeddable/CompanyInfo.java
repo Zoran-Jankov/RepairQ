@@ -1,11 +1,10 @@
 package com.zoran_jankov.repairq.data.embeddable;
 
-import java.util.Map;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 import com.zoran_jankov.repairq.data.FieldType;
+import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
 
@@ -44,11 +43,11 @@ public class CompanyInfo {
     @SuppressWarnings("unused")
     private CompanyInfo() {}
     
-    public CompanyInfo(Map<FieldType, Object> data) {
+    public CompanyInfo(InputData data) {
 	update(data);
     }
     
-    public void update(Map<FieldType, Object> data) {
+    public void update(InputData data) {
 	setCompanyName((String) data.get(FieldType.COMPANY_NAME));
 	setTaxIDNumber((String) data.get(FieldType.TAX_ID));
 	setBankAccount((String) data.get(FieldType.BANK_ACCOUNT));

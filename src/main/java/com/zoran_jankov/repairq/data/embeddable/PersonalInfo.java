@@ -1,11 +1,10 @@
 package com.zoran_jankov.repairq.data.embeddable;
 
-import java.util.Map;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 import com.zoran_jankov.repairq.data.FieldType;
+import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
 
@@ -37,12 +36,12 @@ public class PersonalInfo {
     @SuppressWarnings("unused")
     private PersonalInfo() {}
     
-    public PersonalInfo(Map<FieldType, String> data) {
+    public PersonalInfo(InputData data) {
 	update(data);
     }
     
-    public void update(Map<FieldType, String> data) {
-	setFirstName(data.get(FieldType.FIRST_NAME));
-	setLastName(data.get(FieldType.LAST_NAME));
+    public void update(InputData data) {
+	setFirstName((String) data.get(FieldType.FIRST_NAME));
+	setLastName((String) data.get(FieldType.LAST_NAME));
     }
 }
