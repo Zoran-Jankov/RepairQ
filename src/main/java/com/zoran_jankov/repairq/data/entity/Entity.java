@@ -1,9 +1,6 @@
 package com.zoran_jankov.repairq.data.entity;
 
-import java.util.Map;
-
-import com.zoran_jankov.repairq.data.EntityType;
-import com.zoran_jankov.repairq.data.FieldType;
+import com.zoran_jankov.repairq.data.InputData;
 
 /**
  * Interface for all entities in the data structure.
@@ -20,19 +17,12 @@ public interface Entity {
      */
     public int getId();
 
+    public void update(InputData data);
+    
     /**
      * Getter for entity display name used in user interface.
      * 
      * @return (String) Display name for user interface.
      */
     public String getDisplayName();
-    
-    public void update(Map<FieldType, Object> data);
-    
-    /**
-     * Getter for data entity type.
-     * 
-     * @return (EntityType) Entity Type Enum.
-     */
-    public EntityType getType();
 }

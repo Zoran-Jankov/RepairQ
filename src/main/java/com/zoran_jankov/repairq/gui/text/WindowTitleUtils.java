@@ -1,8 +1,6 @@
 package com.zoran_jankov.repairq.gui.text;
 
-import com.zoran_jankov.repairq.data.EntityType;
-
-public class WindowTitle {
+public class WindowTitleUtils {
     public static String LOGIN = "Login";
     public static String MAIN_WINDOW = "Repair Shop Software";
 
@@ -36,50 +34,6 @@ public class WindowTitle {
     public static String BRAND_UPDATE = "Brand Update";
     public static String USER_UPDATE = "User Update";
 
-    private static String NEW_PROPERTY = "Unknown Property - ERROR";
-    private static String PROPERTY_UPDATE = "Unknown Property - ERROR";
-
-    public static String getNewPropertyTitle(EntityType entityType) {
-	switch (entityType) {
-	case NOTIFICATION_TYPE:
-	    return NEW_NOTIFICATION_TYPE;
-
-	case MARKETING:
-	    return NEW_MARKETING;
-
-	case STATUS:
-	    return NEW_STATUS;
-
-	case DEVICE_TYPE:
-	    return NEW_DEVICE_TYPE;
-
-	case BRAND:
-	    return NEW_BRAND;
-
-	default:
-	    return NEW_PROPERTY;
-	}
-    }
-
-    public static String getPropertyUpdateTitle(EntityType entityType) {
-	switch (entityType) {
-	case NOTIFICATION_TYPE:
-	    return NOTIFICATION_TYPE_UPDATE;
-
-	case MARKETING:
-	    return MARKETING_UPDATE;
-
-	case STATUS:
-	    return STATUS_UPDATE;
-
-	case DEVICE_TYPE:
-	    return DEVICE_TYPE_UPDATE;
-
-	case BRAND:
-	    return BRAND_UPDATE;
-
-	default:
-	    return PROPERTY_UPDATE;
-	}
-    }
+    public static String NEW_PROPERTY = "Unknown Property - ERROR";
+    public static String PROPERTY_UPDATE = "Unknown Property - ERROR";
 }

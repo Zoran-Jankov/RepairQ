@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.zoran_jankov.repairq.data.EntityType;
+import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,13 +23,12 @@ public class ServiceType extends BasicInfo {
     @Column(name = "default_price", nullable = false)
     private int defaultPrice;
 
-    /**
-     * Returns EntityType.SERVICE_TYPE enum.
-     * 
-     * @return (enum EntityType) SERVICE_TYPE
-     */
+    public ServiceType(InputData data) {
+	super(data);
+    }
+
     @Override
-    public EntityType getType() {
-	return EntityType.SERVICE_TYPE;
+    public void update(InputData data) {
+	super.basicUpdate(data);
     }
 }

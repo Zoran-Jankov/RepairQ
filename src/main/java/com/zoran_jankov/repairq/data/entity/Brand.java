@@ -1,12 +1,9 @@
 package com.zoran_jankov.repairq.data.entity;
 
-import java.util.Map;
-
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.zoran_jankov.repairq.data.EntityType;
-import com.zoran_jankov.repairq.data.FieldType;
+import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -22,12 +19,13 @@ import lombok.EqualsAndHashCode;
 @Table(name = "brand")
 public class Brand extends BasicInfo {
     
-    public Brand(Map<FieldType, Object> data) {
+    public Brand(InputData data) {
 	super(data);
     }
-    
+
     @Override
-    public final EntityType getType() {
-	return EntityType.BRAND;
+    public void update(InputData data) {
+	// TODO Auto-generated method stub
+	
     }
 }

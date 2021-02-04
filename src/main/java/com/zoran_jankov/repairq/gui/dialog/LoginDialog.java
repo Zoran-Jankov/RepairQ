@@ -13,7 +13,7 @@ import com.zoran_jankov.repairq.gui.panel.InputButtonPanel;
 import com.zoran_jankov.repairq.gui.text.ErrorMessage;
 import com.zoran_jankov.repairq.gui.text.ErrorTitle;
 import com.zoran_jankov.repairq.gui.text.LabelName;
-import com.zoran_jankov.repairq.gui.text.WindowTitle;
+import com.zoran_jankov.repairq.gui.text.WindowTitleUtils;
 import com.zoran_jankov.repairq.gui.utility.LabelFactory;
 import com.zoran_jankov.repairq.gui.utility.TextFieldFactory;
 
@@ -27,7 +27,7 @@ public class LoginDialog extends JDialog {
 
     public LoginDialog() {
 	setResizable(false);
-	setTitle(WindowTitle.LOGIN);
+	setTitle(WindowTitleUtils.LOGIN);
 	setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
 	getContentPane().setLayout(new MigLayout("", "[][grow]", "[30px:n][30px:n][]"));

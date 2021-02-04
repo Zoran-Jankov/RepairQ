@@ -8,7 +8,7 @@ import com.zoran_jankov.repairq.gui.panel.IdPanel;
 import com.zoran_jankov.repairq.gui.panel.InputButtonPanel;
 import com.zoran_jankov.repairq.gui.panel.SelectionPanel;
 import com.zoran_jankov.repairq.gui.panel.TicketRegistrationPanel;
-import com.zoran_jankov.repairq.gui.text.WindowTitle;
+import com.zoran_jankov.repairq.gui.text.WindowTitleUtils;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -24,7 +24,7 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog {
 	super(owner);
 
 	setResizable(false);
-	setTitle(WindowTitle.NEW_TICKET);
+	setTitle(WindowTitleUtils.NEW_TICKET);
 	setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 	getContentPane().setLayout(new MigLayout("", "[250px:n,grow][250px:n,grow]", "[::30px][200px:n,grow][][]"));

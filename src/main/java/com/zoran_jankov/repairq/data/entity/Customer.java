@@ -1,13 +1,10 @@
 package com.zoran_jankov.repairq.data.entity;
 
-import java.util.Map;
-
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.zoran_jankov.repairq.data.EntityType;
-import com.zoran_jankov.repairq.data.FieldType;
+import com.zoran_jankov.repairq.data.InputData;
 import com.zoran_jankov.repairq.data.embeddable.ContactInfo;
 import com.zoran_jankov.repairq.data.embeddable.PersonalInfo;
 
@@ -31,22 +28,17 @@ public class Customer extends AbstractEntity {
     @Embedded
     private ContactInfo contactInfo;
     
-    public Customer(Map<FieldType, Object> data) {
+    public Customer(InputData data) {
 	super(data);
 	setPersonalInfo(new PersonalInfo(data));
 	setContactInfo(new ContactInfo(data));
     }
     
     @Override
-    public void update(Map<FieldType, Object> data) {
-    	super.update(data);
+    public void update(InputData data) {
+    	super.basicUpdate(data);
     	personalInfo.update(data);
     	contactInfo.update(data);
-    }
-    
-    @Override
-    public final EntityType getType() {
-	return EntityType.CUSTOMER;
     }
     
     @Override

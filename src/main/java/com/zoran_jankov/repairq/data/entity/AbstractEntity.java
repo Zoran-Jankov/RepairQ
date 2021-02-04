@@ -1,7 +1,5 @@
 package com.zoran_jankov.repairq.data.entity;
 
-import java.util.Map;
-
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.GeneratedValue;
@@ -9,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import com.zoran_jankov.repairq.data.FieldType;
+import com.zoran_jankov.repairq.data.InputData;
 import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
 import com.zoran_jankov.repairq.data.embeddable.UpdateInfo;
 
@@ -50,13 +48,12 @@ public abstract class AbstractEntity implements Entity {
     @SuppressWarnings("unused")
     private AbstractEntity() {}
     
-    public AbstractEntity(Map<FieldType, Object> data) {
+    public AbstractEntity(InputData data) {
 	setCreationInfo(new CreationInfo(data));
 	setUpdateInfo(new UpdateInfo(data));
     }
     
-    @Override
-    public void update(Map<FieldType, Object> data) {
+    public void basicUpdate(InputData data) {
 	updateInfo.update(data);
     }
     

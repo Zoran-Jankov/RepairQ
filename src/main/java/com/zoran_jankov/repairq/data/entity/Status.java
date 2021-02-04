@@ -1,12 +1,9 @@
 package com.zoran_jankov.repairq.data.entity;
 
-import java.util.Map;
-
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.zoran_jankov.repairq.data.EntityType;
-import com.zoran_jankov.repairq.data.FieldType;
+import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,12 +13,12 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "status")
 public class Status extends BasicInfo {
-    public Status(Map<FieldType, Object> data) {
+    public Status(InputData data) {
 	super(data);
     }
     
     @Override
-    public EntityType getType() {
-	return EntityType.NOTIFICATION;
+    public void update(InputData data) {
+	super.basicUpdate(data);
     }
 }

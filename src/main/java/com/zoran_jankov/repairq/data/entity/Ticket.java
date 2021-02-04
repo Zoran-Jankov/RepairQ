@@ -7,7 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.zoran_jankov.repairq.data.EntityType;
+import com.zoran_jankov.repairq.data.InputData;
 import com.zoran_jankov.repairq.data.Priority;
 
 import lombok.Data;
@@ -33,8 +33,12 @@ public class Ticket extends AbstractEntity {
     @JoinColumn(name = "device_id", nullable = false)
     private Device device;
 
+    public Ticket(InputData data) {
+	super(data);
+    }
+
     @Override
-    public final EntityType getType() {
-	return EntityType.TICKET;
+    public void update(InputData data) {
+	super.basicUpdate(data);
     }
 }

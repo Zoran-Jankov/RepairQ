@@ -1,11 +1,10 @@
 package com.zoran_jankov.repairq.data.entity;
 
-import java.util.Map;
-
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 import com.zoran_jankov.repairq.data.FieldType;
+import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,15 +25,15 @@ public abstract class BasicInfo extends AbstractEntity {
     @Column(name = "description")
     private String description;
 
-    public BasicInfo(Map<FieldType, Object> data) {
+    public BasicInfo(InputData data) {
 	super(data);
 	setName((String) data.get(FieldType.NAME));
 	setDescription((String) data.get(FieldType.DESCRIPTION));
     }
     
     @Override
-    public void update(Map<FieldType, Object> data) {
-	super.update(data);
+    public void update(InputData data) {
+	super.basicUpdate(data);
 	setName((String) data.get(FieldType.NAME));
 	setDescription((String) data.get(FieldType.DESCRIPTION));
     }

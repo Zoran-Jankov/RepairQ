@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.zoran_jankov.repairq.data.EntityType;
+import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -29,8 +29,12 @@ public class Service extends AbstractEntity {
     @JoinColumn(name = "service_type_id")
     private ServiceType serviceType;
 
+    public Service(InputData data) {
+	super(data);
+    }
+
     @Override
-    public EntityType getType() {
-	return EntityType.SERVICE;
+    public void update(InputData data) {
+	super.basicUpdate(data);
     }
 }

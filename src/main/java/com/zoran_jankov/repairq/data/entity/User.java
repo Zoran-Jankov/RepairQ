@@ -1,12 +1,10 @@
 package com.zoran_jankov.repairq.data.entity;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.zoran_jankov.repairq.data.EntityType;
+import com.zoran_jankov.repairq.data.InputData;
 import com.zoran_jankov.repairq.data.embeddable.ContactInfo;
 import com.zoran_jankov.repairq.data.embeddable.PersonalInfo;
 import com.zoran_jankov.repairq.data.embeddable.UserInfo;
@@ -34,13 +32,13 @@ public class User extends AbstractEntity {
     @Embedded
     private UserInfo userInfo;
     
-    public User(User user, LocalDateTime lastUpdateDate) {
-	super(user, lastUpdateDate);
+    public User(InputData data) {
+	super(data);
     }
 
     @Override
-    public EntityType getType() {
-	return EntityType.USER;
+    public void update(InputData data) {
+	super.basicUpdate(data);
     }
 
     @Override

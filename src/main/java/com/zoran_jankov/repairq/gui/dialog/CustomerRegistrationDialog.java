@@ -8,7 +8,7 @@ import com.zoran_jankov.repairq.gui.panel.ContactInfoPanel;
 import com.zoran_jankov.repairq.gui.panel.IdPanel;
 import com.zoran_jankov.repairq.gui.panel.InputButtonPanel;
 import com.zoran_jankov.repairq.gui.panel.PersonalInfoPanel;
-import com.zoran_jankov.repairq.gui.text.WindowTitle;
+import com.zoran_jankov.repairq.gui.text.WindowTitleUtils;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -23,7 +23,7 @@ public class CustomerRegistrationDialog extends JDialog implements InputDialog {
 	super(owner);
 
 	setResizable(false);
-	setTitle(WindowTitle.NEW_CLIENT);
+	setTitle(WindowTitleUtils.NEW_CLIENT);
 	setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 	getContentPane().setLayout(new MigLayout("", "[]", "[][][][][][]"));

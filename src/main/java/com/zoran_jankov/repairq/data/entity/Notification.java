@@ -7,9 +7,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.zoran_jankov.repairq.data.InputData;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import com.zoran_jankov.repairq.data.EntityType;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -26,9 +27,13 @@ public class Notification extends AbstractEntity {
 
     @Column(name = "comment")
     private String comment;
+    
+    public Notification(InputData data) {
+	super(data);
+    }
 
     @Override
-    public EntityType getType() {
-	return EntityType.NOTIFICATION;
+    public void update(InputData data) {
+	super.basicUpdate(data);
     }
 }

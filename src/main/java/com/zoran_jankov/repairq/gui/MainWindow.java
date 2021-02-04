@@ -8,7 +8,7 @@ import javax.swing.UIManager;
 
 import com.zoran_jankov.repairq.gui.panel.DataTablePanel;
 import com.zoran_jankov.repairq.gui.text.TabName;
-import com.zoran_jankov.repairq.gui.text.WindowTitle;
+import com.zoran_jankov.repairq.gui.text.WindowTitleUtils;
 
 public class MainWindow extends JFrame {
     private static final long serialVersionUID = -6003284600077289818L;
@@ -16,7 +16,7 @@ public class MainWindow extends JFrame {
     private DataTablePanel notificationPanel = new DataTablePanel();
 
     public MainWindow() {
-	setTitle(WindowTitle.MAIN_WINDOW);
+	setTitle(WindowTitleUtils.MAIN_WINDOW);
 	setExtendedState(JFrame.MAXIMIZED_BOTH);
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

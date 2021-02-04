@@ -7,7 +7,7 @@ import javax.swing.JDialog;
 import com.zoran_jankov.repairq.gui.panel.DeviceRegistrationPanel;
 import com.zoran_jankov.repairq.gui.panel.IdPanel;
 import com.zoran_jankov.repairq.gui.panel.InputButtonPanel;
-import com.zoran_jankov.repairq.gui.text.WindowTitle;
+import com.zoran_jankov.repairq.gui.text.WindowTitleUtils;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -21,7 +21,7 @@ public class DeviceRegistrationDialog extends JDialog implements InputDialog {
 	super(owner);
 
 	setResizable(false);
-	setTitle(WindowTitle.NEW_DEVICE);
+	setTitle(WindowTitleUtils.NEW_DEVICE);
 	setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 	getContentPane().setLayout(new MigLayout("", "[434px]", "[25px:n][][]"));

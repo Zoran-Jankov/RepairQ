@@ -7,7 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.zoran_jankov.repairq.data.EntityType;
+import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -29,9 +29,13 @@ public class Device extends AbstractEntity {
 
     @Column(name = "serial", nullable = false)
     private String serial;
+    
+    public Device(InputData data) {
+	super(data);
+    }
 
     @Override
-    public EntityType getType() {
-	return EntityType.DEVICE;
+    public void update(InputData data) {
+	
     }
 }

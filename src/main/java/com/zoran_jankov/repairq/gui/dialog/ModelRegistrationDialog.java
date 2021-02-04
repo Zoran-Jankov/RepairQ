@@ -8,7 +8,7 @@ import com.zoran_jankov.repairq.gui.panel.BasicInfoPanel;
 import com.zoran_jankov.repairq.gui.panel.IdPanel;
 import com.zoran_jankov.repairq.gui.panel.InputButtonPanel;
 import com.zoran_jankov.repairq.gui.panel.ModelRegistrationPanel;
-import com.zoran_jankov.repairq.gui.text.WindowTitle;
+import com.zoran_jankov.repairq.gui.text.WindowTitleUtils;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -23,7 +23,7 @@ public class ModelRegistrationDialog extends JDialog implements InputDialog {
 	super(owner);
 
 	setResizable(false);
-	setTitle(WindowTitle.NEW_MODEL);
+	setTitle(WindowTitleUtils.NEW_MODEL);
 	setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	getContentPane().setLayout(new MigLayout("", "[434px]", "[20px:n][][200px:n][]"));
 
