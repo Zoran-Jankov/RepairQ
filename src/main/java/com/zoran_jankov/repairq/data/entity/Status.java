@@ -16,7 +16,7 @@ public class Status extends BasicInfo {
     public Status(InputData data) {
 	super(data);
     }
-    
+
     @Override
     public void update(InputData data) {
 	super.basicUpdate(data);

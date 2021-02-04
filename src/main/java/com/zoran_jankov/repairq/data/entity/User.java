@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
 /**
  * Class User represents a employee with associated information about that
  * employee.
- * 
+ *
  * @author Zoran Jankov
  */
 @Data
@@ -31,18 +31,18 @@ public class User extends AbstractEntity {
 
     @Embedded
     private UserInfo userInfo;
-    
+
     public User(InputData data) {
 	super(data);
     }
 
     @Override
-    public void update(InputData data) {
-	super.basicUpdate(data);
+    public String getDisplayName() {
+	return userInfo.getUsername();
     }
 
     @Override
-    public String getDisplayName() {
-	return userInfo.getUsername();
+    public void update(InputData data) {
+	super.basicUpdate(data);
     }
 }

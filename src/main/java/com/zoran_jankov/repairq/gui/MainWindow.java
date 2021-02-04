@@ -1,10 +1,13 @@
 package com.zoran_jankov.repairq.gui;
 
+import java.awt.Frame;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.WindowConstants;
 
 import com.zoran_jankov.repairq.gui.panel.DataTablePanel;
 import com.zoran_jankov.repairq.gui.text.TabName;
@@ -17,12 +20,12 @@ public class MainWindow extends JFrame {
 
     public MainWindow() {
 	setTitle(WindowTitleUtils.MAIN_WINDOW);
-	setExtendedState(JFrame.MAXIMIZED_BOTH);
-	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	setExtendedState(Frame.MAXIMIZED_BOTH);
+	setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 	getContentPane().setLayout(new GridLayout(1, 0, 0, 0));
 
-	JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
+	JTabbedPane tabbedPane = new JTabbedPane(SwingConstants.LEFT);
 	getContentPane().add(tabbedPane);
 
 	tabbedPane.addTab(TabName.TICKET, UIManager.getIcon("FileView.fileIcon"), ticketPanel, "Tickets View");
@@ -35,11 +38,11 @@ public class MainWindow extends JFrame {
 	pack();
     }
 
-    public DataTablePanel getTicketPanel() {
-	return ticketPanel;
-    }
-
     public DataTablePanel getNotificationPanel() {
 	return notificationPanel;
+    }
+
+    public DataTablePanel getTicketPanel() {
+	return ticketPanel;
     }
 }

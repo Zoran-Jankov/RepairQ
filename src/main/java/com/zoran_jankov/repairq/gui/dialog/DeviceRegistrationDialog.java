@@ -35,13 +35,13 @@ public class DeviceRegistrationDialog extends JDialog implements InputDialog {
 	pack();
     }
 
+    public DeviceRegistrationPanel getDeviceRegistrationPanel() {
+	return devicePanel;
+    }
+
     @Override
     public IdPanel getIdPanel() {
 	return idPanel;
-    }
-
-    public DeviceRegistrationPanel getDeviceRegistrationPanel() {
-	return devicePanel;
     }
 
     @Override

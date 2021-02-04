@@ -44,12 +44,12 @@ public class CustomerRegistrationDialog extends JDialog implements InputDialog {
 	return idPanel;
     }
 
-    public PersonalInfoPanel getPersonalInfoPanel() {
-	return personalInfoPanel;
-    }
-
     @Override
     public InputButtonPanel getInputButtonPanel() {
 	return buttonPanel;
+    }
+
+    public PersonalInfoPanel getPersonalInfoPanel() {
+	return personalInfoPanel;
     }
 }

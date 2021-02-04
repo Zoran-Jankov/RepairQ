@@ -47,21 +47,21 @@ public class DeviceRegistrationPanel extends JPanel {
 	return (String) cmbModel.getSelectedItem();
     }
 
-    public void setModel(ComboBoxModel<String> model) {
-	cmbModel.setModel(model);
-    }
-
     public String getSerial() {
 	txtSerial.setBackground(Color.WHITE);
 	return txtSerial.getText();
     }
 
-    public void setSerial(String serial) {
-	txtSerial.setText(serial);
-    }
-
     public void setBtnNewModelActionListener(ActionListener listener) {
 	btnNewModel.addActionListener(listener);
+    }
+
+    public void setModel(ComboBoxModel<String> model) {
+	cmbModel.setModel(model);
+    }
+
+    public void setSerial(String serial) {
+	txtSerial.setText(serial);
     }
 
     public void showModelError() {

@@ -21,30 +21,24 @@ import lombok.Setter;
 @Data
 @Embeddable
 public class UpdateInfo {
-    @Column(name = "version",
-	    nullable = false,
-	    updatable = true)
+    @Column(name = "version", nullable = false, updatable = true)
     @Setter(AccessLevel.PRIVATE)
     private short version = 0;
-    
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "last_updated_by_user_id",
-    		nullable = false,
-    		updatable = true)
+    @JoinColumn(name = "last_updated_by_user_id", nullable = false, updatable = true)
     private User user;
 
-    @Column(name = "last_update_date",
-	    nullable = false,
-	    updatable = true)
+    @Column(name = "last_update_date", nullable = false, updatable = true)
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime lastUpdateDate;
-    
+
     public UpdateInfo(InputData data) {
 	update(data);
     }
 
     public void update(InputData data) {
-	setVersion(version ++);
+	setVersion(version++);
 	setUser((User) data.get(FieldType.USER));
 	setLastUpdateDate((LocalDateTime) data.get(FieldType.TIMESTAMP));
     }

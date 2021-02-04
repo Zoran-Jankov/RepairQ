@@ -25,8 +25,8 @@ public enum FieldType {
 
     // Basic information
     NAME, DESCRIPTION,
-    
-    //Foreign Keys
+
+    // Foreign Keys
     NOTIFICATION, NOTIFICATION_TYPE, SERVICE, SERVICE_TYPE, TICKET, STATUS, CUSTOMER, MARKETING, LEGAL_ENTITY, DEVICE,
     MODEL, DEVICE_TYPE, BRAND, USER;
 

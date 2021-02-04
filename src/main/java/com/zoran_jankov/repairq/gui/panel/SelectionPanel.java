@@ -57,13 +57,9 @@ public class SelectionPanel extends JPanel {
 	return (String) cmbEntity.getSelectedItem();
     }
 
-    public void setEntityType(String text) {
-	lblEntityType.setText(text);
-    }
-
-    public void setComboBoxFunction(ComboBoxModel<String> model, ActionListener listener) {
-	cmbEntity.setModel(model);
-	cmbEntity.addActionListener(listener);
+    public void setButtonNewEntityFunction(ActionListener listener, String text) {
+	btnNewEntity.addActionListener(listener);
+	btnNewEntity.setText(text);
     }
 
     public void setButtonUpdateEntityFunction(ActionListener listener, String text) {
@@ -71,13 +67,17 @@ public class SelectionPanel extends JPanel {
 	btnUpdateEntity.setText(text);
     }
 
-    public void setButtonNewEntityFunction(ActionListener listener, String text) {
-	btnNewEntity.addActionListener(listener);
-	btnNewEntity.setText(text);
+    public void setComboBoxFunction(ComboBoxModel<String> model, ActionListener listener) {
+	cmbEntity.setModel(model);
+	cmbEntity.addActionListener(listener);
     }
 
     public void setEntityDetails(String text) {
 	lblEntityDetails.setText(text);
+    }
+
+    public void setEntityType(String text) {
+	lblEntityType.setText(text);
     }
 
     public void showSelectionError() {

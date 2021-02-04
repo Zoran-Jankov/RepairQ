@@ -1,7 +1,8 @@
 package com.zoran_jankov.repairq.gui.utility;
 
-import javax.swing.JButton;
 import java.awt.Font;
+
+import javax.swing.JButton;
 
 public final class ButtonFactory {
     /**

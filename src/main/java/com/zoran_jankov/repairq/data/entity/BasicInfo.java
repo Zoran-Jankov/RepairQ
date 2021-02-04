@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * Class BasicInfo represents a basic information of various entity classes.
- * 
+ *
  * @author Zoran Jankov
  */
 
@@ -30,16 +30,16 @@ public abstract class BasicInfo extends AbstractEntity {
 	setName((String) data.get(FieldType.NAME));
 	setDescription((String) data.get(FieldType.DESCRIPTION));
     }
-    
+
+    @Override
+    public String getDisplayName() {
+	return name;
+    }
+
     @Override
     public void update(InputData data) {
 	super.basicUpdate(data);
 	setName((String) data.get(FieldType.NAME));
 	setDescription((String) data.get(FieldType.DESCRIPTION));
-    }
-    
-    @Override
-    public String getDisplayName() {
-	return name;
     }
 }

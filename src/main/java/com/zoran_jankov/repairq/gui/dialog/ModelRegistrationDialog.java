@@ -40,16 +40,16 @@ public class ModelRegistrationDialog extends JDialog implements InputDialog {
 	return idPanel;
     }
 
+    @Override
+    public InputButtonPanel getInputButtonPanel() {
+	return buttonPanel;
+    }
+
     public ModelRegistrationPanel getModelPanel() {
 	return modelPanel;
     }
 
     public BasicInfoPanel getPropertyPanel() {
 	return propertyPanel;
-    }
-
-    @Override
-    public InputButtonPanel getInputButtonPanel() {
-	return buttonPanel;
     }
 }

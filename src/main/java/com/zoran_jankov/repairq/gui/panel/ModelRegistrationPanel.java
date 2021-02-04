@@ -44,22 +44,14 @@ public class ModelRegistrationPanel extends JPanel {
 	add(btnNewBrand, "cell 2 1,growx");
     }
 
-    public String getDeviceType() {
-	cmbDeviceType.setBackground(Color.WHITE);
-	return (String) cmbDeviceType.getSelectedItem();
-    }
-
-    public void setDeviceTypeCmbModel(ComboBoxModel<String> model) {
-	cmbDeviceType.setModel(model);
-    }
-
-    public void setBtnNewDeviceTypeActionlistener(ActionListener listener) {
-	btnNewDeviceType.addActionListener(listener);
-    }
-
     public String getBrand() {
 	cmbBrand.setBackground(Color.WHITE);
 	return (String) cmbBrand.getSelectedItem();
+    }
+
+    public String getDeviceType() {
+	cmbDeviceType.setBackground(Color.WHITE);
+	return (String) cmbDeviceType.getSelectedItem();
     }
 
     public void setBrandCmbModel(ComboBoxModel<String> model) {
@@ -70,11 +62,19 @@ public class ModelRegistrationPanel extends JPanel {
 	btnNewBrand.addActionListener(listener);
     }
 
-    public void showDeviceTypeError() {
-	cmbDeviceType.setBackground(Color.YELLOW);
+    public void setBtnNewDeviceTypeActionlistener(ActionListener listener) {
+	btnNewDeviceType.addActionListener(listener);
+    }
+
+    public void setDeviceTypeCmbModel(ComboBoxModel<String> model) {
+	cmbDeviceType.setModel(model);
     }
 
     public void showBrandError() {
 	cmbBrand.setBackground(Color.YELLOW);
+    }
+
+    public void showDeviceTypeError() {
+	cmbDeviceType.setBackground(Color.YELLOW);
     }
 }

@@ -1,7 +1,8 @@
 package com.zoran_jankov.repairq.gui.utility;
 
-import javax.swing.JLabel;
 import java.awt.Font;
+
+import javax.swing.JLabel;
 
 public final class LabelFactory {
     /**

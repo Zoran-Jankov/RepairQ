@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * Class Brand represents a device brand.
- * 
+ *
  * @author Zoran Jankov
  */
 @Data
@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "brand")
 public class Brand extends BasicInfo {
-    
+
     public Brand(InputData data) {
 	super(data);
     }
@@ -26,6 +26,6 @@ public class Brand extends BasicInfo {
     @Override
     public void update(InputData data) {
 	// TODO Auto-generated method stub
-	
+
     }
 }

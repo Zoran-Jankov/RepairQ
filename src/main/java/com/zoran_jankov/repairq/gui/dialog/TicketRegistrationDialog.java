@@ -42,11 +42,6 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog {
 	pack();
     }
 
-    @Override
-    public IdPanel getIdPanel() {
-	return idPanel;
-    }
-
     public String getClient() {
 	return clientPanel.getEntity();
     }
@@ -63,12 +58,17 @@ public class TicketRegistrationDialog extends JDialog implements InputDialog {
 	return devicePanel;
     }
 
-    public TicketRegistrationPanel getTicketPanel() {
-	return ticketPanel;
+    @Override
+    public IdPanel getIdPanel() {
+	return idPanel;
     }
 
     @Override
     public InputButtonPanel getInputButtonPanel() {
 	return buttonPanel;
+    }
+
+    public TicketRegistrationPanel getTicketPanel() {
+	return ticketPanel;
     }
 }

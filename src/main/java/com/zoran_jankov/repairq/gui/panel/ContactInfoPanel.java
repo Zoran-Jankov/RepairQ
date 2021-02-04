@@ -22,15 +22,15 @@ public class ContactInfoPanel extends JPanel {
 	add(address, "cell 0 3,grow");
     }
 
-    public String getPhoneNumber() {
-	return phoneNumber.getInput();
+    public String getAddress() {
+	return address.getInput();
     }
 
     public String getEmail() {
 	return email.getInput();
     }
 
-    public String getAddress() {
-	return address.getInput();
+    public String getPhoneNumber() {
+	return phoneNumber.getInput();
     }
 }

@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
 /**
  * Class ServiceType extends abstract class Property and represents a the type
  * of a service.
- * 
+ *
  * @author Zoran Jankov
  */
 @Data

@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 
 import com.zoran_jankov.repairq.gui.panel.InputButtonPanel;
 import com.zoran_jankov.repairq.gui.text.ErrorMessage;
@@ -28,7 +29,7 @@ public class LoginDialog extends JDialog {
     public LoginDialog() {
 	setResizable(false);
 	setTitle(WindowTitleUtils.LOGIN);
-	setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+	setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
 	getContentPane().setLayout(new MigLayout("", "[][grow]", "[30px:n][30px:n][]"));
 
@@ -51,14 +52,14 @@ public class LoginDialog extends JDialog {
 	return buttonPanel;
     }
 
-    public String getUsername() {
-	txtUsername.setBackground(Color.WHITE);
-	return txtUsername.getText();
-    }
-
     public char[] getPassword() {
 	txtUsername.setBackground(Color.WHITE);
 	return txtPassword.getPassword();
+    }
+
+    public String getUsername() {
+	txtUsername.setBackground(Color.WHITE);
+	return txtUsername.getText();
     }
 
     public void showLoginError() {

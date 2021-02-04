@@ -11,34 +11,23 @@ import lombok.Data;
 @Data
 @Embeddable
 public class ContactInfo {
-    @Column(columnDefinition = "",
-	    name = "phone_number",
-	    nullable = true,
-	    unique = false,
-	    updatable = true)
+    @Column(columnDefinition = "", name = "phone_number", nullable = true, unique = false, updatable = true)
     private String phoneNumber;
 
-    @Column(columnDefinition = "",
-	    name = "email_address",
-	    nullable = true,
-	    unique = false,
-	    updatable = true)
+    @Column(columnDefinition = "", name = "email_address", nullable = true, unique = false, updatable = true)
     private String email;
 
-    @Column(columnDefinition = "",
-	    name = "street_address",
-	    nullable = true,
-	    unique = false,
-	    updatable = true)
+    @Column(columnDefinition = "", name = "street_address", nullable = true, unique = false, updatable = true)
     private String address;
-    
+
     @SuppressWarnings("unused")
-    private ContactInfo() {}
-    
+    private ContactInfo() {
+    }
+
     public ContactInfo(InputData data) {
 	update(data);
     }
-    
+
     public void update(InputData data) {
 	setPhoneNumber((String) data.get(FieldType.PHONE_NUMBER));
 	setEmail((String) data.get(FieldType.EMAIL));

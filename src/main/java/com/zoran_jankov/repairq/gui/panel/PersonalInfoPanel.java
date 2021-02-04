@@ -43,21 +43,21 @@ public class PersonalInfoPanel extends JPanel {
 	return txtFirstName.getText();
     }
 
-    public void setFirstName(String firstName) {
-	txtFirstName.setText(firstName);
-    }
-
-    public void showFirstNameError() {
-	txtFirstName.setBackground(Color.YELLOW);
-    }
-
     public String getLastName() {
 	txtLastName.setBackground(Color.WHITE);
 	return txtLastName.getText();
     }
 
+    public void setFirstName(String firstName) {
+	txtFirstName.setText(firstName);
+    }
+
     public void setLastName(String lastName) {
 	txtLastName.setText(lastName);
+    }
+
+    public void showFirstNameError() {
+	txtFirstName.setBackground(Color.YELLOW);
     }
 
     public void showLastNameError() {

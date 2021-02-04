@@ -22,20 +22,15 @@ import lombok.Setter;
 @Embeddable
 public class CreationInfo {
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "created_by_user_id",
-    		nullable = false,
-    		updatable = false,
-    		referencedColumnName = "id")
+    @JoinColumn(name = "created_by_user_id", nullable = false, updatable = false, referencedColumnName = "id")
     @Setter(AccessLevel.PRIVATE)
     private User owner;
 
-    @Column(name = "creation_date",
-	    nullable = false,
-	    updatable = false)
+    @Column(name = "creation_date", nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.PRIVATE)
     private LocalDateTime creationDate;
-    
+
     public CreationInfo(InputData data) {
 	setOwner((User) data.get(FieldType.USER));
 	setCreationDate((LocalDateTime) data.get(FieldType.TIMESTAMP));

@@ -34,13 +34,13 @@ public class BasicInfoPanel extends JPanel {
 	add(txtDescription, "cell 0 3 2 1,grow");
     }
 
+    public String getDescription() {
+	return txtDescription.getText();
+    }
+
     public String getPropertyName() {
 	txtName.setBackground(Color.WHITE);
 	return txtName.getText();
-    }
-
-    public String getDescription() {
-	return txtDescription.getText();
     }
 
     public void showNameError() {

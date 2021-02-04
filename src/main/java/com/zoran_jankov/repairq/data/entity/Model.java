@@ -30,7 +30,7 @@ public class Model extends BasicInfo {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
-    
+
     public Model(InputData data) {
 	super(data);
 	setDeviceType((DeviceType) data.get(FieldType.DEVICE_TYPE));

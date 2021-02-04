@@ -25,7 +25,7 @@ import lombok.Setter;
  * <p>
  * (int) id - must be unique
  * <p>
- * 
+ *
  * @author Zoran Jankov
  */
 @Data
@@ -33,30 +33,29 @@ import lombok.Setter;
 public abstract class AbstractEntity implements Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id",
-    	    updatable = false,
-    	    nullable = false)
+    @Column(name = "id", updatable = false, nullable = false)
     @Setter(AccessLevel.PRIVATE)
     private int id;
 
     @Embedded
     private CreationInfo creationInfo;
-    
+
     @Embedded
     private UpdateInfo updateInfo;
-    
+
     @SuppressWarnings("unused")
-    private AbstractEntity() {}
-    
+    private AbstractEntity() {
+    }
+
     public AbstractEntity(InputData data) {
 	setCreationInfo(new CreationInfo(data));
 	setUpdateInfo(new UpdateInfo(data));
     }
-    
+
     public void basicUpdate(InputData data) {
 	updateInfo.update(data);
     }
-    
+
     @Override
     public String getDisplayName() {
 	return Integer.toString(id);

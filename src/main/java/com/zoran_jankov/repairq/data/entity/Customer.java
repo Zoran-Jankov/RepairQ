@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
 /**
  * Class Client represents a client with associated information about that
  * client.
- * 
+ *
  * @author Zoran Jankov
  */
 @Data
@@ -24,25 +24,25 @@ import lombok.EqualsAndHashCode;
 public class Customer extends AbstractEntity {
     @Embedded
     private PersonalInfo personalInfo;
-    
+
     @Embedded
     private ContactInfo contactInfo;
-    
+
     public Customer(InputData data) {
 	super(data);
 	setPersonalInfo(new PersonalInfo(data));
 	setContactInfo(new ContactInfo(data));
     }
-    
-    @Override
-    public void update(InputData data) {
-    	super.basicUpdate(data);
-    	personalInfo.update(data);
-    	contactInfo.update(data);
-    }
-    
+
     @Override
     public String getDisplayName() {
 	return super.getDisplayName() + " " + personalInfo.getDispalyName();
+    }
+
+    @Override
+    public void update(InputData data) {
+	super.basicUpdate(data);
+	personalInfo.update(data);
+	contactInfo.update(data);
     }
 }

@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * Class DeviceType represents a device type.
- * 
+ *
  * @author Zoran Jankov
  */
 @Data

@@ -27,7 +27,7 @@ public class Notification extends AbstractEntity {
 
     @Column(name = "comment")
     private String comment;
-    
+
     public Notification(InputData data) {
 	super(data);
     }

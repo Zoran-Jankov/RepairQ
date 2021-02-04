@@ -11,35 +11,30 @@ import lombok.Data;
 /**
  * The abstract class Person is a abstract entity data class that represents
  * personal information about a person.
- * 
+ *
  * @author Zoran Jankov
  */
 @Data
 @Embeddable
 public class PersonalInfo {
-    @Column(name = "first_name",
-	    nullable = false,
-	    unique = false,
-	    updatable = true)
+    @Column(name = "first_name", nullable = false, unique = false, updatable = true)
     private String firstName;
-    
-    @Column(name = "last_name",
-	    nullable = false,
-	    unique = false,
-	    updatable = true)
+
+    @Column(name = "last_name", nullable = false, unique = false, updatable = true)
     private String lastName;
-    
-    public String getDispalyName() {
-	return firstName + " " + lastName;
-    }
-    
+
     @SuppressWarnings("unused")
-    private PersonalInfo() {}
-    
+    private PersonalInfo() {
+    }
+
     public PersonalInfo(InputData data) {
 	update(data);
     }
-    
+
+    public String getDispalyName() {
+	return firstName + " " + lastName;
+    }
+
     public void update(InputData data) {
 	setFirstName((String) data.get(FieldType.FIRST_NAME));
 	setLastName((String) data.get(FieldType.LAST_NAME));

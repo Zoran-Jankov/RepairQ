@@ -47,10 +47,6 @@ public class TextInputField extends JPanel {
 	return textField.getText();
     }
 
-    public void setInput(String input) {
-	this.textField.setText(input);
-    }
-
     private boolean isEmpty() {
 	return "".equals(textField.getText());
     }
@@ -65,5 +61,9 @@ public class TextInputField extends JPanel {
 	default:
 	    return true;
 	}
+    }
+
+    public void setInput(String input) {
+	this.textField.setText(input);
     }
 }

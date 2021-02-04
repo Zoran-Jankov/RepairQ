@@ -29,13 +29,13 @@ public class Device extends AbstractEntity {
 
     @Column(name = "serial", nullable = false)
     private String serial;
-    
+
     public Device(InputData data) {
 	super(data);
     }
 
     @Override
     public void update(InputData data) {
-	
+
     }
 }

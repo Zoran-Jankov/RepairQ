@@ -27,12 +27,12 @@ public class DataTablePanel extends JPanel {
 	add(btnAddNewData, "cell 0 1");
     }
 
-    public void setTableModel(TableModel dataModel) {
-	tblData.setModel(dataModel);
-    }
-
     public void setButtonNewFunction(ActionListener listener, String buttonText) {
 	btnAddNewData.setText(buttonText);
 	btnAddNewData.addActionListener(listener);
+    }
+
+    public void setTableModel(TableModel dataModel) {
+	tblData.setModel(dataModel);
     }
 }
