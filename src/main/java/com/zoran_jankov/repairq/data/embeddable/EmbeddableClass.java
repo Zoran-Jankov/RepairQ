@@ -1,0 +1,7 @@
+package com.zoran_jankov.repairq.data.embeddable;
+
+import com.zoran_jankov.repairq.data.InputData;
+
+public interface EmbeddableClass {
+    public void update(InputData data);
+}

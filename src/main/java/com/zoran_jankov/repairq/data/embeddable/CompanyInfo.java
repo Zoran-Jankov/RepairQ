@@ -18,7 +18,7 @@ import lombok.Data;
  */
 @Data
 @Embeddable
-public class CompanyInfo {
+public class CompanyInfo implements EmbeddableClass {
     @Column(columnDefinition = "", name = "company_name", nullable = false, unique = false, updatable = true)
     private String companyName;
 
@@ -36,6 +36,7 @@ public class CompanyInfo {
 	update(data);
     }
 
+    @Override
     public void update(InputData data) {
 	setCompanyName((String) data.get(FieldType.COMPANY_NAME));
 	setTaxIDNumber((String) data.get(FieldType.TAX_ID));

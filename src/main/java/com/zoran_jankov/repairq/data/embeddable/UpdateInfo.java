@@ -20,7 +20,7 @@ import lombok.Setter;
 
 @Data
 @Embeddable
-public class UpdateInfo {
+public class UpdateInfo implements EmbeddableClass {
     @Column(name = "version", nullable = false, updatable = true)
     @Setter(AccessLevel.PRIVATE)
     private short version = 0;
@@ -37,6 +37,7 @@ public class UpdateInfo {
 	update(data);
     }
 
+    @Override
     public void update(InputData data) {
 	setVersion(version++);
 	setUser((User) data.get(FieldType.USER));

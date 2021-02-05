@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @Embeddable
-public class ContactInfo {
+public class ContactInfo implements EmbeddableClass {
     @Column(columnDefinition = "", name = "phone_number", nullable = true, unique = false, updatable = true)
     private String phoneNumber;
 
@@ -28,6 +28,7 @@ public class ContactInfo {
 	update(data);
     }
 
+    @Override
     public void update(InputData data) {
 	setPhoneNumber((String) data.get(FieldType.PHONE_NUMBER));
 	setEmail((String) data.get(FieldType.EMAIL));

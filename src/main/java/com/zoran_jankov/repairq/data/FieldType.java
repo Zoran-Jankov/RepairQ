@@ -28,7 +28,7 @@ public enum FieldType {
 
     // Foreign Keys
     NOTIFICATION, NOTIFICATION_TYPE, SERVICE, SERVICE_TYPE, TICKET, STATUS, CUSTOMER, MARKETING, LEGAL_ENTITY, DEVICE,
-    MODEL, DEVICE_TYPE, BRAND, USER;
+    MODEL, DEVICE_TYPE, BRAND, USER, USER_ROLE;
 
     public static boolean isRequired(FieldType type) {
 	switch (type) {

@@ -16,7 +16,7 @@ import lombok.Data;
  */
 @Data
 @Embeddable
-public class PersonalInfo {
+public class PersonalInfo implements EmbeddableClass {
     @Column(name = "first_name", nullable = false, unique = false, updatable = true)
     private String firstName;
 
@@ -35,6 +35,7 @@ public class PersonalInfo {
 	return firstName + " " + lastName;
     }
 
+    @Override
     public void update(InputData data) {
 	setFirstName((String) data.get(FieldType.FIRST_NAME));
 	setLastName((String) data.get(FieldType.LAST_NAME));
