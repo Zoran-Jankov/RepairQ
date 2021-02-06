@@ -30,6 +30,10 @@ public class CreationInfo {
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.PRIVATE)
     private LocalDateTime creationDate;
+    
+    @SuppressWarnings("unused")
+    private CreationInfo() {
+    }
 
     public CreationInfo(InputData data) {
 	setOwner((User) data.get(FieldType.USER));

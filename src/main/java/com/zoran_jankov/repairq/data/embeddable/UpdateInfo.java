@@ -32,6 +32,10 @@ public class UpdateInfo implements EmbeddableClass {
     @Column(name = "last_update_date", nullable = false, updatable = true)
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime lastUpdateDate;
+    
+    @SuppressWarnings("unused")
+    private UpdateInfo() {
+    }
 
     public UpdateInfo(InputData data) {
 	update(data);
