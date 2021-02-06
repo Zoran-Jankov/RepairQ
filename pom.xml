@@ -38,7 +38,14 @@
 			<artifactId>miglayout</artifactId>
 			<version>3.7.4</version>
 		</dependency>
-		
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.23</version>
+		</dependency>
+
 	</dependencies>
 
 	<description>RepairQ is a software application that is aimed for repair shops. It is used to track all business related things, from creating and tracing tickets, registering customers, devices that are being repaired, repair parts inventory and more.</description>
