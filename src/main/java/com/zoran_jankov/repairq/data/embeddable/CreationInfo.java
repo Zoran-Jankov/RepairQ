@@ -30,7 +30,7 @@ public class CreationInfo {
     @Temporal(TemporalType.TIMESTAMP)
     @Setter(AccessLevel.PRIVATE)
     private LocalDateTime creationDate;
-    
+
     @SuppressWarnings("unused")
     private CreationInfo() {
     }

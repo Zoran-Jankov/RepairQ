@@ -23,7 +23,7 @@ public class UserInfo implements EmbeddableClass {
 
     @Column(name = "password", nullable = false)
     private String passwordHash;
-    
+
     @SuppressWarnings("unused")
     private UserInfo() {
     }
