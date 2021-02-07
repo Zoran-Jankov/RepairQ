@@ -21,5 +21,4 @@ public class DeviceType extends BasicInfo {
     public DeviceType(InputData data) {
 	super(data);
     }
-
 }

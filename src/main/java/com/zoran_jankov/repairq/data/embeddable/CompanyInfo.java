@@ -28,10 +28,6 @@ public class CompanyInfo implements EmbeddableClass {
     @Column(columnDefinition = "", name = "bank_account", nullable = true, unique = false, updatable = true)
     private String bankAccount;
 
-    @SuppressWarnings("unused")
-    private CompanyInfo() {
-    }
-
     public CompanyInfo(InputData data) {
 	update(data);
     }

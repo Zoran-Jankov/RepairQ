@@ -35,14 +35,14 @@ public class Customer extends AbstractEntity {
     }
 
     @Override
-    public String getDisplayName() {
-	return super.getDisplayName() + " " + personalInfo.getDispalyName();
-    }
-
-    @Override
     public void update(InputData data) {
-	super.basicUpdate(data);
+	super.update(data);
 	personalInfo.update(data);
 	contactInfo.update(data);
+    }
+    
+    @Override
+    public String getDisplayName() {
+	return super.getDisplayName() + " " + personalInfo.getDispalyName();
     }
 }

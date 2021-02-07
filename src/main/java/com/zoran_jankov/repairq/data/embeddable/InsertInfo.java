@@ -14,28 +14,24 @@ import com.zoran_jankov.repairq.data.FieldType;
 import com.zoran_jankov.repairq.data.InputData;
 import com.zoran_jankov.repairq.data.entity.User;
 
-import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Setter;
 
 @Data
 @Embeddable
-public class CreationInfo {
+public class InsertInfo {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_by_user_id", nullable = false, updatable = false, referencedColumnName = "id")
-    @Setter(AccessLevel.PRIVATE)
     private User owner;
 
     @Column(name = "creation_date", nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @Setter(AccessLevel.PRIVATE)
     private LocalDateTime creationDate;
 
-    @SuppressWarnings("unused")
-    private CreationInfo() {
+    public InsertInfo(InputData data) {
+	update(data);
     }
 
-    public CreationInfo(InputData data) {
+    public void update(InputData data) {
 	setOwner((User) data.get(FieldType.USER));
 	setCreationDate((LocalDateTime) data.get(FieldType.TIMESTAMP));
     }

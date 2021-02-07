@@ -38,7 +38,7 @@ public abstract class BasicInfo extends AbstractEntity {
 
     @Override
     public void update(InputData data) {
-	super.basicUpdate(data);
+	super.update(data);
 	setName((String) data.get(FieldType.NAME));
 	setDescription((String) data.get(FieldType.DESCRIPTION));
     }

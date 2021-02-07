@@ -43,6 +43,6 @@ public class User extends AbstractEntity {
 
     @Override
     public void update(InputData data) {
-	super.basicUpdate(data);
+	super.update(data);
     }
 }

@@ -8,14 +8,6 @@ import com.zoran_jankov.repairq.data.InputData;
  * @author Zoran Jankov
  */
 public interface Entity {
-
-    /**
-     * Getter for entity display name used in user interface.
-     *
-     * @return (String) Display name for user interface.
-     */
-    public String getDisplayName();
-
     /**
      * Getter for data entity ID number.
      *
@@ -24,4 +16,11 @@ public interface Entity {
     public int getId();
 
     public void update(InputData data);
+    
+    /**
+     * Getter for entity display name used in user interface.
+     *
+     * @return (String) Display name for user interface.
+     */
+    public String getDisplayName();
 }

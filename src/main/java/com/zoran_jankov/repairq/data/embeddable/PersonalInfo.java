@@ -23,10 +23,6 @@ public class PersonalInfo implements EmbeddableClass {
     @Column(name = "last_name", nullable = false, unique = false, updatable = true)
     private String lastName;
 
-    @SuppressWarnings("unused")
-    private PersonalInfo() {
-    }
-
     public PersonalInfo(InputData data) {
 	update(data);
     }

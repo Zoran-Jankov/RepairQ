@@ -18,14 +18,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "brand")
 public class Brand extends BasicInfo {
-
     public Brand(InputData data) {
 	super(data);
-    }
-
-    @Override
-    public void update(InputData data) {
-	// TODO Auto-generated method stub
-
     }
 }

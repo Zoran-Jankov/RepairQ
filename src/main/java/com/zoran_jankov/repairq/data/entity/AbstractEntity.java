@@ -6,14 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
 import com.zoran_jankov.repairq.data.InputData;
-import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
-import com.zoran_jankov.repairq.data.embeddable.UpdateInfo;
+import com.zoran_jankov.repairq.data.embeddable.InsertInfo;
 
-import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Setter;
 
 /**
  * Abstract class AbstractEntity represents a basic data entity, and it is a
@@ -34,26 +32,25 @@ public abstract class AbstractEntity implements Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
-    @Setter(AccessLevel.PRIVATE)
     private int id;
+    
+    @Version
+    @Column(name = "version", nullable = false, updatable = true)
+    private short version;
 
     @Embedded
-    private CreationInfo creationInfo;
+    private InsertInfo creation;
 
     @Embedded
-    private UpdateInfo updateInfo;
-
-    @SuppressWarnings("unused")
-    private AbstractEntity() {
-    }
+    private InsertInfo update;
 
     public AbstractEntity(InputData data) {
-	setCreationInfo(new CreationInfo(data));
-	setUpdateInfo(new UpdateInfo(data));
+	setCreation(new InsertInfo(data));
+	setUpdate(new InsertInfo(data));
     }
 
-    public void basicUpdate(InputData data) {
-	updateInfo.update(data);
+    public void update(InputData data) {
+	update.update(data);
     }
 
     @Override

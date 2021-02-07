@@ -4,6 +4,9 @@ import com.zoran_jankov.repairq.data.entity.User;
 
 public class DataManager {
     private static final DataManager instance = new DataManager();
+    
+    private DataManager() {
+    }
 
     public static DataManager accessData() {
 	return instance;

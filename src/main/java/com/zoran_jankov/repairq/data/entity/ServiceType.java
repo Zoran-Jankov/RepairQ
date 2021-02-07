@@ -29,6 +29,6 @@ public class ServiceType extends BasicInfo {
 
     @Override
     public void update(InputData data) {
-	super.basicUpdate(data);
+	super.update(data);
     }
 }
