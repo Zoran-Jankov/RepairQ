@@ -32,7 +32,6 @@ public class CompanyInfo implements EmbeddableClass {
 	update(data);
     }
 
-    @Override
     public void update(InputData data) {
 	setCompanyName((String) data.get(FieldType.COMPANY_NAME));
 	setTaxIDNumber((String) data.get(FieldType.TAX_ID));

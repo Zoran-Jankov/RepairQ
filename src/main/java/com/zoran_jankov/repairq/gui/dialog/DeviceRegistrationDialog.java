@@ -39,12 +39,10 @@ public class DeviceRegistrationDialog extends JDialog implements InputDialog {
 	return devicePanel;
     }
 
-    @Override
     public IdPanel getIdPanel() {
 	return idPanel;
     }
 
-    @Override
     public InputButtonPanel getInputButtonPanel() {
 	return buttonPanel;
     }

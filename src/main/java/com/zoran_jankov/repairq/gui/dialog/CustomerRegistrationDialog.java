@@ -39,12 +39,10 @@ public class CustomerRegistrationDialog extends JDialog implements InputDialog {
 	pack();
     }
 
-    @Override
     public IdPanel getIdPanel() {
 	return idPanel;
     }
 
-    @Override
     public InputButtonPanel getInputButtonPanel() {
 	return buttonPanel;
     }
