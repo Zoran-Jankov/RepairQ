@@ -24,6 +24,9 @@ public abstract class BasicInfo extends AbstractEntity {
 
     @Column(name = "description")
     private String description;
+    
+    public BasicInfo() {
+    }
 
     public BasicInfo(InputData data) {
 	super(data);

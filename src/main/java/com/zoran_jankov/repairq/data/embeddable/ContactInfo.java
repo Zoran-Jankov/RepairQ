@@ -19,6 +19,9 @@ public class ContactInfo implements EmbeddableClass {
 
     @Column(columnDefinition = "", name = "street_address", nullable = true, unique = false, updatable = true)
     private String address;
+    
+    public ContactInfo() {
+    }
 
     public ContactInfo(InputData data) {
 	update(data);

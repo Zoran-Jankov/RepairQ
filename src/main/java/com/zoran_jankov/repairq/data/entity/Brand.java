@@ -18,6 +18,11 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "brand")
 public class Brand extends BasicInfo {
+    
+    public Brand() {
+	
+    }
+    
     public Brand(InputData data) {
 	super(data);
     }

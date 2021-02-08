@@ -43,6 +43,9 @@ public abstract class AbstractEntity implements Entity {
 
     @Embedded
     private InsertInfo update;
+    
+    public AbstractEntity() {
+    }
 
     public AbstractEntity(InputData data) {
 	setCreation(new InsertInfo(data));

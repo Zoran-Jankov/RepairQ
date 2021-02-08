@@ -27,6 +27,9 @@ public class CompanyInfo implements EmbeddableClass {
 
     @Column(columnDefinition = "", name = "bank_account", nullable = true, unique = false, updatable = true)
     private String bankAccount;
+    
+    public CompanyInfo() {
+    }
 
     public CompanyInfo(InputData data) {
 	update(data);

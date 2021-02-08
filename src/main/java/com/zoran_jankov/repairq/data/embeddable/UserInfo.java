@@ -23,6 +23,9 @@ public class UserInfo implements EmbeddableClass {
 
     @Column(name = "password", nullable = false)
     private String passwordHash;
+    
+    public UserInfo() {
+    }
 
     public UserInfo(InputData data) {
 	update(data);

@@ -18,6 +18,9 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "device_type")
 public class DeviceType extends BasicInfo {
+    public DeviceType() {
+    }
+    
     public DeviceType(InputData data) {
 	super(data);
     }

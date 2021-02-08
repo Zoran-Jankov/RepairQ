@@ -27,6 +27,9 @@ public class Customer extends AbstractEntity {
 
     @Embedded
     private ContactInfo contactInfo;
+    
+    public Customer() {
+    }
 
     public Customer(InputData data) {
 	super(data);

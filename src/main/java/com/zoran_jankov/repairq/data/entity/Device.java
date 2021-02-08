@@ -29,6 +29,9 @@ public class Device extends AbstractEntity {
 
     @Column(name = "serial", nullable = false)
     private String serial;
+    
+    public Device() {
+    }
 
     public Device(InputData data) {
 	super(data);

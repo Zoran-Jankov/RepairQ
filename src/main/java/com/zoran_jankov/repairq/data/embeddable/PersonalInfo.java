@@ -22,6 +22,9 @@ public class PersonalInfo implements EmbeddableClass {
 
     @Column(name = "last_name", nullable = false, unique = false, updatable = true)
     private String lastName;
+    
+    public PersonalInfo() {
+    }
 
     public PersonalInfo(InputData data) {
 	update(data);

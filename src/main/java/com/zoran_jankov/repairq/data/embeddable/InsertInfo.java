@@ -1,6 +1,6 @@
 package com.zoran_jankov.repairq.data.embeddable;
 
-import java.time.LocalDateTime;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
@@ -25,7 +25,10 @@ public class InsertInfo {
 
     @Column(name = "creation_date", nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime creationDate;
+    private Calendar creationDate;
+    
+    public InsertInfo() {
+    }
 
     public InsertInfo(InputData data) {
 	update(data);
@@ -33,6 +36,6 @@ public class InsertInfo {
 
     public void update(InputData data) {
 	setOwner((User) data.get(FieldType.USER));
-	setCreationDate((LocalDateTime) data.get(FieldType.TIMESTAMP));
+	setCreationDate((Calendar) data.get(FieldType.TIMESTAMP));
     }
 }
