@@ -19,16 +19,9 @@ public class ContactInfo implements EmbeddableClass {
 
     @Column(columnDefinition = "", name = "street_address", nullable = true, unique = false, updatable = true)
     private String address;
-    
-    public ContactInfo() {
-    }
-
-    public ContactInfo(InputData data) {
-	update(data);
-    }
 
     @Override
-    public void update(InputData data) {
+    public void initialize(InputData data) {
 	setPhoneNumber((String) data.get(FieldType.PHONE_NUMBER));
 	setEmail((String) data.get(FieldType.EMAIL));
 	setAddress((String) data.get(FieldType.ADDRESS));

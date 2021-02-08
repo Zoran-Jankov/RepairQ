@@ -27,15 +27,9 @@ public class CompanyInfo implements EmbeddableClass {
 
     @Column(columnDefinition = "", name = "bank_account", nullable = true, unique = false, updatable = true)
     private String bankAccount;
-    
-    public CompanyInfo() {
-    }
 
-    public CompanyInfo(InputData data) {
-	update(data);
-    }
-
-    public void update(InputData data) {
+    @Override
+    public void initialize(InputData data) {
 	setCompanyName((String) data.get(FieldType.COMPANY_NAME));
 	setTaxIDNumber((String) data.get(FieldType.TAX_ID));
 	setBankAccount((String) data.get(FieldType.BANK_ACCOUNT));

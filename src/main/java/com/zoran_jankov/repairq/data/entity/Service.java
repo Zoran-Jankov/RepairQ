@@ -8,6 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.zoran_jankov.repairq.data.FieldType;
 import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
@@ -29,12 +30,19 @@ public class Service extends AbstractEntity {
     @JoinColumn(name = "service_type_id")
     private ServiceType serviceType;
 
-    public Service(InputData data) {
-	super(data);
+    @Override
+    public void initialize(InputData data) {
+	super.initialize(data);
+	setPrice((int) data.get(FieldType.PRICE));
+	setNotification((Notification) data.get(FieldType.NOTIFICATION));
+	setServiceType((ServiceType) data.get(FieldType.SERVICE_TYPE));
     }
 
     @Override
     public void update(InputData data) {
 	super.update(data);
+	setPrice((int) data.get(FieldType.PRICE));
+	setNotification((Notification) data.get(FieldType.NOTIFICATION));
+	setServiceType((ServiceType) data.get(FieldType.SERVICE_TYPE));
     }
 }

@@ -31,8 +31,20 @@ public class Model extends BasicInfo {
     @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
 
-    public Model(InputData data) {
-	super(data);
+    @Override
+    public void initialize(InputData data) {
+	super.initialize(data);
+	setDeviceType((DeviceType) data.get(FieldType.DEVICE_TYPE));
+	setBrand((Brand) data.get(FieldType.BRAND));
+    }
+
+    @Override
+    public void update(InputData data) {
+	super.update(data);
+	setFields(data);
+    }
+    
+    private void setFields(InputData data) {
 	setDeviceType((DeviceType) data.get(FieldType.DEVICE_TYPE));
 	setBrand((Brand) data.get(FieldType.BRAND));
     }

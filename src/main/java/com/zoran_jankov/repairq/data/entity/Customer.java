@@ -28,20 +28,23 @@ public class Customer extends AbstractEntity {
     @Embedded
     private ContactInfo contactInfo;
     
-    public Customer() {
-    }
-
-    public Customer(InputData data) {
-	super(data);
-	setPersonalInfo(new PersonalInfo(data));
-	setContactInfo(new ContactInfo(data));
+    @Override
+    public void initialize(InputData data) {
+	super.initialize(data);
+	setPersonalInfo(new PersonalInfo());
+	setContactInfo(new ContactInfo());
+	setFields(data);
     }
 
     @Override
     public void update(InputData data) {
 	super.update(data);
-	personalInfo.update(data);
-	contactInfo.update(data);
+	setFields(data);
+    }
+    
+    private void setFields(InputData data) {
+	getPersonalInfo().initialize(data);
+	getContactInfo().initialize(data);
     }
     
     @Override

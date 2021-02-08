@@ -44,18 +44,19 @@ public abstract class AbstractEntity implements Entity {
     @Embedded
     private InsertInfo update;
     
-    public AbstractEntity() {
+    @Override
+    public void initialize(InputData data) {
+	setCreation(new InsertInfo());
+	setUpdate(new InsertInfo());
+	getCreation().initialize(data);
+	getUpdate().initialize(data);
     }
-
-    public AbstractEntity(InputData data) {
-	setCreation(new InsertInfo(data));
-	setUpdate(new InsertInfo(data));
-    }
-
+    
+    @Override
     public void update(InputData data) {
-	update.update(data);
+	getUpdate().initialize(data);
     }
-
+    
     @Override
     public String getDisplayName() {
 	return Integer.toString(id);

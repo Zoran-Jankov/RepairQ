@@ -7,6 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.zoran_jankov.repairq.data.FieldType;
 import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
@@ -29,16 +30,21 @@ public class Device extends AbstractEntity {
 
     @Column(name = "serial", nullable = false)
     private String serial;
-    
-    public Device() {
-    }
 
-    public Device(InputData data) {
-	super(data);
+    @Override
+    public void initialize(InputData data) {
+	super.initialize(data);
+	setFields(data);
     }
 
     @Override
     public void update(InputData data) {
+	super.update(data);
+	setFields(data);
+    }
 
+    private void setFields(InputData data) {
+	setModel((Model) data.get(FieldType.MODEL));
+	setSerial((String) data.get(FieldType.SERIAL));
     }
 }

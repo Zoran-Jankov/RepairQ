@@ -14,6 +14,8 @@ public interface Entity {
      * @return (int) Data element ID number.
      */
     public int getId();
+    
+    public void initialize(InputData data);
 
     public void update(InputData data);
     

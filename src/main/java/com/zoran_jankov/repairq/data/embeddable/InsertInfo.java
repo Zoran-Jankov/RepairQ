@@ -18,7 +18,7 @@ import lombok.Data;
 
 @Data
 @Embeddable
-public class InsertInfo {
+public class InsertInfo implements EmbeddableClass {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_by_user_id", nullable = false, updatable = false, referencedColumnName = "id")
     private User owner;
@@ -27,14 +27,8 @@ public class InsertInfo {
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar creationDate;
     
-    public InsertInfo() {
-    }
-
-    public InsertInfo(InputData data) {
-	update(data);
-    }
-
-    public void update(InputData data) {
+    @Override
+    public void initialize(InputData data) {
 	setOwner((User) data.get(FieldType.USER));
 	setCreationDate((Calendar) data.get(FieldType.TIMESTAMP));
     }

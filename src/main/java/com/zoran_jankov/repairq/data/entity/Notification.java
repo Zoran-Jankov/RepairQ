@@ -7,6 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.zoran_jankov.repairq.data.FieldType;
 import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
@@ -28,12 +29,17 @@ public class Notification extends AbstractEntity {
     @Column(name = "comment")
     private String comment;
 
-    public Notification(InputData data) {
-	super(data);
+    @Override
+    public void initialize(InputData data) {
+	super.initialize(data);
+	setTicket((Ticket) data.get(FieldType.TICKET));
+	setComment((String) data.get(FieldType.COMMENT));
     }
 
     @Override
     public void update(InputData data) {
 	super.update(data);
+	setTicket((Ticket) data.get(FieldType.TICKET));
+	setComment((String) data.get(FieldType.COMMENT));
     }
 }

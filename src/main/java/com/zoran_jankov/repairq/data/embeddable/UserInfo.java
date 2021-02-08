@@ -24,15 +24,8 @@ public class UserInfo implements EmbeddableClass {
     @Column(name = "password", nullable = false)
     private String passwordHash;
     
-    public UserInfo() {
-    }
-
-    public UserInfo(InputData data) {
-	update(data);
-    }
-
     @Override
-    public void update(InputData data) {
+    public void initialize(InputData data) {
 	setUserRole((UserRole) data.get(FieldType.USER_ROLE));
 	setUsername((String) data.get(FieldType.USER_ROLE));
 	setPasswordHash((String) data.get(FieldType.PASSWORD));

@@ -22,21 +22,14 @@ public class PersonalInfo implements EmbeddableClass {
 
     @Column(name = "last_name", nullable = false, unique = false, updatable = true)
     private String lastName;
-    
-    public PersonalInfo() {
-    }
-
-    public PersonalInfo(InputData data) {
-	update(data);
-    }
-
-    public String getDispalyName() {
-	return firstName + " " + lastName;
-    }
 
     @Override
-    public void update(InputData data) {
+    public void initialize(InputData data) {
 	setFirstName((String) data.get(FieldType.FIRST_NAME));
 	setLastName((String) data.get(FieldType.LAST_NAME));
+    }
+    
+    public String getDispalyName() {
+	return firstName + " " + lastName;
     }
 }

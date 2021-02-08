@@ -22,27 +22,28 @@ public abstract class BasicInfo extends AbstractEntity {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "description", nullable = true, unique = false)
     private String description;
     
-    public BasicInfo() {
-    }
-
-    public BasicInfo(InputData data) {
-	super(data);
-	setName((String) data.get(FieldType.NAME));
-	setDescription((String) data.get(FieldType.DESCRIPTION));
-    }
-
     @Override
-    public String getDisplayName() {
-	return name;
+    public void initialize(InputData data) {
+	super.initialize(data);
+	setFields(data);
     }
 
     @Override
     public void update(InputData data) {
 	super.update(data);
+	setFields(data);
+    }
+    
+    private void setFields(InputData data) {
 	setName((String) data.get(FieldType.NAME));
 	setDescription((String) data.get(FieldType.DESCRIPTION));
+    }
+    
+    @Override
+    public String getDisplayName() {
+	return name;
     }
 }
