@@ -9,7 +9,8 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
 import com.zoran_jankov.repairq.data.InputData;
-import com.zoran_jankov.repairq.data.embeddable.InsertInfo;
+import com.zoran_jankov.repairq.data.embeddable.CreationInfo;
+import com.zoran_jankov.repairq.data.embeddable.UpdateInfo;
 
 import lombok.Data;
 
@@ -39,15 +40,15 @@ public abstract class AbstractEntity implements Entity {
     private short version;
 
     @Embedded
-    private InsertInfo creation;
+    private CreationInfo creation;
 
     @Embedded
-    private InsertInfo update;
+    private UpdateInfo update;
     
     @Override
     public void initialize(InputData data) {
-	setCreation(new InsertInfo());
-	setUpdate(new InsertInfo());
+	setCreation(new CreationInfo());
+	setUpdate(new UpdateInfo());
 	getCreation().initialize(data);
 	getUpdate().initialize(data);
     }

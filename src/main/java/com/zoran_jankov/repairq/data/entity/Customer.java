@@ -21,7 +21,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "customer")
-public class Customer extends AbstractEntity {
+public class Customer extends BaseEntity {
     @Embedded
     private PersonalInfo personalInfo;
 
@@ -30,19 +30,13 @@ public class Customer extends AbstractEntity {
     
     @Override
     public void initialize(InputData data) {
-	super.initialize(data);
 	setPersonalInfo(new PersonalInfo());
 	setContactInfo(new ContactInfo());
-	setFields(data);
-    }
-
-    @Override
-    public void update(InputData data) {
-	super.update(data);
-	setFields(data);
+	super.initialize(data);
     }
     
-    private void setFields(InputData data) {
+    @Override
+    protected void setFields(InputData data) {
 	getPersonalInfo().initialize(data);
 	getContactInfo().initialize(data);
     }

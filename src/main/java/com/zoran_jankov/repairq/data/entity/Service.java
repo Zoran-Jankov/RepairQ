@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "service")
-public class Service extends AbstractEntity {
+public class Service extends BaseEntity {
     @Column(name = "price", nullable = false)
     private int price;
 
@@ -31,16 +31,7 @@ public class Service extends AbstractEntity {
     private ServiceType serviceType;
 
     @Override
-    public void initialize(InputData data) {
-	super.initialize(data);
-	setPrice((int) data.get(FieldType.PRICE));
-	setNotification((Notification) data.get(FieldType.NOTIFICATION));
-	setServiceType((ServiceType) data.get(FieldType.SERVICE_TYPE));
-    }
-
-    @Override
-    public void update(InputData data) {
-	super.update(data);
+    protected void setFields(InputData data) {
 	setPrice((int) data.get(FieldType.PRICE));
 	setNotification((Notification) data.get(FieldType.NOTIFICATION));
 	setServiceType((ServiceType) data.get(FieldType.SERVICE_TYPE));

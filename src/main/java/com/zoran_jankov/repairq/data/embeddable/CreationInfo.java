@@ -18,7 +18,7 @@ import lombok.Data;
 
 @Data
 @Embeddable
-public class InsertInfo implements EmbeddableClass {
+public class CreationInfo implements EmbeddableClass {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_by_user_id", nullable = false, updatable = false, referencedColumnName = "id")
     private User owner;

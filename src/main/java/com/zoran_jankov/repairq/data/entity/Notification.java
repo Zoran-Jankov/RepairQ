@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "notification")
-public class Notification extends AbstractEntity {
+public class Notification extends BasicInfo {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "notification_type_id", nullable = false)
     private NotificationType notificationType;
@@ -30,15 +30,8 @@ public class Notification extends AbstractEntity {
     private String comment;
 
     @Override
-    public void initialize(InputData data) {
-	super.initialize(data);
-	setTicket((Ticket) data.get(FieldType.TICKET));
-	setComment((String) data.get(FieldType.COMMENT));
-    }
-
-    @Override
-    public void update(InputData data) {
-	super.update(data);
+    protected void setFields(InputData data) {
+	setNotificationType((NotificationType) data.get(FieldType.NOTIFICATION_TYPE));
 	setTicket((Ticket) data.get(FieldType.TICKET));
 	setComment((String) data.get(FieldType.COMMENT));
     }

@@ -23,7 +23,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "device")
-public class Device extends AbstractEntity {
+public class Device extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "model_id", nullable = false)
     private Model model;
@@ -32,18 +32,7 @@ public class Device extends AbstractEntity {
     private String serial;
 
     @Override
-    public void initialize(InputData data) {
-	super.initialize(data);
-	setFields(data);
-    }
-
-    @Override
-    public void update(InputData data) {
-	super.update(data);
-	setFields(data);
-    }
-
-    private void setFields(InputData data) {
+    protected void setFields(InputData data) {
 	setModel((Model) data.get(FieldType.MODEL));
 	setSerial((String) data.get(FieldType.SERIAL));
     }

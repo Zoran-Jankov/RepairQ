@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.zoran_jankov.repairq.data.FieldType;
 import com.zoran_jankov.repairq.data.InputData;
 
 import lombok.Data;
@@ -22,13 +23,10 @@ import lombok.EqualsAndHashCode;
 public class ServiceType extends BasicInfo {
     @Column(name = "default_price", nullable = false)
     private int defaultPrice;
-
-    public ServiceType(InputData data) {
-	super(data);
-    }
-
+    
     @Override
-    public void update(InputData data) {
-	super.update(data);
+    protected void setFields(InputData data) {
+	super.setFields(data);
+	setDefaultPrice((int) data.get(FieldType.PRICE));
     }
 }
