@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @MappedSuperclass
-public abstract class BasicInfo extends AbstractEntity {
+public abstract class BasicInfo extends BaseEntity {
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
@@ -26,18 +26,7 @@ public abstract class BasicInfo extends AbstractEntity {
     private String description;
     
     @Override
-    public void initialize(InputData data) {
-	super.initialize(data);
-	setFields(data);
-    }
-
-    @Override
-    public void update(InputData data) {
-	super.update(data);
-	setFields(data);
-    }
-    
-    private void setFields(InputData data) {
+    protected void setFields(InputData data) {
 	setName((String) data.get(FieldType.NAME));
 	setDescription((String) data.get(FieldType.DESCRIPTION));
     }
