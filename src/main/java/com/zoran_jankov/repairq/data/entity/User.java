@@ -22,7 +22,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "user")
-public class User extends AbstractEntity {
+public class User extends BaseEntity {
     @Embedded
     private PersonalInfo personalInfo;
 
@@ -31,18 +31,24 @@ public class User extends AbstractEntity {
 
     @Embedded
     private UserInfo userInfo;
-
-    public User(InputData data) {
-	super(data);
+    
+    @Override
+    public void initialize(InputData data) {
+	setPersonalInfo(new PersonalInfo());
+	setContactInfo(new ContactInfo());
+	setUserInfo(new UserInfo());
+	super.initialize(data);
+    }
+    
+    @Override
+    protected void setFields(InputData data) {
+	getPersonalInfo().initialize(data);
+	getContactInfo().initialize(data);
+	getUserInfo().initialize(data);
     }
 
     @Override
     public String getDisplayName() {
 	return userInfo.getUsername();
-    }
-
-    @Override
-    public void update(InputData data) {
-	super.update(data);
     }
 }

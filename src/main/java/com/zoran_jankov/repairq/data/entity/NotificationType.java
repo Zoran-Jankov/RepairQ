@@ -16,5 +16,5 @@ import lombok.EqualsAndHashCode;
 @Table(name = "notification_type")
 public class NotificationType extends BasicInfo {
     @OneToMany(cascade = CascadeType.ALL)
-    List<Notification> notifications;
+    private List<Notification> notifications;
 }

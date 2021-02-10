@@ -21,5 +21,5 @@ import lombok.EqualsAndHashCode;
 @Table(name = "brand")
 public class Brand extends BasicInfo {
     @OneToMany(cascade = CascadeType.ALL)
-    List<Model> models;
+    private List<Model> models;
 }

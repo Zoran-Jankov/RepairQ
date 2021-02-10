@@ -1,10 +1,14 @@
 package com.zoran_jankov.repairq.data.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.zoran_jankov.repairq.data.FieldType;
@@ -30,6 +34,9 @@ public class Device extends BaseEntity {
 
     @Column(name = "serial", nullable = false)
     private String serial;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Ticket> tikets;
 
     @Override
     protected void setFields(InputData data) {

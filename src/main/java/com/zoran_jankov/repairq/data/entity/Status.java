@@ -1,9 +1,11 @@
 package com.zoran_jankov.repairq.data.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import java.util.List;
 
-import com.zoran_jankov.repairq.data.InputData;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,12 +15,6 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "status")
 public class Status extends BasicInfo {
-    public Status(InputData data) {
-	super(data);
-    }
-
-    @Override
-    public void update(InputData data) {
-	super.update(data);
-    }
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Ticket> tickets;
 }

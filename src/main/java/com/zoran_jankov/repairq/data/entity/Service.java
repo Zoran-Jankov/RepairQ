@@ -23,8 +23,8 @@ public class Service extends BaseEntity {
     private int price;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "notification_id")
-    private Notification notification;
+    @JoinColumn(name = "ticket_id")
+    private Ticket ticket;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_type_id")
@@ -33,7 +33,7 @@ public class Service extends BaseEntity {
     @Override
     protected void setFields(InputData data) {
 	setPrice((int) data.get(FieldType.PRICE));
-	setNotification((Notification) data.get(FieldType.NOTIFICATION));
+	setTicket((Ticket) data.get(FieldType.TICKET));
 	setServiceType((ServiceType) data.get(FieldType.SERVICE_TYPE));
     }
 }

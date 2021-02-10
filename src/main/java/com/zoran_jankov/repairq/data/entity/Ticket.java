@@ -1,12 +1,17 @@
 package com.zoran_jankov.repairq.data.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.zoran_jankov.repairq.data.FieldType;
 import com.zoran_jankov.repairq.data.InputData;
 import com.zoran_jankov.repairq.data.Priority;
 
@@ -17,7 +22,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "ticket")
-public class Ticket extends AbstractEntity {
+public class Ticket extends BaseEntity {
     @Column(name = "priority")
     private Priority priority;
 
@@ -32,13 +37,18 @@ public class Ticket extends AbstractEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "device_id", nullable = false)
     private Device device;
-
-    public Ticket(InputData data) {
-	super(data);
-    }
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Service> services;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Service> notifications;
 
     @Override
-    public void update(InputData data) {
-	super.update(data);
+    protected void setFields(InputData data) {
+	setPriority((Priority) data.get(FieldType.PRIORITY));
+	setStatus((Status) data.get(FieldType.STATUS));
+	setCustomer((Customer) data.get(FieldType.CUSTOMER));
+	setDevice((Device) data.get(FieldType.DEVICE));
     }
 }

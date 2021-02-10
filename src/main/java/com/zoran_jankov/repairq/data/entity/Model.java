@@ -1,9 +1,13 @@
 package com.zoran_jankov.repairq.data.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.zoran_jankov.repairq.data.FieldType;
@@ -30,6 +34,9 @@ public class Model extends BasicInfo {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Device> devices;
     
     @Override
     protected void setFields(InputData data) {

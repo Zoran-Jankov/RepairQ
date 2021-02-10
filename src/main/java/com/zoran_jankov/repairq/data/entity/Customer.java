@@ -1,7 +1,11 @@
 package com.zoran_jankov.repairq.data.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.zoran_jankov.repairq.data.InputData;
@@ -28,6 +32,9 @@ public class Customer extends BaseEntity {
     @Embedded
     private ContactInfo contactInfo;
     
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Ticket> tikets;
+    
     @Override
     public void initialize(InputData data) {
 	setPersonalInfo(new PersonalInfo());
@@ -43,6 +50,6 @@ public class Customer extends BaseEntity {
     
     @Override
     public String getDisplayName() {
-	return super.getDisplayName() + " " + personalInfo.getDispalyName();
+	return super.getDisplayName() + " " + getPersonalInfo().getDispalyName();
     }
 }
