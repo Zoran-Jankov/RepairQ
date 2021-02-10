@@ -39,6 +39,9 @@ public abstract class AbstractEntity implements Entity {
     @Column(name = "version", nullable = false, updatable = true)
     private short version;
 
+    /*
+     * 
+     */
     @Embedded
     private CreationInfo creation;
 
