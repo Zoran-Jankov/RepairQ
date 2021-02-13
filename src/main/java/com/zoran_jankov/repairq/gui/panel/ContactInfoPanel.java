@@ -8,9 +8,9 @@ import net.miginfocom.swing.MigLayout;
 
 public class ContactInfoPanel extends JPanel {
     private static final long serialVersionUID = -1636004925810635460L;
-    private TextInputField phoneNumber = new TextInputField(LabelName.PHONE_NUMBER);
-    private TextInputField email = new TextInputField("Email");
-    private TextInputField address = new TextInputField("Address");
+    private TextInputField phoneNumber = new TextInputField(LabelName.PHONE_NUMBER, true);
+    private TextInputField email = new TextInputField("Email", false);
+    private TextInputField address = new TextInputField("Address", false);
 
     public ContactInfoPanel() {
 	setLayout(new MigLayout("", "[grow]", "[20px:n:20px][][][]"));
