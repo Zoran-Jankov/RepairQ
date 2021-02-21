@@ -37,6 +37,7 @@ public class CustomerRegistrationDialog extends JDialog implements InputDialog {
 	getContentPane().add(buttonPanel, "cell 0 5,grow");
 
 	pack();
+	this.setVisible(true);
     }
 
     public IdPanel getIdPanel() {
