@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.zoran_jankov.repairq.app.FieldProperties;
+import com.zoran_jankov.repairq.app.listener.ListenerFactory;
 import com.zoran_jankov.repairq.data.entity.Entity;
 import com.zoran_jankov.repairq.gui.utility.LabelFactory;
 import com.zoran_jankov.repairq.gui.utility.TextFieldFactory;
@@ -33,12 +34,12 @@ public class InputField extends JPanel {
 	
 	add(textField, "cell 2 0,grow");
 	
-	if (condition) {
-	    
+	if (fieldProperties.isRequired()) {
+	    convertToRequiredField();
 	}
 	
-	if (condition) {
-	    
+	if (isEntity()) {
+	    convertToSelectionField();
 	}
     }
     

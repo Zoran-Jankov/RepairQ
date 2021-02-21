@@ -1,4 +1,4 @@
-package com.zoran_jankov.repairq.gui.panel;
+package com.zoran_jankov.repairq.app.listener;
 
 import java.awt.Window;
 import java.awt.event.ActionListener;
