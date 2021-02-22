@@ -2,29 +2,27 @@ package com.zoran_jankov.repairq.gui.panel;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Window;
 
-import javax.swing.FocusManager;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.zoran_jankov.repairq.app.FieldProperties;
-import com.zoran_jankov.repairq.app.listener.ListenerFactory;
+import com.zoran_jankov.repairq.app.listener.OpenLookup;
 import com.zoran_jankov.repairq.data.entity.Entity;
 import com.zoran_jankov.repairq.gui.utility.LabelFactory;
 import com.zoran_jankov.repairq.gui.utility.TextFieldFactory;
 
 import net.miginfocom.swing.MigLayout;
 
-public class InputField extends JPanel {
+public class InputFieldPanel extends JPanel {
     private static final long serialVersionUID = -1839158784863217197L;
     private JTextField textField = TextFieldFactory.createJTextField(10);
     private Entity selectedEntity;
     private FieldProperties fieldProperties;
 
-    public InputField(FieldProperties fieldProperties) {
+    public InputFieldPanel(FieldProperties fieldProperties) {
 	this.fieldProperties = fieldProperties;
 	
 	setLayout(new MigLayout("", "[left][][grow,fill][]", "[20px:n,fill]"));
@@ -52,8 +50,7 @@ public class InputField extends JPanel {
     
     private void convertToSelectionField() {
 	JButton buttonSelect = new JButton("🔍");
-	Window activeWindow = FocusManager.getCurrentManager().getActiveWindow();
-	buttonSelect.addActionListener(ListenerFactory.openLookup(activeWindow,fieldProperties.getType()));
+	buttonSelect.addActionListener(new OpenLookup(this, fieldProperties.getType()));
 	add(buttonSelect, "cell 3 0");
     }
     
