@@ -5,7 +5,6 @@
 [![codebeat badge](https://codebeat.co/badges/a3fe0b76-70a5-48fb-9ce7-2b659886908b)](https://codebeat.co/projects/github-com-zoran-jankov-repairq-master)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/74e77def1a874fc89d7bb97635abe2bf)](https://www.codacy.com/gh/Zoran-Jankov/RepairQ/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Zoran-Jankov/RepairQ&amp;utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/zoran-jankov/repairq/badge)](https://www.codefactor.io/repository/github/zoran-jankov/repairq)
-[![BCH compliance](https://bettercodehub.com/edge/badge/Zoran-Jankov/RepairQ?branch=master)](https://bettercodehub.com/)
 
 ## Description
 
